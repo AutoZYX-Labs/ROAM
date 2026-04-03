@@ -1,313 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROAM — RoboTaxi Operations Anomaly Management</title>
+    <title>ROAM — L4+ 无人驾驶出租车远程运营异常管理</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; background: #f8f9fc; line-height: 1.6; }
-
-        /* Header */
-        .header { background: linear-gradient(135deg, #0f1629 0%, #1a2744 100%); color: white; padding: 60px 20px 50px; text-align: center; }
-        .header h1 { font-size: 2.8em; font-weight: 800; letter-spacing: -1px; margin-bottom: 8px; }
-        .header h1 span { color: #f59e0b; }
-        .header .subtitle { font-size: 1.15em; color: #94a3b8; max-width: 700px; margin: 0 auto 30px; }
-        .header .badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-        .badge { padding: 6px 16px; border-radius: 20px; font-size: 0.85em; font-weight: 600; }
-        .badge-red { background: rgba(239,68,68,0.15); color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); }
-        .badge-orange { background: rgba(245,158,11,0.15); color: #fcd34d; border: 1px solid rgba(245,158,11,0.3); }
-        .badge-blue { background: rgba(59,130,246,0.15); color: #93c5fd; border: 1px solid rgba(59,130,246,0.3); }
-        .badge-green { background: rgba(34,197,94,0.15); color: #86efac; border: 1px solid rgba(34,197,94,0.3); }
-
-        /* Stats bar */
-        .stats { display: flex; justify-content: center; gap: 40px; padding: 30px 20px; background: white; border-bottom: 1px solid #e2e8f0; flex-wrap: wrap; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; background: #f8f9fc; line-height: 1.7; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        a { color: #2563eb; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .lang-toggle { position: fixed; top: 16px; right: 20px; z-index: 100; display: flex; background: rgba(15,22,41,0.85); border-radius: 20px; padding: 3px; backdrop-filter: blur(8px); }
+        .lang-btn { padding: 6px 16px; border-radius: 17px; border: none; cursor: pointer; font-size: 13px; font-weight: 600; background: transparent; color: #94a3b8; transition: all 0.2s; }
+        .lang-btn.active { background: white; color: #0f1629; }
+        span.en, p.en, h2.en, div.en { display: none; }
+        body.lang-en span.cn, body.lang-en p.cn, body.lang-en h2.cn, body.lang-en div.cn { display: none; }
+        body.lang-en span.en { display: inline; }
+        body.lang-en p.en, body.lang-en h2.en, body.lang-en div.en { display: block; }
+        .header { background: linear-gradient(135deg, #0f1629 0%, #1a2744 60%, #1e3a5f 100%); color: white; padding: 70px 20px 55px; text-align: center; }
+        .header h1 { font-size: 3em; font-weight: 800; letter-spacing: -1px; margin-bottom: 4px; }
+        .header h1 .accent { color: #f59e0b; }
+        .header .subtitle { font-size: 1.05em; color: #94a3b8; margin-bottom: 6px; }
+        .header .desc { font-size: 1.15em; color: #cbd5e1; max-width: 720px; margin: 0 auto 28px; }
+        .badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+        .badge { padding: 5px 14px; border-radius: 20px; font-size: 0.82em; font-weight: 600; }
+        .badge-red { background: rgba(239,68,68,0.15); color: #fca5a5; border: 1px solid rgba(239,68,68,0.25); }
+        .badge-orange { background: rgba(245,158,11,0.15); color: #fcd34d; border: 1px solid rgba(245,158,11,0.25); }
+        .badge-blue { background: rgba(59,130,246,0.15); color: #93c5fd; border: 1px solid rgba(59,130,246,0.25); }
+        .badge-green { background: rgba(34,197,94,0.15); color: #86efac; border: 1px solid rgba(34,197,94,0.25); }
+        .cta-group { display: flex; gap: 14px; justify-content: center; }
+        .cta-btn { display: inline-block; padding: 11px 26px; border-radius: 8px; font-weight: 700; font-size: 0.92em; transition: all 0.2s; text-decoration: none; }
+        .cta-primary { background: #2563eb; color: white; }
+        .cta-primary:hover { background: #1d4ed8; text-decoration: none; }
+        .cta-outline { background: transparent; border: 2px solid #475569; color: #e2e8f0; }
+        .cta-outline:hover { border-color: #93c5fd; color: white; text-decoration: none; }
+        .stats { display: flex; justify-content: center; gap: 36px; padding: 26px 20px; background: white; border-bottom: 1px solid #e2e8f0; flex-wrap: wrap; }
         .stat { text-align: center; }
-        .stat-num { font-size: 2em; font-weight: 800; color: #0f1629; }
-        .stat-label { font-size: 0.85em; color: #64748b; margin-top: 2px; }
-
-        /* Container */
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-
-        /* Alert box */
-        .alert { background: linear-gradient(135deg, #fef3c7, #fde68a); border-left: 4px solid #f59e0b; padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 40px; }
-        .alert-title { font-weight: 700; font-size: 1.05em; margin-bottom: 4px; }
-        .alert-text { color: #78350f; font-size: 0.95em; }
-
-        /* Section */
-        .section { margin-bottom: 50px; }
-        .section h2 { font-size: 1.6em; font-weight: 700; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0; }
-
-        /* Cards grid */
-        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 30px; }
-        .card { background: white; border-radius: 12px; padding: 28px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; transition: transform 0.2s, box-shadow 0.2s; }
-        .card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .card-icon { font-size: 2em; margin-bottom: 12px; }
-        .card h3 { font-size: 1.1em; font-weight: 700; margin-bottom: 6px; }
-        .card p { color: #64748b; font-size: 0.9em; }
-        .card a { color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.9em; }
-        .card a:hover { text-decoration: underline; }
-
-        /* Incident table */
-        .incident-table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
-        .incident-table th { background: #0f1629; color: white; padding: 14px 16px; text-align: left; font-size: 0.85em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-        .incident-table td { padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-size: 0.9em; }
-        .incident-table tr:hover { background: #f8fafc; }
-        .severity { padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 700; }
-        .s1 { background: #dbeafe; color: #1e40af; }
-        .s2 { background: #fef3c7; color: #92400e; }
-        .s3 { background: #fee2e2; color: #991b1b; }
-        .s4 { background: #1f2937; color: #fca5a5; }
-        .scenario-tag { background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; font-family: monospace; }
-
-        /* Architecture diagram */
-        .arch-layers { display: flex; flex-direction: column; gap: 12px; }
-        .arch-layer { padding: 24px; border-radius: 10px; border-left: 5px solid; }
-        .layer-1 { background: #ecfdf5; border-color: #059669; }
-        .layer-2 { background: #fefce8; border-color: #ca8a04; }
-        .layer-3 { background: #fef2f2; border-color: #dc2626; }
-        .layer-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-        .layer-header h3 { font-size: 1.05em; }
-        .layer-pct { font-size: 1.4em; font-weight: 800; }
-        .layer-1 .layer-pct { color: #059669; }
-        .layer-2 .layer-pct { color: #ca8a04; }
-        .layer-3 .layer-pct { color: #dc2626; }
-
-        /* Supporters */
-        .supporters { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; padding: 30px; }
-        .supporter { text-align: center; }
+        .stat-num { font-size: 1.9em; font-weight: 800; color: #0f1629; }
+        .stat-label { font-size: 0.82em; color: #64748b; margin-top: 1px; }
+        .section { padding: 48px 0; }
+        .section h2 { font-size: 1.55em; font-weight: 700; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0; }
+        .alert { background: linear-gradient(135deg, #fef3c7, #fde68a); border-left: 4px solid #f59e0b; padding: 18px 22px; border-radius: 0 8px 8px 0; margin-bottom: 10px; }
+        .alert-title { font-weight: 700; font-size: 1em; margin-bottom: 3px; }
+        .alert-text { color: #78350f; font-size: 0.92em; }
+        .svg-box { margin: 24px 0; text-align: center; overflow-x: auto; }
+        .svg-box img { max-width: 100%; height: auto; }
+        .table-wrap { overflow-x: auto; margin: 16px 0; }
+        table.inc { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); font-size: 0.88em; }
+        table.inc th { background: #0f1629; color: white; padding: 12px 14px; text-align: left; font-size: 0.8em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+        table.inc td { padding: 10px 14px; border-bottom: 1px solid #f1f5f9; }
+        table.inc tr:hover { background: #f8fafc; }
+        .sev { padding: 2px 9px; border-radius: 10px; font-size: 0.78em; font-weight: 700; white-space: nowrap; }
+        .s1 { background: #dbeafe; color: #1e40af; } .s2 { background: #fef3c7; color: #92400e; }
+        .s3 { background: #fee2e2; color: #991b1b; } .s4 { background: #1f2937; color: #fca5a5; }
+        .tag { background: #f1f5f9; color: #475569; padding: 1px 7px; border-radius: 4px; font-size: 0.78em; font-family: monospace; }
+        .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+        .who-card { background: white; border-radius: 10px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; }
+        .who-card h3 { font-size: 1.05em; margin-bottom: 6px; }
+        .who-icon { font-size: 1.8em; margin-bottom: 10px; }
+        .who-card p { color: #64748b; font-size: 0.88em; margin-bottom: 8px; }
+        .who-ex { background: #f8fafc; border-radius: 6px; padding: 10px 12px; font-size: 0.82em; color: #475569; border-left: 3px solid #e2e8f0; }
+        .who-ex strong { color: #1e40af; }
+        table.std { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); font-size: 0.85em; }
+        table.std th { background: #f1f5f9; padding: 10px 12px; text-align: left; font-weight: 600; color: #475569; }
+        table.std td { padding: 9px 12px; border-bottom: 1px solid #f1f5f9; }
+        .supporters { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; padding: 20px; }
+        .supporter { text-align: center; max-width: 320px; }
         .supporter-name { font-weight: 700; font-size: 0.95em; }
-        .supporter-desc { color: #64748b; font-size: 0.82em; }
-
-        /* Footer */
-        .footer { background: #0f1629; color: #94a3b8; padding: 40px 20px; text-align: center; font-size: 0.85em; }
-        .footer a { color: #60a5fa; text-decoration: none; }
-
-        /* CTA */
-        .cta-btn { display: inline-block; background: #2563eb; color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.95em; transition: background 0.2s; }
-        .cta-btn:hover { background: #1d4ed8; }
-        .cta-btn-outline { background: transparent; border: 2px solid #475569; color: #e2e8f0; }
-        .cta-btn-outline:hover { border-color: #93c5fd; color: white; }
-        .cta-group { display: flex; gap: 16px; justify-content: center; margin-top: 30px; }
-
-        @media (max-width: 640px) {
-            .header h1 { font-size: 1.8em; }
-            .stats { gap: 20px; }
-            .stat-num { font-size: 1.5em; }
-            .cta-group { flex-direction: column; align-items: center; }
-        }
+        .supporter-sub { color: #94a3b8; font-size: 0.8em; }
+        .supporter-desc { color: #64748b; font-size: 0.82em; margin-top: 4px; }
+        .footer { background: #0f1629; color: #94a3b8; padding: 36px 20px; text-align: center; font-size: 0.82em; }
+        .footer a { color: #60a5fa; }
+        .footer p { margin-bottom: 6px; }
+        .contribute { text-align: center; padding: 40px 0; }
+        @media (max-width: 640px) { .header h1 { font-size: 2em; } .stats { gap: 16px; } .stat-num { font-size: 1.4em; } .cta-group { flex-direction: column; align-items: center; } .who-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-
+<div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('cn',this)">中文</button>
+    <button class="lang-btn" onclick="setLang('en',this)">EN</button>
+</div>
 <div class="header">
-    <h1><span>ROAM</span></h1>
-    <p style="font-size:1.1em; color:#cbd5e1; margin-bottom:6px;">RoboTaxi Operations Anomaly Management</p>
-    <p class="subtitle">Open-source incident database, scenario taxonomy & reference architecture for L4+ robotaxi remote operations</p>
+    <h1><span class="accent">ROAM</span></h1>
+    <p class="subtitle">RoboTaxi Operations Anomaly Management</p>
+    <p class="desc cn">L4+ 无人驾驶出租车远程运营异常管理 — 开源事故数据库、场景分类体系与参考架构</p>
+    <p class="desc en">Open-Source Incident Database, Scenario Taxonomy & Reference Architecture for L4+ Robotaxi Remote Operations</p>
     <div class="badges">
-        <span class="badge badge-red">16 Incidents Recorded</span>
-        <span class="badge badge-orange">6 Categories &middot; 20+ Scenarios</span>
-        <span class="badge badge-blue">3-Layer Reference Architecture</span>
-        <span class="badge badge-green">Apache 2.0 License</span>
+        <span class="badge badge-red"><span class="cn">16+ 事件记录</span><span class="en">16+ Incidents</span></span>
+        <span class="badge badge-orange"><span class="cn">6大类 · 26场景</span><span class="en">6 Categories · 26 Scenarios</span></span>
+        <span class="badge badge-blue"><span class="cn">三层参考架构</span><span class="en">3-Layer Architecture</span></span>
+        <span class="badge badge-green"><span class="cn">Apache 2.0 开源</span><span class="en">Apache 2.0 License</span></span>
     </div>
     <div class="cta-group">
-        <a href="https://github.com/zyx312/ROAM" class="cta-btn">View on GitHub</a>
-        <a href="#incidents" class="cta-btn cta-btn-outline">Browse Incidents</a>
+        <a href="https://github.com/zyx312/ROAM" class="cta-btn cta-primary"><span class="cn">GitHub 仓库</span><span class="en">View on GitHub</span></a>
+        <a href="#incidents" class="cta-btn cta-outline"><span class="cn">浏览事件库</span><span class="en">Browse Incidents</span></a>
     </div>
 </div>
-
 <div class="stats">
-    <div class="stat"><div class="stat-num">16</div><div class="stat-label">Incidents Recorded</div></div>
-    <div class="stat"><div class="stat-num">4</div><div class="stat-label">Operators Covered</div></div>
-    <div class="stat"><div class="stat-num">5</div><div class="stat-label">Countries</div></div>
-    <div class="stat"><div class="stat-num">26</div><div class="stat-label">Scenario Types</div></div>
-    <div class="stat"><div class="stat-num">8</div><div class="stat-label">KPI Benchmarks</div></div>
+    <div class="stat"><div class="stat-num">16</div><div class="stat-label"><span class="cn">事件记录</span><span class="en">Incidents</span></div></div>
+    <div class="stat"><div class="stat-num">4</div><div class="stat-label"><span class="cn">运营商覆盖</span><span class="en">Operators</span></div></div>
+    <div class="stat"><div class="stat-num">26</div><div class="stat-label"><span class="cn">场景类型</span><span class="en">Scenario Types</span></div></div>
+    <div class="stat"><div class="stat-num">13</div><div class="stat-label"><span class="cn">对齐标准</span><span class="en">Standards</span></div></div>
+    <div class="stat"><div class="stat-num">40</div><div class="stat-label"><span class="cn">参考文献</span><span class="en">References</span></div></div>
 </div>
-
 <div class="container">
-
-    <!-- Why ROAM -->
-    <div class="alert">
-        <div class="alert-title">Why does this project exist?</div>
-        <div class="alert-text">On March 31, 2026, ~100 Baidu robotaxis simultaneously shut down on elevated highways in Wuhan. Passengers were trapped for 2 hours. SOS buttons went unanswered. Resolution: police officers rescuing vehicles one by one. <strong>This is not sustainable at scale.</strong></div>
-    </div>
-
-    <!-- Four pillars -->
     <div class="section">
-        <h2>Four Pillars</h2>
-        <div class="cards">
-            <div class="card">
-                <div class="card-icon">📋</div>
-                <h3>Incident Database</h3>
-                <p>Structured, searchable YAML records of every known L4+ robotaxi anomaly. Community-maintained.</p>
-                <a href="https://github.com/zyx312/ROAM/tree/main/incidents">Browse incidents &rarr;</a>
-            </div>
-            <div class="card">
-                <div class="card-icon">🏷️</div>
-                <h3>Scenario Taxonomy</h3>
-                <p>6 categories, 26 sub-scenarios. Standardized classification for operational anomalies.</p>
-                <a href="https://github.com/zyx312/ROAM/blob/main/taxonomy/scenario-taxonomy-v1.0.md">View taxonomy &rarr;</a>
-            </div>
-            <div class="card">
-                <div class="card-icon">🏗️</div>
-                <h3>Reference Architecture</h3>
-                <p>Three-layer AI-first decision model: autonomous response &rarr; human confirm &rarr; remote driving.</p>
-                <a href="https://github.com/zyx312/ROAM/blob/main/architecture/reference-architecture.md">View architecture &rarr;</a>
-            </div>
-            <div class="card">
-                <div class="card-icon">📊</div>
-                <h3>Evaluation Benchmarks</h3>
-                <p>8 KPIs with target values and baseline data for measuring remote operations performance.</p>
-                <a href="https://github.com/zyx312/ROAM/blob/main/benchmarks/kpi-definitions.md">View KPIs &rarr;</a>
-            </div>
+        <div class="alert">
+            <div class="alert-title"><span class="cn">为什么需要 ROAM？</span><span class="en">Why ROAM?</span></div>
+            <div class="alert-text"><span class="cn">2026年3月31日，武汉近百辆萝卜快跑无人驾驶出租车在高架路段同时熄火瘫痪，乘客被困近2小时。SOS按钮无人应答，客服电话占线，最终依靠交警逐车施救。<strong>当L4车队规模化运营时，这样的应急方式不可持续。</strong></span><span class="en">On March 31, 2026, ~100 Baidu robotaxis simultaneously shut down on elevated highways in Wuhan. Passengers trapped for 2 hours. SOS unanswered. Resolution: police rescuing vehicles one by one. <strong>This is not sustainable at scale.</strong></span></div>
         </div>
     </div>
-
-    <!-- Recent Incidents -->
+    <div class="section">
+        <h2 class="cn">四大支柱</h2><h2 class="en">Four Pillars</h2>
+        <div class="svg-box"><img src="assets/four-pillars.svg" alt="ROAM Four Pillars"/></div>
+    </div>
     <div class="section" id="incidents">
-        <h2>Recent Incidents</h2>
-        <table class="incident-table">
-            <thead>
-                <tr><th>Date</th><th>Operator</th><th>Location</th><th>Incident</th><th>Scenario</th><th>Severity</th></tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2026-03-31</td><td>Baidu Apollo</td><td>Wuhan, CN</td>
-                    <td>~100 vehicles mass shutdown on elevated highways, passengers trapped 2hrs</td>
-                    <td><span class="scenario-tag">A1</span> <span class="scenario-tag">F1</span></td>
-                    <td><span class="severity s3">S3</span></td>
-                </tr>
-                <tr>
-                    <td>2026-03-07</td><td>Waymo</td><td>Phoenix, US</td>
-                    <td>Attempted 8-lane crossing without adequate gap, stopped mid-road</td>
-                    <td><span class="scenario-tag">C3</span></td>
-                    <td><span class="severity s2">S2</span></td>
-                </tr>
-                <tr>
-                    <td>2026-03-01</td><td>Waymo</td><td>Austin, US</td>
-                    <td>Blocked ambulance at mass shooting scene</td>
-                    <td><span class="scenario-tag">E3</span></td>
-                    <td><span class="severity s3">S3</span></td>
-                </tr>
-                <tr>
-                    <td>2026-01-23</td><td>Waymo</td><td>Santa Monica, US</td>
-                    <td>Struck 9-year-old child near school during drop-off</td>
-                    <td><span class="scenario-tag">C5</span></td>
-                    <td><span class="severity s2">S2</span></td>
-                </tr>
-                <tr>
-                    <td>2026 (ongoing)</td><td>Waymo</td><td>Multiple, US</td>
-                    <td>6+ instances of first responders taking control of vehicles</td>
-                    <td><span class="scenario-tag">E3</span></td>
-                    <td><span class="severity s2">S2</span></td>
-                </tr>
-                <tr>
-                    <td>2025-12</td><td>Waymo</td><td>San Francisco, US</td>
-                    <td>Power outage: mass fleet paralysis, 31 emergency calls, 2.5hr wait</td>
-                    <td><span class="scenario-tag">A3</span></td>
-                    <td><span class="severity s3">S3</span></td>
-                </tr>
-                <tr>
-                    <td>2025-05</td><td>Pony.ai</td><td>Beijing, CN</td>
-                    <td>Test vehicle caught fire after veering off road</td>
-                    <td><span class="scenario-tag">D3</span></td>
-                    <td><span class="severity s2">S2</span></td>
-                </tr>
-                <tr>
-                    <td>2023-10</td><td>Cruise</td><td>San Francisco, US</td>
-                    <td>Vehicle ran over and dragged pedestrian 20 feet</td>
-                    <td><span class="scenario-tag">C5</span></td>
-                    <td><span class="severity s4">S4</span></td>
-                </tr>
-            </tbody>
-        </table>
-        <p style="margin-top:14px; color:#64748b; font-size:0.85em;">Showing 8 of 16 incidents. <a href="https://github.com/zyx312/ROAM/tree/main/incidents" style="color:#2563eb;">View all incidents on GitHub &rarr;</a></p>
+        <h2 class="cn">近期事件</h2><h2 class="en">Recent Incidents</h2>
+        <div class="table-wrap">
+        <table class="inc"><thead><tr>
+            <th><span class="cn">日期</span><span class="en">Date</span></th>
+            <th><span class="cn">运营商</span><span class="en">Operator</span></th>
+            <th><span class="cn">地点</span><span class="en">Location</span></th>
+            <th><span class="cn">事件描述</span><span class="en">Description</span></th>
+            <th><span class="cn">场景</span><span class="en">Type</span></th>
+            <th><span class="cn">严重度</span><span class="en">Sev.</span></th>
+        </tr></thead><tbody>
+            <tr><td>2026-03-31</td><td><span class="cn">百度Apollo</span><span class="en">Baidu Apollo</span></td><td><span class="cn">武汉</span><span class="en">Wuhan</span></td><td><span class="cn">近百辆车高架路段同时熄火，乘客被困2小时，SOS无人应答</span><span class="en">~100 vehicles mass shutdown on elevated highways, passengers trapped 2hrs</span></td><td><span class="tag">A1</span> <span class="tag">F1</span></td><td><span class="sev s3">S3</span></td></tr>
+            <tr><td>2026-03-07</td><td>Waymo</td><td><span class="cn">凤凰城</span><span class="en">Phoenix</span></td><td><span class="cn">横穿8车道时停在路中央，乘客尖叫</span><span class="en">Attempted 8-lane crossing, stopped mid-road</span></td><td><span class="tag">C3</span></td><td><span class="sev s2">S2</span></td></tr>
+            <tr><td>2026-03-01</td><td>Waymo</td><td><span class="cn">奥斯汀</span><span class="en">Austin</span></td><td><span class="cn">枪击案现场堵住救护车</span><span class="en">Blocked ambulance at mass shooting scene</span></td><td><span class="tag">E3</span></td><td><span class="sev s3">S3</span></td></tr>
+            <tr><td>2025-12</td><td>Waymo</td><td><span class="cn">旧金山</span><span class="en">San Francisco</span></td><td><span class="cn">停电导致车队大规模瘫痪，应急热线等待2.5小时</span><span class="en">Power outage: mass fleet paralysis, 2.5hr emergency wait</span></td><td><span class="tag">A3</span></td><td><span class="sev s3">S3</span></td></tr>
+            <tr><td>2025-05</td><td>Pony.ai</td><td><span class="cn">北京</span><span class="en">Beijing</span></td><td><span class="cn">测试车辆偏离道路后起火</span><span class="en">Test vehicle caught fire after veering off road</span></td><td><span class="tag">D3</span></td><td><span class="sev s2">S2</span></td></tr>
+            <tr><td>2023-10</td><td>Cruise</td><td><span class="cn">旧金山</span><span class="en">San Francisco</span></td><td><span class="cn">车辆碾压并拖拽行人20英尺，运营全面暂停</span><span class="en">Ran over and dragged pedestrian 20 feet</span></td><td><span class="tag">C5</span></td><td><span class="sev s4">S4</span></td></tr>
+        </tbody></table></div>
+        <p style="margin-top:10px;color:#64748b;font-size:0.82em;"><span class="cn">展示6条典型事件。<a href="https://github.com/zyx312/ROAM/tree/main/incidents">在GitHub上查看全部16条 →</a></span><span class="en">6 representative incidents. <a href="https://github.com/zyx312/ROAM/tree/main/incidents">View all 16 on GitHub →</a></span></p>
     </div>
-
-    <!-- Reference Architecture -->
     <div class="section">
-        <h2>Reference Architecture: Three-Layer Decision Model</h2>
-        <div class="arch-layers">
-            <div class="arch-layer layer-1">
-                <div class="layer-header">
-                    <h3>Layer 1: AI Autonomous Response</h3>
-                    <span class="layer-pct">70%</span>
-                </div>
-                <p>AI identifies the scenario, assesses risk, generates a response plan, and executes autonomously. Examples: pull over safely, reroute around obstacle, restart perception module, calm passenger via voice.</p>
-            </div>
-            <div class="arch-layer layer-2">
-                <div class="layer-header">
-                    <h3>Layer 2: AI-Assisted + Human Confirm</h3>
-                    <span class="layer-pct">25%</span>
-                </div>
-                <p>AI generates a recommended action plan with confidence score. Remote operator reviews, confirms or modifies, then the vehicle executes. Examples: complex intersection escape, police gesture interpretation, multi-vehicle conflict resolution.</p>
-            </div>
-            <div class="arch-layer layer-3">
-                <div class="layer-header">
-                    <h3>Layer 3: Remote Driving / On-Site Dispatch</h3>
-                    <span class="layer-pct">5%</span>
-                </div>
-                <p>Full remote teleoperation at ≤10 km/h, or dispatch on-site rescue team. Examples: vehicle hardware failure (cannot self-move), accident scene management, vehicle fire, mass system failure.</p>
-            </div>
+        <h2 class="cn">参考架构：三层决策模型</h2><h2 class="en">Reference Architecture</h2>
+        <div class="svg-box"><img src="assets/architecture.svg" alt="Three-Layer Architecture"/></div>
+        <p style="margin-top:12px;color:#64748b;font-size:0.85em;text-align:center;"><span class="cn">完整技术文档见 <a href="https://github.com/zyx312/ROAM/blob/main/architecture/reference-architecture.md">reference-architecture.md</a></span><span class="en">Full docs: <a href="https://github.com/zyx312/ROAM/blob/main/architecture/reference-architecture.md">reference-architecture.md</a></span></p>
+    </div>
+    <div class="section">
+        <h2 class="cn">适用对象</h2><h2 class="en">Who Is This For</h2>
+        <div class="who-grid">
+            <div class="who-card"><div class="who-icon">🚕</div><h3><span class="cn">Robotaxi 运营商</span><span class="en">Robotaxi Operators</span></h3><p><span class="cn">百度Apollo（萝卜快跑）、小马智行、文远知行等无人驾驶出租车服务运营商</span><span class="en">Baidu Apollo Go, Pony.ai, WeRide and other robotaxi service operators</span></p><div class="who-ex"><span class="cn"><strong>应用示例：</strong>基于参考架构搭建远程运维中心，接入事件数据库训练AI异常处置模型</span><span class="en"><strong>Example:</strong> Build remote ops center using reference architecture, train AI models with incident database</span></div></div>
+            <div class="who-card"><div class="who-icon">🏭</div><h3><span class="cn">整车厂（OEM）</span><span class="en">OEMs</span></h3><p><span class="cn">上汽、一汽、长安、广汽等推出L4 Robotaxi方案的车企</span><span class="en">SAIC, FAW, Changan, GAC deploying L4 robotaxi solutions</span></p><div class="who-ex"><span class="cn"><strong>应用示例：</strong>使用场景分类体系规划L4服务部署，参考KPI指标设计运营安全目标</span><span class="en"><strong>Example:</strong> Plan L4 deployment using scenario taxonomy, design safety targets with KPI benchmarks</span></div></div>
+            <div class="who-card"><div class="who-icon">🚀</div><h3><span class="cn">远程运营创业公司</span><span class="en">Teleops Startups</span></h3><p><span class="cn">如Vay、Ottopia等提供远程驾驶/远程协助技术方案的公司</span><span class="en">Vay, Ottopia and other remote driving technology companies</span></p><div class="who-ex"><span class="cn"><strong>应用示例：</strong>在开源基线之上构建定制化产品，避免从零开始</span><span class="en"><strong>Example:</strong> Build customized products on open baseline, skip starting from scratch</span></div></div>
+            <div class="who-card"><div class="who-icon">📜</div><h3><span class="cn">监管机构与研究者</span><span class="en">Regulators & Researchers</span></h3><p><span class="cn">工信部、公安部、各地方交通管理部门，以及高校/研究机构</span><span class="en">MIIT, MPS, local authorities, universities and research institutions</span></p><div class="who-ex"><span class="cn"><strong>应用示例：</strong>基于结构化事件数据制定监管政策，开展安全学术研究</span><span class="en"><strong>Example:</strong> Develop regulatory policies from structured incident data, conduct safety research</span></div></div>
         </div>
     </div>
-
-    <!-- Who is this for -->
     <div class="section">
-        <h2>Who Is This For?</h2>
-        <div class="cards">
-            <div class="card">
-                <div class="card-icon">🚕</div>
-                <h3>Robotaxi Operators</h3>
-                <p>Baidu, Pony.ai, WeRide — reference architecture for building your remote operations platform.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🏭</div>
-                <h3>OEMs</h3>
-                <p>SAIC, FAW, Changan — scenario database for planning L4 service deployment.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🚀</div>
-                <h3>Teleops Startups</h3>
-                <p>Build on an open baseline instead of starting from scratch. Customize for your specific needs.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">📜</div>
-                <h3>Regulators &amp; Researchers</h3>
-                <p>Evidence-based incident data for policy development and academic research.</p>
-            </div>
-        </div>
+        <h2 class="cn">对齐标准</h2><h2 class="en">Standards Alignment</h2>
+        <div class="table-wrap"><table class="std"><thead><tr><th><span class="cn">标准</span><span class="en">Standard</span></th><th><span class="cn">全称</span><span class="en">Full Title</span></th><th><span class="cn">与ROAM的关联</span><span class="en">Relevance</span></th></tr></thead><tbody>
+            <tr><td>GB XXXXX</td><td><span class="cn">智能网联汽车 自动驾驶系统安全要求（征求意见稿）</span><span class="en">ICV ADS Safety Requirements (Draft, 2026)</span></td><td><span class="cn">附录C.2定义L4远程协助要求；附录D定义安全档案</span><span class="en">C.2: L4 remote assistance; D: Safety Case</span></td></tr>
+            <tr><td>UN GTR on ADS</td><td><span class="cn">GRVA自动驾驶系统全球技术法规草案</span><span class="en">GRVA draft GTR (2026)</span></td><td><span class="cn">"称职且谨慎的人类驾驶员"安全基线</span><span class="en">"Competent and careful human driver" baseline</span></td></tr>
+            <tr><td>ISO 34502</td><td><span class="cn">道路车辆 — 自动驾驶系统测试场景</span><span class="en">Test scenarios for ADS (2022)</span></td><td><span class="cn">场景分类体系对齐</span><span class="en">Scenario taxonomy alignment</span></td></tr>
+            <tr><td>ISO 21448</td><td><span class="cn">道路车辆 — 预期功能安全（SOTIF）</span><span class="en">SOTIF (2022)</span></td><td><span class="cn">未知不安全场景识别</span><span class="en">Unknown unsafe scenario identification</span></td></tr>
+            <tr><td>ISO 22737</td><td><span class="cn">低速自动驾驶系统</span><span class="en">LSAD for predefined routes (2021)</span></td><td><span class="cn">含"无人驾驶运营调度员"角色</span><span class="en">Includes DOD role definition</span></td></tr>
+            <tr><td>StVFernLV</td><td><span class="cn">德国道路交通远程驾驶条例（2025-12）</span><span class="en">German Remote Driving Ordinance (2025)</span></td><td><span class="cn">欧洲首个远程驾驶法律框架</span><span class="en">Europe's first teleop driving framework</span></td></tr>
+        </tbody></table></div>
+        <p style="margin-top:10px;color:#64748b;font-size:0.82em;"><span class="cn">完整13项标准映射见 <a href="https://github.com/zyx312/ROAM/blob/main/docs/related-standards.md">related-standards.md</a> · 中文对齐分析见 <a href="https://github.com/zyx312/ROAM/blob/main/docs/standard-alignment-cn.md">standard-alignment-cn.md</a></span><span class="en">Full mapping: <a href="https://github.com/zyx312/ROAM/blob/main/docs/related-standards.md">related-standards.md</a></span></p>
     </div>
-
-    <!-- Contribute -->
-    <div class="section" style="text-align:center; padding:40px 0;">
-        <h2 style="border:none;">Contribute</h2>
-        <p style="color:#64748b; max-width:600px; margin:0 auto 20px;">ROAM is community-driven. Report incidents, improve the taxonomy, enhance the reference architecture, or contribute baseline data.</p>
-        <a href="https://github.com/zyx312/ROAM/blob/main/CONTRIBUTING.md" class="cta-btn">Contribution Guide</a>
+    <div class="contribute">
+        <h2 style="border:none;"><span class="cn">参与贡献</span><span class="en">Contribute</span></h2>
+        <p style="color:#64748b;max-width:600px;margin:0 auto 18px;"><span class="cn">ROAM 是社区共建项目。你可以提交新的事件记录、完善场景分类、改进参考架构，或贡献基线数据。</span><span class="en">ROAM is community-driven. Report incidents, improve taxonomy, enhance architecture, or contribute data.</span></p>
+        <a href="https://github.com/zyx312/ROAM/blob/main/CONTRIBUTING.md" class="cta-btn cta-primary"><span class="cn">贡献指南</span><span class="en">Contribution Guide</span></a>
     </div>
-
-    <!-- Supporters -->
     <div class="section" style="text-align:center;">
-        <h2 style="border:none;">Supported By</h2>
+        <h2 style="border:none;"><span class="cn">支持单位</span><span class="en">Supported By</span></h2>
         <div class="supporters">
-            <div class="supporter">
-                <div class="supporter-name">Jilin University</div>
-                <div class="supporter-desc">AD Safety Joint Lab<br/>Scenario taxonomy &amp; SOTIF methodology</div>
-            </div>
-            <div class="supporter">
-                <div class="supporter-name">DRIVEResearch</div>
-                <div class="supporter-desc">驭研科技<br/>750h+ aerial naturalistic driving data</div>
-            </div>
+            <div class="supporter"><div class="supporter-name">吉林大学自动驾驶安全联合实验室</div><div class="supporter-sub">Jilin University AD Safety Joint Lab</div><div class="supporter-desc"><span class="cn">场景分类体系 · SOTIF方法论 · 学术研究</span><span class="en">Scenario taxonomy · SOTIF methodology · Research</span></div></div>
+            <div class="supporter"><div class="supporter-name">驭研科技（DRIVEResearch）</div><div class="supporter-sub">DRIVEResearch</div><div class="supporter-desc"><span class="cn">750h+ 航测自然驾驶数据 · 10.5M+ 轨迹基线</span><span class="en">750h+ aerial naturalistic driving data · 10.5M+ trajectories</span></div></div>
         </div>
     </div>
-
 </div>
-
 <div class="footer">
-    <p><strong>ROAM</strong> &mdash; RoboTaxi Operations Anomaly Management</p>
-    <p style="margin-top:8px;">Apache 2.0 License &middot; <a href="https://github.com/zyx312/ROAM">GitHub</a> &middot; Initiated by <a href="https://www.linkedin.com/in/yuxin-zhang-auto/">Yuxin Zhang</a></p>
-    <p style="margin-top:12px; font-size:0.8em;">The incident data in this project is collected from publicly available sources for research purposes.</p>
+    <p><strong>ROAM</strong> — RoboTaxi Operations Anomaly Management</p>
+    <p>Apache 2.0 License · <a href="https://github.com/zyx312/ROAM">GitHub</a> · <span class="cn">发起人</span><span class="en">By</span> <a href="https://www.linkedin.com/in/yuxin-zhang-auto/">Yuxin Zhang 张玉新</a></p>
+    <p style="margin-top:10px;font-size:0.78em;"><span class="cn">本项目事件数据来源于公开渠道，仅用于研究目的。</span><span class="en">Incident data from publicly available sources for research purposes.</span></p>
 </div>
-
+<script>
+function setLang(lang, btn) {
+    document.body.className = lang === 'en' ? 'lang-en' : '';
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+}
+</script>
 </body>
 </html>

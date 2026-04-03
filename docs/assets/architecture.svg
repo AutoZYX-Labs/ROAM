@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480" font-family="'Arial','PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <filter id="ds" x="-2%" y="-2%" width="104%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00000015"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="480" fill="#f8f9fc" rx="12"/>
+
+  <!-- Title -->
+  <text x="500" y="36" text-anchor="middle" fill="#0f1629" font-size="18" font-weight="800">三层决策模型 — AI优先，人工兜底</text>
+  <text x="500" y="54" text-anchor="middle" fill="#94a3b8" font-size="11">Three-Layer Decision Model: AI-First, Human Fallback</text>
+
+  <!-- Layer 1 -->
+  <rect x="40" y="74" width="920" height="110" rx="10" fill="#ecfdf5" filter="url(#ds)" stroke="#a7f3d0" stroke-width="1"/>
+  <rect x="40" y="74" width="8" height="110" rx="4" fill="#059669"/>
+  <text x="72" y="98" fill="#059669" font-size="14" font-weight="800">Layer 1</text>
+  <text x="142" y="98" fill="#065f46" font-size="14" font-weight="700">AI自主处置</text>
+  <text x="262" y="98" fill="#6ee7b7" font-size="12">AI Autonomous Response</text>
+  <!-- Percentage badge -->
+  <rect x="870" y="80" width="76" height="34" rx="17" fill="#059669"/>
+  <text x="908" y="102" text-anchor="middle" fill="white" font-size="16" font-weight="800">70%</text>
+  <!-- Content -->
+  <text x="72" y="120" fill="#475569" font-size="11">场景识别 → 风险评估 → 决策生成 → 自动执行（无需人工介入）</text>
+  <text x="72" y="140" fill="#64748b" font-size="10.5">✓ 靠边停车　✓ 驶入服务区　✓ 低速绕障　✓ 感知模块重启　✓ 乘客语音安抚　✓ 调度备用车辆</text>
+  <rect x="72" y="150" width="860" height="22" rx="4" fill="#d1fae5"/>
+  <text x="82" y="165" fill="#065f46" font-size="10">对齐GB标准C.2.1.2："ADS应不依赖远程协助执行DDT" — Layer 1体现ADS自主能力优先原则</text>
+
+  <!-- Arrow -->
+  <text x="500" y="198" text-anchor="middle" fill="#94a3b8" font-size="11">↓ 超出AI处置能力时升级</text>
+
+  <!-- Layer 2 -->
+  <rect x="40" y="210" width="920" height="110" rx="10" fill="#fefce8" filter="url(#ds)" stroke="#fde68a" stroke-width="1"/>
+  <rect x="40" y="210" width="8" height="110" rx="4" fill="#ca8a04"/>
+  <text x="72" y="234" fill="#ca8a04" font-size="14" font-weight="800">Layer 2</text>
+  <text x="142" y="234" fill="#713f12" font-size="14" font-weight="700">AI辅助 + 人工确认</text>
+  <text x="302" y="234" fill="#fbbf24" font-size="12">AI-Assisted + Human Confirm</text>
+  <rect x="870" y="216" width="76" height="34" rx="17" fill="#ca8a04"/>
+  <text x="908" y="238" text-anchor="middle" fill="white" font-size="16" font-weight="800">25%</text>
+  <text x="72" y="256" fill="#475569" font-size="11">AI生成处置方案（含置信度）→ 远程安全员审核 → 确认/修改 → 车辆执行</text>
+  <text x="72" y="276" fill="#64748b" font-size="10.5">✓ 复杂路口脱困　✓ 交警手势解读　✓ 多车冲突裁决　✓ 是否报警/叫救护车　✓ 乘客异常行为</text>
+  <rect x="72" y="286" width="860" height="22" rx="4" fill="#fef9c3"/>
+  <text x="82" y="301" fill="#713f12" font-size="10">对齐GB标准C.2.3："ADS应能够及时接收远程协助指令" + C.2.1.4："基于行驶环境安全响应远程协助指令"</text>
+
+  <!-- Arrow -->
+  <text x="500" y="336" text-anchor="middle" fill="#94a3b8" font-size="11">↓ 超出远程确认能力时升级</text>
+
+  <!-- Layer 3 -->
+  <rect x="40" y="348" width="920" height="110" rx="10" fill="#fef2f2" filter="url(#ds)" stroke="#fecaca" stroke-width="1"/>
+  <rect x="40" y="348" width="8" height="110" rx="4" fill="#dc2626"/>
+  <text x="72" y="372" fill="#dc2626" font-size="14" font-weight="800">Layer 3</text>
+  <text x="142" y="372" fill="#7f1d1d" font-size="14" font-weight="700">远程遥控 / 线下派人</text>
+  <text x="312" y="372" fill="#fca5a5" font-size="12">Remote Driving / On-Site Dispatch</text>
+  <rect x="870" y="354" width="76" height="34" rx="17" fill="#dc2626"/>
+  <text x="908" y="376" text-anchor="middle" fill="white" font-size="16" font-weight="800">5%</text>
+  <text x="72" y="394" fill="#475569" font-size="11">远程人员直接接管车辆（≤10km/h）或派遣线下救援团队到现场处理</text>
+  <text x="72" y="414" fill="#64748b" font-size="10.5">✓ 车辆硬件故障　✓ 批量系统瘫痪　✓ 事故现场处理　✓ 车辆起火　✓ 乘客物理救援</text>
+  <rect x="72" y="424" width="860" height="22" rx="4" fill="#fee2e2"/>
+  <text x="82" y="439" fill="#7f1d1d" font-size="10">对齐德国StVFernLV远程驾驶框架（≤80km/h）及Tesla Teleops模式（≤10mph直接遥控）</text>
+</svg>
