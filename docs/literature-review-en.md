@@ -165,85 +165,85 @@ The ROAM project will adhere to open-source collaboration principles, providing 
 
 ## References
 
-[1] NHTSA, "Cruise LLC Consent Order and Civil Penalty," National Highway Traffic Safety Administration, 2024. See also: NBC News, "Cruise recalls fleet after pedestrian dragging incident," October 2023.
+[1] NHTSA, "Cruise LLC Consent Order and Civil Penalty," National Highway Traffic Safety Administration, 2024. [Link](https://www.nhtsa.gov/press-releases/consent-order-cruise-crash-reporting)
 
-[2] Multiple news sources, "Waymo vehicles affected by San Francisco network outage," December 2025.
+[2] TechCrunch, "Waymo explains why its robotaxis got stuck during the SF blackout," December 2025. [Link](https://techcrunch.com/2025/12/24/waymo-explains-why-its-robotaxis-got-stuck-during-the-sf-blackout/)
 
-[3] Huxiu [虎嗅网], "Analysis of Apollo Go mass shutdown in Wuhan" [萝卜快跑武汉大规模宕机事件分析], April 2026.
+[3] Huxiu, "Apollo Go mass shutdown in Wuhan exposes Achilles' heel of robotaxi operations," April 2026. [Link](https://www.huxiu.com/article/4847431.html)
 
-[4] Sina Auto [新浪汽车], "Baidu Apollo Go Wuhan incident follow-up: SOS failure, customer service overload" [百度Apollo萝卜快跑武汉事件追踪：SOS失效、客服过载], April 2026. See also: NBC News; CNBC related coverage.
+[4] Sina Auto, "Apollo Go Wuhan incident: vehicles restored, industry analysis," April 2026. [Link](https://auto.sina.cn/news/2026-04-01/detail-inhsyfuw2691947.d.html)
 
-[5] UNECE, "ECE-TRANS-WP.29-GRVA-2026-02e: Draft Global Technical Regulation on Automated Driving Systems," United Nations Economic Commission for Europe, January 2026.
+[5] UNECE, "ECE-TRANS-WP.29-GRVA-2026-02e: Draft Global Technical Regulation on Automated Driving Systems," United Nations Economic Commission for Europe, January 2026. [Link](https://unece.org/sites/default/files/2026-01/ECE-TRANS-WP.29-GRVA-2026-02e.pdf)
 
-[6] UNECE, "GRVA adopts draft GTR on Automated Driving Systems," UNECE Press Release, January 2026.
+[6] Connected Automated Driving, "UNECE GRVA Adopts Draft Global Regulation on Automated Driving Systems," January 2026. [Link](https://www.connectedautomateddriving.eu/blog/unece-grva-adopts-draft-global-regulation-on-automated-driving-systems/)
 
-[7] Connected Automated Driving Blog, "WP.29 GTR on ADS: Timeline and key requirements," 2026.
+[7] U.S. Federal Register, "Notice and Request for Comment; Proposal for a New United Nations Global Technical Regulation on Automated Driving Systems (ADS)," January 2026. [Link](https://www.federalregister.gov/documents/2026/01/23/2026-01274/notice-and-request-for-comment-proposal-for-a-new-united-nations-global-technical-regulation-on)
 
-[8] Ministry of Industry and Information Technology of the People's Republic of China [中华人民共和国工业和信息化部], "GB XXXXX--XXXX Intelligent and Connected Vehicles -- Safety Requirements for Automated Driving Systems" [智能网联汽车 自动驾驶系统安全要求], Draft for Public Comment, February 2026. Including Appendix C.2 Remote Assistance Requirements and Appendix D Safety Case Requirements.
+[8] Ministry of Industry and Information Technology of China, "GB XXXXX--XXXX Intelligent and Connected Vehicles -- Safety Requirements for Automated Driving Systems," Draft for Public Comment, February 2026. Including Appendix C.2 Remote Assistance Requirements and Appendix D Safety Case Requirements. [Link](https://carnewschina.com/2026/02/26/new-chinese-regulations-push-l3-autonomous-vehicles-closer-to-l4-capabilities-with-enhanced-safety-protocols/)
 
-[9] Relevant local regulations and industry standards [相关地方性法规及行业规范], Remote safety operator-to-vehicle ratio requirements, maximum 1:3.
+[9] Ministry of Transport of China, "Guidelines for Safe Transportation Services of Autonomous Vehicles (Trial)," December 2023. Remote safety operator-to-vehicle ratio requirement: maximum 1:3. [Link](https://xxgk.mot.gov.cn/2020/jigou/ysfws/202312/t20231205_3962490.html)
 
-[10] Standing Committee of the Shenzhen Municipal People's Congress [深圳市人民代表大会常务委员会], "Shenzhen Special Economic Zone Regulations on the Management of Intelligent and Connected Vehicles" [深圳经济特区智能网联汽车管理条例], August 2022.
+[10] Standing Committee of the Shenzhen Municipal People's Congress, "Shenzhen Special Economic Zone Regulations on the Management of Intelligent and Connected Vehicles," August 2022. [Link](https://www.gd.gov.cn/gdywdt/dsdt/content/post_3986167.html)
 
-[11] Standing Committee of the Beijing Municipal People's Congress [北京市人民代表大会常务委员会], "Beijing Autonomous Vehicle Regulations" [北京市自动驾驶汽车条例], Effective April 2025.
+[11] Standing Committee of the Beijing Municipal People's Congress, "Beijing Autonomous Vehicle Regulations," Effective April 2025. [Link](https://www.beijing.gov.cn/zhengce/dfxfg/202501/t20250103_3980149.html)
 
-[12] NHTSA, "Standing General Order 2021-01: Incident Reporting for Automated Driving Systems," National Highway Traffic Safety Administration. See also: NHTSA SGO official page.
+[12] NHTSA, "Standing General Order on Crash Reporting for Automated Driving Systems," National Highway Traffic Safety Administration. [Link](https://www.nhtsa.gov/laws-regulations/standing-general-order-crash-reporting)
 
-[13] Mayer Brown, "NHTSA's April 2025 AV Framework: Analysis and implications," April 2025.
+[13] Mayer Brown, "DOT and NHTSA Announce Autonomous Vehicle Framework," April 2025. [Link](https://www.mayerbrown.com/en/insights/publications/2025/04/dot-and-nhtsa-announce-autonomous-vehicle-framework)
 
-[14] Foley & Lardner LLP, "NHTSA Autonomous Vehicle Policy Update," November 2025.
+[14] Foley & Lardner LLP, "Driving Into 2026: The State of NHTSA and the Future of Vehicle Safety Regulation," November 2025. [Link](https://www.foley.com/insights/publications/2025/11/driving-into-2026-the-state-of-nhtsa-and-the-future-of-vehicle-safety-regulation/)
 
-[15] UK Parliament, "Automated Vehicles Act 2024," Royal Assent May 20, 2024. See also: GOV.UK official announcement.
+[15] UK Parliament, "Automated Vehicles Act 2024," Royal Assent May 20, 2024. [Link](https://www.legislation.gov.uk/ukpga/2024/10)
 
-[16] Hogan Lovells, "UK Automated Vehicles Act 2024: Key provisions and implications," 2024.
+[16] Hogan Lovells, "UK passes Automated Vehicles Act 2024," 2024. [Link](https://www.hoganlovells.com/en/publications/uk-passes-automated-vehicles-act-2024)
 
-[17] Addleshaw Goddard, "UK autonomous vehicle commercial pilots: Legal framework and timeline," 2025.
+[17] Addleshaw Goddard, "The UK's Automated Vehicles Act 2024," 2024. [Link](https://www.addleshawgoddard.com/en/insights/insights-briefings/2024/transport/passing-self-driving-test-uks-automated-vehicles-act-2024/)
 
-[18] Taylor Wessing, "Germany's StVFernLV: Europe's first teleoperated driving regulation," February 2026.
+[18] Taylor Wessing, "Legal framework for automated and autonomous driving and teledriving in the EU and Germany," February 2026. [Link](https://www.taylorwessing.com/en/insights-and-events/insights/2026/02/legal-frameworks-for-autonomous-driving-and-teledriving)
 
-[19] Bird & Bird, "German Remote Driving Ordinance: Regulatory analysis," 2025. See also: ADT Media related coverage.
+[19] Bird & Bird, "Teleoperated Driving -- StVFernLV in force since December 2025," 2026. [Link](https://www.twobirds.com/en/insights/2026/germany/teleoperiertes-fahren-straenverkehr-fernlenk-verordnung-(stvfernlv)-seit-dezember-2025-in-kraft)
 
-[20] Vay Technology, "Vay plans commercial driverless carsharing under German StVFernLV framework," Press Release, 2025.
+[20] Vay Technology, "Vay Welcomes Germany's Remote Driving Regulation," Press Release, 2025. [Link](https://vay.io/press-release/vay-welcomes-germanys-remote-driving-regulation-a-breakthrough-in-remote-driving-commercialization-at-scale/)
 
-[21] SIP-adus (Cross-ministerial Strategic Innovation Promotion Program -- Automated Driving for Universal Services), Cabinet Office of Japan, launched 2014. Official website: https://en.sip-adus.go.jp/
+[21] SIP-adus (Cross-ministerial Strategic Innovation Promotion Program -- Automated Driving for Universal Services), Cabinet Office of Japan, launched 2014. [Link](https://en.sip-adus.go.jp/)
 
-[22] Matsumoto, S. et al., "Field operational tests for automated driving with remote monitoring in Japan," in *Automated Driving*, Springer, 2023.
+[22] SIP-adus, "An Update on Japanese Initiatives for Automated Driving," in *Automated Driving*, Springer, 2018. [Link](https://link.springer.com/chapter/10.1007/978-3-319-94896-6_2)
 
-[23] SAE International, "J3016_202405: Taxonomy and Definitions for Terms Related to Driving Automation Systems for On-Road Motor Vehicles," May 2024 update (Joint with ISO). See also: MobilityEngTech, "SAE J3016 May 2024 update adds remote-support terminology," June 2024.
+[23] SAE International, "J3016: Taxonomy and Definitions for Terms Related to Driving Automation Systems for On-Road Motor Vehicles," May 2024 update (Joint with ISO). See also: MobilityEngTech analysis. [Link](https://www.mobilityengineeringtech.com/component/content/article/44792-sae-ma-06724)
 
-[24] ISO, "ISO 22737:2021 -- Intelligent transport systems -- Low-speed automated driving (LSAD) systems for predefined routes -- Performance requirements, system requirements and performance test procedures," International Organization for Standardization, 2021.
+[24] ISO, "ISO 22737:2021 -- Intelligent transport systems -- Low-speed automated driving (LSAD) systems for predefined routes," International Organization for Standardization, 2021. [Link](https://www.iso.org/standard/73767.html)
 
-[25] Waymo Blog, "How Waymo's Fleet Response team supports autonomous driving," May 2024.
+[25] Waymo Blog, "Fleet response: Lending a helpful hand to Waymo's autonomously driven vehicles," May 2024. [Link](https://waymo.com/blog/2024/05/fleet-response/)
 
-[26] Remio AI, "Analysis of Waymo remote operations: Agent ratios, latency, and fleet scale," 2025. See also: Futurism related analysis.
+[26] Remio AI, "Waymo Remote Assistance: The Reality of Autonomous Driving," 2025. See also: Futurism related analysis. [Link](https://www.remio.ai/post/waymo-remote-assistance-the-reality-of-autonomous-driving)
 
-[27] Waymo Blog, "Independent audit of Waymo's autonomous driving safety," November 2025.
+[27] Waymo Blog, "Independent Audits of Waymo's Safety Case and Remote Assistance Programs," November 2025. [Link](https://waymo.com/blog/2025/11/independent-audits/)
 
-[28] TechCrunch, "Tesla launches teleoperation service in Austin," November 2024 (preview). See also: Automotive World follow-up coverage, 2025.
+[28] TechCrunch, "Tesla appears to be building a teleoperations team for its robotaxi service," November 2024. See also: TechCrunch, "Tesla launches robotaxi rides in Austin," June 2025. [Link](https://techcrunch.com/2024/11/26/tesla-appears-to-be-building-a-teleoperations-team-for-its-robotaxi-service/)
 
-[29] Futurism, "Tesla remote operators can take full vehicle control at low speeds," 2025.
+[29] Futurism, "Tesla Workers Are Seizing Control of Robotaxis When They Get Stuck," 2025. [Link](https://futurism.com/advanced-transport/tesla-robotaxis-driven-remotely)
 
-[30] Planetizen, "Tesla plans 7-city expansion for autonomous ride-hailing in H1 2026," 2026.
+[30] Planetizen, "Tesla Reveals Remote Drivers Temporarily Control its Robotaxis," 2026. [Link](https://www.planetizen.com/news/2026/04/137261-tesla-reveals-remote-drivers-temporarily-control-its-robotaxis)
 
-[31] Baidu Investor Relations, "Apollo Go (萝卜快跑) Q4 2025 operational data: 3.4M+ orders," 2026.
+[31] Baidu Investor Relations, "Baidu Announces Fourth Quarter and Fiscal Year 2025 Results," February 2026. [Link](https://ir.baidu.com/news-releases/news-release-details/baidu-announces-fourth-quarter-and-fiscal-year-2025-results)
 
-[32] Vay Technology, "Vay completes 17,000+ trips in Las Vegas by July 2025," Press Release, 2025. See also related coverage: 30 rental vehicles deployed February 2025.
+[32] Vay Technology, "Vay expands service area in Las Vegas," Press Release, 2025. See also: TechCrunch, "Vay expands driverless car-sharing fleet in Las Vegas," January 2025. [Link](https://vay.io/vay-expands-service-area-in-las-vegas/)
 
-[33] StartUs Insights, "Top autonomous vehicle teleoperation startups," 2025. Covering Ottopia (AI-powered teleoperation platform) and GetUgo (end-to-end encrypted communication solution).
+[33] StartUs Insights, "5 Top Emerging Teleoperation Startups," 2025. Covering Ottopia (AI-powered teleoperation platform) and GetUgo (end-to-end encrypted communication solution). [Link](https://www.startus-insights.com/innovators-guide/5-top-emerging-teleoperation-startups/)
 
-[34] Tracxn, "Autonomous vehicle teleoperation: 13 companies globally," 2025.
+[34] Tracxn, "Top Companies in Autonomous Vehicles Teleoperation," 2025. [Link](https://tracxn.com/d/trending-business-models/startups-in-autonomous-vehicles-teleoperation/__GS_MwTPd-ARbXrP9dRsdYOTXDe2wOGOsT2hPv2G8ty8/companies)
 
-[35] Hofbauer, M. et al., "Network latency challenges in teleoperation of connected and automated vehicles: A systematic review," *Sensors*, vol. 24, no. 12, p. 3957, 2024. DOI: 10.3390/s24123957.
+[35] Hofbauer, M. et al., "Network latency challenges in teleoperation of connected and automated vehicles: A systematic review," *Sensors*, vol. 24, no. 12, p. 3957, 2024. [Link](https://www.mdpi.com/1424-8220/24/12/3957)
 
-[36] Kim, J. et al., "Tele-operated driving assistance using indirect control for automated vehicles," *International Journal of Automotive Technology*, 2025. DOI: 10.1007/s12239-025-00218-8.
+[36] Kim, K. et al., "Development of Tele-operated Driving Assistance System for Autonomous Vehicles with an Open-Source Platform," *International Journal of Automotive Technology*, vol. 26, pp. 1379-1390, 2025. [Link](https://link.springer.com/article/10.1007/s12239-025-00218-8)
 
-[37] TU Munich FTM (Institute of Automotive Technology), "Control center framework for teleoperation support of automated vehicles on public roads," in *Proc. IEEE Intelligent Vehicles Symposium (IV)*, 2025.
+[37] Wolf, M.-M. et al., "Control center framework for teleoperation support of automated vehicles on public roads," in *Proc. IEEE Intelligent Vehicles Symposium (IV)*, 2025. [Link](https://ieeexplore.ieee.org/document/11097634/)
 
-[38] Lu, Q. et al., "Teleoperation technologies for enhancing connected and autonomous vehicles," *IEEE Transactions on Intelligent Transportation Systems* (Survey), 2022.
+[38] Lu, S. et al., "Teleoperation technologies for enhancing connected and autonomous vehicles," in *Proc. IEEE 19th International Conference on Mobile Ad Hoc and Smart Systems (MASS)*, 2022. [Link](https://ieeexplore.ieee.org/document/9973618/)
 
-[39] DAM Firm, "Waymo accident statistics: 1,429 accidents, 117 injuries, 2 fatalities (Jul 2021 -- Nov 2025)," damfirm.com, 2025.
+[39] DAM Firm, "Waymo Accidents | NHTSA Crash Data," damfirm.com, 2025. [Link](https://www.damfirm.com/waymo-accident-statistics.html)
 
-[40] Multiple news sources, "Pony.ai Beijing vehicle fire incident and service suspension" [Pony.ai北京车辆起火事件及服务暂停], 2024.
+[40] EVreporter, "Pony.ai Beijing operations suspended after Robotaxi fire," 2025. [Link](https://evreporter.com/autonomous-driving-startup-pony-ai-beijing-operations-suspended-after-robotaxi-fire/)
 
 ---
 
