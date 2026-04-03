@@ -30,14 +30,16 @@ a:hover { text-decoration:underline; }
 .lang { position:fixed; top:24px; right:48px; z-index:99; display:flex; border:1px solid var(--border); border-radius:6px; overflow:hidden; background:rgba(250,249,245,0.92); backdrop-filter:blur(8px); }
 .lang button { padding:7px 16px; border:none; cursor:pointer; font-size:12px; font-weight:600; background:transparent; color:var(--text3); transition:.15s; font-family:inherit; }
 .lang button.on { background:var(--text); color:var(--bg); }
-span.en, p.en, div.en, h2.en { display:none; }
-body.E span.cn, body.E p.cn, body.E div.cn, body.E h2.cn { display:none!important; }
+span.en, p.en, div.en, h2.en, .en-link { display:none; }
+body.E span.cn, body.E p.cn, body.E div.cn, body.E h2.cn, body.E .cn-link { display:none!important; }
 body.E span.en { display:inline!important; }
 body.E p.en, body.E div.en, body.E h2.en { display:block!important; }
+body.E .en-link { display:inline-block!important; }
 
 /* Header */
 header { padding:96px 32px 72px; text-align:center; border-bottom:1px solid var(--border); }
-header h1 { font-family:'Playfair Display',Georgia,serif; font-size:clamp(5rem,4rem+5vw,9rem); font-weight:800; letter-spacing:-4px; margin-bottom:10px; color:var(--accent); }
+header .logo { max-width:280px; height:auto; margin-bottom:16px; }
+header h1 { font-family:'Playfair Display',Georgia,serif; font-size:clamp(10rem,8rem+12vw,22rem); font-weight:800; letter-spacing:-8px; margin-bottom:0; color:var(--accent); line-height:0.85; }
 header .sub { font-family:'Inter',sans-serif; font-size:clamp(0.9rem,0.8rem+0.5vw,1.2rem); color:var(--text3); margin-bottom:14px; letter-spacing:2px; text-transform:uppercase; font-weight:500; }
 header .desc { font-size:clamp(1.1rem,1rem+0.5vw,1.4rem); color:var(--text2); max-width:700px; margin:0 auto 36px; line-height:1.8; }
 header .actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
@@ -117,7 +119,8 @@ footer a { color:var(--accent); }
 /* Taxonomy side-by-side responsive */
 @media(max-width:768px) { div[style*="grid-template-columns:1fr 1fr"] { display:block!important; } div[style*="grid-template-columns:1fr 1fr"] > div + div { margin-top:20px; } }
 @media(max-width:640px) {
-  header h1 { font-size:4rem; }
+  header h1 { font-size:6rem; letter-spacing:-4px; }
+  header .logo { max-width:160px; }
   .wrap { padding:0 18px; }
   header { padding:72px 18px 48px; }
   .lang { right:18px; }
@@ -132,6 +135,7 @@ footer a { color:var(--accent); }
 </div>
 
 <header>
+  <img src="assets/logo.png" class="logo" alt="ROAM Logo">
   <h1>ROAM</h1>
   <p class="sub">RoboTaxi Operations Anomaly Management</p>
   <p class="desc cn">无人驾驶出租车运营异常管理平台<br>开源事故数据库 · 场景分类体系 · 参考架构 · 评价基准</p>
@@ -139,7 +143,8 @@ footer a { color:var(--accent); }
   <div class="actions">
     <a href="https://github.com/zyx312/ROAM" class="btn btn-primary"><span class="cn">GitHub 仓库</span><span class="en">GitHub Repo</span></a>
     <a href="#incidents" class="btn btn-secondary"><span class="cn">浏览事件库</span><span class="en">Browse Incidents</span></a>
-    <a href="https://github.com/zyx312/ROAM/blob/main/docs/literature-review-en.md" class="btn btn-secondary"><span class="cn">文献综述</span><span class="en">Literature Review</span></a>
+    <a href="https://github.com/zyx312/ROAM/blob/main/docs/literature-review.md" class="btn btn-secondary cn-link"><span class="cn">文献综述</span></a>
+    <a href="https://github.com/zyx312/ROAM/blob/main/docs/literature-review-en.md" class="btn btn-secondary en-link"><span class="en">Literature Review</span></a>
   </div>
 </header>
 
