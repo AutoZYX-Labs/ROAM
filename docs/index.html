@@ -38,8 +38,8 @@ body.E .en-link { display:inline-block!important; }
 
 /* Header */
 header { padding:96px 32px 72px; text-align:center; border-bottom:1px solid var(--border); }
-header h1 { font-family:'Playfair Display',Georgia,serif; font-size:clamp(8rem,6rem+12vw,18rem); font-weight:800; letter-spacing:12px; margin-bottom:8px; color:var(--accent); line-height:1; }
-header .sub { font-family:'Inter',sans-serif; font-size:clamp(0.9rem,0.8rem+0.5vw,1.2rem); color:var(--text3); margin-bottom:14px; letter-spacing:2px; text-transform:uppercase; font-weight:500; }
+header h1 { font-family:'Playfair Display',Georgia,serif; font-size:12vw; font-weight:800; letter-spacing:0.08em; margin-bottom:8px; color:var(--accent); line-height:1; }
+header .sub { font-family:'Inter',sans-serif; font-size:1.8vw; color:var(--text3); margin-bottom:14px; letter-spacing:4px; text-transform:uppercase; font-weight:500; }
 header .desc { font-size:clamp(1.1rem,1rem+0.5vw,1.4rem); color:var(--text2); max-width:700px; margin:0 auto 36px; line-height:1.8; }
 header .actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 .btn { display:inline-block; padding:11px 26px; border-radius:4px; font-size:0.88rem; font-weight:600; transition:.2s; font-family:inherit; }
@@ -118,7 +118,8 @@ footer a { color:var(--accent); }
 /* Taxonomy side-by-side responsive */
 @media(max-width:768px) { div[style*="grid-template-columns:1fr 1fr"] { display:block!important; } div[style*="grid-template-columns:1fr 1fr"] > div + div { margin-top:20px; } }
 @media(max-width:640px) {
-  header h1 { font-size:5rem; letter-spacing:6px; }
+  header h1 { font-size:14vw; }
+  header .sub { font-size:3vw; }
   .wrap { padding:0 18px; }
   header { padding:72px 18px 48px; }
   .lang { right:18px; }
@@ -140,8 +141,8 @@ footer a { color:var(--accent); }
   <div class="actions">
     <a href="https://github.com/zyx312/ROAM" class="btn btn-primary"><span class="cn">GitHub 仓库</span><span class="en">GitHub Repo</span></a>
     <a href="#incidents" class="btn btn-secondary"><span class="cn">浏览事件库</span><span class="en">Browse Incidents</span></a>
-    <a href="https://github.com/zyx312/ROAM/blob/main/docs/literature-review.md" class="btn btn-secondary cn-link">文献综述</a>
-    <a href="https://github.com/zyx312/ROAM/blob/main/docs/literature-review-en.md" class="btn btn-secondary en-link">Literature Review</a>
+    <a href="https://github.com/zyx312/ROAM/blob/main/docs/literature-review.md" class="btn btn-secondary cn-link" style="display:inline-block">文献综述</a>
+    <a href="https://github.com/zyx312/ROAM/blob/main/docs/literature-review-en.md" class="btn btn-secondary en-link" style="display:none">Literature Review</a>
   </div>
 </header>
 
@@ -149,7 +150,13 @@ footer a { color:var(--accent); }
 
   <section>
     <div class="alert">
-      <p><span class="cn"><strong>为什么需要这个项目？</strong> 2026年3月31日，武汉近百辆萝卜快跑在高架路段同时熄火。乘客被困2小时，SOS无人应答，最终依靠交警逐车施救。三个月前，旧金山停电导致Waymo大面积瘫痪，应急热线等待2.5小时。当无人驾驶出租车规模化运营时，这种靠人力逐车施救的模式不可持续。</span><span class="en"><strong>Why this project?</strong> On March 31, 2026, ~100 Baidu Apollo robotaxis shut down simultaneously on Wuhan's elevated highways. Passengers trapped for 2 hours. SOS unanswered. Police rescued vehicles one by one. Three months earlier, a San Francisco blackout stranded Waymo's fleet — emergency services waited 2.5 hours on hold. At scale, this is unsustainable.</span></p>
+      <p><span class="cn"><strong>为什么需要这个项目？</strong><br><br>
+        &bull; <strong>萝卜快跑</strong>：2026年3月31日，武汉近百辆萝卜快跑在高架路段同时熄火，乘客被困2小时，SOS无人应答，最终依靠交警逐车施救。<br><br>
+        &bull; <strong>Waymo</strong>：三个月前，旧金山停电导致Waymo大面积瘫痪，应急热线等待2.5小时。<br><br>
+        &bull; 当无人驾驶出租车规模化运营时，这种靠人力逐车施救的模式不可持续。</span><span class="en"><strong>Why this project?</strong><br><br>
+        &bull; <strong>Baidu Apollo</strong>: On March 31, 2026, ~100 robotaxis shut down simultaneously on Wuhan's elevated highways. Passengers trapped for 2 hours. SOS unanswered. Police rescued vehicles one by one.<br><br>
+        &bull; <strong>Waymo</strong>: Three months earlier, a San Francisco blackout stranded Waymo's fleet — emergency services waited 2.5 hours on hold.<br><br>
+        &bull; At scale, manual vehicle-by-vehicle rescue is unsustainable.</span></p>
     </div>
   </section>
 
