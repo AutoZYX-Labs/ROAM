@@ -4,8 +4,7 @@
 
 ---
 
-> 作者：张玉新
-> 单位：吉林大学汽车工程学院 / 英国杜伦大学访问学者
+> 作者：[Yuxin Zhang](https://www.linkedin.com/in/zhangyuxin/)
 > 日期：2026年4月
 > 文档版本：v1.0
 

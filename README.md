@@ -6,7 +6,7 @@
 [![Incidents](https://img.shields.io/badge/Incidents-16-red.svg)](#incident-database)
 [![Scenarios](https://img.shields.io/badge/Scenarios-6%20categories-orange.svg)](#scenario-taxonomy)
 
-🌐 **Website:** [zyx312.github.io/ROAM](https://zyx312.github.io/ROAM) (coming soon)
+🌐 **Website:** [zyx312.github.io/ROAM](https://zyx312.github.io/ROAM)
 
 ---
 

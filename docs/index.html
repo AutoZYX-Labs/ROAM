@@ -37,9 +37,9 @@ body.E p.en, body.E div.en, body.E h2.en { display:block!important; }
 
 /* Header */
 header { padding:96px 32px 72px; text-align:center; border-bottom:1px solid var(--border); }
-header h1 { font-family:'Playfair Display',Georgia,serif; font-size:clamp(3.2rem,3rem+2.5vw,5rem); font-weight:800; letter-spacing:-2px; margin-bottom:6px; color:var(--accent); }
-header .sub { font-family:'Inter',sans-serif; font-size:0.95rem; color:var(--text3); margin-bottom:12px; letter-spacing:1px; text-transform:uppercase; font-weight:500; }
-header .desc { font-size:1.15rem; color:var(--text2); max-width:640px; margin:0 auto 36px; line-height:1.8; }
+header h1 { font-family:'Playfair Display',Georgia,serif; font-size:clamp(5rem,4rem+5vw,9rem); font-weight:800; letter-spacing:-4px; margin-bottom:10px; color:var(--accent); }
+header .sub { font-family:'Inter',sans-serif; font-size:clamp(0.9rem,0.8rem+0.5vw,1.2rem); color:var(--text3); margin-bottom:14px; letter-spacing:2px; text-transform:uppercase; font-weight:500; }
+header .desc { font-size:clamp(1.1rem,1rem+0.5vw,1.4rem); color:var(--text2); max-width:700px; margin:0 auto 36px; line-height:1.8; }
 header .actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 .btn { display:inline-block; padding:11px 26px; border-radius:4px; font-size:0.88rem; font-weight:600; transition:.2s; font-family:inherit; }
 .btn-primary { background:var(--accent); color:white; }
@@ -114,8 +114,10 @@ footer a { color:var(--accent); }
 .sup-name { font-weight:700; color:var(--text); font-size:0.88rem; margin-bottom:2px; }
 .sup-desc { font-size:0.78rem; color:var(--text2); }
 
+/* Taxonomy side-by-side responsive */
+@media(max-width:768px) { div[style*="grid-template-columns:1fr 1fr"] { display:block!important; } div[style*="grid-template-columns:1fr 1fr"] > div + div { margin-top:20px; } }
 @media(max-width:640px) {
-  header h1 { font-size:2.8rem; }
+  header h1 { font-size:4rem; }
   .wrap { padding:0 18px; }
   header { padding:72px 18px 48px; }
   .lang { right:18px; }
@@ -221,6 +223,66 @@ footer a { color:var(--accent); }
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- Taxonomy Detail -->
+  <section>
+    <h2 class="sec-title"><span class="cn">场景分类体系 v1.0</span><span class="en">Scenario Taxonomy v1.0</span></h2>
+    <p class="sec-sub"><span class="cn">6大类、27子场景，每个子场景对应推荐处置层级</span><span class="en">6 categories, 27 sub-scenarios, each mapped to a recommended response layer</span></p>
+
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr>
+        <th><span class="cn">编码</span><span class="en">Code</span></th>
+        <th><span class="cn">类别</span><span class="en">Category</span></th>
+        <th><span class="cn">子场景数</span><span class="en">Sub-scenarios</span></th>
+        <th><span class="cn">典型场景示例</span><span class="en">Typical Examples</span></th>
+        <th><span class="cn">推荐层级</span><span class="en">Layer</span></th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="font-weight:700;color:var(--red);">A</td><td><span class="cn">系统性故障</span><span class="en">System-Wide Failure</span></td><td>A1–A4</td><td><span class="cn">云端中断致批量瘫痪、OTA推送异常、停电、服务器崩溃</span><span class="en">Cloud outage mass paralysis, OTA failure, power outage, server crash</span></td><td>L1→L3</td></tr>
+        <tr><td style="font-weight:700;color:var(--amber);">B</td><td><span class="cn">感知/决策失效</span><span class="en">Perception/Decision Failure</span></td><td>B1–B5</td><td><span class="cn">路口犹豫、异常物体误识、极端天气退化、行人闯红灯、GPS漂移</span><span class="en">Intersection hesitation, object misidentification, weather degradation, jaywalker, GPS drift</span></td><td>L1–L2</td></tr>
+        <tr><td style="font-weight:700;color:var(--amber);">C</td><td><span class="cn">规划/执行异常</span><span class="en">Planning/Execution Anomaly</span></td><td>C1–C5</td><td><span class="cn">路中停车、意外刹车、危险变道、碰撞静态物体、低速撞行人</span><span class="en">Mid-road freeze, unexpected braking, dangerous lane change, static collision, pedestrian contact</span></td><td>L1–L2</td></tr>
+        <tr><td style="font-weight:700;color:var(--text3);">D</td><td><span class="cn">车辆硬件故障</span><span class="en">Vehicle Hardware Failure</span></td><td>D1–D4</td><td><span class="cn">传感器失效、动力系统故障、车辆起火、制动/转向执行器失效</span><span class="en">Sensor failure, powertrain fault, vehicle fire, brake/steering actuator failure</span></td><td>L2–L3</td></tr>
+        <tr><td style="font-weight:700;color:var(--green);">E</td><td><span class="cn">外部环境冲突</span><span class="en">External Conflict</span></td><td>E1–E4</td><td><span class="cn">被他车碰撞、道路施工、阻碍应急车辆、交警手势不理解</span><span class="en">Struck by other vehicle, construction, emergency vehicle blocked, police gesture misread</span></td><td>L2–L3</td></tr>
+        <tr><td style="font-weight:700;color:var(--accent);">F</td><td><span class="cn">乘客端异常</span><span class="en">Passenger-Side Issue</span></td><td>F1–F4</td><td><span class="cn">乘客被困、危险位置上下车、乘客干扰车辆、乘客医疗紧急</span><span class="en">Passenger trapped, dangerous pickup, passenger interference, medical emergency</span></td><td>L1–L2</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- Severity + Urgency side by side -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px;">
+      <div>
+        <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:10px;"><span class="cn">严重度分级 Severity Scale</span><span class="en">Severity Scale</span></h3>
+        <table>
+          <thead><tr><th><span class="cn">等级</span><span class="en">Level</span></th><th><span class="cn">定义</span><span class="en">Definition</span></th><th><span class="cn">伤亡</span><span class="en">Injury</span></th></tr></thead>
+          <tbody>
+            <tr><td><span class="sev s1">S0</span></td><td><span class="cn">未遂事件</span><span class="en">Near-Miss</span></td><td><span class="cn">无</span><span class="en">None</span></td></tr>
+            <tr><td><span class="sev s1">S1</span></td><td><span class="cn">轻微：交通影响 &lt;5min</span><span class="en">Minor: disruption &lt;5min</span></td><td><span class="cn">无</span><span class="en">None</span></td></tr>
+            <tr><td><span class="sev s2">S2</span></td><td><span class="cn">中等：显著中断或轻伤</span><span class="en">Moderate: significant disruption or minor injury</span></td><td><span class="cn">轻伤</span><span class="en">Minor</span></td></tr>
+            <tr><td><span class="sev s3">S3</span></td><td><span class="cn">严重：大规模瘫痪或重伤</span><span class="en">Severe: mass paralysis or serious injury</span></td><td><span class="cn">重伤</span><span class="en">Serious</span></td></tr>
+            <tr><td><span class="sev s4">S4</span></td><td><span class="cn">致命：死亡或50+车受影响</span><span class="en">Critical: fatality or 50+ vehicles</span></td><td><span class="cn">致命</span><span class="en">Fatal</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:10px;"><span class="cn">紧急度分级 Urgency Scale</span><span class="en">Urgency Scale</span></h3>
+        <table>
+          <thead><tr><th><span class="cn">等级</span><span class="en">Level</span></th><th><span class="cn">响应窗口</span><span class="en">Response</span></th><th><span class="cn">典型场景</span><span class="en">Scenarios</span></th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag">U0</span></td><td><span class="cn">下次维护周期</span><span class="en">Next maintenance</span></td><td><span class="cn">内部日志趋势</span><span class="en">Log trends</span></td></tr>
+            <tr><td><span class="tag">U1</span></td><td><span class="cn">30分钟内</span><span class="en">Within 30min</span></td><td><span class="cn">路边安全停车待救援</span><span class="en">Roadside safe stop</span></td></tr>
+            <tr><td><span class="tag">U2</span></td><td><span class="cn">10分钟内</span><span class="en">Within 10min</span></td><td><span class="cn">车道内停滞、乘客不安</span><span class="en">Lane blocked, passenger distressed</span></td></tr>
+            <tr><td><span class="tag">U3</span></td><td style="color:var(--red);font-weight:700;"><span class="cn">立即处置</span><span class="en">Immediate</span></td><td><span class="cn">乘客安全受威胁、阻碍应急车辆</span><span class="en">Passenger safety at risk, emergency blocked</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p style="margin-top:16px;color:var(--text3);font-size:0.82rem;">
+      <span class="cn">完整场景定义见 <a href="https://github.com/zyx312/ROAM/blob/main/taxonomy/scenario-taxonomy-v1.0.md">scenario-taxonomy-v1.0.md</a> · <a href="https://github.com/zyx312/ROAM/blob/main/taxonomy/severity-scale.md">severity-scale.md</a> · <a href="https://github.com/zyx312/ROAM/blob/main/taxonomy/urgency-scale.md">urgency-scale.md</a></span>
+      <span class="en">Full definitions: <a href="https://github.com/zyx312/ROAM/blob/main/taxonomy/scenario-taxonomy-v1.0.md">scenario-taxonomy-v1.0.md</a> · <a href="https://github.com/zyx312/ROAM/blob/main/taxonomy/severity-scale.md">severity-scale.md</a> · <a href="https://github.com/zyx312/ROAM/blob/main/taxonomy/urgency-scale.md">urgency-scale.md</a></span>
+    </p>
   </section>
 
   <section id="incidents">
