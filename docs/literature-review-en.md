@@ -146,6 +146,25 @@ The framework offers three insights directly relevant to ROAM:
 
 **Extension direction for ROAM's reference architecture:** ROAM's current three-layer architecture primarily addresses decision escalation logic (AI autonomous / human confirm / human takeover), while Koopman's framework complements this with a personnel organization perspective. Future versions of ROAM's reference architecture could add a "Roles & Responsibilities" module formally aligning Koopman's twelve roles with ROAM's three-layer decision model, specifying the personnel roles, required qualifications, response time requirements, and legal liability allocation for each decision layer.
 
+### 4.7 Cross-Domain Lessons from UAV Remote Operations
+
+Cummings (2026) published a systematic transfer of 35+ years of U.S. military Unmanned Aerial Vehicle (UAV) remote operations experience to self-driving car applications [45]. The study identifies five key lessons directly applicable to Robotaxi remote operations: latency constraints, human-centered workstation design, operator workload management, systematic operator training, and robust contingency planning.
+
+The physical limits of latency. Cummings notes that human neuromuscular lag is 200-500ms [45]. Early U.S. Air Force pilots attempted to remotely take off and land UAVs in the Middle East from Las Vegas with ~2s latency, producing accident rates so high that these operations were replaced first with local line-of-sight operations, then with full automation. The implication for Robotaxi remote driving is that any scenario requiring operator response within 200ms is physically infeasible — task allocation must be restructured through AI pre-processing and operator-assisted decision-making. Waymo's relocation of remote operations to the Philippines increased end-to-end latency significantly and contributed to the severity of the 2025 San Francisco power outage incident.
+
+Workstation design determines outcomes. Cummings' data reveals that the Army Shadow UAV attributed 80% of its crashes to poor interface design, while the highly automated Global Hawk lost only 1 aircraft to human factors [45]. The widespread use of Xbox/PS5 gaming controllers as remote control devices for low-speed shuttles presents serious risks: absence of force feedback leading to inadvertent actuation, negative training transfer from gaming habits, and unstable control posture. The military introduced force feedback into digital controls 40 years ago specifically to prevent such misapplications.
+
+Operator workload faces an order-of-magnitude gap. After hundreds of millions of dollars in R&D investment over 20+ years, the U.S. military still cannot achieve a 1-operator-to-many-UAV ratio for medium-to-large aircraft. Waymo's current 1:29 operator-to-vehicle ratio shows a clear performance ceiling in Cummings' analysis of 2024-2025 data: average resolution times for blocking and freezing incidents were 21.5 and 20.3 minutes respectively, with no statistically significant improvement (t=-0.217, p=0.82) [45], indicating this ratio has reached its capability limit.
+
+DJI's productized solutions offer a parallel reference. Complementing military experience, DJI has accumulated 30 years of productized consumer and industrial drone remote operations experience, engineering the five lessons above into scalable deployment solutions [46-49]:
+
+- OcuSync/O4 transmission system: achieves end-to-end video latency as low as 15ms through physical-layer direct connection (eliminating TCP/IP handshake overhead), 15km range under FCC standards, adaptive frequency hopping across 5.170-5.250 GHz and 5.725-5.850 GHz bands [46]. This engineering achievement demonstrates that latency can be dramatically compressed through dedicated link design.
+- FlightHub 2 Virtual Cockpit: modular remote operator workstation with three-panel layout (map / device info / controls), mouse+keyboard primary input (replacing gamepads), with audible prompts and FPV window [47].
+- Dock 2 automated base: IP55 weather resistance, dual RTK antennas, independent battery backup, automatic return-to-dock on communication loss [48] — representing a mature form of the "local autonomy + remote oversight" hybrid architecture.
+- UTC training and certification system: 200+ global DJI training centers, 40,000+ certified pilots, standardized 12-hour online + 2-day in-person + flight exam certification workflow [49].
+
+This comparison reveals a unique opportunity for Robotaxi remote operations: Chinese Robotaxi operators with drone technology heritage (such as Zhuoyu Technology, inheriting DJI's technology stack) possess native structural advantages in low-latency dedicated transmission links, operator workstation design, and pilot-level certification systems that other pure-AV-background companies cannot easily replicate. The systematic extraction and open sharing of this advantage constitutes an important differentiated contribution direction for the ROAM project. Technical details and mapping analysis are documented in [uav-lessons-learned.md](./uav-lessons-learned.md).
+
 Current academic research exhibits notable gaps: strategies for remote operations during systemic failure scenarios remain understudied, theoretical models for operator-to-vehicle ratio optimization have yet to be established, and the quantitative impact of cross-border operations center latency on decision quality awaits empirical validation.
 
 ## 5 Accident Data Analysis
@@ -330,6 +349,16 @@ The ROAM project will adhere to open-source collaboration principles, providing 
 [43] Cui, Z. et al., "C-TRAIL: A Commonsense World Framework for Trajectory Planning in Autonomous Driving," *IEEE Transactions on Vehicular Technology*, 2026. GitHub: [https://github.com/ZhihongCui/CTRAIL](https://github.com/ZhihongCui/CTRAIL)
 
 [44] Koopman, P., "Human Roles in AVs and Embodied AI Systems," *Phil & Junko on AV Safety*, Substack, April 4, 2026. Proposes a 6-role × 2-location = 12-combination framework challenging the "assistant vs. driver" dichotomy and arguing that remote deciders bear substantive safety responsibility. [Link](https://philkoopman.substack.com/p/embodied-ai-accountability-for-remote)
+
+[45] Cummings, M., "What self-driving companies should learn from drone remote operations," College of Engineering & Computing, George Mason University, 2026. Synthesizes 35+ years of U.S. military UAV experience into five lessons for Robotaxi: latency, workstation design, operator workload, training, contingency planning. Identifies Waymo's 1:29 operator-to-vehicle ratio as at a capability ceiling.
+
+[46] DJI Enterprise, "OcuSync/O4 Video Transmission Technology: 15ms latency, 15km range with adaptive frequency hopping," 2024. [Link](https://enterprise.dji.com/)
+
+[47] DJI Enterprise Insights, "DJI FlightHub 2: Virtual Cockpit Now Available," 2024. Three-panel remote operator workstation interface: map + device info + controls, mouse+keyboard input. [Link](https://enterprise-insights.dji.com/blog/dji-flighthub-2-virtual-cockpit-now-available)
+
+[48] DJI Enterprise, "DJI Dock 2 Elevates Automated Drone Operations," 2024. IP55 weather resistance, dual RTK antennas, battery backup, automatic return-to-dock on communication loss. [Link](https://enterprise.dji.com/news/detail/dji-dock-2-release)
+
+[49] DJI Enterprise, "DJI UTC (Unmanned Aerial System Training Centers) Program," 200+ global training centers, 40,000+ certified pilots. [Link](https://enterprise-insights.dji.com/learning-center)
 
 ---
 

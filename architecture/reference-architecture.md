@@ -544,9 +544,92 @@ Any claim that "L4 means no humans involved" misrepresents real-world operationa
 
 ---
 
+## 10. Operational Lessons from UAV Remote Operations
+
+This section applies lessons from 35+ years of military UAV remote operations and 30 years of DJI productized drone operations to Robotaxi remote operations design [2][3]. See [uav-lessons-learned.md](../docs/uav-lessons-learned.md) for full analysis.
+
+### 10.1 Latency Budget Analysis
+
+Human neuromuscular lag is 200-500ms [2], establishing the physical floor for remote driving response times. Any operation requiring sub-200ms operator response is infeasible.
+
+| Operation Mode | End-to-End Latency Budget | Recommended Transmission |
+|---------------|--------------------------|-------------------------|
+| Layer 3 Remote Driving | < 150ms | Physical-layer dedicated link (DJI OcuSync-style, ~15ms achievable) |
+| Layer 2 AI-Assisted Confirm | < 500ms | Commercial cellular with pre-computed options |
+| Layer 1 AI Autonomous | N/A (edge-local) | No transmission dependency |
+| Emergency command (safe stop) | < 300ms | Redundant multi-carrier cellular + satellite backup |
+
+**Design requirement:** Never architect Layer 3 remote driving on best-effort cellular networks. Adopt UAV-style dedicated transmission links with adaptive frequency hopping.
+
+### 10.2 Workstation Design Anti-Patterns
+
+Based on military UAV accident data [2]:
+- Army Shadow UAV: 80% of crashes from poor interface design
+- Air Force Global Hawk: only 1 aircraft lost to human factors (well-designed interface)
+- Common failure modes: gaming controllers for industrial use, absence of force feedback, unstable control positions
+
+Recommended workstation specifications (inspired by DJI FlightHub 2 Virtual Cockpit [3]):
+
+| Component | Specification |
+|-----------|--------------|
+| Display layout | Three-panel: map (left) + telemetry/FPV (center) + controls (right) |
+| Primary input (Layer 2) | Keyboard + mouse with defined shortcuts |
+| Primary input (Layer 3) | Force-feedback controller (NOT gaming gamepad) |
+| Audio alerts | Distinct tones for warning / error / takeover request |
+| Anti-accidental-actuation | Force thresholds + two-step confirmation for critical commands |
+| Emergency controls | Physical "Big Red Button" for immediate safe-stop |
+
+### 10.3 Staffing Model Sensitivity
+
+Waymo's current 1:29 operator-to-vehicle ratio shows a performance ceiling [2]: 2024-2025 incident resolution times remained at M=21.5min → M=20.3min with no statistically significant improvement (p=0.82). U.S. military after 20+ years still cannot achieve 1-to-many ratios for medium-to-large UAVs due to cognitive switching costs.
+
+**Two-tier staffing recommendation:**
+
+| Tier | Role | Ratio | Duties |
+|------|------|-------|--------|
+| Tier 1 | Routine Supervisor | 1:100+ | Layer 2 decision approvals during normal operation |
+| Tier 2 | Emergency Responder | 1:20 | Layer 3 events, incident response, surge handling |
+
+Separate these pools operationally — emergency surges must not cannibalize routine supervision capacity.
+
+### 10.4 Training & Certification Requirements
+
+Model borrowed from DJI UTC program (200+ centers, 40,000+ certified pilots [4]):
+
+| Certification Level | Roles Covered | Training | Recertification |
+|--------------------|--------------|----------|-----------------|
+| Level 1 Operator | Layer 2 Decider | 8hr online + 1 day workstation + scenario exam | Annual + after major ADS updates |
+| Level 2 Operator | Layer 3 Responder | L1 + 2 days on-vehicle + supervised shifts | Annual + quarterly refresher |
+| Level 3 Operator | Layer 3 Remote Driver | L2 + simulator + road test + checkride | Semi-annual + post-incident |
+
+### 10.5 Contingency Planning Framework
+
+Military lesson: staffing models valid under nominal conditions WILL fail during emergencies [2]. DJI Dock 2 engineering lesson: local autonomy with graceful degradation beats pure cloud dependency [5].
+
+Required contingency protocols:
+
+| Scenario | Required Capability |
+|---------|---------------------|
+| Cloud connectivity loss | Edge-cached decision logic, pre-programmed MRC |
+| Operations center power failure | Geographically distributed backup centers, automatic failover |
+| Mass emergency event | Pre-drilled surge protocols, automatic triage escalation |
+| Fleet-wide software bug | Automatic return-to-depot trigger |
+| Regional weather event | Pre-defined weather-ODD-exit protocols |
+
+**Leadership accountability:** Quarterly fleet-wide emergency drills; board-level ownership of contingency readiness metrics.
+
+**References:**
+[2] Cummings, M., "What self-driving companies should learn from drone remote operations," George Mason University, 2026.
+[3] DJI Enterprise, "FlightHub 2 Virtual Cockpit," 2024. [Link](https://enterprise-insights.dji.com/blog/dji-flighthub-2-virtual-cockpit-now-available)
+[4] DJI Enterprise, "UTC Program," 200+ centers, 40,000+ pilots. [Link](https://enterprise-insights.dji.com/learning-center)
+[5] DJI Enterprise, "Dock 2 Specifications," 2024. [Link](https://enterprise.dji.com/news/detail/dji-dock-2-release)
+
+---
+
 ## Changelog
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 1.2 | 2026-04-05 | Added Section 10: UAV operational lessons + DJI productized patterns |
 | 1.1 | 2026-04-04 | Added Adaptive Trust Calibration mechanism (Section 2.3) based on C-TRAIL framework |
 | 1.0 | 2026-04-02 | Initial release |

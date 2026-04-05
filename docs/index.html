@@ -277,6 +277,62 @@ footer a { color:var(--accent); }
     </p>
   </section>
 
+  <!-- UAV Cross-Domain Lessons -->
+  <section>
+    <h2 class="sec-title"><span class="cn">跨域经验：无人机远程运营的启示</span><span class="en">Cross-Domain Lessons: Drone Remote Operations</span></h2>
+    <p class="sec-sub"><span class="cn">借鉴美军35年UAV经验与DJI 30年产品化沉淀，避免重走弯路</span><span class="en">35+ years of military UAV experience and 30 years of DJI productization, avoiding repeated mistakes</span></p>
+
+    <div class="alert" style="border-color:#c8d5e8; background:#f0f4fa;">
+      <p style="color:#2c4a6e;"><span class="cn">自动驾驶行业正在重复无人机领域30年前犯过的错误。Cummings（2026）指出美军UAV远程运营的五大教训可直接迁移至Robotaxi；而DJI已将这些教训工程化为成熟产品。卓驭科技（承袭DJI技术栈）在低延迟图传、操作员工作站、飞手认证等维度具备原生优势。</span><span class="en">The self-driving industry is repeating mistakes drone operators made 30 years ago. Cummings (2026) identified five military UAV lessons directly applicable to Robotaxi; DJI has already productized these lessons. Zhuoyu Technology (inheriting DJI's stack) holds native advantages in low-latency transmission, operator workstations, and pilot certification.</span></p>
+    </div>
+
+    <div class="tbl-wrap" style="margin-top:20px;">
+    <table>
+      <thead><tr>
+        <th><span class="cn">教训</span><span class="en">Lesson</span></th>
+        <th><span class="cn">军方经验（Cummings）</span><span class="en">Military Experience</span></th>
+        <th><span class="cn">DJI工程解答</span><span class="en">DJI Engineering Answer</span></th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td><strong><span class="cn">延迟约束</span><span class="en">Latency</span></strong></td>
+          <td><span class="cn">人类神经肌肉延迟200-500ms；2秒延迟导致起降事故率极高</span><span class="en">200-500ms human neuromuscular lag; 2s latency caused high UAV crash rate</span></td>
+          <td><span class="cn">OcuSync/O4物理层直连，端到端延迟低至15ms，15km范围自适应跳频</span><span class="en">OcuSync/O4 physical-layer link, 15ms latency, 15km range with adaptive hopping</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="cn">工作站设计</span><span class="en">Workstation</span></strong></td>
+          <td><span class="cn">Shadow UAV 80%事故因界面缺陷；Global Hawk仅损失1架（界面优良）</span><span class="en">Shadow UAV: 80% of crashes from poor UI; Global Hawk lost only 1</span></td>
+          <td><span class="cn">FlightHub 2 Virtual Cockpit三段式界面+力反馈控制器</span><span class="en">FlightHub 2 Virtual Cockpit: three-panel UI + force-feedback controller</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="cn">操作员负荷</span><span class="en">Operator Load</span></strong></td>
+          <td><span class="cn">Waymo 1:29人车比已达天花板；2024-2025响应时间无改善</span><span class="en">Waymo 1:29 ratio at capability ceiling; no improvement 2024-2025</span></td>
+          <td><span class="cn">Dock 2本地自主+云端协同，操作员仅处理异常事件</span><span class="en">Dock 2 local autonomy + cloud coordination, operators handle exceptions only</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="cn">训练认证</span><span class="en">Training</span></strong></td>
+          <td><span class="cn">自动驾驶行业无KSA标准、无认证checkride</span><span class="en">AV industry has no KSA standards, no certification checkride</span></td>
+          <td><span class="cn">DJI UTC全球200+培训中心，40,000+认证飞手</span><span class="en">DJI UTC: 200+ global training centers, 40,000+ certified pilots</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="cn">应急预案</span><span class="en">Contingency</span></strong></td>
+          <td><span class="cn">Waymo断电时无法召回车辆；常态配置在应急时崩溃</span><span class="en">Waymo couldn't recall vehicles during blackout; nominal staffing fails in emergencies</span></td>
+          <td><span class="cn">Dock 2：IP55+双RTK+电池备份+通信失联自动返航</span><span class="en">Dock 2: IP55 + dual RTK + battery backup + auto return-to-dock</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div style="margin-top:20px; padding:16px 20px; background:var(--bg2); border-radius:6px; border-left:3px solid var(--accent);">
+      <p style="font-size:1.05rem; color:var(--text2); line-height:1.7;"><span class="cn">ROAM项目的独特贡献：将DJI/卓驭的无人机远程运营技术栈系统化提炼为Robotaxi远程运营参考标准，包括专用低延迟传输链路、操作员工作站规范、飞手级认证体系。这是其他纯自动驾驶背景公司难以复制的结构性优势。</span><span class="en">ROAM's unique contribution: systematically distilling DJI/Zhuoyu's drone remote operations stack into Robotaxi reference standards — dedicated low-latency transmission, operator workstation specifications, pilot-grade certification. This is a structural advantage other pure-AV companies cannot easily replicate.</span></p>
+    </div>
+
+    <p style="margin-top:16px;color:var(--text3);font-size:0.95rem;">
+      <span class="cn">详细分析：<a href="https://github.com/AutoZYX/ROAM/blob/main/docs/uav-lessons-learned.md">uav-lessons-learned.md</a> · 参考：Cummings (2026), DJI Enterprise</span>
+      <span class="en">Full analysis: <a href="https://github.com/AutoZYX/ROAM/blob/main/docs/uav-lessons-learned.md">uav-lessons-learned.md</a> · References: Cummings (2026), DJI Enterprise</span>
+    </p>
+  </section>
+
   <!-- Taxonomy Detail -->
   <section>
     <h2 class="sec-title"><span class="cn">场景分类体系 v1.0</span><span class="en">Scenario Taxonomy v1.0</span></h2>
