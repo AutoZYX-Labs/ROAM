@@ -119,6 +119,33 @@ The Institute of Automotive Technology (FTM) at the Technical University of Muni
 
 Lu et al. published a survey in IEEE in 2022 that systematically reviewed teleoperation technologies for enhancing the performance of connected and autonomous vehicles [38]. The survey covered communication architectures, human-machine interaction interfaces, and safety mechanisms across multiple dimensions, and remains one of the more highly cited foundational works in the field.
 
+### 4.5 Trust Calibration for AI Decision-Making
+
+As AI-assisted and AI-autonomous decision-making becomes central to remote operations (ROAM Layers 1 and 2), the question of when to trust AI outputs -- and when to override them -- becomes critical. Cui et al. proposed C-TRAIL, a commonsense world framework for trajectory planning that introduces a dual trust mechanism: commonsense trust (evaluating whether AI outputs align with traffic common sense) and kinematic trust (verifying physical feasibility) [43]. The framework employs an Adaptive Trust Calibration mechanism based on exponential moving average (EMA) updates with reward-adaptive decay: when AI decisions yield high rewards (correct outcomes), trust levels are maintained; when decisions yield low rewards (errors or near-misses), trust decays at an accelerated rate. This trust decay mechanism has direct implications for remote operations: in ROAM's Layer 1 (AI Autonomous Response), a similar approach could dynamically adjust the confidence threshold for autonomous action -- automatically escalating to Layer 2 (human confirmation) when cumulative trust in AI decision quality drops below a safety threshold.
+
+### 4.6 Human Roles Taxonomy
+
+Koopman proposed a systematic classification of human roles in AVs and embodied AI systems in April 2026, fundamentally challenging the industry's simplistic "assistant vs. driver" dichotomy [44]. The framework identifies six role types, each with "on-site" and "remote" variants, yielding twelve role combinations in total:
+
+| Role | Responsibility | ROAM Layer Correspondence |
+|------|---------------|--------------------------|
+| **Operator** | Performs at least one sustained control loop (steering, braking) | Layer 3 Remote Driving |
+| **Supervisor** | Actively monitors automation, intervenes when needed | (Not covered — expansion direction) |
+| **Decider** | Responds to AI requests, provides situational judgment or approval | Layer 2 AI-Assisted + Confirm |
+| **Responder** | Handles incidents (extrication, accidents, passenger issues) | Layer 3 On-Site Dispatch |
+| **Standby** | On-call to switch into any other role | Operations center staffing |
+| **Maintainer** | Diagnostics, repair, operational readiness management | (Not covered — fleet management domain) |
+
+The framework offers three insights directly relevant to ROAM:
+
+**First, clarifying safety responsibility boundaries for "Remote Assistance."** Koopman critiques the position of the Automated Vehicle Safety Consortium (AVSC-I-04-2023), which holds that Remote Assistance bears no DDT safety responsibility and can therefore be staffed offshore without driver-level regulation [44]. Koopman counters that remote-decider responses to tasks such as "identifying traffic signal color" or "classifying roadway objects" directly influence ADS behavior, and such tasks are themselves components of the DDT. Denying their safety responsibility amounts to "accountability laundering."
+
+**Second, orthogonality to SAE automation levels.** Koopman explicitly notes that these twelve human roles are independent of the SAE J3016 L0-L5 classification. SAE levels describe the allocation of DDT between human and machine, while the role framework describes the types of human work required to make automation viable in real-world operation [44]. A system marketed as L4 may simultaneously require Operators (during testing), Remote Deciders (during daily operations), and Remote/On-Scene Responders (during incident response).
+
+**Third, accountability principles.** The framework argues that regardless of which role a person fills, if their decision influences system behavior, they should bear safety responsibility commensurate with the scope of their role. Victims should not bear the burden of disentangling human-machine liability in complex product liability disputes.
+
+**Extension direction for ROAM's reference architecture:** ROAM's current three-layer architecture primarily addresses decision escalation logic (AI autonomous / human confirm / human takeover), while Koopman's framework complements this with a personnel organization perspective. Future versions of ROAM's reference architecture could add a "Roles & Responsibilities" module formally aligning Koopman's twelve roles with ROAM's three-layer decision model, specifying the personnel roles, required qualifications, response time requirements, and legal liability allocation for each decision layer.
+
 Current academic research exhibits notable gaps: strategies for remote operations during systemic failure scenarios remain understudied, theoretical models for operator-to-vehicle ratio optimization have yet to be established, and the quantitative impact of cross-border operations center latency on decision quality awaits empirical validation.
 
 ## 5 Accident Data Analysis
@@ -299,6 +326,10 @@ The ROAM project will adhere to open-source collaboration principles, providing 
 [41] Swiss Re, "Waymo and Swiss Re partner on autonomous vehicle insurance," 2024. [Link](https://www.swissre.com/reinsurance/property-and-casualty/solutions/automotive-solutions.html)
 
 [42] China Banking and Insurance News, "Intelligent connected vehicle insurance: from traditional auto insurance to data-driven risk management [智能网联汽车保险]," 2025. [Link](https://www.cbimc.cn/)
+
+[43] Cui, Z. et al., "C-TRAIL: A Commonsense World Framework for Trajectory Planning in Autonomous Driving," *IEEE Transactions on Vehicular Technology*, 2026. GitHub: [https://github.com/ZhihongCui/CTRAIL](https://github.com/ZhihongCui/CTRAIL)
+
+[44] Koopman, P., "Human Roles in AVs and Embodied AI Systems," *Phil & Junko on AV Safety*, Substack, April 4, 2026. Proposes a 6-role × 2-location = 12-combination framework challenging the "assistant vs. driver" dichotomy and arguing that remote deciders bear substantive safety responsibility. [Link](https://philkoopman.substack.com/p/human-roles-in-avs-and-embodied-ai)
 
 ---
 

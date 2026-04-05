@@ -239,6 +239,44 @@ footer a { color:var(--accent); }
     </div>
   </section>
 
+  <!-- Human Roles -->
+  <section>
+    <h2 class="sec-title"><span class="cn">人类角色体系</span><span class="en">Human Roles Framework</span></h2>
+    <p class="sec-sub"><span class="cn">基于Koopman六角色框架，明确远程运营中每类人员的职责边界</span><span class="en">Based on Koopman's six-role framework, clarifying responsibility boundaries of each personnel type</span></p>
+
+    <div class="alert" style="border-color:#c8d5e8; background:#f0f4fa;">
+      <p style="color:#2c4a6e;"><span class="cn"><strong>超越"Assistant vs Driver"的二分法。</strong> 当前行业对远程协助人员的定位存在根本分歧：他们是"辅助者"还是"驾驶员"？Phil Koopman在2026年4月提出六角色框架，将人类在自动驾驶系统中的参与细分为6种职责×2种位置（现场/远程）=12种角色组合，彻底重构了这一讨论。</span><span class="en"><strong>Beyond the "assistant vs. driver" dichotomy.</strong> The industry fundamentally disagrees on how to classify remote operators: assistants or drivers? In April 2026, Phil Koopman proposed a six-role framework that breaks human involvement into 6 responsibilities × 2 locations (on-site/remote) = 12 role combinations, restructuring this debate.</span></p>
+    </div>
+
+    <div class="tbl-wrap" style="margin-top:20px;">
+    <table>
+      <thead><tr>
+        <th><span class="cn">角色</span><span class="en">Role</span></th>
+        <th><span class="cn">职责</span><span class="en">Responsibility</span></th>
+        <th><span class="cn">对应ROAM层级</span><span class="en">ROAM Layer</span></th>
+        <th><span class="cn">安全责任</span><span class="en">Safety Responsibility</span></th>
+      </tr></thead>
+      <tbody>
+        <tr><td><strong><span class="cn">操作员 Operator</span><span class="en">Operator</span></strong></td><td><span class="cn">执行持续控制回路（方向、制动）</span><span class="en">Performs continuous control loop (steering, braking)</span></td><td><span class="tag">Layer 3</span></td><td><span class="cn">完整驾驶员责任</span><span class="en">Full driver liability</span></td></tr>
+        <tr><td><strong><span class="cn">监督员 Supervisor</span><span class="en">Supervisor</span></strong></td><td><span class="cn">主动监控自动化，必要时介入</span><span class="en">Actively monitors automation, intervenes proactively</span></td><td><span class="tag">跨层级</span></td><td><span class="cn">介入响应责任</span><span class="en">Intervention responsibility</span></td></tr>
+        <tr><td><strong><span class="cn">决策者 Decider</span><span class="en">Decider</span></strong></td><td><span class="cn">响应AI请求，批准或修改方案</span><span class="en">Responds to AI queries, approves/rejects plans</span></td><td><span class="tag">Layer 2</span></td><td><span class="cn">决策范围责任</span><span class="en">Decision-scope liability</span></td></tr>
+        <tr><td><strong><span class="cn">响应者 Responder</span><span class="en">Responder</span></strong></td><td><span class="cn">处理异常事件（脱困、事故、乘客问题）</span><span class="en">Handles incidents (extrication, accidents, passenger issues)</span></td><td><span class="tag">Layer 3</span></td><td><span class="cn">情景判断责任</span><span class="en">Situational judgment</span></td></tr>
+        <tr><td><strong><span class="cn">待命者 Standby</span><span class="en">Standby</span></strong></td><td><span class="cn">按需切换至任何其他角色</span><span class="en">On-call to switch into any role</span></td><td><span class="cn">调度层</span><span class="en">Orchestration</span></td><td><span class="cn">就绪与警觉</span><span class="en">Availability and alertness</span></td></tr>
+        <tr><td><strong><span class="cn">维护者 Maintainer</span><span class="en">Maintainer</span></strong></td><td><span class="cn">诊断、维修、运营就绪</span><span class="en">Diagnostics, repair, operational readiness</span></td><td><span class="cn">正交维度</span><span class="en">Orthogonal</span></td><td><span class="cn">维护质量</span><span class="en">Maintenance quality</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div style="margin-top:20px; padding:16px 20px; background:var(--bg2); border-radius:6px; border-left:3px solid var(--accent);">
+      <p style="font-size:1.05rem; color:var(--text2); line-height:1.7;"><span class="cn"><strong>关键洞察：</strong>Layer 2的远程决策者（Remote Decider）并非单纯的"辅助者"——他们对交通信号灯识别、道路物体分类、路径批准的决策直接影响ADS行为，这些本就是DDT的组成部分。Koopman明确反对"责任洗白"（accountability laundering）——将安全责任转移给AI计算机是回避人类问责的不当做法。</span><span class="en"><strong>Key insight:</strong> Layer 2 Remote Deciders are NOT merely "assistants" — their decisions on traffic signal interpretation, object classification, and path approval directly affect ADS behavior and are legitimate DDT components. Koopman explicitly rejects "accountability laundering" — shifting safety responsibility to AI computers is an improper evasion of human accountability.</span></p>
+    </div>
+
+    <p style="margin-top:16px;color:var(--text3);font-size:0.95rem;">
+      <span class="cn">参考：Koopman, P., "Human Roles in AVs and Embodied AI Systems," 2026-04-04. <a href="https://philkoopman.substack.com/p/human-roles-in-avs-and-embodied-ai">原文链接</a></span>
+      <span class="en">Reference: Koopman, P., "Human Roles in AVs and Embodied AI Systems," April 4, 2026. <a href="https://philkoopman.substack.com/p/human-roles-in-avs-and-embodied-ai">Original article</a></span>
+    </p>
+  </section>
+
   <!-- Taxonomy Detail -->
   <section>
     <h2 class="sec-title"><span class="cn">场景分类体系 v1.0</span><span class="en">Scenario Taxonomy v1.0</span></h2>

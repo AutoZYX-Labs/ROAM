@@ -1,7 +1,7 @@
 # ROAM Reference Architecture: Three-Layer Remote Operations Platform
 
-**Version:** 1.0
-**Last Updated:** 2026-04-02
+**Version:** 1.1
+**Last Updated:** 2026-04-04
 **Status:** Initial Release
 
 ---
@@ -117,12 +117,52 @@ Layer 1 handles anomalies where the correct response is deterministic or where a
   +---------------------------+
 ```
 
-### 2.3 Key Requirements
+### 2.3 Adaptive Trust Calibration for AI Decisions
+
+Layer 1 relies on AI to make autonomous decisions without human oversight. A critical question is: how does the system know when its own AI decisions are becoming unreliable? Drawing on the trust calibration approach proposed by C-TRAIL [Cui et al., IEEE Trans. Vehicular Technology, 2026], ROAM recommends an **Adaptive Trust Calibration** mechanism for Layer 1 decision quality monitoring.
+
+**Dual Trust Dimensions:**
+
+- **Commonsense Trust** (T_cs): Does the AI's proposed action align with expected traffic behavior? For example, accelerating toward a red light or routing through a clearly blocked road would violate commonsense expectations and reduce T_cs.
+- **Kinematic Trust** (T_kin): Is the proposed action physically feasible given the vehicle's current state? Proposed trajectories that exceed steering limits, require impossible deceleration rates, or violate vehicle dynamics constraints would reduce T_kin.
+
+**Exponential Moving Average (EMA) Trust Update:**
+
+```
+T(t) = alpha * T(t-1) + (1 - alpha) * R(t)
+
+where:
+  T(t)   = trust score at time step t
+  alpha  = decay factor (0 < alpha < 1)
+  R(t)   = reward signal from latest decision outcome
+```
+
+**Reward-Adaptive Decay:** The decay factor alpha is not fixed but adapts to decision quality:
+
+- **High reward** (correct resolution, no incident): alpha remains high (e.g., 0.95), maintaining accumulated trust
+- **Low reward** (incorrect action, near-miss, passenger complaint): alpha decreases (e.g., 0.7), accelerating trust decay
+- **Negative reward** (safety-critical error): alpha drops sharply (e.g., 0.3), rapidly eroding trust
+
+**Escalation Trigger:** When the composite trust score T = w_cs * T_cs + w_kin * T_kin falls below a configurable safety threshold (e.g., T < 0.6), the system automatically escalates subsequent anomalies to Layer 2 for human confirmation, even if they would normally be handled by Layer 1. Trust recovery occurs gradually as Layer 2-confirmed decisions demonstrate consistent quality.
+
+**Application in Remote Operations:**
+
+| Trust State | System Behavior |
+|-------------|----------------|
+| T >= 0.8 (High) | Layer 1 operates normally with full autonomy |
+| 0.6 <= T < 0.8 (Medium) | Layer 1 operates with enhanced logging and monitoring |
+| T < 0.6 (Low) | Auto-escalate to Layer 2; Layer 1 restricted to fail-safe defaults only |
+| T < 0.3 (Critical) | Fleet-wide alert; all decisions require human confirmation |
+
+This mechanism ensures that when AI decision quality degrades -- whether due to distribution shift, sensor degradation, environmental changes, or software defects -- the system self-corrects by routing more decisions to human operators rather than continuing to execute potentially unreliable autonomous actions.
+
+### 2.4 Key Requirements
 
 - **On-board fallback logic**: Vehicles must be able to execute Layer 1 actions WITHOUT cloud connectivity (edge-cached decision logic)
 - **Scenario classifier accuracy**: >95% correct primary scenario classification
 - **Action library**: Pre-programmed action sequences for each Layer 1 scenario
 - **Passenger notification**: Automated in-vehicle messages for relevant events (e.g., "Your vehicle is rerouting due to road construction")
+- **Trust monitoring**: Continuous trust score computation with configurable escalation thresholds
 
 ---
 
@@ -455,8 +495,58 @@ This reference architecture should be adapted for:
 
 ---
 
+## 9. Human Roles & Responsibilities
+
+This section aligns ROAM's three-layer architecture with Koopman's six-role framework for human participation in automated driving systems [1]. Koopman identifies six distinct roles (Operator, Supervisor, Decider, Responder, Standby, Maintainer), each with on-site and remote variants, yielding twelve role combinations. This taxonomy complements ROAM's decision-flow-based architecture by addressing personnel organization.
+
+### 9.1 Role-to-Layer Mapping
+
+| Koopman Role | Description | ROAM Layer | Location | Safety Responsibility |
+|-------------|-------------|-----------|----------|---------------------|
+| **Operator** | Continuous control loop (steering, braking) | Layer 3 | Remote (teleoperation) / On-site (chase vehicle) | Full driver-equivalent liability |
+| **Supervisor** | Monitors automation, intervenes proactively | Across all layers | Remote monitoring station | Intervention responsibility |
+| **Decider** | Responds to AI queries, approves/rejects plans | **Layer 2 (primary)** | Remote (operations center) | Decision-scope liability |
+| **Responder** | Handles incidents outside normal operation | **Layer 3 (primary)** | On-site dispatch + remote support | Situational judgment responsibility |
+| **Standby** | On-call to fill any role | Orchestration layer | Remote pool + on-site mobile teams | Availability and alertness |
+| **Maintainer** | Diagnostics, repair, readiness | Orthogonal to ROAM layers | Depot (on-site) + remote diagnostics | Maintenance quality |
+
+### 9.2 Legal Accountability Principles
+
+Following Koopman's argument, all human participants in remote operations bear safety responsibility commensurate with their role:
+
+- **Layer 2 Deciders** are NOT merely "assistants" — their decisions on traffic signal interpretation, object classification, and path approval directly affect ADS behavior and are legitimate DDT components.
+- **Layer 3 Operators and Responders** carry driver-equivalent or incident-commander responsibilities.
+- The ROAM architecture explicitly rejects the "accountability laundering" position that AI computers bear legal responsibility — legal persons (individuals and employers) must be identifiable and accountable.
+
+### 9.3 Staffing Implications
+
+Integrating the role framework with ROAM's scaling table (Section 8.1):
+
+| Fleet Size | Layer 2 Deciders | Layer 3 Operators/Responders | Standby Pool | Maintainers |
+|-----------|:----:|:----:|:----:|:----:|
+| 50 vehicles | 2-3 | 1-2 | 2 (cross-trained) | 1-2 (depot) |
+| 200 vehicles | 5-8 | 3-4 | 5 (tiered pools) | 3-5 (depot + remote) |
+| 1,000 vehicles | 15-25 | 8-12 | 15+ (24/7 rotation) | 15-20 (multi-depot) |
+
+Note: Cross-training Standby personnel across multiple roles enables efficient resource utilization but requires robust qualification management.
+
+### 9.4 Orthogonality to SAE Levels
+
+Koopman explicitly notes that these role assignments are independent of SAE J3016 L0-L5 classification [1]. A nominally L4 system may still require:
+- Operators during testing phases
+- Remote Deciders during daily operations (Layer 2)
+- On-Scene Responders for incident management (Layer 3)
+
+Any claim that "L4 means no humans involved" misrepresents real-world operational requirements.
+
+**Reference:**
+[1] Koopman, P., "Human Roles in AVs and Embodied AI Systems," *Phil & Junko on AV Safety*, Substack, April 4, 2026. [Link](https://philkoopman.substack.com/p/human-roles-in-avs-and-embodied-ai)
+
+---
+
 ## Changelog
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 1.1 | 2026-04-04 | Added Adaptive Trust Calibration mechanism (Section 2.3) based on C-TRAIL framework |
 | 1.0 | 2026-04-02 | Initial release |
