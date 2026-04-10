@@ -134,9 +134,6 @@ ROAM/
 
 - **Jilin University AD Safety Joint Lab** (吉林大学自动驾驶安全联合实验室) — Scenario taxonomy, SOTIF methodology, academic research
 - **DRIVEResearch** (驭研科技) — Naturalistic driving baseline data (750h+ aerial UAV, 10.5M+ trajectories)
-- **Zhuoyu Technology** (卓驭科技, formerly DJI Automotive) — Cross-domain expertise from drone remote operations
-- **University of Waterloo** — International collaboration on AV safety research
-- **Tsinghua University · Chongqing University · FAW Group** (prospective collaborators) — Pending engagement
 
 ## Related Standards
 
