@@ -17,6 +17,10 @@ description: |
   failed to properly account for the pole's position in the constrained alley
   environment. Waymo issued a voluntary recall of 672 vehicles to address the
   software defect via an OTA update.
+description_cn: |
+  一辆 Waymo 自动驾驶车辆在低速通过狭窄巷道时与一根木质电线杆发生碰撞。无人员受伤。事件原因是
+  车辆感知和路径规划系统的软件问题，未能正确计算受限巷道环境中电线杆的位置。Waymo 主动召回
+  672 辆车，通过 OTA 更新修复该软件缺陷。
 impact:
   vehicles_affected: 672
   duration_minutes: null
@@ -29,16 +33,24 @@ emergency_response:
   remote_intervention: "post-incident"
   on_site_response: "Waymo roadside assistance"
   resolution_method: "vehicle retrieved by Waymo team; software recall issued"
+  resolution_method_cn: "Waymo 团队回收车辆；发布软件召回"
 root_cause:
   category: "perception and path planning"
+  category_cn: "感知与路径规划"
   description: "Software failed to properly detect and maintain clearance from a stationary wooden utility pole in a narrow alley environment"
+  description_cn: "软件未能在狭窄巷道环境中正确检测静止木质电线杆并保持安全距离"
   confirmed: true
 systemic_issues:
   - "Static object detection in constrained environments needs improvement"
   - "Alley and narrow passage navigation is an edge case for urban robotaxis"
+systemic_issues_cn:
+  - "受限环境下的静态物体检测能力有待提升"
+  - "巷道和狭窄通道导航是城市 Robotaxi 的边缘场景"
 regulatory_action: |
   NHTSA recall. Waymo issued voluntary recall of 672 vehicles and deployed OTA
   software update to improve static object avoidance in constrained spaces.
+regulatory_action_cn: |
+  NHTSA 召回。Waymo 主动召回 672 辆车并部署 OTA 软件更新，以改进受限空间中的静态物体避障能力。
 sources:
   - url: "https://www.damfirm.com/waymo-accident-statistics.html"
     title: "Waymo Accidents - NHTSA Crash Data"

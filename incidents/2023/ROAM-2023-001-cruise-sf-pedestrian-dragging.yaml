@@ -20,6 +20,11 @@ description: |
   dragging portion of the incident to regulators, providing only a truncated video.
   This incident triggered the most significant regulatory backlash in the L4 industry
   to date.
+description_cn: |
+  一辆 Cruise 自动驾驶车辆碾压并拖拽一名行人约 20 英尺（6 米）。该行人此前被另一辆人类驾驶车辆撞击后
+  弹入 Robotaxi 行驶路径。Cruise 车辆在初次碰撞后停车，但随后执行了靠边停车操作，拖拽了被困在车底的
+  行人。行人遭受了严重的、改变人生的伤害。Cruise 最初未向监管机构披露拖拽部分的事实，仅提供了经剪辑的
+  视频。该事件引发了 L4 行业迄今为止最严重的监管反弹。
 impact:
   vehicles_affected: 950
   duration_minutes: null
@@ -32,21 +37,33 @@ emergency_response:
   remote_intervention: "failed to prevent dragging"
   on_site_response: "emergency services"
   resolution_method: "emergency responders extracted pedestrian from under vehicle"
+  resolution_method_cn: "急救人员从车辆下方将行人救出"
 root_cause:
   category: "software decision logic"
+  category_cn: "软件决策逻辑"
   description: "Vehicle's post-collision pullover maneuver failed to detect trapped pedestrian underneath; software executed a 'minimize risk condition' pullover without recognizing the obstruction"
+  description_cn: "车辆碰撞后的靠边停车操作未能检测到被困在车底的行人；软件在未识别障碍物的情况下执行了'最小风险状态'靠边停车"
   confirmed: true
 systemic_issues:
   - "Post-collision behavior logic did not account for pedestrian entrapment scenario"
   - "Company initially concealed critical portion of incident from CPUC and NHTSA"
   - "Remote operations center failed to prevent the pullover maneuver"
   - "Regulatory trust fundamentally broken by incomplete disclosure"
+systemic_issues_cn:
+  - "碰撞后行为逻辑未考虑行人被困场景"
+  - "公司最初向 CPUC 和 NHTSA 隐瞒了事件的关键部分"
+  - "远程运营中心未能阻止靠边停车操作"
+  - "不完整的信息披露从根本上破坏了监管信任"
 regulatory_action: |
   CPUC suspended Cruise's driverless permit in California. NHTSA opened investigation
   and issued recall of 950 vehicles. Cruise fined $1.5M by NHTSA for delayed reporting.
   DMV revoked Cruise's autonomous vehicle deployment permit. CEO Kyle Vogt resigned.
   Cruise suspended all driverless operations nationwide. GM subsequently wound down
   Cruise operations entirely in late 2024.
+regulatory_action_cn: |
+  CPUC 暂停了 Cruise 在加州的无人驾驶许可。NHTSA 启动调查并召回 950 辆车。Cruise 因延迟报告被
+  NHTSA 罚款 150 万美元。DMV 撤销了 Cruise 的自动驾驶车辆部署许可。CEO Kyle Vogt 辞职。
+  Cruise 在全美暂停所有无人驾驶运营。GM 随后于 2024 年底彻底关闭了 Cruise 业务。
 sources:
   - url: "https://techcrunch.com/2023/11/08/cruise-recalls-entire-fleet-after-robotaxi-ran-over-dragged-pedestrian/"
     title: "Cruise recalls entire fleet after robotaxi ran over, dragged pedestrian - TechCrunch"

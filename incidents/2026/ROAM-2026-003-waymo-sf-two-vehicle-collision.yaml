@@ -19,6 +19,11 @@ description: |
   from the same fleet should have shared awareness to prevent same-fleet collisions
   and cascading blockages. The incident went viral on social media as a symbol of
   robotaxi operational challenges.
+description_cn: |
+  两辆 Waymo Robotaxi 在旧金山相互碰撞，阻塞了该地点的全部交通。碰撞后，一辆从后方
+  驶来的第三辆 Waymo 车辆卡住，无法绕过两辆失效车辆。最终三辆 Waymo 车辆造成完全交通
+  堵塞。该事件引发了关于车队级协调的质疑——同一车队的车辆是否应具备共享感知能力，以防止
+  同车队碰撞和级联堵塞。事件在社交媒体上广泛传播，成为 Robotaxi 运营挑战的标志性事件。
 impact:
   vehicles_affected: 3
   duration_minutes: 45
@@ -31,9 +36,12 @@ emergency_response:
   remote_intervention: "unable to clear third vehicle"
   on_site_response: "Waymo field team, SFPD traffic control"
   resolution_method: "manual towing of disabled vehicles; third vehicle remotely rerouted after delay"
+  resolution_method_cn: "人工拖移失效车辆；第三辆车延迟后远程重新规划路线"
 root_cause:
   category: "vehicle-to-vehicle coordination failure"
+  category_cn: "车车协调失败"
   description: "Two vehicles from the same fleet collided, indicating no effective V2V awareness or fleet coordination; third vehicle's inability to navigate around the scene indicates path planning failure in degraded scenarios"
+  description_cn: "同一车队的两辆车发生碰撞，表明缺乏有效的 V2V 感知或车队协调；第三辆车无法绕行事故现场，表明降级场景下的路径规划存在缺陷"
   confirmed: false
 systemic_issues:
   - "Same-fleet vehicles lack V2V coordination to prevent mutual collisions"
@@ -41,9 +49,17 @@ systemic_issues:
   - "Fleet-level situational awareness is absent"
   - "Social media amplification of 'three Waymos blocking traffic' damaged brand perception"
   - "Path planning cannot handle scenarios with disabled fleet vehicles blocking the route"
+systemic_issues_cn:
+  - "同车队车辆缺乏 V2V 协调以防止相互碰撞"
+  - "第三辆车的级联堵塞放大了事件影响"
+  - "缺乏车队级态势感知"
+  - "社交媒体对'三辆 Waymo 堵塞交通'的传播损害了品牌形象"
+  - "路径规划无法处理同车队失效车辆阻断路线的场景"
 regulatory_action: |
   CPUC requested briefing from Waymo on fleet coordination capabilities.
   No formal enforcement action taken.
+regulatory_action_cn: |
+  CPUC 要求 Waymo 就车队协调能力进行汇报。未采取正式执法行动。
 sources:
   - url: "https://futurism.com/advanced-transport/waymo-crashed-into-each-other"
     title: "Two Self-Driving Waymos Crashed Into Each Other - Futurism"

@@ -17,6 +17,10 @@ description: |
   such as parking lot gates, chains, and flexible bollards. Multiple low-speed
   collisions were reported across Waymo's operating territories. No injuries
   resulted from these incidents but vehicle and property damage occurred.
+description_cn: |
+  Waymo 因软件问题导致车辆与路侧护栏、道闸和链条发生碰撞，主动召回 1,212 辆车。车辆未能
+  正确检测或响应某些类型的细长、低对比度障碍物，如停车场道闸、链条和柔性防撞柱。Waymo
+  运营区域内报告了多起低速碰撞事故。事故未造成人员伤亡，但造成了车辆和财产损失。
 impact:
   vehicles_affected: 1212
   duration_minutes: null
@@ -29,18 +33,28 @@ emergency_response:
   remote_intervention: "post-incident"
   on_site_response: "Waymo roadside assistance"
   resolution_method: "software recall and OTA update to improve barrier detection"
+  resolution_method_cn: "软件召回并通过 OTA 更新提升障碍物检测能力"
 root_cause:
   category: "perception deficiency"
+  category_cn: "感知能力不足"
   description: "Perception system failed to reliably detect thin, low-contrast, or flexible barriers such as chains, gates, and flexible bollards; these objects fell outside the trained detection model's reliable performance envelope"
+  description_cn: "感知系统无法可靠检测细长、低对比度或柔性障碍物，如链条、道闸和柔性防撞柱；此类目标超出了已训练检测模型的可靠性能包络"
   confirmed: true
 systemic_issues:
   - "Thin and low-contrast objects remain a challenging perception edge case"
   - "Parking lot and driveway environments have diverse barrier types"
   - "Pattern of repeated collisions before recall indicates detection gap was systematic"
   - "Largest Waymo recall to date at 1,212 vehicles"
+systemic_issues_cn:
+  - "细长、低对比度目标仍是感知系统的边缘难题"
+  - "停车场和车道入口环境中存在多种类型的障碍物"
+  - "召回前反复发生碰撞的模式表明检测缺陷是系统性的"
+  - "这是 Waymo 迄今最大规模的召回，涉及 1,212 辆车"
 regulatory_action: |
   NHTSA recall. Waymo issued voluntary recall and deployed OTA software update
   to improve detection of thin barriers, gates, and chains.
+regulatory_action_cn: |
+  NHTSA 召回。Waymo 主动发起召回并部署 OTA 软件更新，提升对细长障碍物、道闸和链条的检测能力。
 sources:
   - url: "https://techcrunch.com/2025/05/14/waymo-recalls-1200-robotaxis-following-low-speed-collisions-with-gates-and-chains/"
     title: "Waymo recalls 1,200 robotaxis - TechCrunch"

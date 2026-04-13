@@ -19,6 +19,11 @@ description: |
   risk due to the unpredictable movement patterns of young children. The incident
   reignited debate about robotaxi operations near schools and in areas with
   high concentrations of vulnerable road users.
+description_cn: |
+  一辆 Waymo Robotaxi 在早间送学时段撞击了一名小学附近的 9 岁儿童。儿童受轻伤。
+  事发地点为学校区域，行人密集，包括儿童、家长和过街引导员。学校区域因低龄儿童运动
+  模式不可预测而存在更高风险。该事件重新引发了关于 Robotaxi 在学校附近及弱势道路使用者
+  密集区域运营的讨论。
 impact:
   vehicles_affected: 1
   duration_minutes: null
@@ -31,9 +36,12 @@ emergency_response:
   remote_intervention: "post-incident"
   on_site_response: "paramedics, school administration, police"
   resolution_method: "child treated on scene; vehicle secured by Waymo"
+  resolution_method_cn: "儿童在现场接受治疗；车辆由 Waymo 现场封存"
 root_cause:
   category: "pedestrian detection / child behavior prediction"
+  category_cn: "行人检测 / 儿童行为预测"
   description: "Vehicle failed to adequately predict and respond to the movement of a child in a school zone environment; children exhibit less predictable trajectories than adult pedestrians"
+  description_cn: "车辆未能充分预测和响应学校区域内儿童的运动；儿童的运动轨迹远比成年行人更不可预测"
   confirmed: false
 systemic_issues:
   - "School zones represent a high-risk ODD that may require special operating restrictions"
@@ -41,10 +49,19 @@ systemic_issues:
   - "Morning drop-off creates chaotic, dense pedestrian environments"
   - "Public sensitivity extremely high when children are involved"
   - "Question of whether L4 vehicles should operate in active school zones"
+systemic_issues_cn:
+  - "学校区域属于高风险 ODD，可能需要特殊运营限制"
+  - "儿童行人行为的可预测性显著低于成年人"
+  - "早间送学时段会形成混乱、密集的行人环境"
+  - "涉及儿童时公众敏感度极高"
+  - "L4 车辆是否应在学校区域活跃时段运营存在争议"
 regulatory_action: |
   Santa Monica city council initiated review of robotaxi operations near schools.
   NHTSA opened a preliminary evaluation. California legislators proposed bills
   restricting autonomous vehicle operations in school zones.
+regulatory_action_cn: |
+  圣莫尼卡市议会启动了对学校附近 Robotaxi 运营的审查。NHTSA 开展初步评估。
+  加州立法者提出限制自动驾驶车辆在学校区域运营的法案。
 sources:
   - url: "https://www.autoblog.com/news/waymo-robotaxis-incidents-san-francisco"
     title: "Waymo Robotaxis incidents including Santa Monica child - Autoblog"

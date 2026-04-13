@@ -18,6 +18,11 @@ description: |
   萝卜快跑 was rapidly scaling operations in Wuhan, becoming the world's largest
   robotaxi fleet deployment. Public debate intensified around the displacement of
   traditional taxi drivers and safety of autonomous vehicles in Chinese cities.
+description_cn: |
+  一辆百度 Apollo Robotaxi（萝卜快跑）在路口与一名闯红灯的行人发生碰撞，当时车辆处于绿灯通行状态。
+  百度将该事件描述为"轻微接触"。行人违反信号灯过马路。该事件在中国引发广泛关注，彼时萝卜快跑正在
+  武汉快速扩大运营规模，成为全球最大的 Robotaxi 车队部署。围绕传统出租车司机就业替代和自动驾驶
+  车辆在中国城市安全性的公共讨论显著升温。
 impact:
   vehicles_affected: 1
   duration_minutes: null
@@ -30,18 +35,28 @@ emergency_response:
   remote_intervention: "post-incident review"
   on_site_response: "traffic police"
   resolution_method: "standard traffic incident handling"
+  resolution_method_cn: "按标准交通事件流程处理"
 root_cause:
   category: "pedestrian behavior (jaywalking)"
+  category_cn: "行人行为（闯红灯）"
   description: "Pedestrian jaywalked against the signal; vehicle had right of way but made contact at low speed. Questions remain about whether ADS should have anticipated and avoided the jaywalker entirely"
+  description_cn: "行人违反信号灯过马路；车辆拥有通行权但在低速下发生接触。关于自动驾驶系统是否应该预判并完全避让闯红灯行人的问题仍存争议"
   confirmed: false
 systemic_issues:
   - "Chinese urban environments have high jaywalking rates requiring robust pedestrian prediction"
   - "Public trust fragile during rapid fleet scaling"
   - "Tension between robotaxi deployment and traditional taxi driver livelihoods"
   - "'Light contact' framing raised questions about incident reporting transparency"
+systemic_issues_cn:
+  - "中国城市环境中行人闯红灯率较高，要求具备强健的行人预测能力"
+  - "快速扩大车队规模期间公众信任脆弱"
+  - "Robotaxi 部署与传统出租车司机生计之间的矛盾"
+  - "'轻微接触'的表述引发对事件报告透明度的质疑"
 regulatory_action: |
   No formal regulatory action. Local Wuhan authorities reviewed the incident.
   The event contributed to broader national discussion about robotaxi regulation in China.
+regulatory_action_cn: |
+  无正式监管行动。武汉地方当局对事件进行了审查。该事件推动了全国范围内关于 Robotaxi 监管的讨论。
 sources:
   - url: "https://m.gmw.cn/2024-07/10/content_1303787341.htm"
     title: "萝卜快跑无人驾驶出租车发生碰撞事故 - 光明网"

@@ -23,6 +23,13 @@ description: |
   surpassing the Waymo SF blackout (ROAM-2025-003) in both scale and severity
   due to passengers being physically trapped on elevated structures with no
   functioning emergency systems.
+description_cn: |
+  约 100 辆萝卜快跑 Robotaxi 在武汉晚高峰期间同时停摆。车辆停在高架快速路和主要桥梁上，
+  包括杨泗港大桥、白沙洲大桥和三环线高架段。乘客被困车内长达 2 小时。车载 SOS 系统失效。
+  客服热线完全过载，无法接通。警察逐辆解救车辆并疏散乘客。大规模停运在高峰时段瘫痪了
+  武汉主要交通干道。该事件是全球最大规模的单次 Robotaxi 车队故障事件，在规模和严重程度上
+  均超过 Waymo 旧金山停电事件（ROAM-2025-003），因为乘客被困在高架结构上且应急系统
+  全部失效。
 impact:
   vehicles_affected: 100
   duration_minutes: 120
@@ -35,9 +42,12 @@ emergency_response:
   remote_intervention: "failed / unavailable"
   on_site_response: "police rescue, vehicle-by-vehicle extraction"
   resolution_method: "police physically accessed each vehicle to release passengers and clear vehicles from bridges and elevated roads one by one"
+  resolution_method_cn: "警察逐辆到达现场，释放乘客并将车辆从桥梁和高架道路上逐一清除"
 root_cause:
   category: "cloud/network system failure"
+  category_cn: "云平台 / 网络系统故障"
   description: "Mass simultaneous shutdown suggests cloud platform or network connectivity failure affecting the entire fleet; all remote systems including SOS, customer service, and remote intervention failed simultaneously, indicating a common-mode failure in the backend infrastructure"
+  description_cn: "大规模同时停运表明云平台或网络连接故障影响了整个车队；包括 SOS、客服和远程干预在内的所有远程系统同时失效，表明后端基础设施存在共因失效"
   confirmed: false
 systemic_issues:
   - "~100 vehicles simultaneously failing indicates catastrophic single-point-of-failure in cloud infrastructure"
@@ -48,11 +58,23 @@ systemic_issues:
   - "Police one-by-one rescue is not scalable — what if fleet grows 10x?"
   - "Largest robotaxi fleet failure globally in terms of vehicles affected"
   - "Evening rush hour on bridges maximized public impact and danger"
+systemic_issues_cn:
+  - "约 100 辆车同时故障表明云基础设施存在灾难性单点故障"
+  - "SOS 系统在大规模故障期间失效——恰恰是最需要它的时刻"
+  - "客服系统在负载下完全崩溃"
+  - "乘客被困在高架桥上且无逃生通道——极其危险"
+  - "无优雅降级：车辆在桥梁车道内停车，而非驶向安全停靠点"
+  - "警察逐辆救援不可扩展——若车队规模扩大 10 倍怎么办？"
+  - "按受影响车辆数计，全球最大规模的 Robotaxi 车队故障事件"
+  - "晚高峰桥梁停运将公众影响和危险最大化"
 regulatory_action: |
   Wuhan city government initiated emergency review of 萝卜快跑 operations.
   Ministry of Industry and Information Technology (MIIT) reportedly requested
   incident report from Baidu. National-level discussion on robotaxi fleet
   resilience standards intensified.
+regulatory_action_cn: |
+  武汉市政府启动对萝卜快跑运营的紧急审查。据报道工业和信息化部（MIIT）要求百度提交
+  事故报告。关于 Robotaxi 车队韧性标准的全国性讨论加速推进。
 sources:
   - url: "https://www.huxiu.com/article/4847431.html"
     title: "萝卜快跑瘫痪事故暴露的阿喀琉斯之踵 - 虎嗅网"

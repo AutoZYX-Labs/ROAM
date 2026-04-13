@@ -17,6 +17,10 @@ description: |
   following the pedestrian contact incident days earlier. Traffic congestion resulted
   as other vehicles had to navigate around the stalled robotaxi. The incident
   highlighted concerns about robotaxi fleet resilience during high-traffic periods.
+description_cn: |
+  一辆萝卜快跑 Robotaxi 在武汉晚高峰期间抛锚，阻塞交通。车辆在道路中间停车，无法恢复自动驾驶。
+  该事件发生在行人接触事件数日后公众审视最为密集的时期。其他车辆被迫绕行，导致交通拥堵。
+  该事件突显了 Robotaxi 车队在高流量时段的韧性问题。
 impact:
   vehicles_affected: 1
   duration_minutes: 30
@@ -29,18 +33,28 @@ emergency_response:
   remote_intervention: "attempted, unable to resolve"
   on_site_response: "Baidu support team dispatched"
   resolution_method: "on-site technician manually moved the vehicle"
+  resolution_method_cn: "现场技术人员手动移走车辆"
 root_cause:
   category: "software freeze / planning failure"
+  category_cn: "软件冻结/规划模块故障"
   description: "Vehicle entered a state where the planning module could not find a viable path, resulting in indefinite stop in active traffic lane"
+  description_cn: "车辆进入规划模块无法找到可行路径的状态，导致在活跃车道上无限期停车"
   confirmed: false
 systemic_issues:
   - "Mid-road stalling creates safety hazard and traffic disruption"
   - "Rush hour complexity may exceed current planning module capabilities"
   - "Remote intervention unable to resolve frozen planning state"
   - "Physical human response required adds significant delay"
+systemic_issues_cn:
+  - "路中间抛锚造成安全隐患和交通中断"
+  - "高峰时段的复杂性可能超出当前规划模块的能力"
+  - "远程干预无法解决规划模块冻结状态"
+  - "需要人员到场处理，显著增加响应延迟"
 regulatory_action: |
   No formal regulatory action. Incident contributed to public pressure on Wuhan
   city government regarding the pace of robotaxi deployment.
+regulatory_action_cn: |
+  未有正式监管行动。该事件加剧了公众对武汉市政府推进 Robotaxi 部署速度的质疑。
 sources:
   - url: "https://www.ofweek.com/auto/2024-07/ART-70109-8110-30640596.html"
     title: "萝卜快跑争议背后，无人驾驶入市太急？- OFweek"

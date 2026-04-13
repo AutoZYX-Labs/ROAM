@@ -17,6 +17,10 @@ description: |
   reported where the unexpected braking caused injuries to occupants of following vehicles.
   The recall addressed the prediction software that was incorrectly assessing the behavior
   of oncoming vehicles in certain scenarios.
+description_cn: |
+  Cruise 因软件缺陷导致意外急刹车事件，主动召回 1,194 辆车。车辆会突然无明显原因地制动，导致后方车辆
+  追尾碰撞。多起事件中，意外制动造成后方车辆乘员受伤。此次召回针对的是在特定场景下错误评估对向车辆
+  行为的预测软件。
 impact:
   vehicles_affected: 1194
   duration_minutes: null
@@ -29,17 +33,26 @@ emergency_response:
   remote_intervention: "not applicable"
   on_site_response: "standard collision response"
   resolution_method: "software recall and OTA update"
+  resolution_method_cn: "软件召回及 OTA 更新"
 root_cause:
   category: "prediction software defect"
+  category_cn: "预测软件缺陷"
   description: "Software incorrectly predicted oncoming vehicle trajectories, triggering unnecessary hard braking; the prediction model overestimated collision risk in certain traffic configurations"
+  description_cn: "软件错误预测对向车辆轨迹，触发不必要的急刹车；预测模型在特定交通场景下高估了碰撞风险"
   confirmed: true
 systemic_issues:
   - "Prediction model overly conservative in specific oncoming traffic scenarios"
   - "Hard braking without sufficient warning creates secondary collision risk"
   - "Pattern of incidents accumulated before recall was initiated"
+systemic_issues_cn:
+  - "预测模型在特定对向交通场景下过于保守"
+  - "无充分预警的急刹车产生二次碰撞风险"
+  - "在启动召回前已累积多起事件"
 regulatory_action: |
   NHTSA recall (23V-579). Cruise issued voluntary recall and deployed OTA software
   update to address the prediction software defect.
+regulatory_action_cn: |
+  NHTSA 召回（23V-579）。Cruise 主动召回并部署 OTA 软件更新以修复预测软件缺陷。
 sources:
   - url: "https://www.smartcitiesdive.com/news/gm-cruise-recalls-autonomous-fleet-software-update-chevy-bolt-ev-nhtsa/725344/"
     title: "Entire Cruise robotaxi fleet recalled for unexpected braking - Smart Cities Dive"

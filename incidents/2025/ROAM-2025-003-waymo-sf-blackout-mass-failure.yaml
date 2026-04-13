@@ -22,6 +22,12 @@ description: |
   revealed that Waymo's emergency response systems were wholly inadequate for
   a multi-vehicle simultaneous failure scenario. This was the first documented
   mass fleet failure event for a commercial robotaxi service.
+description_cn: |
+  旧金山大面积 PG&E 停电导致 Waymo Robotaxi 车队大规模瘫痪。超过 20 辆车在全市各处
+  失去行动能力，阻塞车道和交叉路口。停电使车辆所依赖的交通信号灯和通信基础设施失效。
+  应急服务受到严重影响——急救人员共拨打 Waymo 支持热线 31 次，累计等待时间达 2 小时
+  36 分钟。该事件暴露了对外部基础设施的关键依赖，并表明 Waymo 的应急响应系统完全无法
+  应对多车同时故障的场景。这是商业 Robotaxi 服务中首次有记录的大规模车队故障事件。
 impact:
   vehicles_affected: 20
   duration_minutes: 180
@@ -34,9 +40,12 @@ emergency_response:
   remote_intervention: "severely degraded due to connectivity loss"
   on_site_response: "SFFD, SFPD, Waymo field teams"
   resolution_method: "manual vehicle retrieval one by one after power restoration"
+  resolution_method_cn: "电力恢复后逐辆人工回收车辆"
 root_cause:
   category: "external infrastructure dependency"
+  category_cn: "外部基础设施依赖"
   description: "PG&E power outage disabled traffic signals and cellular/network infrastructure; vehicles entered safe stop mode but blocked traffic; fleet management system could not coordinate mass recovery; emergency response channels overwhelmed"
+  description_cn: "PG&E 停电导致交通信号灯和蜂窝/网络基础设施瘫痪；车辆进入安全停车模式但阻塞交通；车队管理系统无法协调大规模回收；应急响应渠道被挤爆"
   confirmed: true
 systemic_issues:
   - "Fleet has critical single-point dependency on external power and connectivity infrastructure"
@@ -45,10 +54,20 @@ systemic_issues:
   - "31 calls from first responders with 2h36m total wait time is unacceptable"
   - "Safe stop behavior (stop in lane) creates secondary hazards at scale"
   - "No pre-coordinated protocol with city emergency services"
+systemic_issues_cn:
+  - "车队对外部电力和通信基础设施存在关键单点依赖"
+  - "缺乏针对大规模基础设施故障的优雅降级策略"
+  - "应急响应热线完全无法应对多车事件"
+  - "急救人员拨打 31 次电话、累计等待 2 小时 36 分钟，不可接受"
+  - "安全停车行为（车道内停车）在规模化时产生次生风险"
+  - "与城市应急服务之间缺乏预先协调的应急预案"
 regulatory_action: |
   SFMTA and CPUC launched reviews of robotaxi resilience requirements.
   San Francisco officials publicly criticized Waymo's emergency response capacity.
   Renewed calls for mandatory fleet resilience standards.
+regulatory_action_cn: |
+  SFMTA 和 CPUC 启动了 Robotaxi 韧性要求的审查。旧金山官员公开批评 Waymo 的应急响应能力。
+  各方再次呼吁制定强制性的车队韧性标准。
 sources:
   - url: "https://sfstandard.com/2025/12/23/wtf-happened-waymo-blackout-industry-experts-have-guesses/"
     title: "WTF happened to Waymo during the blackout? - SF Standard"

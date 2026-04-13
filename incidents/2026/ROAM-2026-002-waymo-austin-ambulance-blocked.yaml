@@ -19,6 +19,12 @@ description: |
   highlighted the critical gap in autonomous vehicle interaction with emergency
   response operations and the life-threatening consequences when robotaxis
   cannot yield to emergency vehicles in real time.
+description_cn: |
+  一辆 Waymo Robotaxi 在德克萨斯州奥斯汀一起大规模枪击事件中卡住，阻挡了赶赴现场的
+  救护车。车辆在试图抵达现场的急救车辆路径上冻结。警察不得不亲自干预，将 Robotaxi
+  移出救护车通道。事件发生在争分夺秒的紧急救援期间。该事件凸显了自动驾驶车辆与应急
+  响应操作之间的关键交互缺陷，以及 Robotaxi 无法实时为急救车辆让路时可能危及生命的
+  后果。
 impact:
   vehicles_affected: 1
   duration_minutes: 15
@@ -31,9 +37,12 @@ emergency_response:
   remote_intervention: "too slow for emergency context"
   on_site_response: "police physically intervened"
   resolution_method: "police officers manually moved vehicle out of ambulance path"
+  resolution_method_cn: "警察人工将车辆移出救护车通道"
 root_cause:
   category: "emergency vehicle interaction failure"
+  category_cn: "急救车辆交互失败"
   description: "Vehicle failed to detect and yield to approaching emergency vehicles with active lights and sirens; entered a frozen state in the emergency corridor, unable to execute an appropriate pullover maneuver"
+  description_cn: "车辆未能检测并避让开启警灯和警报的驶近急救车辆；在应急通道中进入冻结状态，无法执行适当的靠边避让操作"
   confirmed: false
 systemic_issues:
   - "Emergency vehicle detection and yielding is a critical safety function that failed"
@@ -41,11 +50,20 @@ systemic_issues:
   - "Remote intervention latency incompatible with emergency response timelines"
   - "No pre-established protocol between Waymo and local emergency services"
   - "Mass casualty events create chaotic traffic patterns that exceed ADS capabilities"
+systemic_issues_cn:
+  - "急救车辆检测与避让是关键安全功能，此次功能失效"
+  - "紧急救援期间冻结车辆阻塞应急通道，可能危及生命"
+  - "远程干预延迟与应急响应时间要求不兼容"
+  - "Waymo 与当地应急服务之间缺乏预先建立的协调机制"
+  - "大规模伤亡事件产生的混乱交通模式超出了 ADS 能力范围"
 regulatory_action: |
   Austin city council held emergency session on robotaxi operations. Texas DOT
   opened review of autonomous vehicle emergency response requirements. Federal
   legislators cited incident in calls for mandatory emergency vehicle interaction
   standards for autonomous vehicles.
+regulatory_action_cn: |
+  奥斯汀市议会就 Robotaxi 运营召开紧急会议。德克萨斯州交通部启动自动驾驶车辆应急
+  响应要求审查。联邦立法者引用此事件，呼吁制定自动驾驶车辆与急救车辆交互的强制性标准。
 sources:
   - url: "https://techcrunch.com/2026/03/25/waymo-robotaxi-roadside-assistance-emergency-first-responders/"
     title: "Waymo robotaxi roadside assistance and emergency first responders - TechCrunch"

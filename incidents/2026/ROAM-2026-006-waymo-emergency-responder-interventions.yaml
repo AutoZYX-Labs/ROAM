@@ -20,6 +20,12 @@ description: |
   with the inability to quickly clear autonomous vehicles from emergency scenes.
   The pattern indicates a systemic gap in ADS emergency vehicle interaction rather
   than isolated incidents.
+description_cn: |
+  2026 年内，至少发生 6 起有记录的事件，急救人员不得不在应急行动中物理接管 Waymo 车辆。
+  这些事件遍及 Waymo 运营区域内的多个城市。在每起事件中，自动驾驶车辆要么未能为急救车辆
+  让路，要么阻塞了应急通道，或在阻碍应急操作的位置冻结。多个司法管辖区的消防和警察部门
+  均反映了对无法快速清除应急现场自动驾驶车辆的不满。这一模式表明 ADS 在急救车辆交互方面
+  存在系统性缺陷，而非孤立事件。
 impact:
   vehicles_affected: 6
   duration_minutes: null
@@ -32,9 +38,12 @@ emergency_response:
   remote_intervention: "latency too high for emergency contexts"
   on_site_response: "first responders forced to intervene directly with vehicles"
   resolution_method: "first responders manually moved or overrode vehicles"
+  resolution_method_cn: "急救人员人工移动或强制接管车辆"
 root_cause:
   category: "emergency vehicle interaction — systemic pattern"
+  category_cn: "急救车辆交互——系统性模式"
   description: "Recurring failure to detect, yield to, and clear path for emergency vehicles across multiple scenarios and cities; the pattern indicates a fundamental gap in emergency response behavior rather than isolated bugs"
+  description_cn: "在多个场景和城市中反复出现未能检测、避让急救车辆和清空通道的情况；该模式表明应急响应行为存在根本性缺陷，而非孤立的软件缺陷"
   confirmed: true
 systemic_issues:
   - "At least 6 documented incidents across multiple cities indicate systemic failure"
@@ -43,11 +52,21 @@ systemic_issues:
   - "Remote intervention latency is structurally incompatible with emergency timelines"
   - "No standardized interface between ADS fleets and emergency dispatch systems"
   - "Each incident potentially delays life-saving emergency response"
+systemic_issues_cn:
+  - "多个城市至少 6 起有记录的事件表明系统性失效"
+  - "急救车辆检测与响应是安全关键功能"
+  - "急救人员缺乏快速清除自动驾驶车辆的标准化工具"
+  - "远程干预延迟在结构上与应急时间要求不兼容"
+  - "ADS 车队与应急调度系统之间缺乏标准化接口"
+  - "每起事件都可能延误挽救生命的应急响应"
 regulatory_action: |
   NHTSA opened investigation into Waymo emergency vehicle interaction.
   International Association of Fire Chiefs (IAFC) issued guidance on
   autonomous vehicle interaction. Multiple cities considering mandatory
   emergency responder override requirements.
+regulatory_action_cn: |
+  NHTSA 对 Waymo 急救车辆交互问题启动调查。国际消防局长协会（IAFC）发布了自动驾驶
+  车辆交互指南。多个城市正在考虑制定强制性的急救人员接管要求。
 sources:
   - url: "https://techcrunch.com/2026/03/25/waymo-robotaxi-roadside-assistance-emergency-first-responders/"
     title: "Who's driving Waymo's self-driving cars? Sometimes, the police - TechCrunch"

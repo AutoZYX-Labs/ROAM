@@ -18,6 +18,11 @@ description: |
   The second event suggested that the underlying infrastructure dependency issues
   identified in the blackout event had not been fully resolved, or that additional
   failure modes existed in the fleet management system.
+description_cn: |
+  在 12 月 13 日停电大规模故障（ROAM-2025-003）发生仅数天后，Waymo 旧金山车队再次经历
+  停运事件。多辆车再次停止运行并阻塞交通。同一周内的重复故障显著加剧了公众和监管机构对
+  车队可靠性的担忧。第二次事件表明，停电事件中暴露的底层基础设施依赖问题尚未完全解决，
+  或车队管理系统中存在其他故障模式。
 impact:
   vehicles_affected: 10
   duration_minutes: 120
@@ -30,19 +35,30 @@ emergency_response:
   remote_intervention: "partially effective"
   on_site_response: "Waymo field teams"
   resolution_method: "combination of remote restart and manual vehicle retrieval"
+  resolution_method_cn: "远程重启与人工回收车辆相结合"
 root_cause:
   category: "fleet management / cloud system failure"
+  category_cn: "车队管理 / 云系统故障"
   description: "Second fleet disruption within days of the blackout event; precise root cause of the repeat failure not fully disclosed. Likely related to residual infrastructure instability or fleet management system issues exposed by the earlier outage"
+  description_cn: "停电事件后数天内发生第二次车队中断；重复故障的确切根因未完全披露。可能与残留的基础设施不稳定性或早期停电暴露的车队管理系统问题有关"
   confirmed: false
 systemic_issues:
   - "Repeat failure within same week indicates systemic rather than isolated issue"
   - "Fleet recovery procedures not robust enough to prevent recurrence"
   - "Public confidence severely damaged by back-to-back fleet failures"
   - "Pattern suggests fundamental resilience architecture gaps"
+systemic_issues_cn:
+  - "同一周内重复故障表明这是系统性问题而非孤立事件"
+  - "车队恢复程序不够健壮，无法防止再次发生"
+  - "接连发生的车队故障严重损害了公众信心"
+  - "故障模式表明韧性架构存在根本性缺陷"
 regulatory_action: |
   Contributed to ongoing CPUC and SFMTA reviews initiated after the December 13
   blackout. San Francisco Supervisor Aaron Peskin called for stricter fleet
   resilience requirements.
+regulatory_action_cn: |
+  促成了 12 月 13 日停电后启动的 CPUC 和 SFMTA 审查。旧金山市议员 Aaron Peskin
+  呼吁制定更严格的车队韧性要求。
 sources:
   - url: "https://futurism.com/advanced-transport/waymo-shuts-down-again"
     title: "Days After Mass Bricking Event, Waymo Fleet Shuts Down Again - Futurism"

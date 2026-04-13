@@ -19,6 +19,11 @@ description: |
   period before eventually completing the crossing. The incident was captured on
   video by passengers and went viral, illustrating the terror experienced when
   an ADS makes a dangerous decision that passengers cannot override.
+description_cn: |
+  一辆 Waymo Robotaxi 在对向车流间隙不足的情况下尝试横穿 8 车道道路。车辆已启动穿越
+  操作但在道路中央停下，阻塞多条对向车道。车内乘客在高速来车逼近时惊恐尖叫。Robotaxi
+  在暴露位置冻结了较长时间后才最终完成穿越。乘客拍摄的视频广泛传播，生动展现了当 ADS
+  做出危险决策而乘客无法干预时所经历的恐惧。
 impact:
   vehicles_affected: 1
   duration_minutes: 5
@@ -31,9 +36,12 @@ emergency_response:
   remote_intervention: "too slow for the acute danger window"
   on_site_response: "none required, vehicle eventually moved"
   resolution_method: "vehicle eventually completed crossing autonomously"
+  resolution_method_cn: "车辆最终自主完成穿越"
 root_cause:
   category: "gap acceptance / decision making"
+  category_cn: "间距接受 / 决策失误"
   description: "Planning module committed to a multi-lane crossing without sufficient gap in oncoming traffic; vehicle then froze mid-crossing rather than accelerating through or reversing, creating maximum exposure to collision risk"
+  description_cn: "规划模块在对向车流间距不足时执行多车道穿越；车辆在穿越中途冻结，既未加速通过也未倒车退回，导致碰撞风险暴露最大化"
   confirmed: false
 systemic_issues:
   - "Gap acceptance algorithm failed for high-speed multi-lane crossing scenario"
@@ -42,9 +50,19 @@ systemic_issues:
   - "Remote intervention latency incompatible with seconds-critical danger"
   - "8-lane crossings may require dedicated handling or avoidance in route planning"
   - "Passenger psychological trauma from loss of control in dangerous situation"
+systemic_issues_cn:
+  - "间距接受算法在高速多车道穿越场景中失效"
+  - "启动后冻结是道路中央暴露的最差结果"
+  - "乘客无法覆盖危险决策"
+  - "远程干预延迟与秒级危险不兼容"
+  - "8 车道穿越可能需要在路径规划中专门处理或规避"
+  - "乘客在危险情境中失去控制所遭受的心理创伤"
 regulatory_action: |
   Arizona DOT reviewed the incident. No formal enforcement action.
   Incident cited in federal discussions about passenger override capabilities.
+regulatory_action_cn: |
+  亚利桑那州交通部审查了该事件。未采取正式执法行动。该事件在联邦层面关于乘客覆盖
+  控制能力的讨论中被引用。
 sources:
   - url: "https://www.autoblog.com/news/waymo-robotaxi-tries-to-cross-8-lanes-passengers-start-screaming"
     title: "Waymo Robotaxi Tries to Cross 8 Lanes - Autoblog"

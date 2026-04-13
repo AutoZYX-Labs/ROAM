@@ -18,6 +18,11 @@ description: |
   of Pony.ai's robotaxi service in the affected district while an investigation
   was conducted. This was notable as one of the few vehicle fire incidents
   involving an L4 autonomous vehicle.
+description_cn: |
+  一辆小马智行（Pony.ai）自动驾驶测试车辆在北京大兴区偏离道路后起火。事发时车内无乘客。
+  未造成人员伤亡。火势较大，需消防部门出动灭火。该事件导致小马智行在该区域的 Robotaxi
+  服务被暂时叫停，待调查完成后恢复运营。该事件是为数不多的涉及 L4 自动驾驶车辆起火的
+  案例之一。
 impact:
   vehicles_affected: 1
   duration_minutes: null
@@ -30,18 +35,28 @@ emergency_response:
   remote_intervention: "unable to prevent fire"
   on_site_response: "fire department"
   resolution_method: "fire extinguished by fire department; vehicle total loss"
+  resolution_method_cn: "消防部门扑灭火灾；车辆全损报废"
 root_cause:
   category: "vehicle fire / mechanical failure"
+  category_cn: "车辆起火 / 机械故障"
   description: "Vehicle veered off road and caught fire; root cause under investigation. Potential causes include electrical system failure, battery thermal event, or mechanical failure leading to loss of control"
+  description_cn: "车辆偏离道路后起火；根本原因仍在调查中。潜在原因包括电气系统故障、电池热失控事件或导致失控的机械故障"
   confirmed: false
 systemic_issues:
   - "Vehicle fire represents a severe failure mode for public trust"
   - "Loss of vehicle control preceding fire suggests possible cascading failure"
   - "Remote monitoring was unable to prevent or mitigate the incident"
   - "Autonomous test vehicles operating without safety drivers face unique fire response challenges"
+systemic_issues_cn:
+  - "车辆起火是严重损害公众信任的失效模式"
+  - "起火前车辆失控表明可能存在级联故障"
+  - "远程监控未能预防或减轻事故影响"
+  - "无安全员的自动驾驶测试车辆在火灾响应方面面临独特挑战"
 regulatory_action: |
   Beijing Daxing district temporarily suspended Pony.ai's robotaxi service
   pending investigation. Service gradually resumed after review.
+regulatory_action_cn: |
+  北京大兴区暂停小马智行 Robotaxi 服务运营，待调查结束。经审查后服务逐步恢复。
 sources:
   - url: "https://carnewschina.com/2025/05/15/pony-ai-robotaxi-catches-fire-in-beijing-test-amid-expansion-push/"
     title: "Pony.ai robotaxi catches fire in Beijing - CarNewsChina"

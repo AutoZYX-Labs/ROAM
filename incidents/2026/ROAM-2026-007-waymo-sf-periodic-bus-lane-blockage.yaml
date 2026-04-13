@@ -21,6 +21,12 @@ description: |
   The recurring nature of the problem suggests a systemic issue with the
   vehicle's handling of bus lane geometry, signaling, or right-of-way rules
   rather than random failures.
+description_cn: |
+  2026 年间，Waymo Robotaxi 在旧金山各处公交车道和交叉路口反复出现停摆事件。这并非
+  单一事件，而是一种持续性模式：车辆进入冻结或混乱状态，阻塞专用公交车道和交叉路口
+  进口。平均每次事件解决时间约 20 分钟。SFMTA 记录了多起停摆 Robotaxi 导致 Muni
+  公交延误的案例。对公共交通可靠性的累积影响显著，影响到每日数千名公交乘客。问题的
+  反复性表明车辆在处理公交车道几何、信号或路权规则方面存在系统性缺陷，而非随机故障。
 impact:
   vehicles_affected: 1
   duration_minutes: 20
@@ -33,9 +39,12 @@ emergency_response:
   remote_intervention: "attempted, often unsuccessful"
   on_site_response: "Waymo field team or SFMTA"
   resolution_method: "manual vehicle restart or towing; average 20 minutes per incident"
+  resolution_method_cn: "人工重启或拖移车辆；平均每次事件耗时 20 分钟"
 root_cause:
   category: "bus lane / intersection planning failure — recurring"
+  category_cn: "公交车道 / 交叉路口规划失效——反复发生"
   description: "Vehicles repeatedly enter frozen states in bus lanes and intersections; likely related to complex right-of-way rules, bus lane markings, or transit signal priority systems that the planning module cannot reliably handle"
+  description_cn: "车辆在公交车道和交叉路口反复进入冻结状态；可能与复杂的路权规则、公交车道标线或公交信号优先系统有关，规划模块无法可靠处理这些场景"
   confirmed: false
 systemic_issues:
   - "Recurring pattern indicates systemic rather than random failure"
@@ -44,10 +53,20 @@ systemic_issues:
   - "Cumulative impact on Muni service reliability affects thousands of riders"
   - "Tension between robotaxi operations and public transit priority"
   - "Remote intervention frequently unable to resolve the frozen state"
+systemic_issues_cn:
+  - "反复出现的模式表明这是系统性而非随机故障"
+  - "公交车道堵塞对公共交通用户造成不成比例的影响"
+  - "平均 20 分钟的解决时间在运营上不可接受"
+  - "对 Muni 公交服务可靠性的累积影响波及数千名乘客"
+  - "Robotaxi 运营与公共交通优先权之间的矛盾"
+  - "远程干预经常无法解除车辆冻结状态"
 regulatory_action: |
   SFMTA documenting incidents and engaging with Waymo on bus lane performance.
   San Francisco Board of Supervisors considering legislation to penalize
   repeated bus lane blockages by autonomous vehicles.
+regulatory_action_cn: |
+  SFMTA 记录事件并就公交车道表现与 Waymo 进行沟通。旧金山市议会正在考虑立法，
+  对自动驾驶车辆反复阻塞公交车道进行处罚。
 sources:
   - url: "https://www.blackcarnews.com/article/the-hidden-staggering-costs-of-waymo-robotaxis"
     title: "The Hidden, Staggering Costs of Waymo Robotaxis - Black Car News"
