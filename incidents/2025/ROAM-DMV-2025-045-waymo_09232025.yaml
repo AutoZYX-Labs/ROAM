@@ -1,0 +1,28 @@
+id: "ROAM-DMV-2025-045"
+tier: 2
+date: "2025-09-23"
+time: "02:59"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Palou Avenue near Industrial Street"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On September 23, 2025 at 2:59 PM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco, California was in a
+  collision involving a tow truck on Palou Avenue near Industrial Street.
+  
+  The Waymo AV was traveling northwestbound on Palou Avenue and slowed to a stop to yield to a tow truck that stopped in the Waymo
+  AV’s lane of travel. The Waymo AV momentarily proceeded forward, but came to a stop again as the tow truck began to reverse. While the
+  Waymo AV remained stopped, the tow truck continued to reverse and the rear of the tow truck made contact with the front of the stationary
+  Waymo AV. At the time of the impact, the Waymo AV’s Level 4 ADS was engaged in autonomous mode. The Waymo AV sustained
+  damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_09232025-pdf/"
+    title: "Waymo collision report 2025-09-23 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

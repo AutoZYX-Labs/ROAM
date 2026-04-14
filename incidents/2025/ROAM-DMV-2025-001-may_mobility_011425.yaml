@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2025-001"
+tier: 2
+date: "2025-01-14"
+operator: "Unknown"
+location:
+  city: "Martinez, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "3113 Pine St"
+scenario:
+  primary: "E1"
+severity: "S0"
+urgency: "U0"
+description: |
+  While traveling northbound on Pine Street in Martinez, a black vehicle pulled out of a driveway facing the road at the last second and
+  collided with the passenger broad side of May's vehicle.
+  May's vehicle is traveling at approximately 20 MPH in a residential neighborhood when this black vehicle exits a driveway facing the road
+  and May's vehicle. This vehicle did not slow down or stop until entering into the roadway and collided with May's vehicle. May's vehicle
+  operator attempts to swerve to the left but is unable to avoid a collision.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/may_mobility_011425-pdf/"
+    title: "Unknown collision report 2025-01-14 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

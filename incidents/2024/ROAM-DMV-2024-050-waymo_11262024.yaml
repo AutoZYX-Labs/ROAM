@@ -1,0 +1,28 @@
+id: "ROAM-DMV-2024-050"
+tier: 2
+date: "2024-11-26"
+time: "05:57"
+operator: "Waymo"
+location:
+  city: "Los Angeles, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Venice Boulevard and Vermont Avenue"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  On November 26, 2024 at 5:57 PM PT, a Waymo Autonomous Vehicle (“Waymo AV”) operating in Los Angeles, California, was involved
+  in a collision involving a passenger car at the intersection of Venice Boulevard and Vermont Avenue.
+  
+  The Waymo AV was traveling west on Venice Blvd, and approaching Vermont Ave in the leftmost of two through lanes proceeding
+  straight. As the Waymo AV began to enter the intersection after the traffic light turned yellow, an eastbound passenger car, waiting to make
+  a left turn onto northbound Vermont Ave, proceeded to initiate a left turn during the yellow traffic signal, and impacted the Waymo AV on
+  the front driver side. At the time of the impact, the Waymo AV Level 4 ADS was engaged in autonomous mode. Both vehicles sustained
+  damage and required towing services; the passenger in the passenger car reported a minor injury.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_11262024-pdf/"
+    title: "Waymo collision report 2024-11-26 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

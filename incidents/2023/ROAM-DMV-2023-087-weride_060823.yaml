@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2023-087"
+tier: 2
+date: "2023-06-08"
+time: "02:06"
+operator: "WeRide"
+location:
+  city: "California, USA"
+  country: "USA"
+  road_type: "urban_street"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  At 2:06pm a WeRide driverless vehicle (car 1) was stopped behind a big rig truck (vehicle 2). As our vehicle (car 1) was stopped behind the
+  big rig truck, the big rig truck proceeded to reverse backwards and eventually collided into the WeRide vehicle (car 1). Both parties pulled
+  over both involved vehicles and cooperated to exchange information. The damage sustained to the WeRide vehicle was moderate and the big
+   rig truck did not have any damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/weride_060823-pdf/"
+    title: "WeRide collision report 2023-06-08 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

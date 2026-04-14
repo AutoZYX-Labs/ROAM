@@ -1,0 +1,26 @@
+id: "ROAM-DMV-2022-063"
+tier: 2
+date: "2022-10-21"
+time: "08:27"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Filbert Street at Kearny Street"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On October 21, 2022 at 8:27 AM PST a Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco, California made contact
+  with the pavement on a steep hill on Filbert Street at Kearny Street.
+  
+  The Waymo AV was on a steep hill, turning from Filbert Street onto Kearny Street, when the Waymo AV's undercarriage made contact
+  with the pavement (the AV did not contact any vehicle or road user). At the time of the impact, the Waymo AV’s Level 4 ADS was engaged
+  in autonomous mode, and a test driver was present (in the driver’s seating position). The Waymo AV sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_102122-pdf/"
+    title: "Waymo collision report 2022-10-21 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

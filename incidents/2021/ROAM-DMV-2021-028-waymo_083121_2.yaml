@@ -1,0 +1,26 @@
+id: "ROAM-DMV-2021-028"
+tier: 2
+date: "2021-08-31"
+time: "05:41"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Cook Street and Geary Street"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On August 31, 2021 at 5:41 PM PDT, Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco was in a collision
+  involving an unoccupied parked passenger vehicle at 20 Cook Street. While performing a multipoint turn at the north end of Cook Street (a
+  dead-end road), the Waymo AV was in reverse at approximately 2 MPH when it made contact with the front driver’s side door of an
+  unoccupied parked passenger vehicle. The Waymo AV was in autonomous mode until just before making contact, when the test driver
+  transitioned the Waymo AV into manual mode. The contact caused minor scuffing and a small dent in the door handle of the parked
+  vehicle’s driver door and minor damage to the plastic sensor housing on the Waymo AV’s rear passenger’s side.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_083121_2-pdf/"
+    title: "Waymo collision report 2021-08-31 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,29 @@
+id: "ROAM-DMV-2025-039"
+tier: 2
+date: "2025-08-24"
+time: "12:43"
+operator: "Waymo"
+location:
+  city: "Los Angeles, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Beverly Boulevard at N. Curson Avenue"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On August 24, 2025 at 12:43 AM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in Los Angeles, California was in a
+  collision involving a passenger car on Beverly Boulevard at N. Curson Avenue.
+  
+  The Waymo AV was traveling westbound in the rightmost lane on Beverly Boulevard when it began to slow as it approached a red light at
+  the intersection at N. Curson Avenue. A passenger car that was traveling westbound in the adjacent lane proceeded to change lanes and
+  approached the Waymo AV and a stopped SUV in the adjacent lane from behind as it was traveling in between lanes. The front right of the
+  passenger car made contact with the rear left of the Waymo, and the left of the passenger car also made contact with the right of the stopped
+  SUV. At the time of the impact, the Waymo AV’s Level 4 ADS was engaged in autonomous mode. The Waymo AV, the passenger car, and
+  the SUV sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_082425-pdf/"
+    title: "Waymo collision report 2025-08-24 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

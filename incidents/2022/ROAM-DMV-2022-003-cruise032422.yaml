@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2022-003"
+tier: 2
+date: "2022-03-24"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "1090 Point Lobos Avenue"
+scenario:
+  primary: "C5"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle ("Cruise AV"), operating in supervised autonomous mode, was traveling southbound on Point Lobos
+  Avenue between 48th Avenue and Balboa Street. The Cruise AV was traveling downhill when a cyclist approached the Cruise AV from
+  behind. The Cruise AV began to brake, and shortly thereafter, the cyclist made contact with the rear window of the Cruise AV. The cyclist
+  fell to the ground and sustained injuries. Police and Emergency Medical Services (EMS) were called. The cyclist was transferred from
+  the scene via EMS. The impact caused damage to the rear passenger side of the bumper, rear hatch, and rear window of the Cruise AV.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/cruise032422-pdf/"
+    title: "Cruise (GM) collision report 2022-03-24 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

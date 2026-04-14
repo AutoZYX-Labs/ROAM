@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2022-032"
+tier: 2
+date: "2022-04-11"
+operator: "Pony.ai"
+location:
+  city: "Milpitas, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "301 Ranch Dr"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  On April 11, 2022, while in supervised (“Drivered”) autonomous mode, a Pony.ai Autonomous Vehicle was parked in a parking lot when a
+  passenger vehicle reversed into the Pony.ai vehicle. The Pony.ai vehicle sustained minor damage to the driver’s side rear door. There were
+  no injuries or other property damage, the police were not called to the scene, and the Pony.ai vehicle was driven back to Pony.ai’s Fremont
+  facility.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/pony-ai_041122-pdf/"
+    title: "Pony.ai collision report 2022-04-11 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

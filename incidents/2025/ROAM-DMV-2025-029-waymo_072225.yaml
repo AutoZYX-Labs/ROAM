@@ -1,0 +1,26 @@
+id: "ROAM-DMV-2025-029"
+tier: 2
+date: "2025-07-22"
+time: "07:29"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Midcrest Way near Cityview Way"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On July 22, 2025 at 7:29 PM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco, California was in a collision
+  involving a small dumbbell on Midcrest Way near Cityview Way.
+  
+  The Waymo AV was traveling southwestbound on Midcrest Way and the front right tire of the Waymo AV made contact with a small
+  dumbbell in the Waymo AV’s lane of travel. At the time of the impact, the Waymo AV’s Level 4 ADS was engaged in autonomous mode.
+  The dumbbell sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_072225-pdf/"
+    title: "Waymo collision report 2025-07-22 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

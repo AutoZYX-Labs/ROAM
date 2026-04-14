@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2026-022"
+tier: 2
+date: "2026-03-12"
+time: "08:13"
+operator: "Waymo"
+location:
+  city: "Los Angeles, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Gorham Place near Gorham Avenue"
+scenario:
+  primary: "C3"
+severity: "S1"
+urgency: "U0"
+description: |
+  On March 12, 2026 at 8:13 AM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in Los Angeles, California was in a collision
+  involving an SUV on Gorham Place near Gorham Avenue.
+  
+  The Waymo AV was traveling eastbound on Gorham Place when it approached the exit of a parking garage. As the Waymo AV proceeded
+  forward, an SUV proceeded to exit the parking garage and entered the Waymo AV's lane of travel, and the front of the SUV made contact
+  with the right side of the Waymo AV. At the time of the impact, the Waymo AV’s Level 4 ADS was engaged in autonomous mode. Both
+  vehicles sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_031226-pdf/"
+    title: "Waymo collision report 2026-03-12 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

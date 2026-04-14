@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2019-024"
+tier: 2
+date: "2019-02-14"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Gough St. and Fell St."
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  Cruise autonomous vehicle (“Cruise AV”), operating in autonomous mode, was traveling southbound on Gough Street at the intersection
+  with Fell Street when the Cruise AV began to yield to a car on its right. The driver of the Cruise AV disengaged from autonomous mode,
+  and shortly thereafter, another vehicle made contact with the center rear bumper of the Cruise AV, damaging the rear radar mounting
+  bracket of the Cruise AV. There were no injuries and police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/gm-cruise-collision-report-february-14-2019-pdf/"
+    title: "Cruise (GM) collision report 2019-02-14 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

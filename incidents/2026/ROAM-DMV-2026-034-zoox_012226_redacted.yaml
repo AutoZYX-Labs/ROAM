@@ -1,0 +1,25 @@
+id: "ROAM-DMV-2026-034"
+tier: 2
+date: "2026-01-22"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Brannan Street towards 8th Street"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1) operating in autonomous mode was traveling northeast on Brannan Street toward 8th Street in San Francisco. At
+  that time, an SUV (Vehicle 2) traveling ahead pulled into the parking lane on the right. Just as the Zoox vehicle was approaching, Vehicle 2
+  suddenly swerved into the Zoox vehicle's lane without using a turn signal. The Zoox vehicle braked hard and attempted to steer left to avoid
+  the collision. The vehicle operator then disengaged autonomy and continued braking, but contact was unavoidable. The left front of Vehicle
+  2 struck the right front of the Zoox vehicle. The Zoox vehicle sustained moderate damage, and the right rear passenger reported
+  "experiencing soreness" after the collision. The police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_012226_redacted-pdf/"
+    title: "Zoox collision report 2026-01-22 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

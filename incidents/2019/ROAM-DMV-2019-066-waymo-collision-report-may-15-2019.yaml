@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2019-066"
+tier: 2
+date: "2019-05-15"
+operator: "Waymo"
+location:
+  city: "Mountain View, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Shoreline Blvd. at El Camino Real"
+scenario:
+  primary: "C2"
+severity: "S1"
+urgency: "U0"
+description: |
+  A Waymo Autonomous Vehicle (“Waymo AV”) in autonomous mode was yielding to check for cross traffic while in the slip lane to turn
+  from southbound Shoreline Boulevard to westbound El Camino Real in Mountain View when it was rear-ended by a passenger vehicle at
+  approximately 5 MPH. The Waymo AV sustained minor damage to its rear bumper, and the passenger vehicle had minor damage to its
+  front bumper. The two Waymo AV operators reported neck/back pain but declined medical attention at the scene.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo-collision-report-may-15-2019-pdf/"
+    title: "Waymo collision report 2019-05-15 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,25 @@
+id: "ROAM-DMV-2019-014"
+tier: 2
+date: "2019-10-26"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "The Embarcadero and Battery St."
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV”), operating in autonomous mode, was traveling southeast bound on The Embarcadero near the
+  intersection with Battery Street when the Cruise AV yielded to another vehicle in the left adjacent lane that encroached into the Cruise AV’s
+  lane. The driver of the Cruise AV disengaged from autonomous mode and, shortly thereafter, a second vehicle behind the Cruise AV made
+  contact with the rear bumper of the Cruise AV, damaging the Cruise AV’s right rear bumper, fascia, signal lamp, and radar assembly. There
+  were no injuries reported at the scene by either party and police were not called. Both of the Cruise AV test operators later mentioned neck
+  and back injuries.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/cruise-collision-report-october-26-2019-pdf/"
+    title: "Cruise (GM) collision report 2019-10-26 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

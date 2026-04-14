@@ -1,0 +1,28 @@
+id: "ROAM-DMV-2026-024"
+tier: 2
+date: "2026-03-15"
+time: "11:59"
+operator: "Waymo"
+location:
+  city: "Palo Alto, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Alma Street near W. Meadow Drive"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On March 15, 2026 at 11:59 AM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in Palo Alto, California was in a collision
+  involving an SUV on Alma Street near W. Meadow Drive.
+  
+  The Waymo AV was traveling northwestbound in the left lane on Alma Street when it slowed to a stop in a queue of traffic for a red light at
+  the intersection with W. Meadow Drive. While the Waymo AV was stopped, an SUV traveling northwestbound in the left lane on Alma
+  Street behind the Waymo AV proceeded to change lanes to the left, and began to enter the adjacent median. As the SUV continued to enter
+  the median, the front right side of the SUV made contact with the rear left side of the stationary Waymo AV. At the time of the impact, the
+  Waymo AV’s Level 4 ADS was engaged in autonomous mode. Both vehicles sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_031526-1-pdf/"
+    title: "Waymo collision report 2026-03-15 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

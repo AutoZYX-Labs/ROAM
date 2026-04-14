@@ -1,0 +1,26 @@
+id: "ROAM-DMV-2025-098"
+tier: 2
+date: "2025-10-15"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "17th Street and Valencia Street"
+scenario:
+  primary: "C2"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1) operating in autonomous mode was eastbound on 17th Street, preparing to make an unprotected left turn onto
+  Valencia Street in San Francisco. As the Zoox vehicle slowed approaching the intersection at Valencia Street, a left-turning vehicle in the
+  oncoming lane accelerated abruptly. The Zoox vehicle braked in response to the oncoming vehicle, and was rear ended by a passenger car
+  (Vehicle 2) traveling directly behind. The Zoox vehicle operator then disengaged from autonomy, and shortly after, continued through the
+  intersection along 17th Street and pulled over to exchange information. The Zoox vehicle sustained minor damage to the rear end, and
+  Vehicle 2 appears to have sustained moderate damage to the left front area and hood. The Zoox vehicle operator and the software operator,
+  seated in the front passenger seat, reported injuries after the collision. The police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_101525-pdf/"
+    title: "Zoox collision report 2025-10-15 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

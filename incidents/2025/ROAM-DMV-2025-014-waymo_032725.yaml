@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2025-014"
+tier: 2
+date: "2025-03-27"
+time: "10:03"
+operator: "Waymo"
+location:
+  city: "Inglewood, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "La Cienega Boulevard at W 83rd Street"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On March 27, 2025 at 10:03 PM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in Inglewood, California was in a collision
+  involving a passenger car on La Cienega Boulevard at W 83rd Street.
+  
+  The Waymo AV was traveling southbound on La Cienega Boulevard and came to a stop in a queue of traffic for a red light at the
+  intersection at W Florence Avenue. As the light remained red and the Waymo AV remained stopped, a passenger car approached the
+  Waymo AV from behind and the front of the passenger car made contact with the rear of the stationary Waymo AV. At the time of the
+  impact, the Waymo AV’s Level 4 ADS was engaged in autonomous mode. The passenger car sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_032725-pdf/"
+    title: "Waymo collision report 2025-03-27 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

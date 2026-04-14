@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2021-018"
+tier: 2
+date: "2021-04-14"
+time: "09:38"
+operator: "Lyft"
+location:
+  city: "SAN FRANCISCO, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "HARRISON & 1 ST"
+scenario:
+  primary: "C3"
+severity: "S2"
+urgency: "U0"
+description: |
+  On April 14, 2021 at 9:38am, AV104 driving in autonomous mode in San Francisco, California, experienced longitudinal contact from a
+  Toyota sedan at the intersection of First and Harrison Streets. The AV was moving at 9mph in the right lane and slowing to begin to execute
+  a right turn, when the Toyota sedan “side-swiped” the left front lidar unit on the AV while overtaking at a greater speed from the left
+  adjacent lane. The AV vehicle sustained moderate property damage to the lidar unit, mount, and front fender/bumper. The driver of the
+  Toyota did not stop*. There are no known injuries, and Lyft does not know what (if any) damage was sustained by the Toyota.
+  
+  *Note: this lane merges onto a freeway ramp and may not have provided a place to safely pull over.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/lyft_041421-pdf/"
+    title: "Lyft collision report 2021-04-14 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

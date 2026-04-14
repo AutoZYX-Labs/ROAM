@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2026-032"
+tier: 2
+date: "2026-01-10"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Alameda Street near Bryant Street"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  An unoccupied Zoox autonomous vehicle (Vehicle 1) was traveling east on Alameda Street near Bryant Street in San Francisco. It began to
+  slow down for a stopped box truck (Vehicle 2) in the same lane, which had an open liftgate. As the Zoox vehicle was preparing to maneuver
+  around, Vehicle 2 began to reverse. The Zoox vehicle came to a stop; however, Vehicle 2 continued reversing. The Zoox vehicle honked, but
+   Vehicle 2's open liftgate made contact with the right front fender and front fascia of the Zoox vehicle. The Zoox vehicle was towed from the
+   scene and was found to have sustained minor damage. The police were notified, and no injuries were reported.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_01102026-pdf/"
+    title: "Zoox collision report 2026-01-10 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

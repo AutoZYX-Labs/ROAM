@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2024-019"
+tier: 2
+date: "2024-04-13"
+time: "03:35"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Bayshore Boulevard at Boutwell Street"
+scenario:
+  primary: "C3"
+severity: "S1"
+urgency: "U0"
+description: |
+  On April 13, 2024 at 3:35 PM PT a Waymo Autonomous Vehicle ("Waymo AV") operating in San Francisco, California was in a collision
+  involving a pickup truck on Bayshore Boulevard near Boutwell Street.
+  
+  The Waymo AV was traveling southbound on Bayshore Boulevard in the far right lane when it passed a pickup truck that was stopped in
+  the bike lane. As the Waymo passed the pickup truck, the driver of the pickup truck opened the driver’s side door and the door made contact
+  with the Waymo’s passenger side wing mirror and rear right sensor housing. At the time of the impact, the Waymo AV's Level 4 ADS was
+  engaged in autonomous mode, and a test driver was present (in the driver's seating position). The Waymo AV sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_04132024-pdf/"
+    title: "Waymo collision report 2024-04-13 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

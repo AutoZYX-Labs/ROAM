@@ -1,0 +1,25 @@
+id: "ROAM-DMV-2021-019"
+tier: 2
+date: "2021-10-28"
+operator: "Pony.ai"
+location:
+  city: "Fremont, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Southbound on Fremont Blvd past Cushing Pkwy"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  On October 28, 2021, after turning right onto Fremont Blvd from Cushing Pkwy, the Pony.ai Autonomous Vehicle ("Pony.ai AV")
+  performed a left lane change maneuver in autonomous mode. While performing the lane change, the Pony.ai AV came into contact with a
+  center divider on Fremont Blvd. and the traffic sign that was posted on the divider. The Pony.ai AV suffered moderate damage to the front
+  of the vehicle and the undercarriage. There were no injuries and no other vehicles involved. Fremont Police Department were called to
+  report the incident and the damaged street sign. Pony.ai has subsequently worked with local authorities to resolve all issues related to the
+  damaged sign.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/pony-ai_102821-pdf/"
+    title: "Pony.ai collision report 2021-10-28 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

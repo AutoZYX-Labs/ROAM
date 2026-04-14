@@ -1,0 +1,25 @@
+id: "ROAM-DMV-2021-029"
+tier: 2
+date: "2021-09-02"
+time: "01:56"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "8th Avenue at Lake Street"
+scenario:
+  primary: "C4"
+severity: "S1"
+urgency: "U0"
+description: |
+  On September 2, 2021 at 1:56 AM PDT, a Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco was in a collision
+  involving an unoccupied parked passenger vehicle at the north end of 8th Avenue (a dead-end road). While performing a multipoint turn in
+  autonomous mode, the Waymo AV was reversing at approximately 2 MPH when it made contact with the rear tail light of an unoccupied
+  parked passenger vehicle. The contact caused a small break in the tail light cover of the parked vehicle and minor damage to the rear
+  bumper of the Waymo AV.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_090221-pdf/"
+    title: "Waymo collision report 2021-09-02 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

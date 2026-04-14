@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2019-045"
+tier: 2
+date: "2019-05-02"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "24th St. and Potrero Ave"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV”), operating in autonomous mode, was stopped at a red light on eastbound 24th Street at the
+  intersection with Potrero Avenue when another vehicle approaching from the rear did not come to a complete stop and made contact with
+  the Cruise AV’s rear bumper. The driver of the other vehicle drove away without exchanging information. The Cruise AV tester sitting in
+  the driver’s seat requested medical treatment and emergency services arrived on the scene. SFPD incident report number was not available
+  at the time of filing of this report.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/gm-cruise-collision-report-may-2-2019-pdf/"
+    title: "Cruise (GM) collision report 2019-05-02 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

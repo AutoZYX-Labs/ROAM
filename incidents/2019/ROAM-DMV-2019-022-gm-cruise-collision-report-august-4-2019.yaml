@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2019-022"
+tier: 2
+date: "2019-08-04"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Leavenworth St. and Geary St."
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV”), operating in autonomous mode, was traveling northbound on Leavenworth Street between
+  Geary and Post Streets when another vehicle changed from the right adjacent lane to ahead of the Cruise AV without using its left signal.
+  The driver of the Cruise AV disengaged from autonomous mode and, shortly thereafter, a second vehicle made contact with the rear bumper
+  of the Cruise AV, damaging the Cruise AV’s rear bumper mounting bracket. Police were not called and no injuries were reported at the
+  scene by either party. The Cruise AV tester sitting in the driver’s seat later mentioned neck pain.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/gm-cruise-collision-report-august-4-2019-pdf/"
+    title: "Cruise (GM) collision report 2019-08-04 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

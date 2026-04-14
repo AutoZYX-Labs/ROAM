@@ -1,0 +1,26 @@
+id: "ROAM-DMV-2025-087"
+tier: 2
+date: "2025-05-10"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Alameda Street approaching Harrison Street"
+scenario:
+  primary: "C3"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1), operating in autonomous mode, was heading east on Alameda Street toward Harrison Street in San Francisco. It
+   then encountered a van hauling a trailer (Vehicle 2) traveling west, partially occupying both the westbound and eastbound lanes on Alameda
+   Street. The Zoox vehicle slowed for the oncoming Vehicle 2; then its operator disengaged from autonomy and manually brought the vehicle
+   to a complete stop. As Vehicle 2 passed, the driver's side of Vehicle 2 scraped the driver's side of the stopped Zoox vehicle. The driver of
+  Vehicle 2 failed to stop and exchange information. The Zoox vehicle sustained minor damage, and no injuries were reported. Camera
+  footage from the Zoox vehicle shows that the operator of Vehicle 2 steered toward it without appearing to attempt to avoid making contact.
+  The police were later notified about the incident.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_05102025_1-pdf/"
+    title: "Zoox collision report 2025-05-10 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

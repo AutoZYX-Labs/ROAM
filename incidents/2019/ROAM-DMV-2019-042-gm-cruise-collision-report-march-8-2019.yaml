@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2019-042"
+tier: 2
+date: "2019-03-08"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "16th St. and Guerrero St."
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV”), operating in autonomous mode, was making a right turn from 16th Street onto northbound
+  Guerrero Street when another vehicle, entering traffic from a curbside parked position on westbound 16th Street, made contact with the
+  right rear corner of the Cruise AV, damaging the Cruise AV’s rear right bumper, wheel well, and rear parking sensor. The driver of the
+  other vehicle drove away without exchanging information. There were no injuries and police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/gm-cruise-collision-report-march-8-2019-pdf/"
+    title: "Cruise (GM) collision report 2019-03-08 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2025-032"
+tier: 2
+date: "2025-07-31"
+time: "06:43"
+operator: "Waymo"
+location:
+  city: "Inglewood, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "E. Fairview Boulevard at N. La Brea Avenue"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On July 31, 2025 at 6:43 PM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in Inglewood, California was in a collision
+  involving a passenger car on E. Fairview Boulevard at N. La Brea Avenue.
+  
+  The Waymo AV was traveling westbound on E. Fairview Boulevard and came to a stop for a queue of traffic turning left at the intersection
+  with N. La Brea Avenue. A passenger car approached the Waymo AV from behind and the front of the passenger car made contact with the
+  rear of the Waymo AV. At the time of the impact, the Waymo AV’s Level 4 ADS was engaged in autonomous mode. Both vehicles
+  sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_073125_1-pdf/"
+    title: "Waymo collision report 2025-07-31 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

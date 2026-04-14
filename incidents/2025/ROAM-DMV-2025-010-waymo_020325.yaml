@@ -1,0 +1,28 @@
+id: "ROAM-DMV-2025-010"
+tier: 2
+date: "2025-02-03"
+time: "01:32"
+operator: "Waymo"
+location:
+  city: "Brisbane, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Bayshore Boulevard near Valley Drive"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On February 3, 2025 at 1:32 AM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in Brisbane, California was in a collision
+  involving a hand truck dolly on Bayshore Boulevard near Valley Drive.
+  
+  The Waymo AV was traveling southbound on Bayshore Boulevard in the leftmost lane of two southbound lanes when an oncoming vehicle
+  in the northbound lane struck a hand truck dolly, which was then projected from the northbound lane through the median lane and into the
+  southbound lane occupied by the Waymo AV. The front of the Waymo AV then made contact with the hand truck dolly, which became
+  lodged at the front of the Waymo AV. At the time of the impact, the Waymo AV’s Level 4 ADS was engaged in autonomous mode. The
+  Waymo AV and the hand truck dolly sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_020325-pdf/"
+    title: "Waymo collision report 2025-02-03 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,26 @@
+id: "ROAM-DMV-2023-046"
+tier: 2
+date: "2023-06-05"
+operator: "Pony.ai"
+location:
+  city: "Fremont, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Warren Ave & Kato Rd"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  On June 5, 2023, while in supervised (“Drivered”) autonomous mode, a Pony.ai AV was rear-ended twice by a passenger vehicle at the
+  intersection of Warren Ave and Kato Road in Fremont, CA. The Pony.ai AV was stopped at a red stop light when the passenger vehicle
+  directly behind the Pony.ai AV proceeded to rear-end the Pony.ai AV two times in quick succession. The Pony.ai safety operator
+  disengaged the Pony.ai AV from autonomous mode, and, concerned for his own safety, immediately drove the vehicle back to the Pony.ai
+  Fremont office (a distance of approximately 1 mile). The passenger vehicle which had rear-ended the Pony.ai AV followed the Pony.ai AV
+  back to Pony.ai’s Fremont office. After a brief interaction during which the driver of the passenger vehicle threatened Pony.ai employees,
+  the passenger vehicle and driver drove away. The Fremont police took a report about the incident. There were no injuries reported.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/pony-ai_060523-pdf/"
+    title: "Pony.ai collision report 2023-06-05 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

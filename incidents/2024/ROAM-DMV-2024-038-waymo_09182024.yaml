@@ -1,0 +1,29 @@
+id: "ROAM-DMV-2024-038"
+tier: 2
+date: "2024-09-18"
+time: "08:44"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Potrero Avenue at 16th Street"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On September 18, 2024 at 8:44 PM PT a Waymo Autonomous Vehicle ("Waymo AV") operating in San Francisco, California was in a
+  collision involving a van on Potrero Avenue at 16th Street.
+  
+  The Waymo AV was stopped in a queue of traffic in the leftmost of two through lanes on southbound Potrero Avenue at the intersection
+  with 16th Street when a van traveling behind the Waymo AV passed the Waymo AV on the left to enter the dedicated left turn lane. The
+  passenger side of the van made contact with the rear left sensor of the Waymo AV. Without stopping, the van then crossed the double
+  yellow line to the northbound side of Potrero Avenue, turned left onto eastbound 16th Street, and left the scene. At the time of the impact,
+  the Waymo AV's Level 4 ADS was engaged in autonomous mode, and a test driver was present (in the driver's seating position). The
+  Waymo AV sustained damage to the rear left sensor housing and assembly.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_09182024-pdf/"
+    title: "Waymo collision report 2024-09-18 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

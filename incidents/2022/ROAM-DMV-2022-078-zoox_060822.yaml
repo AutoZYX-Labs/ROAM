@@ -1,0 +1,22 @@
+id: "ROAM-DMV-2022-078"
+tier: 2
+date: "2022-06-08"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Harrison St. and 13th St."
+scenario:
+  primary: "C5"
+severity: "S1"
+urgency: "U0"
+description: |
+  Zoox received an allegation regarding contact between a bicyclist and a Zoox vehicle at the intersection of Harrison and 13th Street in San
+  Francisco. After a thorough search of available sensor data and other internal sources, Zoox was not able to identify any such incident, nor
+  any additional related information including whether a Zoox vehicle was involved or in autonomy.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_060822-pdf/"
+    title: "Zoox collision report 2022-06-08 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

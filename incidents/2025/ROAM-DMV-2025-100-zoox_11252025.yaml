@@ -1,0 +1,25 @@
+id: "ROAM-DMV-2025-100"
+tier: 2
+date: "2025-11-25"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Alameda Street"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  An unoccupied Zoox autonomous vehicle (Vehicle 1) was traveling east on Alameda Street when it encountered a double-parked vehicle and
+   a pedestrian ahead in its lane, as well as two vehicles approaching in the oncoming lane. As the Zoox vehicle gradually slowed to a stop, a
+  U-Haul box truck (Vehicle 2) traveling west on Alameda Street began turning left into a U-Haul facility and grazed the left-rear fender of the
+   stopped Zoox vehicle. The operator of Vehicle 2 did not stop or return to the Zoox vehicle to exchange information. The Zoox vehicle
+  returned to base and was found to have sustained minor damage to the left rear fender. The police were notified, and no injuries were
+  reported.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_11252025-pdf/"
+    title: "Zoox collision report 2025-11-25 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

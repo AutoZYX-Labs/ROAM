@@ -1,0 +1,25 @@
+id: "ROAM-DMV-2019-021"
+tier: 2
+date: "2019-08-26"
+operator: "Cruise (GM)"
+location:
+  city: "California, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Division Street between Potrero
+Avenue and Bryant Street"
+scenario:
+  primary: "E3"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV”), operating in autonomous mode, was traveling westbound on Division Street between Potrero
+  Avenue and Bryant Street when the Cruise AV slowed down in the right turn lane. The driver of the Cruise AV disengaged from
+  autonomous mode, and shortly thereafter, an electric scooterist traveling in the same lane made contact with the rear bumper and fascia of
+  the Cruise AV. The scooterist reported injuries and emergency services and the police arrived at the scene. SFPD incident report number
+  190633860 was not available at the time of filing of this report.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/gm-cruise-collision-report-august-26-2019-pdf/"
+    title: "Cruise (GM) collision report 2019-08-26 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

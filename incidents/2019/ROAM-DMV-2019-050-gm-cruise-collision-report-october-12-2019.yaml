@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2019-050"
+tier: 2
+date: "2019-10-12"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Spear St. between Howard St. and Folsom St."
+scenario:
+  primary: "E2"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV”), operating in autonomous mode, was traveling southeast bound on Spear Street between
+  Howard and Folsom Streets when the Cruise AV slowed down to change into the right adjacent lane due to traffic cones ahead. The driver
+  of the Cruise AV disengaged from autonomous mode and, shortly thereafter, a lane-splitting car made contact with the right rear corner of
+  the Cruise AV, damaging the Cruise AV’s right lower tail lamp. The driver of the other vehicle drove away without exchanging
+  information. There were no injuries reported. Police were called but were not dispatched to the scene.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/gm-cruise-collision-report-october-12-2019-pdf/"
+    title: "Cruise (GM) collision report 2019-10-12 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

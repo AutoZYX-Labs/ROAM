@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2019-053"
+tier: 2
+date: "2019-09-09"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Geary Blvd and Palm Ave."
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV), operating in autonomous mode, was yielding to oncoming traffic prior to making a left turn
+  onto northbound Palm Avenue from eastbound Geary Boulevard when another vehicle made contact with the rear bumper of the Cruise AV.
+  There were no injuries reported at the scene by either party and police were not called. The Cruise AV tester sitting in the front passenger
+  seat later mentioned neck pain.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/gm-cruise-collision-report-september-9-2019-pdf/"
+    title: "Cruise (GM) collision report 2019-09-09 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

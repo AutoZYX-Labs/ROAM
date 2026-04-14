@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2019-003"
+tier: 2
+date: "2019-10-11"
+operator: "Unknown"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Union St. and Grant St."
+scenario:
+  primary: "C5"
+severity: "S2"
+urgency: "U0"
+description: |
+  The stationary Zoox vehicle was in autonomous mode heading northbound on Union St. Contact occurred when the Zoox vehicle was
+  stopped at a stop sign at the intersection of Union St. and Grant St., when it was rear-ended by an electric scooter. The scooter was
+  following closely behind the Zoox vehicle and the scooter driver was not focused on the Zoox vehicle in front of it, when the scooter's front
+  tire made contact with the rear bumper of the Zoox vehicle. There were no injuries.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/collision-report-zoox-october-11-2019-pdf/"
+    title: "Unknown collision report 2019-10-11 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

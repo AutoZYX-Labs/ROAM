@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2025-091"
+tier: 2
+date: "2025-05-29"
+operator: "Zoox"
+location:
+  city: "California, USA"
+  country: "USA"
+  road_type: "urban_street"
+scenario:
+  primary: "C4"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1) was operating in autonomous mode, traveling east in the right lane of 15th Street between Mission and Wiese
+  Streets in San Francisco. As it approached a double-parked passenger car (Vehicle 2) in the lane, the operator of the Zoox vehicle
+  disengaged from autonomous driving. The operator then moved into the left lane and maneuvered around Vehicle 2. The driver of Vehicle 2
+  started moving just as the Zoox vehicle was re-entering the right lane, and shortly after, the right front area of the Zoox vehicle made contact
+   with the left front area of Vehicle 2. The Zoox vehicle did not sustain any damage, but Vehicle 2 sustained moderate damage to its left front
+  door. There were no reported injuries, and the police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_05292025-pdf/"
+    title: "Zoox collision report 2025-05-29 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

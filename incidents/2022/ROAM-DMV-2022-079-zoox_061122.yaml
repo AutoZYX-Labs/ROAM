@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2022-079"
+tier: 2
+date: "2022-06-11"
+operator: "Zoox"
+location:
+  city: "San Mateo, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Halsey Ave."
+scenario:
+  primary: "C3"
+severity: "S1"
+urgency: "U0"
+description: |
+  A Zoox vehicle was in autonomy exiting a parking space on Halsey Ave. between S. Norfolk St. and Eisenhower St. in San Mateo, CA,
+  with a second vehicle stopped in the lane with its right turn indicator on, when a third vehicle overtook the second vehicle and cut in
+  abruptly from the left, making contact with the front left side and sensors of the Zoox vehicle as it was exiting the space. The Zoox operator
+  disengaged to manual mode just before the contact.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_061122-pdf/"
+    title: "Zoox collision report 2022-06-11 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2019-051"
+tier: 2
+date: "2019-10-03"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "10th St. and Bryant St."
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV”), operating in autonomous mode, was traveling northeast bound on Bryant Street between 11th
+  and 10th Streets when the Cruise AV yielded to a parallel parking vehicle ahead on the right. Shortly thereafter, a lane-splitting electric
+  scooterist attempting to change lanes made contact with the left rear corner of the Cruise AV. There were no injuries reported at the scene
+  by either party and police were not called. The electric scooterist later reported injuries.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/gm-cruise-collision-report-october-3-2019-pdf/"
+    title: "Cruise (GM) collision report 2019-10-03 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

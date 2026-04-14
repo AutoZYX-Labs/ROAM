@@ -1,0 +1,26 @@
+id: "ROAM-DMV-2025-079"
+tier: 2
+date: "2025-01-17"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Bryant Street and 16th Street"
+scenario:
+  primary: "C2"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1), operating in autonomous mode, was stopped for a red traffic light on northbound Bryant Street at the
+  intersection with 16th Street in San Francisco. A passenger car (Vehicle 2) was also stopped for the same traffic light directly behind the
+  Zoox vehicle. After a few seconds, the passenger car started to inch forward and rear-ended the stopped Zoox vehicle, and the Zoox vehicle
+  operator then disengaged from autonomy. The Zoox vehicle sustained minor damage to the rear bumper. There were no reported injuries at
+  that time and the police were not called. The Zoox vehicle camera footage shows that the passenger car driver was not looking ahead at the
+  roadway before or at the time of contact. Zoox is submitting this updated report to include new information on notice of an unspecified
+  injury allegation received on February 4, 2025, from the Zoox vehicle operator.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_011725-pdf/"
+    title: "Zoox collision report 2025-01-17 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

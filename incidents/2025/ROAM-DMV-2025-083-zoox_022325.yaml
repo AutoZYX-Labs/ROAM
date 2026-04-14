@@ -1,0 +1,25 @@
+id: "ROAM-DMV-2025-083"
+tier: 2
+date: "2025-02-23"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "16th Street at Potrero Avenue"
+scenario:
+  primary: "C2"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1) in autonomous mode was stopped for a red traffic light on westbound 16th Street at the intersection with Potrero
+  Avenue in San Francisco. An SUV (Vehicle 2) traveling directly behind the Zoox vehicle failed to come to a stop and rear-ended the stopped
+   Zoox vehicle. The SUV driver reversed, then left the scene without attempting to exchange information. After the collision, the Zoox
+  vehicle remained stopped, then later cleared the intersection. The Zoox vehicle sustained minor damage to the license plate bracket. There
+  were no reported injuries and the police were not called. The Zoox vehicle camera footage shows the SUV driver was not looking ahead at
+  the roadway before or at the time of contact.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_022325-pdf/"
+    title: "Zoox collision report 2025-02-23 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

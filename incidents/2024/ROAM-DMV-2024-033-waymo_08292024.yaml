@@ -1,0 +1,26 @@
+id: "ROAM-DMV-2024-033"
+tier: 2
+date: "2024-08-29"
+time: "11:38"
+operator: "Waymo"
+location:
+  city: "Los Angeles, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "12941 W. Runway Road"
+scenario:
+  primary: "C3"
+severity: "S1"
+urgency: "U0"
+description: |
+  On August 29, 2024 at 11:38 AM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in Los Angeles, California was in a
+  collision involving a fixed object (exterior wall next to a garage).
+  
+  The Waymo AV was making a left turn around a cul-de-sac-style driveway at a low rate of speed when the front passenger side corner of
+  the Waymo AV made contact with the corner of a garage stucco wall. At the time of the impact, the Waymo AV’s Level 4 ADS was
+  engaged in autonomous mode. The Waymo AV and the wall sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_08292024-pdf/"
+    title: "Waymo collision report 2024-08-29 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

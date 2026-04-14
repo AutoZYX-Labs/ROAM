@@ -1,0 +1,25 @@
+id: "ROAM-DMV-2025-094"
+tier: 2
+date: "2025-08-07"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Bryant Street toward 19th Street"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  An unoccupied Zoox vehicle in autonomy was traveling north on Bryant Street toward 19th Street in San Francisco and slowing for an SUV
+  (Vehicle 2) ahead, also heading north on Bryant Street. As the Zoox vehicle approached the nearly stopped Vehicle 2, it steered left to pass.
+  The driver of Vehicle 2 then, without using a turn signal, abruptly began reversing in an apparent attempt to parallel park on the right side of
+  Bryant Street. The Zoox vehicle then braked to a near stop when it was struck on the right rear wheel by Vehicle 2 as it swung into a parking
+   space. Shortly afterward, the Zoox vehicle was towed from the scene for inspection. The Zoox vehicle did not sustain damage, but the left
+  front bumper of the SUV appeared to have minor damage. There were no reported injuries, and the police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_080725-pdf/"
+    title: "Zoox collision report 2025-08-07 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

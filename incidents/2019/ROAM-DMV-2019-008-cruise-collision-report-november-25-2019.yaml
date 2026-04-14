@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2019-008"
+tier: 2
+date: "2019-11-25"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "California St. and Hyde St."
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV”), operating in autonomous mode, was making a right turn from eastbound California Street
+  onto southbound Hyde Street when another vehicle made contact with the Cruise AV’s rear bumper, damaging the rear fascia and the rear
+  center radars. There were no injuries reported at the scene by either party and police were not called. Days after the collision, the Cruise AV
+  test operator sitting in the driver's seat reported injuries. [originally filed 12/4/2019, amended 12/16/2019]
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/cruise-collision-report-november-25-2019-pdf/"
+    title: "Cruise (GM) collision report 2019-11-25 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2025-052"
+tier: 2
+date: "2025-10-09"
+time: "02:25"
+operator: "Waymo"
+location:
+  city: "Los Angeles, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Clinton Street near N. Kenmore Avenue"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On October 9, 2025 at 2:25 AM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in Los Angeles, California was in a collision
+  involving an SUV on Clinton Street near N. Kenmore Avenue.
+  
+  The Waymo AV was traveling eastbound on a narrow portion of Clinton Street with vehicles parked on both sides when it came to a stop to
+  yield to an SUV traveling westbound on Clinton Street. As the SUV passed the stationary Waymo AV, the left side of the SUV made
+  contact with the rear left side of the Waymo AV. At the time of the impact, the Waymo AV’s Level 4 ADS was engaged in autonomous
+  mode. The SUV sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_100925_redacted_2-pdf/"
+    title: "Waymo collision report 2025-10-09 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

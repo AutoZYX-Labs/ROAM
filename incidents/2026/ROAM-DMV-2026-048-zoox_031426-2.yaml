@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2026-048"
+tier: 2
+date: "2026-03-14"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Howard Street, past 7th Street"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  An occupied Zoox vehicle, after turning right onto Howard Street from 7th Street in San Francisco, pulled over to the right to drop off a
+  passenger. Shortly after the passenger exited and while the now-unoccupied Zoox vehicle was attempting to re-enter the travel lane in heavy
+  traffic, a van (Vehicle 2) lightly swiped the left rear fender while attempting to pass the Zoox vehicle on the left. Vehicle 2's operator did not
+   stop to exchange information. The Zoox vehicle was found to have sustained minor damage. No injuries were reported, and police were not
+  notified.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_031426-2-pdf/"
+    title: "Zoox collision report 2026-03-14 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

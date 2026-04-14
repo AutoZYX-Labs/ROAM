@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2025-047"
+tier: 2
+date: "2025-09-25"
+time: "10:42"
+operator: "Waymo"
+location:
+  city: "Los Angeles, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "W. 3rd Street at Witmer Street"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On September 25, 2025 at 10:42 PM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in Los Angeles, California was in a
+  collision involving an SUV on W. 3rd Street at Witmer Street.
+  
+  The Waymo AV was stopped facing southeast in the second to the right lane on W. 3rd Street in a queue of traffic for a red light at the
+  intersection with Witmer Street. The traffic light turned green and the Waymo AV began to proceed with traffic. An SUV that was initially
+  stopped behind the Waymo AV proceeded forward and the front of the SUV made contact with the rear of the Waymo AV. At the time of
+  the impact, the Waymo AV’s Level 4 ADS was engaged in autonomous mode. The SUV sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_09252025-pdf/"
+    title: "Waymo collision report 2025-09-25 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

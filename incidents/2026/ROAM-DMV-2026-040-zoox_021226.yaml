@@ -1,0 +1,25 @@
+id: "ROAM-DMV-2026-040"
+tier: 2
+date: "2026-02-12"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Division Street and Bryant Street"
+scenario:
+  primary: "C3"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1) operating in autonomous mode was slowing to a stop behind an already-stopped motorcycle waiting for a red
+  signal in the right lane of westbound Division Street at Bryant Street in San Francisco, when a passenger vehicle (Vehicle 2) rapidly
+  approached from the rear, overtook the slowing Zoox vehicle on the left, and swiped the left front sensor unit on the Zoox vehicle. The Zoox
+   vehicle operator then disengaged from autonomy. Vehicle 2 driver then accelerated and struck the left side of the stopped motorcycle as
+  they proceeded through the intersection, violating the red signal. The police arrived at the scene shortly after Vehicle 2 had left the scene.
+  The Zoox vehicle was found to have sustained minor damage, and there were no reported injuries.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_021226-pdf/"
+    title: "Zoox collision report 2026-02-12 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,26 @@
+id: "ROAM-DMV-2022-067"
+tier: 2
+date: "2022-12-17"
+time: "01:50"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Embarcadero at Howard Street"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On December 17, 2022 at 1:50 PM PST, a Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco, CA was in a collision
+  involving a passenger car on Embarcadero near the intersection with Folsom Street.
+  
+  The Waymo AV was traveling southbound on Embarcadero in autonomous mode when it slowed and stopped for a parallel parking vehicle
+  ahead. A passenger car following the Waymo AV made contact with the rear of the Waymo AV. At the time of impact, the Waymo AV's
+  Level 4 ADS was engaged in autonomous mode with a test driver present (in the driver's seating position). Both vehicles sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_121722-pdf/"
+    title: "Waymo collision report 2022-12-17 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

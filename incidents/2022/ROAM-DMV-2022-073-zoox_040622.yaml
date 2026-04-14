@@ -1,0 +1,22 @@
+id: "ROAM-DMV-2022-073"
+tier: 2
+date: "2022-04-06"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "9th and Bryant Street"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle in autonomous mode was making a right turn from Bryant Street onto 9th Street when a vehicle overtaking from the rear
+  switched lanes as it drove in front of the Zoox vehicle and made contact with the front Zoox sensors. The other party left the scene. The
+  police were not called and there were no injuries.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_040622-pdf/"
+    title: "Zoox collision report 2022-04-06 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

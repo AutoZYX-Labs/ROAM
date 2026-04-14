@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2025-086"
+tier: 2
+date: "2025-05-08"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "On Bryant St at Division St"
+scenario:
+  primary: "C5"
+severity: "S1"
+urgency: "U0"
+description: |
+  An unoccupied Zoox vehicle in autonomous mode was traveling south on Bryant Street, slowing and preparing to make a right turn onto
+  Division Street in San Francisco. At that time, an approaching e-scooterist was also traveling south on Bryant Street in the curb lane offset
+  from the Zoox vehicle. The Zoox vehicle braked to a stop as the e-scooterist was beginning to enter the intersection. The e-scooterist then
+  made contact with the right rear side of the stopped Zoox vehicle, and the e-scooterist fell to the ground next to the Zoox vehicle. The Zoox
+  vehicle then started to move and completed the right turn onto Treat Avenue, coming to a stop a short distance down Treat Avenue. The
+  e-scooterist then walked themself and the e-scooter over to the sidewalk, where they were met by a member of the Zoox operations team,
+  and they reported “[a] chipped tooth and jaw pain.” The e-scooterist declined medical attention and rode their e-scooter from the scene after
+  exchanging information. There was no damage to the Zoox vehicle and the police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_05082025-pdf/"
+    title: "Zoox collision report 2025-05-08 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

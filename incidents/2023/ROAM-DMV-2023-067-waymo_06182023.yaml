@@ -1,0 +1,28 @@
+id: "ROAM-DMV-2023-067"
+tier: 2
+date: "2023-06-18"
+time: "05:06"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Market Street at Diamond Street"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On June 18, 2023 at 5:06 PM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco, California was in a collision
+  involving a passenger vehicle on Market Street and Diamond Street.
+  
+  The Waymo AV was stopped for a red light on Market Street at Diamond Street with its turn signal activated to indicate intent to turn left
+  onto Diamond Street. The traffic light turned green, and the Waymo AV slowly moved forward, yielding to oncoming traffic, when the
+  vehicle that had been previously stopped behind the Waymo AV proceeded forward, making contact with the rear bumper of the Waymo
+  AV. The other party immediately left the scene of the event. At the time of the impact, the Waymo AV’s Level 4 ADS was engaged in
+  autonomous mode. Both vehicles sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_06182023-pdf/"
+    title: "Waymo collision report 2023-06-18 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

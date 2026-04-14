@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2025-080"
+tier: 2
+date: "2025-01-23"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "11th Street towards Folsom Street"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1) operating in autonomous mode, was traveling northeast on 11th Street approaching Folsom Street in San
+  Francisco. A passenger car (Vehicle 2) was parallel parked on the right side of the roadway in the same direction as the Zoox vehicle. The
+  passenger car pulled out of the parking spot and made a U-turn into the opposite travel lane, and unexpectedly crossed the double-yellow
+  centerline and veered into the Zoox vehicle's travel lane. The Zoox vehicle braked in response to the encroaching passenger car however the
+  passenger car made contact with the Zoox vehicle's driver's side fender and front and rear doors. The Zoox vehicle operator disengaged from
+   autonomy and braked to a stop shortly after. The Zoox vehicle sustained major damage and had to be towed from the scene. The frontal
+  airbags deployed on the passenger car and it sustained moderate damage to the front driver's side. The passenger car driver fled the scene
+  and did not exchange information. The police were called to the scene and there were no reported injuries.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_012325-pdf/"
+    title: "Zoox collision report 2025-01-23 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

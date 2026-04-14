@@ -1,0 +1,20 @@
+id: "ROAM-DMV-2024-027"
+tier: 2
+date: "2024-07-06"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Mission Street between 7th and 8th Street"
+scenario:
+  primary: "E1"
+severity: "S0"
+urgency: "U0"
+description: |
+  (See Attached Narrative Document)
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_070624_a-pdf/"
+    title: "Waymo collision report 2024-07-06 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

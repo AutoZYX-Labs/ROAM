@@ -1,0 +1,28 @@
+id: "ROAM-DMV-2019-063"
+tier: 2
+date: "2019-02-06"
+operator: "Waymo"
+location:
+  city: "Mountain View, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Central Expressway and Shoreline Boulevard"
+scenario:
+  primary: "C2"
+severity: "S2"
+urgency: "U0"
+description: |
+  Per the DMV's request of 02/21/2019, Waymo is resubmitting this OL316 so the DMV's digital version is compliant with accessibility
+  requirements under AB 434. Waymo's original report was submitted on 02/14/2019.
+  
+  A Waymo Autonomous Vehicle (“Waymo AV”) was stopped in autonomous mode in the slip-lane from northbound Shoreline Boulevard to
+  northbound Central Expressway in Mountain View when it was rear-ended. The Waymo AV was yielding to approaching traffic from the
+  left when a passenger vehicle rear-ended the Waymo AV while travelling approximately 4 MPH. The Waymo AV sustained minor damage
+  to the rear bumper, and the passenger vehicle had minor damage to its front bumper. No injuries were reported at the scene but the two
+  operators in the Waymo AV later reported minor headache and neck soreness. They sought medical attention and both were cleared to
+  return to work.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo-collision-report-february-6-2019-pdf/"
+    title: "Waymo collision report 2019-02-06 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

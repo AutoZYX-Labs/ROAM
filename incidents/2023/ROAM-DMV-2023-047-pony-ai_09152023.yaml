@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2023-047"
+tier: 2
+date: "2023-09-15"
+operator: "Pony.ai"
+location:
+  city: "Milpitas, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Interstate 880; near exit 10"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  On September 15, 2023, a Pony.ai autonomous vehicle (AV) collided with road debris while operating in supervised autonomous
+  ("Drivered") mode northbound on the 880 freeway, preparing to enter the Dixon Landing exit.
+  
+  Immediately prior to the incident, the safety driver noticed a flat item was in the center part of the lane. The driver disengaged from
+  autonomous mode and attempted to dodge the debris. However, the debris struck the rear bumper slightly damaging it.
+  
+  Following the collision, the safety operator promptly drove the AV to Pony.ai's Fremont office. There were no injuries reported, and the
+  police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/pony-ai_09152023-pdf/"
+    title: "Pony.ai collision report 2023-09-15 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

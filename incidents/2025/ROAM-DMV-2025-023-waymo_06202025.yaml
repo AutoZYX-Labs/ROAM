@@ -1,0 +1,26 @@
+id: "ROAM-DMV-2025-023"
+tier: 2
+date: "2025-06-20"
+time: "06:34"
+operator: "Waymo"
+location:
+  city: "San Bruno, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Cypress Avenue near Clark Avenue"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On June 20, 2025 at 6:34 PM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in San Bruno, California was in a collision
+  involving a fallen utility line on Cypress Avenue near Clark Avenue.
+  
+  The Waymo AV was traveling northbound on Cypress Avenue when the front of the Waymo AV made contact with a fallen utility line
+  hanging across the roadway. At the time of the impact, the Waymo AV’s Level 4 ADS was engaged in autonomous mode. The Waymo AV
+  sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_06202025-pdf/"
+    title: "Waymo collision report 2025-06-20 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

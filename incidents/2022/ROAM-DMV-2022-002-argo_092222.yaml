@@ -1,0 +1,26 @@
+id: "ROAM-DMV-2022-002"
+tier: 2
+date: "2022-09-22"
+operator: "Unknown"
+location:
+  city: "Palo Alto, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "SE Park Avenue"
+scenario:
+  primary: "C5"
+severity: "S1"
+urgency: "U0"
+description: |
+  An Argo AI Autonomous Vehicle ("Argo AV") was impacted by a cyclist while traveling east on Park Ave and approaching Cambridge
+  Ave. The Argo AV was traveling in its lane adjacent to a cyclist who was traveling in a marked bike lane. As the Argo AV was passing the
+  cyclist (while maintaining more than 2 meters of lateral margin), the cyclist veered left into the Argo AV's lane. In response, the Argo
+  AV steered away from the cyclist, but the cyclist continued into the lane and the bicycle's left handlebar made contact with the Argo
+  AV's passenger side door handle. The Test Specialist brought the AV to a stop. The cyclist maintained balance, continued to cross
+  the lanes behind the stopped Argo AV, and left the scene after a brief conversation with the left seat Test Specialist, during which the
+  cyclist indicated that he was fine and apologized. The Argo AV sustained minor damage to its passenger side door handle.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/argo_092222-pdf/"
+    title: "Unknown collision report 2022-09-22 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

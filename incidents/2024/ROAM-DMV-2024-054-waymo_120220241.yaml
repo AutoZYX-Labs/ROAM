@@ -1,0 +1,29 @@
+id: "ROAM-DMV-2024-054"
+tier: 2
+date: "2024-12-02"
+time: "10:54"
+operator: "Waymo"
+location:
+  city: "Los Angeles, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "East 3rd Street at South Central Avenue"
+scenario:
+  primary: "C5"
+severity: "S1"
+urgency: "U0"
+description: |
+  On December 2, 2024 at 10:54 AM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in Los Angeles, California was in a
+  collision involving a plastic crate on East 3rd Street at South Central Avenue.
+  
+  The Waymo AV was traveling westbound in the center lane on East 3rd Street, crossing the intersection with South Central Avenue when
+  the front passenger side of the Waymo AV made contact with a plastic crate that was in the roadway within the Waymo AV’s lane of travel.
+  The contact with the Waymo AV caused the crate to move into the adjacent right lane, which was occupied by a scooterist. The front tire of
+  the scooter made contact with the crate and the scooter and scooterist fell. At the time of the impact, the Waymo AV’s Level 4 ADS was
+  engaged in autonomous mode. Given the speed at which the scooter was traveling at the time of the contact, the scooter may have sustained
+  damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_120220241-pdf/"
+    title: "Waymo collision report 2024-12-02 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

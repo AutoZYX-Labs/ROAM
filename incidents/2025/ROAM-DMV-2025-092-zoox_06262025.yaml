@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2025-092"
+tier: 2
+date: "2025-06-26"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Harrison Street near 12th Street"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  An unoccupied Zoox vehicle (Vehicle 1) in autonomous mode was traveling northeast in the right lane on Harrison Street near 12th Street in
+   San Francisco. At that time, it encountered a passenger car (Vehicle 2), facing the same direction of travel and reversing to parallel park
+  adjacent to the curb along northeast-bound Harrison Street. The Zoox vehicle gradually slowed to a stop while the Vehicle 2 driver
+  continued reversing, making contact with the right front fender of the Zoox vehicle. The Vehicle 2 driver then left the scene without
+  stopping to exchange information. The Zoox vehicle sustained minor damage. The police were notified.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_06262025-pdf/"
+    title: "Zoox collision report 2025-06-26 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

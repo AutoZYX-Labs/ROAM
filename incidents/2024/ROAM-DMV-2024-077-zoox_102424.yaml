@@ -1,0 +1,28 @@
+id: "ROAM-DMV-2024-077"
+tier: 2
+date: "2024-10-24"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Howard Street and 12th Street"
+scenario:
+  primary: "C5"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle in autonomous mode was stopped for a red traffic light on northbound Howard Street while preparing to turn left onto
+  westbound 12th Street in San Francisco. After the light turned green the Zoox vehicle began to move forward and then slowed gradually to
+  yield to a pedestrian with right of way in the crosswalk on 12th Street. Just as the Zoox vehicle slowed to almost a stop (0.2 mph), a
+  skateboarder quickly approached the rear of the Zoox vehicle extending their left arm forward and making contact with the right rear corner
+  of the Zoox vehicle. The Zoox vehicle operator then disengaged from autonomy and brought the vehicle to a stop. The skateboarder initially
+  told the Zoox vehicle operator they were not injured but later mentioned they “smacked” their hand and it was “bruised.” When asked,
+  however, they declined medical attention. The Zoox vehicle did not sustain damage. The police were not called. The Zoox vehicle camera
+  footage shows that the skateboarder was looking at their cell phone and did not appear to have been looking ahead at the roadway before the
+   time of contact.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_102424-pdf/"
+    title: "Zoox collision report 2024-10-24 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

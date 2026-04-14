@@ -1,0 +1,29 @@
+id: "ROAM-DMV-2022-064"
+tier: 2
+date: "2022-11-08"
+time: "09:34"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "2nd Street at Minna Street"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On November 8, 2022 at 9:34 AM PST a Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco, California was in a
+  collision involving a passenger car on 2nd Street at Minna Street.
+  
+  The Waymo AV was stopped in traffic on northbound 2nd Street in autonomous mode. A passenger car that had been stopped behind the
+  Waymo AV passed on the left side, crossing the double yellow line and making contact with the Waymo AV’s rear left sensor housing. The
+  passenger car immediately left the scene.
+  
+  At the time of the impact, the Waymo AV’s Level 4 ADS was engaged in autonomous mode, and a test driver was present (in the driver’s
+  seating position). The Waymo AV sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_110822-pdf/"
+    title: "Waymo collision report 2022-11-08 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

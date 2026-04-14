@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2019-016"
+tier: 2
+date: "2019-10-29"
+operator: "Cruise (GM)"
+location:
+  city: "California, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Beach Street"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV”), operating in autonomous mode, was traveling eastbound in a channelized lane on Beach Street
+  near the intersection with The Embarcadero when it stopped at the traffic light and another vehicle behind the Cruise AV made contact with
+  its rear bumper. There were no injuries reported at the scene by either party and police were not called. The Cruise AV test operators sitting
+  in the driver’s seat and in the backseat later mentioned back pain.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/cruise-collision-report-october-29-2019-pdf/"
+    title: "Cruise (GM) collision report 2019-10-29 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2024-004"
+tier: 2
+date: "2024-01-31"
+operator: "Nuro"
+location:
+  city: "Palo Alto, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Intersection of Boyce Ave and Fife Ave"
+scenario:
+  primary: "C2"
+severity: "S2"
+urgency: "U0"
+description: |
+  On Wednesday, January 31st at approximately 4:20pm, a Nuro Prius was operating in autonomous mode driving south on Boyce Ave in
+  Palo Alto. As the Prius proceeded straight through the intersection of Boyce Ave. and Fife Ave. a Honda CR-V ran the Fife Ave. stop sign
+  and initiated a left turn. The Honda CR-V rear-ended the Nuro Prius, though the Nuro driver took control of the Prius and nudged right in an
+  attempt to avoid impact. Both vehicles sustained de minimis damage. Law enforcement was not involved and there were no injuries
+  reported or VRUs present.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/nuro_013124-pdf/"
+    title: "Nuro collision report 2024-01-31 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

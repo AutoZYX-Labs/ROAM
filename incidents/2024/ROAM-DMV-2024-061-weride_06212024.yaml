@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2024-061"
+tier: 2
+date: "2024-06-21"
+time: "03:51"
+operator: "WeRide"
+location:
+  city: "Santa Clara, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "2656-2600 Northwestern Pkwy"
+scenario:
+  primary: "E3"
+severity: "S2"
+urgency: "U0"
+description: |
+  At 3:51pm, a WeRide vehicle (Car1) was attempting to make a u-turn at 6 mph on Northwestern parkway. During the u-turn maneuver, a
+  white chevy cruze (Car 2) traveling at 23 mph, having just made a right turn off of Walsh Ave., approached from behind on northwestern
+  parkway. Car 2 steered left just before the impact but still clipped the front left side bumper of Car 1 with its (car2's) right side. The damage
+  sustained to Car 1 was on the front bumper, left side, and the damage sustained to Car 2 was on the right passenger's door. Both parties
+  pulled over to exchange information. The other party vehicle owner (of car2), Sagardeep Singh. was not driving the vehicle but was seated
+  in the front passenger seat and Gurdeep Singh was driving the vehicle at the time of accident.
+  There were no injuries reported and no emergency responders were called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/weride_06212024-pdf/"
+    title: "WeRide collision report 2024-06-21 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

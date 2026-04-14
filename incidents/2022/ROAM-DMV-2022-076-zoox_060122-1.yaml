@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2022-076"
+tier: 2
+date: "2022-06-01"
+operator: "Zoox"
+location:
+  city: "California, USA"
+  country: "USA"
+  road_type: "urban_street"
+scenario:
+  primary: "C5"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle in autonomous mode was proceeding westbound with the right of way on a green traffic light at the six way intersection of
+  Pacific Ave., Keary St., and Columbus Ave., when a person operating an electric scooter ran a red light and proceeded northbound into the
+  intersection. The scooter made contact with the left rear quarter panel of the Zoox vehicle, at which time the Zoox vehicle had disengaged
+  from autonomous mode. The Zoox vehicle pulled over, and police and emergency services arrived at the scene. Zoox is submitting this
+  updated report to correct a previous reporting error in the injury field and to update for additional information received in August 2022. This
+  update provides complete information for this incident.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_060122-1-pdf/"
+    title: "Zoox collision report 2022-06-01 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

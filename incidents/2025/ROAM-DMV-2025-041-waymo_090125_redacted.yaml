@@ -1,0 +1,30 @@
+id: "ROAM-DMV-2025-041"
+tier: 2
+date: "2025-09-01"
+time: "08:22"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Mission Street near Angelo’s Alley"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On September 1, 2025 at 8:22 PM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco, California was in a
+  collision involving a motor home on Mission Street near Angelo’s Alley.
+  
+  The Waymo AV was stopped facing northeast within the left lane on Mission Street with its left turn signal activated. The Waymo AV was
+  preparing to turn left into a parking garage located at 1160 Mission Street, but remained stopped to yield to other vehicles traveling
+  southwestbound on Mission Street to enter the parking garage. While the Waymo AV was stopped, a motor home traveling northeastbound
+  in the left lane on Mission Street approached the Waymo AV from behind, briefly yielded to a passenger car passing in the adjacent bus
+  lane, then began to change lanes to the adjacent bus lane. While attempting to pass the Waymo AV, the left side of the motor home made
+  contact with the rear right side of the Waymo AV. At the time of the impact, the Waymo AV's Level 4 ADS was engaged in autonomous
+  mode. Waymo became aware of damage to the Waymo AV on September 17th, 2025.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_090125_redacted-pdf/"
+    title: "Waymo collision report 2025-09-01 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

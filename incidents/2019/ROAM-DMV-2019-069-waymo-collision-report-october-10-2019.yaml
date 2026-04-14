@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2019-069"
+tier: 2
+date: "2019-10-10"
+operator: "Waymo"
+location:
+  city: "Mountain View, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Rengstorff Avenue at Central Expressway"
+scenario:
+  primary: "C2"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Waymo Autonomous Vehicle (“Waymo AV”) was stopped in autonomous mode in traffic at a red light on southbound Rengstorff
+  Avenue at Central Expressway in Mountain View when it was rear-ended by a passenger vehicle. The passenger vehicle made contact with
+  the Waymo AV’s rear bumper at approximately 1 MPH. The Waymo AV sustained minor damage to its rear bumper, and the passenger
+  vehicle sustained minor damage to its front bumper. No injuries were reported.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo-collision-report-october-10-2019-pdf/"
+    title: "Waymo collision report 2019-10-10 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

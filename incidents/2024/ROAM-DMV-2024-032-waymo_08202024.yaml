@@ -1,0 +1,28 @@
+id: "ROAM-DMV-2024-032"
+tier: 2
+date: "2024-08-20"
+time: "05:49"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Brannan Street at 4th Street"
+scenario:
+  primary: "C5"
+severity: "S2"
+urgency: "U0"
+description: |
+  On August 20, 2024 at 5:49 PM PT a Waymo Autonomous Vehicle ("Waymo AV") operating in San Francisco, California was in a
+  collision involving a cyclist on Brannan Street at 4th Street.
+  
+  The Waymo AV was traveling south-westbound on Brannan Street approaching the intersection with 4th Street. As the Waymo AV came to
+  a stop for a traffic stack ahead of the Waymo AV, partially oriented into the dedicated left turn lane at the location where that lane begins, a
+  cyclist merged out of the bike lane and into the general purpose travel lane, and while the cyclist was looking backwards, the front of the
+  bicycle made contact with the rear passenger side of the stopped Waymo AV. At the time of the impact, the Waymo AV's Level 4 ADS was
+  engaged in autonomous mode. The cyclist remained upright throughout the interaction and alleged that they had sustained an injury.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_08202024-pdf/"
+    title: "Waymo collision report 2024-08-20 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

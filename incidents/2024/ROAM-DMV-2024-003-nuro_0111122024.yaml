@@ -1,0 +1,22 @@
+id: "ROAM-DMV-2024-003"
+tier: 2
+date: "2024-01-12"
+operator: "Nuro"
+location:
+  city: "Mountain View, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Cross street: Terra Bella and Shoreline"
+scenario:
+  primary: "C2"
+severity: "S2"
+urgency: "U0"
+description: |
+  On Friday, January 12th, a Nuro Prius operating autonomously was stopped at a red light at the intersection of Shoreline and Terra Bella
+  Ave. A Mazda approaching the intersection failed to completely stop and rear-ended the Nuro Prius. No injuries were reported. Both
+  vehicles sustained minor damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/nuro_0111122024-pdf/"
+    title: "Nuro collision report 2024-01-12 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

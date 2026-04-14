@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2022-026"
+tier: 2
+date: "2022-12-28"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "1398 Folsom St"
+scenario:
+  primary: "C3"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV”), operating in driverless autonomous mode, was traveling eastbound on Folsom Street in the
+  leftmost lane between 9th Street and 10th Street. At the same time, a Model 3 Tesla traveling in the adjacent center lane veered into the
+  Cruise AV’s lane without a turn signal. Shortly thereafter, contact was made with the Cruise AV’s front passenger side quarter panel and
+  mirror, damaging the front passenger side quarter panel, front passenger side mirror and front passenger side radar assembly. The parties
+  exchanged information and there were no reported injuries.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/cruise_122822-pdf/"
+    title: "Cruise (GM) collision report 2022-12-28 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

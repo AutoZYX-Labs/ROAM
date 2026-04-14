@@ -1,0 +1,22 @@
+id: "ROAM-DMV-2025-003"
+tier: 2
+date: "2025-07-30"
+operator: "Nuro"
+location:
+  city: "Mountain View, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Linda Vista Ave. and Terra Bella Ave"
+scenario:
+  primary: "E1"
+severity: "S0"
+urgency: "U0"
+description: |
+  On Wednesday, July 30, a Nuro vehicle operating in autonomous mode came to a complete stop at a sign-controlled intersection, then
+  began to cautiously proceed through the intersection to make a left turn, with the turn signal indicators activated. Just after the Nuro vehicle
+  began to move into the intersection, it was struck from behind by another vehicle.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/nuro_073025-pdf/"
+    title: "Nuro collision report 2025-07-30 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

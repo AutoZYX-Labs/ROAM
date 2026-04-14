@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2022-084"
+tier: 2
+date: "2022-10-03"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Pine St. near Powell St."
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle was in autonomy proceeding straight on Pine Street in San Francisco, CA when it encountered a double parked United
+  States Postal Service van in lane (vehicle 2: model, year, VIN and insurance are unknown). The Zoox vehicle came to a complete stop while
+  waiting for an opportunity to merge around vehicle 2. Vehicle 2 then rolled backwards into the Zoox vehicle, causing minor damage to front
+  sensors and Vehicle 2 rear bumper. There were no injuries and first responders were not notified. Post incident review did not observe any
+  brake lights or reverse lights on vehicle 2 while it was rolling backwards.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_100322-pdf/"
+    title: "Zoox collision report 2022-10-03 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

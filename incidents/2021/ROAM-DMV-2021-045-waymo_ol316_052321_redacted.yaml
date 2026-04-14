@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2021-045"
+tier: 2
+date: "2021-05-23"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Sanchez Street at 16th Street"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Waymo Autonomous Vehicle (“Waymo AV”) traveling northbound on Sanchez Street at 16th Street in San Francisco was involved in a
+  collision. While in autonomous mode, the Waymo AV was stationary for a red light when a passenger vehicle behind the Waymo AV made
+  contact with the Waymo AV’s rear bumper at approximately 7 MPH. The Waymo AV was traveling 0 MPH. The Waymo AV sustained
+  minor damage to its rear bumper, and the passenger vehicle sustained minor damage to its front bumper. No injuries were reported at the
+  scene.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_ol316_052321_redacted-pdf/"
+    title: "Waymo collision report 2021-05-23 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

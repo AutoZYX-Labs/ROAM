@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2026-008"
+tier: 2
+date: "2026-02-01"
+time: "05:12"
+operator: "Waymo"
+location:
+  city: "Bulringame, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Mitten Road near Old Bayshore Highway"
+scenario:
+  primary: "C3"
+severity: "S1"
+urgency: "U0"
+description: |
+  On February 1, 2026 at 5:12 AM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in Burlingame, California made contact
+  with the pavement in a parking lot driveway entrance on Mitten Road near Old Bayshore Highway.
+  
+  The Waymo AV was traveling southwestbound on Mitten Road and began to turn left at the parking lot driveway entrance at 1799 Old
+  Bayshore Highway when the underside of the Waymo AV made contact with the pavement. At the time of the impact, the Waymo AV’s
+  Level 4 ADS was engaged in autonomous mode, and a test driver was present in the driver’s seating position. The Waymo AV sustained
+  damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_020126_redacted-pdf/"
+    title: "Waymo collision report 2026-02-01 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

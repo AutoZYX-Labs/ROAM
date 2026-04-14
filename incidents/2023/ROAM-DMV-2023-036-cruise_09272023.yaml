@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2023-036"
+tier: 2
+date: "2023-09-27"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "453 2nd St"
+scenario:
+  primary: "C3"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“AV”), operating in driverless autonomous mode, was traveling northbound on 2nd Street between Stillman
+  Street and Bryant Street. As the AV was approaching the intersection with Stillman Street, a blue Model 3 Tesla exited out of a parking
+  garage into the AV’s lane of travel. The AV braked and, shortly thereafter, the AV made contact with the Model 3 Tesla, damaging the
+  AV’s front bumper fascia and front passenger side wheel opening molding. The driver of the Model 3 Tesla left the scene without
+  exchanging information. There were no reported injuries. The driver of the Model 3 Tesla later reported damages.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/cruise_09272023-pdf/"
+    title: "Cruise (GM) collision report 2023-09-27 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

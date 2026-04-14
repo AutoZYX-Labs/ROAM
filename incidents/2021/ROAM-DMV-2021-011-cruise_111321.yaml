@@ -1,0 +1,26 @@
+id: "ROAM-DMV-2021-011"
+tier: 2
+date: "2021-11-13"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "1100 Ocean Ave"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (Cruise AV), operating in supervised autonomous mode, was traveling westbound on Ocean Avenue between
+  Lee Avenue and Harold Avenue. The Cruise AV was traveling 18.8 mph upon coming to the intersection with Lee Avenue on a green light.
+  As the Cruise AV entered the intersection, a 2014 Audi made a prohibited left turn from the rightmost westbound lane on Ocean Ave. The
+  Cruise AV hard braked prior to the Cruise AV operator disengaging the Cruise AV from autonomous mode. The Cruise AV operator
+  continued to hard brake while steering away from the approaching vehicle but, shortly thereafter, the 2014 Audi made contact with the
+  Cruise AV, damaging the front right of the Cruise AV and the front left bumper of the 2014 Audi. The Cruise AV was traveling 11.4 mph at
+  the time of contact. Police were not called to the scene and no injuries were reported.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/cruise_111321-pdf/"
+    title: "Cruise (GM) collision report 2021-11-13 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

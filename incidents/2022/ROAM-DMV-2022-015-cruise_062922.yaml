@@ -1,0 +1,25 @@
+id: "ROAM-DMV-2022-015"
+tier: 2
+date: "2022-06-29"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "835 Clement Street"
+scenario:
+  primary: "C5"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle ("Cruise AV"), operating in supervised autonomous mode, was traveling eastbound on Clement Street
+  between 10th Avenue and 9th Avenue. Following the intersection of 10th Avenue mid-block, while engaged in autonomous mode, a
+  vehicle in an angled parking space on the right backed out into the same lane as the oncoming Cruise AV. The AV operator disengaged
+  from autonomous into manual mode, and pulled to the left to avoid the vehicle backing up. At this time, contact by a cyclist was made at
+  the rear driver side bumper of the Cruise AV. There were no reported injuries or damages at the scene by either party and police were
+  not called. The following day on June 30, 2022, the cyclist claimed damages and injuries related to the event.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/cruise_062922-pdf/"
+    title: "Cruise (GM) collision report 2022-06-29 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

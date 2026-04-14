@@ -1,0 +1,26 @@
+id: "ROAM-DMV-2024-025"
+tier: 2
+date: "2024-06-11"
+time: "12:07"
+operator: "Waymo"
+location:
+  city: "Santa Monica, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Maple Street at 10th Street"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On June 11, 2024 at 12:07 AM PT a Waymo Autonomous Vehicle ("Waymo AV") operating in Santa Monica, California was in a collision
+  involving an SUV on Maple Street near 10th Street.
+  
+  The Waymo AV was maneuvering out of a curbside parallel parking space at the curb on the south side of Maple Street when the passenger
+  side front corner of the Waymo AV made contact with the driver side back corner of an SUV parked in front of the AV. At the time of the
+  impact, the Waymo AV's Level 4 ADS was engaged in autonomous mode. Both vehicles sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_06112024-pdf/"
+    title: "Waymo collision report 2024-06-11 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

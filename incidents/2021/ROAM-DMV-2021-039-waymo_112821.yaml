@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2021-039"
+tier: 2
+date: "2021-11-28"
+time: "06:08"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Clay Street and Franklin Street"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On November 28, 2021 at 6:08 PM PST a Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco, CA was in a collision
+  involving a passenger vehicle at Clay Street at Franklin Street.
+  
+  The Waymo AV was stopped at a red light on eastbound Clay Street at Franklin Street when a passenger vehicle struck the Waymo AV’s
+  rear bumper. At the time of the impact, the Waymo AV’s Level 4 ADS was engaged in autonomous mode, and a test driver was present (in
+  the driver’s seating position). The Waymo AV’s rear bumper sustained damage, and the passenger vehicle’s front bumper sustained
+  damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_112821-pdf/"
+    title: "Waymo collision report 2021-11-28 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

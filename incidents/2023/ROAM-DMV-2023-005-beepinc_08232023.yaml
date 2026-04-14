@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2023-005"
+tier: 2
+date: "2023-08-23"
+operator: "Unknown"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "9th St at Seven Seas Ave, Treasure Island"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  At approximately 5:54 p.m. PST on Wednesday, August 23, 2023, at the intersection of Seven Seas Ave and 9th Street on Treasure Island in
+  the city of San Francisco, a Beep-operated autonomous shuttle was proceeding in autonomous mode straight E/B after stopping at a 3-way
+  stop intersection when a vehicle making a left turn heading N/B proceeded out of turn resulting in a collision within the intersection. There
+  were no passengers on board and no injuries reported. Both vehicle sustained minor damage and police did not respond to the scene. There
+  were no other witness statements received.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/beepinc_08232023-pdf/"
+    title: "Unknown collision report 2023-08-23 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

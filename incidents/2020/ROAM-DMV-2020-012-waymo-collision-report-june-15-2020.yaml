@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2020-012"
+tier: 2
+date: "2020-06-15"
+operator: "Waymo"
+location:
+  city: "Palo Alto, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Alma Street at Alma Village Circle"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Waymo Autonomous Vehicle (“Waymo AV”) was stopped in autonomous mode on northbound Alma Street at Alma Village Circle in
+  Palo Alto when it was rear-ended. The Waymo AV was stopped in traffic for a red light when a passenger vehicle made contact with the
+  Waymo AV’s rear bumper at approximately 2 MPH. The Waymo AV sustained minor damage to its rear bumper and hatch, and the
+  passenger vehicle sustained minor damage to its front bumper. No injuries were reported.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo-collision-report-june-15-2020-pdf/"
+    title: "Waymo collision report 2020-06-15 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

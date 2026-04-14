@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2019-015"
+tier: 2
+date: "2019-10-28"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Howard St. and 9th St."
+scenario:
+  primary: "C5"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV”), operating in autonomous mode, was traveling southeast bound on Howard Street near the
+  intersection with 9th Street when a bicyclist in the right adjacent dedicated bike lane veered away from a wayward pedestrian throwing an
+  unknown object in the bicyclist's direction in the crosswalk. The driver of the Cruise AV disengaged from autonomous mode and, shortly
+  thereafter, the bicyclist veered into the Cruise AV's lane and made contact with the right front passenger door of the Cruise AV. No injuries
+  were reported at the scene by either party. Police were called but not dispatched to the scene. The bicyclist later reported injuries.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/cruise-collision-report-october-28-2019-pdf/"
+    title: "Cruise (GM) collision report 2019-10-28 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

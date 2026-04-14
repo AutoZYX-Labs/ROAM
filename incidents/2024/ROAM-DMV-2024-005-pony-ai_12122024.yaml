@@ -1,0 +1,22 @@
+id: "ROAM-DMV-2024-005"
+tier: 2
+date: "2024-12-12"
+operator: "Pony.ai"
+location:
+  city: "Fremont, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "3501 Gateway Blvd"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  On December 12, 2024, a Pony.ai AV test vehicle was involved in a minor incident while parked behind Pony.ai’s office at 3501 Gateway
+  Boulevard in Fremont. A passenger vehicle, unaffiliated with the company, backed into the rear of the Pony.ai AV test vehicle while it was
+  parked. The damage to both vehicles was cosmetic in nature. There were no injuries reported, and the police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/pony-ai_12122024-pdf/"
+    title: "Pony.ai collision report 2024-12-12 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

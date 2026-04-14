@@ -1,0 +1,25 @@
+id: "ROAM-DMV-2025-096"
+tier: 2
+date: "2025-09-09"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Brannan Street and 8th Street"
+scenario:
+  primary: "C3"
+severity: "S2"
+urgency: "U0"
+description: |
+  An unoccupied Zoox autonomous vehicle (Vehicle 1) was traveling northeast on a green traffic light on Brannan Street at 8th Street in San
+  Francisco. At that time, a box truck (Vehicle 2), heading southwest on Brannan Street, suddenly attempted an unprotected left turn onto 8th
+  Street. The Zoox vehicle braked hard to yield to the rapidly approaching Vehicle 2, when the left side mirror assembly of Vehicle 2 made
+  contact with the roof-mounted left rear sensor pod of the Zoox vehicle. The Zoox vehicle stopped after the contact, and the Vehicle 2
+  operator completed the turn onto 8th Street and pulled over. Shortly afterward, the Zoox vehicle cleared the intersection, pulled over, and
+  then returned to base. The Zoox vehicle sustained sensor damage, and no injuries were reported.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_090925_redacted-pdf/"
+    title: "Zoox collision report 2025-09-09 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

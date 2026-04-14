@@ -6,8 +6,7 @@ location:
   city: "Santa Clara, USA"
   country: "USA"
   road_type: "urban_street"
-  specific: "Martin Avenue, a street in Santa Clara, CA with a single travel
-lane in the direction of travel, when a motorcycle attem"
+  specific: "Eastbound on Martin Ave, near De La Cruz Blvd"
 scenario:
   primary: "E1"
 severity: "S2"

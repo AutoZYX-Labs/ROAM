@@ -1,0 +1,28 @@
+id: "ROAM-DMV-2024-021"
+tier: 2
+date: "2024-05-20"
+time: "03:02"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "14th Street at Folsom Street"
+scenario:
+  primary: "C3"
+severity: "S1"
+urgency: "U0"
+description: |
+  On May 20, 2024 at 3:02 AM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco, California was in a collision
+  involving a passenger car on 14th Street at Folsom Street.
+  
+  The Waymo AV was traveling east on 14th Street and came to a stop at a red light at the intersection with Folsom Street to prepare for a left
+  turn. When the light turned green, the Waymo AV proceeded into the intersection. As it did so, a passenger car traveling southbound on
+  Folsom Street at a high rate of speed entered the intersection against a red traffic light. The front of the passenger car made contact with the
+  driver’s side of the Waymo AV. At the time of the impact, the Waymo AV’s Level 4 ADS was engaged in autonomous mode. Both vehicles
+  sustained damage, and the passengers of the passenger car left the scene on foot.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_052024-pdf/"
+    title: "Waymo collision report 2024-05-20 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

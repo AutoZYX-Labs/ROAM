@@ -1,0 +1,25 @@
+id: "ROAM-DMV-2024-067"
+tier: 2
+date: "2024-02-22"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "On Mission St at 9th St"
+scenario:
+  primary: "C3"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1) in autonomy, traveling northeast on Mission St, was stopped in lane for a red traffic light at 9th Street. A
+  SamTrans bus (Vehicle 2), with a front-mounted triple-bike rack extending past the width of the bus on the driver's side, was traveling
+  southeast on 9th Street and attempting a right turn onto Mission St. The protruding edge of the bike rack was encroaching into the Zoox
+  vehicle's travel lane as the bus was executing the right hand turn. As the light turned green the Zoox vehicle inched forward and attempted
+  to steer away from the bus. Just as the safety operator disengaged from autonomy, the protruding edge of the bike rack made contact with
+  the driver's side fender on the Zoox vehicle. There were no reported injuries and the police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_022220241-pdf/"
+    title: "Zoox collision report 2024-02-22 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

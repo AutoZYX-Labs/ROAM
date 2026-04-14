@@ -1,0 +1,22 @@
+id: "ROAM-DMV-2025-002"
+tier: 2
+date: "2025-06-10"
+operator: "Nuro"
+location:
+  city: "Mountain View, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "2034 Main Street"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On Tuesday, June 10, 2025 a Nuro vehicle operating in autonomous mode encountered a trash can some distance from the curb. When
+  passing the trash can, the side mirror tapped the trash can. The trash can was not damaged or moved. The Nuro vehicle sustained negligible
+  damage to a plastic attachment on the side mirror.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/nuro_06102025-pdf/"
+    title: "Nuro collision report 2025-06-10 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

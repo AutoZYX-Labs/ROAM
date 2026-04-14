@@ -1,0 +1,25 @@
+id: "ROAM-DMV-2019-002"
+tier: 2
+date: "2019-09-19"
+time: "07:58"
+operator: "Apple"
+location:
+  city: "Sunnyvale, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Sunnyvale Community Center Park Entrance"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  On September 19th, 2019 at 7:58am an Apple test vehicle, which was conducting a manually driven test mission, was struck while stopped
+  in the left turn lane preparing to exit the Sunnyvale Community Center Park onto Manet Drive. The Apple test vehicle was stopped when
+  the Toyota Corolla, traveling at approximately 6 mph, swung wide outside of its lane while making a right turn into the Sunnyvale
+  Community Center Park entrance from Manet Drive and struck the Apple test vehicle. Both vehicles sustained minor damage to the driver's
+  side front bumpers. The drivers exchanged information. No injuries were reported. The police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/apple-collision-report-september-19-2019-pdf/"
+    title: "Apple collision report 2019-09-19 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2021-006"
+tier: 2
+date: "2021-04-21"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "1401 15th St"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV”), operating in autonomous mode was turning from Southbound on Folsom Street to Westbound
+  on 15th Street. When the Cruise AV stopped to yield for an oncoming vehicle, a Chevrolet Silverado that was traveling behind made contact
+  with the rear bumper of the Cruise AV. This caused damage to the rear bumper of the Cruise AV. At the time of the incident, the driver of
+  the Cruise AV reported a minor injury, but emergency services were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/cruise_042121-pdf/"
+    title: "Cruise (GM) collision report 2021-04-21 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

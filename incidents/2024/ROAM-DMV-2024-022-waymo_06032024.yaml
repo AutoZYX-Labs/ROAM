@@ -1,0 +1,29 @@
+id: "ROAM-DMV-2024-022"
+tier: 2
+date: "2024-06-03"
+time: "04:54"
+operator: "Waymo"
+location:
+  city: "Marina Del Rey, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Admiralty Way at Bali Way"
+scenario:
+  primary: "C3"
+severity: "S1"
+urgency: "U0"
+description: |
+  On June 3, 2024 at 4:54 PM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in Marina Del Rey, California was in a collision
+  involving a passenger car on Admiralty Way at Bali Way.
+  
+  The Waymo AV was making a left turn from the rightmost dedicated left turn lane on Admiralty Way into lane two of three lanes in the
+  eastbound direction of Bali Way. A passenger car was also making a left turn from the leftmost dedicated left turn lane (leftmost lane). The
+  passenger car had made the turn onto Bali Way and was partially in the number 1 lane (leftmost) and partially in the number 2 lane (middle)
+  when the front passenger side of the passenger car made contact with the rear driver side of the Waymo AV, which was traveling in the
+  number 2 lane (middle). At the time of the impact, the Waymo AV’s Level 4 ADS was engaged in autonomous mode, and a test driver was
+  present (in the driver’s seating position). Both vehicles sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_06032024-pdf/"
+    title: "Waymo collision report 2024-06-03 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

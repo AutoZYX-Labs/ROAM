@@ -1,0 +1,26 @@
+id: "ROAM-DMV-2026-042"
+tier: 2
+date: "2026-02-19"
+operator: "Zoox"
+location:
+  city: "Santa Monica, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Broadway and 2nd St"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1) in autonomous mode was traveling southeast on 2nd Street, preparing to change lanes to the right to
+  turn onto Broadway in Santa Monica, when it was hit on the right rear corner (rear bumper, hatch, right rear wheel, and right
+  rear quarter panel) by an SUV (Vehicle 2). The Zoox vehicle stopped facing southwest on Broadway, with the front of Vehicle 2
+  still engaged with the right rear of the Zoox vehicle. The Zoox vehicle sustained severe rear damage, including damage to data
+  recording systems. Vehicle 2 had major damage to its front end. Airbags deployed in both vehicles, and they were towed from
+  the scene. Police and emergency responders arrived to assist, and the driver of vehicle 2 was detained. The Zoox vehicle
+  operator and two passengers reported soreness and a headache after the collision.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_021926-pdf/"
+    title: "Zoox collision report 2026-02-19 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

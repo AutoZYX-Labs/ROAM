@@ -1,0 +1,30 @@
+id: "ROAM-DMV-2024-062"
+tier: 2
+date: "2024-11-27"
+time: "01:27"
+operator: "WeRide"
+location:
+  city: "San Jose, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "In Intersection Coleman Ave Left turn to W Hedding St"
+scenario:
+  primary: "C2"
+severity: "S1"
+urgency: "U0"
+description: |
+  On November 27th at 1:27pm, Car 1 (weride av) - while in autonomous mode - was making a legal, protected, left turn from Coleman Ave.
+  Car 1, turning onto W Hedding St., performed the turn from the second lane from the left and was travelling 11 mph when Car 1 then
+  slowed down while still in the intersection. It is at this time Car 1's safety driver disengaged Car 1 from autonomous mode by using the
+  throttle; this put car 1 into manual mode. It is at this time when car 2 (Ford f-150 XLT), traveling at 18 mph and also making a left turn
+  from Coleman Ave within the same lane as car 1, struck and rear ended car 1 while both cars were still in the intersection.
+  
+   Car 1 sustained minor damage to its rear bumper and car 2 sustained minor damage to front bumper. Both parties pulled over to exchange
+  information.
+  Car 2 did not provide Registration and Insurance for their respective car. Car 2's driver did give us driver's license information but the driver
+  of the vehicle (car 2) at the time of the incident was a different person than that represented on the driver's license presented.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/weride_11272024-pdf/"
+    title: "WeRide collision report 2024-11-27 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

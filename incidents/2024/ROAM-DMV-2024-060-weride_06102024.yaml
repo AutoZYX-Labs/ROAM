@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2024-060"
+tier: 2
+date: "2024-06-10"
+operator: "WeRide"
+location:
+  city: "San Jose, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "E San Carlos St & S 4th St"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  At approximately 10:33am, a WeRide vehicle (car 1) was stopped at a red traffic light on E San Carlos st. about to turn right on S 4th St. At
+  this time a Toyota RAV4 (car 2) approached from behind traveling at a speed of (>10mph) and slammed into car 1's rear - causing damages
+  to car 1. Car 1 sustained damages on rear bumper and rear sensors. Both parties pulled over to a safe location to exchange information. Car
+  2's driver didn't have an up-to-date registration card for the vehicle.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/weride_06102024-pdf/"
+    title: "WeRide collision report 2024-06-10 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

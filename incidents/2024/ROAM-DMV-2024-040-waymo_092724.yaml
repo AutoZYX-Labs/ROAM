@@ -1,0 +1,29 @@
+id: "ROAM-DMV-2024-040"
+tier: 2
+date: "2024-09-27"
+time: "02:52"
+operator: "Waymo"
+location:
+  city: "Los Angeles, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "San Vicente Boulevard at Wilshire Boulevard"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On September 27, 2024 at 2:52 PM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in Los Angeles, California was in a
+  collision involving a passenger car on San Vicente Boulevard at Wilshire Boulevard.
+  
+  The Waymo AV was stopped in traffic for a red light in the leftmost through lane of southeastbound San Vicente Boulevard at the
+  intersection with Wilshire Boulevard. When the light turned green, the Waymo AV proceeded into the intersection. Simultaneously, a
+  passenger car traveling in the rightmost dedicated left turn lane (the left adjacent lane to the Waymo AV) proceeded straight into the
+  intersection and partially entered the leftmost through lane ahead of the Waymo AV. The passenger side of the passenger car then made
+  contact with the driver side of the Waymo AV. At the time of the impact, the Waymo AV’s Level 4 ADS was engaged in autonomous
+  mode. Both vehicles sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_092724-pdf/"
+    title: "Waymo collision report 2024-09-27 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

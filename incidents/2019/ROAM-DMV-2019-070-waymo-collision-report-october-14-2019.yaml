@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2019-070"
+tier: 2
+date: "2019-10-14"
+operator: "Waymo"
+location:
+  city: "Los Altos, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Cuesta Drive at S. San Antonio Road"
+scenario:
+  primary: "C2"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Waymo Autonomous Vehicle (“Waymo AV”) was stopped in autonomous mode on westbound Cuesta Drive at S. San Antonio Road in
+  Los Altos when it was rear-ended. The Waymo AV was preparing to make a right-on-red from Cuesta Drive onto northbound S. San
+  Antonio Road and was yielding to cross-traffic when a passenger vehicle made contact with the Waymo AV's rear bumper at approximately
+  3 MPH. The Waymo AV sustained minor damage to its rear bumper, and the passenger vehicle sustained no damage to its front bumper. No
+  injuries were reported.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo-collision-report-october-14-2019-pdf/"
+    title: "Waymo collision report 2019-10-14 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

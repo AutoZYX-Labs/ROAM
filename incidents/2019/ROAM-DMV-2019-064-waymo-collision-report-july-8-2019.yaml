@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2019-064"
+tier: 2
+date: "2019-07-08"
+operator: "Waymo"
+location:
+  city: "Mountain View, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Escuela Avenue and El Camino Real"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Waymo Autonomous Vehicle (“Waymo AV”) was stopped in autonomous mode on southbound Escuela Avenue at El Camino Real in
+  Mountain View when it was side-swiped. The Waymo AV was stopped in traffic at a red light when a passenger vehicle attempted to pass
+  the Waymo AV on the right, and made contact with a sensor on the Waymo AV’s passenger side front fender at approximately 1 MPH. The
+  Waymo AV’s sensor housing sustained a minor scratch, and the passenger vehicle sustained a minor scratch to its driver side mirror. There
+  were no injuries reported at the scene.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo-collision-report-july-8-2019-pdf/"
+    title: "Waymo collision report 2019-07-08 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

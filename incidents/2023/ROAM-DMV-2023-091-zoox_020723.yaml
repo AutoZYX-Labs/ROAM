@@ -1,0 +1,22 @@
+id: "ROAM-DMV-2023-091"
+tier: 2
+date: "2023-02-07"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "2nd Street and Folsom Street Intersection"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle in autonomous mode was making a right turn to travel southwest onto 2nd Street from Folsom Street from lane 1 when
+  Vehicle 2 crossed from lane 3 into the Zoox vehicle's lane and made contact with the Zoox vehicle's front sensors before making the right
+  turn. Vehicle 2 did not stop before leaving the scene. No information was exchanged. There were no injuries and the police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_020723-pdf/"
+    title: "Zoox collision report 2023-02-07 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

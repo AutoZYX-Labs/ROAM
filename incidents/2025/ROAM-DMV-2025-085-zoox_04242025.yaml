@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2025-085"
+tier: 2
+date: "2025-04-24"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Bryant Street at 17th Street"
+scenario:
+  primary: "C2"
+severity: "S1"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1), operating in autonomous mode, was gradually slowing to a stop for a red traffic signal on southbound Bryant
+  Street at the intersection with 17th Street in San Francisco when it was rear-ended by a passenger car (Vehicle 2) traveling directly behind.
+  The Zoox vehicle operator then disengaged from autonomy. Both vehicles proceeded a few feet further and pulled over to exchange
+  information. Both the Zoox vehicle and Vehicle 2 sustained minor damage. The police were not called. The Zoox vehicle operator reported
+  back pain after the collision.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_04242025-pdf/"
+    title: "Zoox collision report 2025-04-24 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

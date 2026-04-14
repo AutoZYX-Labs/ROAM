@@ -1,0 +1,25 @@
+id: "ROAM-DMV-2023-025"
+tier: 2
+date: "2023-06-29"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "1207 Selby St"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV”), operating in supervised autonomous mode, was traveling southbound on Selby Street between
+  Palou Avenue and Oakdale Avenue. The Cruise AV came to a stop behind a semi-trailer truck that was slowly reversing diagonally onto
+  Selby Street from the intersection with Palou Avenue. As the semi-trailer truck began encroaching into the Cruise AV’s lane of travel, the
+  Cruise AV operator disengaged from autonomous into manual mode and began reversing the Cruise AV, causing the Cruise AV to back
+  into a different semi-trailer truck parked behind the Cruise AV. This caused damage to the Cruise AV’s rear passenger side wheel molding.
+  The Cruise AV operator left information for the other party and there were no reported injuries.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/cruise_062923-pdf/"
+    title: "Cruise (GM) collision report 2023-06-29 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

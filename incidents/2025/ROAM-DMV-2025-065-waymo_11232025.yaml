@@ -1,0 +1,31 @@
+id: "ROAM-DMV-2025-065"
+tier: 2
+date: "2025-11-23"
+time: "10:36"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Crestlake Drive at Sloat Boulevard."
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On November 23, 2025 at 10:36 AM PT a Waymo Autonomous Vehicle ("Waymo AV") operating in San Francisco, California was in a
+  collision involving a van on Crestlake Drive at Sloat Boulevard.
+  
+  The Waymo AV was stopped facing south with its right turn signal activated on Crestlake Drive for a stop sign at the intersection with Sloat
+  Boulevard. While the Waymo AV remained stopped for westbound traffic on Sloat Boulevard, a van that was traveling eastbound on
+  Crestlake Drive and making a right turn towards the intersection with Sloat Boulevard approached the Waymo AV from behind, and the
+  front of the van made contact with the rear of the stationary Waymo AV. At the time of the impact, the Waymo AV's Level 4 ADS was
+  engaged in autonomous mode. Both vehicles sustained damage.
+  
+  Waymo is reporting this crash under Request No. 2 of Standing General Order 2021-01. Waymo may supplement or correct its reporting
+  with additional information as it may become available.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_11232025-pdf/"
+    title: "Waymo collision report 2025-11-23 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

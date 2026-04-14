@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2019-035"
+tier: 2
+date: "2019-06-20"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Bush St. and Octavia St."
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV”), operating in autonomous mode, was making a left turn from the leftmost lane on westbound
+  Bush Street onto northbound Octavia Street when the Cruise AV slowed down. The driver of the Cruise AV disengaged from autonomous
+  mode and, shortly thereafter, another vehicle clipped the Cruise AV’s right rear corner, damaging the right rear bumper cover, wheel well,
+  and wheel. The driver of the other vehicle drove away without exchanging information. There were no injuries. Police were called but not
+  dispatched to the scene.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/gm-cruise-collision-report-june-20-2019-pdf/"
+    title: "Cruise (GM) collision report 2019-06-20 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

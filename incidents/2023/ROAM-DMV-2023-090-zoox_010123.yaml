@@ -1,0 +1,22 @@
+id: "ROAM-DMV-2023-090"
+tier: 2
+date: "2023-01-01"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Mason Street and Eddy Street"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle in autonomous mode was proceeding straight in its lane on Mason Street in San Francisco, CA when an occupant of a
+  parallel parked car (Vehicle 2) abruptly opened its rear passenger side door into the side of the Zoox vehicle, causing minor damage to both
+  vehicles. The Zoox operator disengaged as a result of the contact. There were no injuries and the police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_010123-pdf/"
+    title: "Zoox collision report 2023-01-01 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,28 @@
+id: "ROAM-DMV-2024-070"
+tier: 2
+date: "2024-04-28"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Intersection of 11th and Bryant St"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1) in autonomy was stopped at a red light in the right travel lane on southbound 11th Street at the intersection with
+  Bryant/Division Streets in San Francisco. After the light turned green, the Zoox vehicle entered the intersection and began bearing right onto
+   southbound Bryant Street when a lane-splitting motorcycle (Vehicle 2) operator maneuvered around other traffic and quickly came up on
+  the rear of the Zoox vehicle, traversing laterally in lane from the left to the right side of the Zoox vehicle. The Zoox vehicle braked and then
+  the Zoox vehicle operator disengaged. The motorcycle then struck the passenger’s side of the rear bumper and quarter panel on the Zoox
+  vehicle and the motorcycle and its operator fell to the ground. The motorcycle operator appeared to have scraped his hands, but declined
+  medical attention. The motorcycle sustained minor damage to the fairing, left side mirror, and front and rear left turn signal lens and the
+  Zoox vehicle did not sustain damage. The motorcycle operator left the scene without exchanging their information. The police were not
+  called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_042824-pdf/"
+    title: "Zoox collision report 2024-04-28 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

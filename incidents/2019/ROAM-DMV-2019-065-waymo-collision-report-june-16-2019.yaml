@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2019-065"
+tier: 2
+date: "2019-06-16"
+operator: "Waymo"
+location:
+  city: "Palo Alto, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Alma Street at Oregon Expressway"
+scenario:
+  primary: "C2"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Waymo Autonomous Vehicle (“Waymo AV”) was stopped in autonomous mode on the off-ramp from westbound Alma Street to
+  southbound Oregon Expressway in Palo Alto when it was rear-ended. The Waymo AV was yielding to cross-traffic when a passenger
+  vehicle made contact with the Waymo AV’s rear bumper at approximately 5 MPH. The Waymo AV sustained minor damage to the rear
+  bumper, and the passenger vehicle left the scene without stopping or exchanging information. The Waymo AV driver complained of neck,
+  back, and nose pain and was treated at the scene by emergency responders.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo-collision-report-june-16-2019-pdf/"
+    title: "Waymo collision report 2019-06-16 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

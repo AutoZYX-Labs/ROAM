@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2024-072"
+tier: 2
+date: "2024-07-16"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "On King St at 7th Street"
+scenario:
+  primary: "C3"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1) in autonomous mode was stopped at a stop sign waiting for traffic to clear to make a left turn from northeast
+  bound King Street onto 7th Street in San Francisco. A passenger car (Vehicle 2) was stopped directly behind the Zoox vehicle apparently in
+  the process of turning right onto 7th Street. As the Zoox vehicle advanced and then came to a stop as it yielded to cross traffic, the passenger
+   car tried to pass the Zoox vehicle on the right side and contacted the Zoox vehicle. The front bumper on the passenger car and rear bumper
+  on the Zoox vehicle sustained minor damage. There were no reported injuries and the police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_07162024-pdf/"
+    title: "Zoox collision report 2024-07-16 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

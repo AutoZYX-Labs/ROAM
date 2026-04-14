@@ -1,0 +1,28 @@
+id: "ROAM-DMV-2025-004"
+tier: 2
+date: "2025-08-23"
+operator: "Unknown"
+location:
+  city: "Riverside, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Gemende Drive"
+scenario:
+  primary: "C3"
+severity: "S1"
+urgency: "U0"
+description: |
+  The Ohmio Lift was driving on Gemende Drive towards Airport Drive in Riverside California. A minivan reversed out of a parking position
+  (perpendicular parking to road lane) from the right side of the road into the shuttle’s path and struck the shuttle from the side.
+  Summary of Events
+  -Upon detecting the minivan in the side envelope, the system issued a brake command within 5ms.
+  -Brake pressure began rising 58ms after the command and exceeded 90% of the requested pressure 164ms after the initial command.
+  -The minivan reversed out of a parking space perpendicular to the Ohmio Lift’s direction of travel and struck the Lift on the side.
+  -The minivan continued reversing until contact occurred.
+  -The elapsed time from first detection of the minivan in the side envelope to impact was approximately 358ms.
+  -The vehicle came to a complete stop in 1.178 seconds.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/ohmio_08232025-pdf/"
+    title: "Unknown collision report 2025-08-23 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

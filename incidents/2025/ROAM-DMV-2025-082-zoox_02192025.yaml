@@ -1,0 +1,25 @@
+id: "ROAM-DMV-2025-082"
+tier: 2
+date: "2025-02-19"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Harrison Street near Columbia Square Street"
+scenario:
+  primary: "C5"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1) in autonomous mode was traveling in lane 4 on southwest-bound Harrison Street near Columbia Square in San
+  Francisco. At that time a passenger car (Vehicle 2), traveling in the same direction ahead of the Zoox vehicle in the right adjacent lane (lane
+  5), was attempting to go around a cyclist, on the right side, in lane 5. The Zoox vehicle operator disengaged, Vehicle 2 then swerved left into
+   lane 4 across the path of the Zoox vehicle and the driver-side quarter panel on Vehicle 2 contacted the passenger-side fender and front door
+  of the Zoox vehicle. Both vehicles proceeded a few feet further and pulled over to exchange information. Vehicle 2 appeared to sustain
+  minor damage and the Zoox vehicle did not sustain any damage. There were no reported injuries and the police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_02192025-pdf/"
+    title: "Zoox collision report 2025-02-19 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,21 @@
+id: "ROAM-DMV-2022-075"
+tier: 2
+date: "2022-05-20"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Folsom St. near Essex St."
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle in autonomous mode was stopped on Folsom Street facing Essex Street, when a passenger vehicle from behind made
+  contact with its rear sensors at low speed. The police were not called and there were no injuries.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_052022-pdf/"
+    title: "Zoox collision report 2022-05-20 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

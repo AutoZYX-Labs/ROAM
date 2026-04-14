@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2019-009"
+tier: 2
+date: "2019-11-29"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Embarcadero St. and Washington St."
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV”), operating in autonomous mode, was traveling southeast bound on The Embarcadero at the
+  intersection with Washington Street when the Cruise AV slowed down. The driver of the Cruise AV disengaged from autonomous mode
+  and, shortly thereafter, another vehicle made contact with the rear bumper of the Cruise AV, damaging the Cruise AV’s rear fascia assembly
+  and radars. There were no injuries reported at the scene by either party and police were not called. Both of the Cruise AV test operators later
+  mentioned neck and back pain.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/cruise-collision-report-november-29-2019-pdf/"
+    title: "Cruise (GM) collision report 2019-11-29 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,22 @@
+id: "ROAM-DMV-2021-047"
+tier: 2
+date: "2021-09-02"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Folsom St. and Essex St. Intersection"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle in autonomous mode making a right turn onto Essex St, fro Folsom St., when a passenger vehicle in the left adjacent turn
+  lane encroached into its lane and made contact with the left bumper and sensors of the Zoox vehicle. There were no injuries and the police
+  were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_090221-pdf/"
+    title: "Zoox collision report 2021-09-02 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,21 @@
+id: "ROAM-DMV-2022-071"
+tier: 2
+date: "2022-01-11"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "13th and Bryant St."
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A stopped Zoox vehicle in autonomous mode was struck by a passenger vehicle that approached it at low speed from behind. The Zoox
+  vehicle incurred damage to its sensors and rear bumper. There were no injuries and the police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_011122-pdf/"
+    title: "Zoox collision report 2022-01-11 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2024-008"
+tier: 2
+date: "2024-01-08"
+time: "12:05"
+operator: "Waymo"
+location:
+  city: "Los Angeles, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Manhattan Place at West Adams Boulevard"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On January 8, 2023 at 12:05 PM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in Los Angeles, California was in a collision
+  involving an SUV on Manhattan Place at West Adams Boulevard.
+  
+  The Waymo AV was traveling northbound on Manhattan Place when it came to a stop to yield to an oncoming vehicle in a narrow roadway
+  with parked vehicles on both sides of the street. As the oncoming SUV passed the Waymo AV, the driver’s side rear of the SUV made
+  contact with the driver’s side rear of the Waymo AV. At the time of the impact, the Waymo AV’s Level 4 ADS was engaged in autonomous
+  mode. The Waymo AV sustained damage and the SUV left the scene.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_01082024-pdf/"
+    title: "Waymo collision report 2024-01-08 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

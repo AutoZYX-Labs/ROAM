@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2019-068"
+tier: 2
+date: "2019-05-29"
+operator: "Waymo"
+location:
+  city: "Palo Alto, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "San Antonio Road at Charleston Road"
+scenario:
+  primary: "C2"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Waymo Autonomous Vehicle (“Waymo AV”) in autonomous mode was stopped in traffic while in the leftmost lane on southbound San
+  Antonio Road headed toward Charleston Road in Palo Alto when it was rear-ended by a passenger vehicle maneuvering into the Waymo
+  AV’s lane at approximately less than 1 MPH. The Waymo AV sustained minor scratches to its rear sensor, and the passenger vehicle left
+  the scene. There were no injuries reported at the scene.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo-collision-report-may-29-2019-pdf/"
+    title: "Waymo collision report 2019-05-29 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

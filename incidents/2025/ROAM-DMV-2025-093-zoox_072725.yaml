@@ -1,0 +1,26 @@
+id: "ROAM-DMV-2025-093"
+tier: 2
+date: "2025-07-27"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Howard Street towards 8th Street"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1) in autonomous mode was traveling in the left lane on southwest-bound Howard Street toward 8th Street in San
+  Francisco when a ball, immediately followed by a dog, entered the roadway from between parked cars on the left side of Howard Street
+  directly into the path of the Zoox vehicle. The Zoox vehicle braked in response, but its underbody made contact with the dog. The Zoox
+  vehicle operator then disengaged autonomous mode and brought the vehicle to a stop. The Zoox vehicle operator then reversed the vehicle to
+   free the dog. The dog owner did not indicate injuries to the dog at the scene. The dog and its owner then returned to the sidewalk and the
+  Zoox vehicle operator drove the vehicle from the scene. The police were not called. Zoox subsequently received an email alleging injuries
+  to the dog, "abrasions behind its left front leg and a possible cracked rib."
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_072725-pdf/"
+    title: "Zoox collision report 2025-07-27 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

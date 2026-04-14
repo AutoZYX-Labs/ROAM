@@ -1,0 +1,31 @@
+id: "ROAM-DMV-2019-001"
+tier: 2
+date: "2019-09-16"
+time: "10:05"
+operator: "AImotive"
+location:
+  city: "California, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "US Free way
+101, between Old Middlefield Rd"
+scenario:
+  primary: "C2"
+severity: "S2"
+urgency: "U0"
+description: |
+  On 09/16/2019 at approximately 9:55 AM, an Aimotive autonomous test vehicle was being driven manually southbound, on US Free way
+  101, between Old Middlefield Rd. and Shoreline Blvd. The car was in the rightmost lane, which splits off into an exit lane for Shoreline
+  Blvd. Traffic in front of the autonomous test vehicle had slowed down to a stop to take this exit, causing this lane to be backed up. The
+  driver of the autonomous vehicle applied normal braking force to come to a stop. Shortly thereafter, the autonomous test vehicle was
+  rear-ended by a Honda -CRV. No major bodily injuries were reported from either party in the crash. Damage to the autonomous vehicle was
+  minor; the car had small scratches. The Honda -CRV's driver airbag was deployed and the front bumper of the car was partially hanging out
+  of the car's body frame. Drivers from both parties exchanged information and took pictures of the damage. The passenger of the
+  autonomous test vehicle contacted 911 approximately at 10:05 AM and requested a CHP officer on scene. The CHP officer arrived
+  approximately 45 minutes after the initial call and took down a report. After both parties had exchanged information, the officer dismissed
+  both parties. The Aimotive vehicle was driven manually back to the office.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/aimotive-collision-report-september-16-2019-pdf/"
+    title: "AImotive collision report 2019-09-16 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

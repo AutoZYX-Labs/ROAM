@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2021-024"
+tier: 2
+date: "2021-04-18"
+operator: "Waymo"
+location:
+  city: "California, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Park Presidio Bypass approaching Crossover Drive"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Waymo Autonomous Vehicle (“Waymo AV”) traveling southbound on Park Presidio Bypass approaching Crossover Drive in San
+  Francisco was involved in a collision. While in autonomous mode, the Waymo AV was stationary in stop-and-go traffic when a passenger
+  vehicle behind the Waymo AV made contact with the Waymo AV’s rear bumper at approximately 5 MPH. The Waymo AV was traveling 0
+  MPH. The Waymo AV sustained minor damage to its rear bumper, and the passenger vehicle sustained minor damage to its front bumper.
+  No injuries were reported at the scene.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_041821-pdf/"
+    title: "Waymo collision report 2021-04-18 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

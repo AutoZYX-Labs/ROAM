@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2019-075"
+tier: 2
+date: "2019-09-14"
+operator: "Waymo"
+location:
+  city: "Los Altos, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "4800 El Camino Real"
+scenario:
+  primary: "C3"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Waymo Autonomous Vehicle (“Waymo AV”) was stopped in autonomous mode in a grocery store parking lot in Los Altos when a
+  passenger vehicle reversed into it. Three passengers were exiting the Waymo AV when the passenger vehicle in the right adjacent parking
+  spot began to reverse out of the parking spot and made contact with the Waymo AV’s passenger side rear quarter panel at approximately 1
+  MPH. The Waymo AV sustained minor damage to its passenger side sliding rear door and rear quarter panel, and the passenger vehicle
+  sustained minor damage to its rear bumper. No injuries were reported.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo-collision-report-september-14-2019-pdf/"
+    title: "Waymo collision report 2019-09-14 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

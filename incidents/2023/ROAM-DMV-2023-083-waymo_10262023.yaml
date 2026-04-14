@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2023-083"
+tier: 2
+date: "2023-10-26"
+time: "07:48"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "13th Street near Bernice Street"
+scenario:
+  primary: "C3"
+severity: "S1"
+urgency: "U0"
+description: |
+  On October 26, 2023 at 7:48 AM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco, California was in a
+  collision involving an SUV on 13th Street near Bernice Street.
+  
+  The Waymo AV was traveling westbound on 13th Street in the rightmost lane. As the SUV in the left adjacent lane traveling alongside the
+  Waymo AV initiated a right lane change, the front passenger’s side of the SUV made contact with the front driver’s side of the Waymo AV.
+  At the time of the impact, the Waymo AV’s Level 4 ADS was not engaged as the test driver transitioned the Waymo AV to manual mode
+  just before the contact. Both vehicles sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_10262023-pdf/"
+    title: "Waymo collision report 2023-10-26 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

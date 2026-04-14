@@ -1,0 +1,22 @@
+id: "ROAM-DMV-2021-046"
+tier: 2
+date: "2021-05-11"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Kearny St. and Columbus Ave. Intersection"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle in autonomous mode began to slow down during an unprotected left turn to yield for cross traffic entering the lane from the
+  right. A passenger vehicle from behind did not slow and made contact with the rear sensors of the Zoox vehicle. There were no injuries and
+  the police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_05112021-pdf/"
+    title: "Zoox collision report 2021-05-11 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2025-078"
+tier: 2
+date: "2025-05-02"
+time: "02:23"
+operator: "WeRide"
+location:
+  city: "California, USA"
+  country: "USA"
+  road_type: "urban_street"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  At 2:23pm: WeRide driverless vehicle (vehicle 1) was travelling ~45mph without much traffic ahead when a BMW x3 (vehicle 2)
+  travelling in the adjacent left lane and in the same direction, merged into vehicle 1's left front quarter panel. Vehicle 1 and Vehicle 2
+  sustained moderate damages.
+  After discussing the incident with vehicle 2's driver, they admitted they were attempting to make an upcoming right turn off the expressway.
+   They initiated 2 consecutive right lane changes abruptly before hitting vehicle 1 on their last attempted lane change.
+  After the initial impact, vehicle 1 was forced out of the initial lane, onto a divide, and ultimately came to a stop on the shoulder of the
+  expressway. At this time both occupants of vehicle 1 and vehicle 2 were able to assess respective damages and exchange information. It was
+   determined that there were no injuries. Vehicle 1 required a tow back to the facility.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/weride_05022025-pdf/"
+    title: "WeRide collision report 2025-05-02 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

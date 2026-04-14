@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2022-077"
+tier: 2
+date: "2022-06-01"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "11th Street and Harrison Street Intersection"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle in autonomous mode was stopped at a red traffic signal at the intersection of Harrison and 11th Streets in San Francisco
+  with its left turn signal engaged. After the traffic signal changed to green and while waiting for an opening to turn left onto Harrison Street,
+  the Zoox vehicle was struck by a passenger vehicle from behind. The driver of that passenger vehicle stated that he was using his phone and
+  not paying attention. No police or emergency services were called to the scene. The Zoox driver, front passenger, and rear passenger
+  reported minor injuries for which they later sought medical attention. The Zoox vehicle incurred minor damage to its rear sensors.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_060122-2-pdf/"
+    title: "Zoox collision report 2022-06-01 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

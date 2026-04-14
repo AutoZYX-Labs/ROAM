@@ -1,0 +1,28 @@
+id: "ROAM-DMV-2022-056"
+tier: 2
+date: "2022-08-13"
+time: "03:09"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "106 Noe Street"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On August 13, 2022 at 03:09 AM PST a Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco, CA was in a collision
+  involving an SUV on 14th Street at Noe Street.
+  
+  The Waymo AV was traveling eastbound on 14th Street in autonomous mode when it slowed for a stop sign on Noe Street. As the Waymo
+  AV slowed to almost a complete stop, an SUV made contact with the rear of the Waymo AV. Both vehicles sustained damage.
+  
+  At the time of the impact, the Waymo AV’s Level 4 ADS was engaged in autonomous mode, and a test driver was present (in the driver’s
+  seating position).
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_081322-pdf/"
+    title: "Waymo collision report 2022-08-13 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

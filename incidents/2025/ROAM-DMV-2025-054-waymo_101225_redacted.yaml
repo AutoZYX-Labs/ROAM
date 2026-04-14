@@ -1,0 +1,30 @@
+id: "ROAM-DMV-2025-054"
+tier: 2
+date: "2025-10-12"
+time: "12:07"
+operator: "Waymo"
+location:
+  city: "Redwood City, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "1455 Madison Avenue"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On October 12, 2025 at 12:07 PM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in Redwood City, California was in a
+  collision involving a curb and later a speed bump in a parking lot at 1455 Madison Avenue.
+  The Waymo AV was traveling northeastbound on Vera Avenue in the parking lot at 1455 Madison Avenue when it initiated a U-turn over a
+  curb partitioning parking stalls. While proceeding over the dividing curb, the undercarriage of the Waymo AV made contact with the curb
+  and the left side rail trim of the Waymo AV partially detached. After the Waymo AV completed the U-turn, the Waymo AV traveled
+  southwestbound on Vera Avenue, turned right onto northwestbound Saint Francis Street, and parked for a passenger pick-up. After
+  remaining stopped for approximately five minutes, the passenger pick-up was cancelled and the Waymo AV traveled northwestbound on
+  Saint Francis Street for a short distance and then proceeded over a rubber speed bump. As the Waymo AV traveled over the rubber speed
+  bump, the partially detached left side rail trim of the Waymo AV caught on the rubber speed bump. At the time of the impact, the Waymo
+  AV’s Level 4 ADS was engaged in autonomous mode. The Waymo AV and the speed bump sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_101225_redacted-pdf/"
+    title: "Waymo collision report 2025-10-12 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

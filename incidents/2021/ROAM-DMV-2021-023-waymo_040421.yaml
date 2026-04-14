@@ -1,0 +1,26 @@
+id: "ROAM-DMV-2021-023"
+tier: 2
+date: "2021-04-04"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Jones Street at Clay Street"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Waymo Autonomous Vehicle (“Waymo AV”) traveling northbound on Jones Street approaching Clay Street in San Francisco was
+  involved in a collision. After the Waymo AV made a right turn from Pleasant Street in autonomous mode, the Waymo AV test driver
+  disengaged autonomous mode to maneuver past an oncoming vehicle on Jones Street that was drifting toward the Waymo AV. While in
+  manual mode, the Waymo AV’s passenger side view mirror then made contact with an unoccupied parked passenger vehicle’s driver side
+  view mirror at approximately 6 MPH. The Waymo AV sustained minor damage to its passenger side view mirror. The unoccupied
+  passenger vehicle’s driver-side mirror was cracked, but most or all of the damage appeared to have been pre-existing. No other damage was
+  observed to the unoccupied passenger vehicle. No injuries were reported at the scene.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_040421-pdf/"
+    title: "Waymo collision report 2021-04-04 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

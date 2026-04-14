@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2025-060"
+tier: 2
+date: "2025-11-06"
+time: "08:25"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "I-280 near the Monterey Boulevard on-ramp"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On November 6, 2025 at 8:25 AM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco, California was in a
+  collision involving an SUV on I-280 Junipero Serra Freeway near the Monterey Boulevard on-ramp.
+  
+  The Waymo AV was traveling eastbound in the second from the right lane on I-280 Junipero Serra Freeway when it slowed to a stop for a
+  queue of traffic ahead. While the Waymo AV was stopped, an SUV that was traveling behind the Waymo AV approached the Waymo AV
+  from behind and the front of the SUV made contact with the rear of the stationary Waymo AV. At the time of the impact, the Waymo AV’s
+  Level 4 ADS was engaged in autonomous mode. Both vehicles sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_110625-pdf/"
+    title: "Waymo collision report 2025-11-06 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

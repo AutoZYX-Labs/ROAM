@@ -1,0 +1,26 @@
+id: "ROAM-DMV-2024-075"
+tier: 2
+date: "2024-07-20"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "On 16th Street at the intersection with Utah Street"
+scenario:
+  primary: "C2"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1) in autonomy was traveling west on 16th Street in the left travel lane, slowing as it approached the intersection
+  with Utah Street in San Francisco. The Zoox vehicle the operator disengaged from autonomy and braked further for stopped traffic ahead in
+  the same travel lane. At that time, a Tesla sedan (Vehicle 2) traveling directly behind the Zoox vehicle abruptly attempted a lane change
+  maneuver into the adjacent lane on the right, side-swiping a BMW sedan (Vehicle 3) that was also westbound on 16th Street in the right
+  lane. Vehicle 2, after making contact with Vehicle 3, veered back to the left lane behind the Zoox vehicle and rear ended the stopped Zoox
+  vehicle. The Zoox vehicle sustained minor damage, while Vehicle 2 and Vehicle 3 appeared to have sustained moderate damage. There were
+   no reported injuries and the police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_07202024b-pdf/"
+    title: "Zoox collision report 2024-07-20 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

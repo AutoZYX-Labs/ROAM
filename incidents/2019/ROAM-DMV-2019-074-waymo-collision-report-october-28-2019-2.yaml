@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2019-074"
+tier: 2
+date: "2019-10-28"
+operator: "Waymo"
+location:
+  city: "Mountain View, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Castro Street at Central Expressway"
+scenario:
+  primary: "C2"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Waymo Autonomous Vehicle (“Waymo AV”) was in autonomous mode and beginning to proceed at a green traffic light to turn left from
+  northbound Castro Street to northbound Central Expressway in Mountain View when it was rear-ended at approximately 6 MPH by a
+  passenger vehicle. The Waymo AV sustained minor damage to the rear bumper, and the passenger vehicle left the scene without exchanging
+  information. There were no injuries reported at the scene.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo-collision-report-october-28-2019-2-pdf/"
+    title: "Waymo collision report 2019-10-28 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

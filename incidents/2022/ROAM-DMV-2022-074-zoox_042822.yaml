@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2022-074"
+tier: 2
+date: "2022-04-28"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Colin P. Kelly St and Brannan St. Intersection"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle in autonomous mode came to a complete stop at the T-junction stop sign at Colin P. Kelly Jr. St. and Brannan St. and
+  yielded to oncoming traffic from the left. Due to traffic flow, the driver then disengaged autonomous mode and reversed, making contact
+  with a vehicle that had approached from the rear and was attempting to pass the Zoox vehicle to make a right turn. There were no injuries
+  and the police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_042822-pdf/"
+    title: "Zoox collision report 2022-04-28 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

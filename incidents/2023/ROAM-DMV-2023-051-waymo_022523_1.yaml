@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2023-051"
+tier: 2
+date: "2023-02-25"
+time: "07:23"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Noe Street at 25th Street"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On February 25th, 2023 at 7:23 AM PST a Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco, California was in a
+  collision involving a heavy truck on 25th Street at Noe Street.
+  
+  The Waymo AV was proceeding East on 25th Street near the intersection with Noe Street when it came to a stop to yield to a heavy truck
+  traveling West on 25th Street. As the heavy truck moved past the Waymo AV, the front left tire of the heavy truck made contact with the
+  rear left sensor of the Waymo AV. The heavy truck then left the scene. At the time of the impact, the Waymo AV’s Level 4 ADS was
+  engaged in autonomous mode. The Waymo AV sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_022523_1-pdf/"
+    title: "Waymo collision report 2023-02-25 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

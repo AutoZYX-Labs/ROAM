@@ -1,0 +1,28 @@
+id: "ROAM-DMV-2022-062"
+tier: 2
+date: "2022-09-17"
+time: "06:38"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Potrero Avenue and 24th Street"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On September 17, 2022 at 6:38 AM PST a Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco, California was in a
+  collision involving an SUV on Potrero Avenue and 24th Street.
+  
+  While traveling northbound on Potrero Avenue, the Waymo AV changed lanes from the center lane to the right lane before slowing to a
+  stop at a red light at 24th Street. While the Waymo AV was making the lane change, the vehicle immediately behind the Waymo AV in the
+  right lane moved to the center lane and made contact with the right rear sensor of the Waymo AV. At the time of the impact, the Waymo
+  AV’s Level 4 ADS was engaged in autonomous mode, and a test driver was present (in the driver’s seating position). The SUV sustained
+  damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_091722-pdf/"
+    title: "Waymo collision report 2022-09-17 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

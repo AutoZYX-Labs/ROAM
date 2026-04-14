@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2020-001"
+tier: 2
+date: "2020-01-14"
+time: "11:13"
+operator: "Unknown"
+location:
+  city: "Santa Clara, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Lafayette St. and Benton St."
+scenario:
+  primary: "C2"
+severity: "S2"
+urgency: "U0"
+description: |
+  On 01/14/2020 at 11:13 AM, the Aurora vehicle -- while at a complete stop at a red light at the intersection of Lafayette St and Benton St.
+  in Santa Clara -- was rear-ended on the driver's side rear fender by a Jeep Wrangler, when it attempted to navigate around the stopped
+  Aurora vehicle. There were no injuries to the occupants of either vehicle, nor damage to either vehicle.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/aurora-innovation-collision-report-january-14-2020-pdf/"
+    title: "Unknown collision report 2020-01-14 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

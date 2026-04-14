@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2020-006"
+tier: 2
+date: "2020-06-01"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Mission St. and 10th St."
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV”), operating in autonomous mode, was coming to a complete stop in response to stopped traffic
+  on southwest bound Mission Street near the intersection with 10th Street when another vehicle approaching from the rear made contact with
+  the Cruise AV’s rear bumper, damaging the rear right fascia light bracket. The driver of the other vehicle left the scene without exchanging
+  information. Both of the Cruise AV test operators mentioned back pain at the scene but police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/cruise-collision-report-june-1-2020-pdf/"
+    title: "Cruise (GM) collision report 2020-06-01 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

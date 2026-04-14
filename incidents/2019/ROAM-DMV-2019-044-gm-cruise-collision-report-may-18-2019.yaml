@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2019-044"
+tier: 2
+date: "2019-05-18"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Euclid Ave. and Palm Ave."
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV”), operating in autonomous mode, was about to make a left turn after stopping at the four-way
+  stop sign on westbound Euclid Avenue at the intersection with Palm Avenue when another vehicle made contact with the rear bumper of the
+  Cruise AV. Police were not called and no injuries were reported at the scene by either party. Two of the Cruise AV testers sitting in the
+  driver and front passenger seats later mentioned injuries.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/gm-cruise-collision-report-may-18-2019-pdf/"
+    title: "Cruise (GM) collision report 2019-05-18 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

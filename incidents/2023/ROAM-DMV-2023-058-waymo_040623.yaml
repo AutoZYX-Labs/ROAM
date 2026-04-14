@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2023-058"
+tier: 2
+date: "2023-04-06"
+time: "10:48"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Randall Street near Harper Street"
+scenario:
+  primary: "C3"
+severity: "S1"
+urgency: "U0"
+description: |
+  On April 6, 2023 at 10:48 AM PST a Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco, California was in a
+  collision involving a heavy truck on Randall Street near Harper Street.
+  
+  The Waymo AV was proceeding northwest on Randall Street near the intersection with Harper Street when it came to a stop to yield to a
+  heavy truck traveling southeast on Randall Street. As the heavy truck drove past the Waymo AV, the driver’s side section of the heavy truck
+  made contact with the rear driver’s side sensor of the Waymo AV. The heavy truck then left the scene. At the time of the impact, the
+  Waymo AV’s Level 4 ADS was engaged in autonomous mode. The Waymo AV sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_040623-pdf/"
+    title: "Waymo collision report 2023-04-06 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

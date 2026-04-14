@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2023-082"
+tier: 2
+date: "2023-09-30"
+time: "09:00"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "US-101 Exit 429B at Bayshore Blvd"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On September 20th, 2023 at 9:00 PM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco, California was in a
+  collision involving a passenger car on US-101 exit ramp 429B at the intersection with Bayshore Boulevard.
+  
+  The Waymo AV was proceeding south on exit ramp 429B in the leftmost lane and entered the slip lane to proceed north on Bayshore
+  Boulevard. As the Waymo AV came to a stop for a red light at the intersection with Bayshore Boulevard, the front of the passenger car
+  which was following behind the Waymo AV made contact with the rear of the Waymo AV. The Waymo AV sustained damage. At the time
+  of the impact, the Waymo AV’s Level 4 ADS was engaged in autonomous mode, and a test driver was present.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_09302023-pdf/"
+    title: "Waymo collision report 2023-09-30 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

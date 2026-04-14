@@ -1,0 +1,23 @@
+id: "ROAM-DMV-2022-033"
+tier: 2
+date: "2022-05-17"
+operator: "Pony.ai"
+location:
+  city: "Irvine, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "30407 Arroyo Dr"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  On May 17, 2022, a passenger vehicle reversed out of a parking spot into a Pony.ai autonomous testing vehicle’s rear bumper. At the time
+  of the collision, the Pony.ai vehicle was operating in autonomous mode with a safety operator in the driver’s seat and was moving at a low
+  speed. The Pony.ai vehicle did not sustain any damage. There were no injuries or property damage, the police were not called to the scene,
+  and a Pony.ai employee drove the Pony.ai vehicle back to Pony.ai’s Irvine facility.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/pony-ai_051722-pdf/"
+    title: "Pony.ai collision report 2022-05-17 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2022-010"
+tier: 2
+date: "2022-04-16"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "1460 Pine St"
+scenario:
+  primary: "C3"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV”), operating in driverless autonomous mode, was traveling in the rightmost lane on westbound
+  Pine Street between Polk Street and Larkin Street. A white Lexus traveling in the middle lane of westbound Pine Street alongside the Cruise
+  AV attempted to change into the rightmost lane in which the Cruise AV was traveling. Shortly thereafter, the white Lexus made contact
+  with the left rear door of the Cruise AV, damaging the Cruise AV’s left rear door. The driver of the other vehicle left the scene without
+  exchanging information. There were no injuries and a police report was later filed.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/cruise_041622-pdf/"
+    title: "Cruise (GM) collision report 2022-04-16 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

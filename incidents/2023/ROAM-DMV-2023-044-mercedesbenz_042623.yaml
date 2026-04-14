@@ -1,0 +1,21 @@
+id: "ROAM-DMV-2023-044"
+tier: 2
+date: "2023-04-26"
+operator: "Mercedes-Benz"
+location:
+  city: "SANTA CLARA, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "San Thomas Expressway & Central Expressway"
+scenario:
+  primary: "C2"
+severity: "S0"
+urgency: "U0"
+description: |
+  The Mercedes-Benz was leaving the off-ramp of EB Central Expressway and approached the merge at NB San Thomas Expressway. The
+  driver yielded to cross traffic at the merge when the Porsche Cayenne vehicle rear-ended the Mercedes-Benz.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/mercedesbenz_042623-pdf/"
+    title: "Mercedes-Benz collision report 2023-04-26 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

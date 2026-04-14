@@ -1,0 +1,20 @@
+id: "ROAM-DMV-2025-084"
+tier: 2
+date: "2025-04-04"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Intersection of 11th St and Bryant St"
+scenario:
+  primary: "E1"
+severity: "S0"
+urgency: "U0"
+description: |
+  Please see attached document for crash description.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_040425-pdf/"
+    title: "Zoox collision report 2025-04-04 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

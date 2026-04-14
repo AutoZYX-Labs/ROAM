@@ -1,0 +1,28 @@
+id: "ROAM-DMV-2025-042"
+tier: 2
+date: "2025-09-10"
+time: "08:06"
+operator: "Waymo"
+location:
+  city: "Santa Monica, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Broadway at Euclid Court"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On September 10, 2025 at 8:06 AM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in Santa Monica, California was in a
+  collision involving a pickup truck on Broadway at Euclid Court.
+  
+  The Waymo AV was traveling southwestbound on Broadway when it made a left turn onto Euclid Court. A pickup truck was stopped facing
+  southeast on Euclid Court to yield to a vehicle that was stopped facing northwest. After the Waymo AV completed its left turn, the Waymo
+  AV came to a stop to yield to the pickup truck and the pickup truck began to reverse. The rear of the pickup truck then made contact with
+  the front of the stationary Waymo AV. At the time of the impact, the Waymo AV’s Level 4 ADS was engaged in autonomous mode. Both
+  vehicles sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_091025_redacted-pdf/"
+    title: "Waymo collision report 2025-09-10 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,26 @@
+id: "ROAM-DMV-2024-073"
+tier: 2
+date: "2024-07-20"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Division Street near Bryant Street"
+scenario:
+  primary: "C5"
+severity: "S3"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1), was completing a mission traveling southwest on Division Street in San Francisco. As the vehicle was
+  completing its mission and slowed to a near stop, the Zoox vehicle operator identified an oncoming bicycle, disengaged from autonomy, and
+   braked the Zoox vehicle to a full stop in its lane. The bicyclist crossed into the oncoming traffic lane occupied by the Zoox vehicle and
+  continued rapidly while steering directly towards the front of the Zoox vehicle. The bicycle made contact with the front bumper of the
+  stationary Zoox vehicle and the bicyclist made contact with the hood of the Zoox vehicle and fell to the ground. The police and emergency
+  responders arrived at the scene and the bicyclist was transported to a hospital. Preliminary police information describes injuries to the
+  bicyclist as “loss of consciousness, complaint of pain to back, knee, and toe nail”.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_07202024-pdf/"
+    title: "Zoox collision report 2024-07-20 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

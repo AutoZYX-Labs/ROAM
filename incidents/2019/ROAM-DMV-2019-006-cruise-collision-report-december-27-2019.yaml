@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2019-006"
+tier: 2
+date: "2019-12-27"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "850 Stanyan St."
+scenario:
+  primary: "C3"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle (“Cruise AV”), operating in autonomous mode, was traveling southbound on Stanyan Street at the
+  intersection with Beulah Street when a lane-encroaching municipal city bus in the right adjacent lane attempted to pass the Cruise AV. The
+  driver of the Cruise AV disengaged from autonomous mode and, shortly thereafter, the city bus made contact with the right side of the
+  Cruise AV, damaging the Cruise AV’s right articulating radar casing. There were no injuries. Police were called but not dispatched to the
+  scene.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/cruise-collision-report-december-27-2019-pdf/"
+    title: "Cruise (GM) collision report 2019-12-27 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

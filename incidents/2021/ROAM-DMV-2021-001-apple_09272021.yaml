@@ -1,0 +1,22 @@
+id: "ROAM-DMV-2021-001"
+tier: 2
+date: "2021-09-27"
+operator: "Apple"
+location:
+  city: "Sunnyvale, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "N Mathilda Ave and Del Rey Ave"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A test vehicle, operating in autonomous mode in Sunnyvale and turning right from Mathilda Avenue onto Del Ray Avenue, made contact
+  with a curb at approximately 13 miles per hour. While there was no tire or wheel damage, the contact resulted in misalignment. No other
+  agents were involved, no injuries were reported, and law enforcement was not called to the scene.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/apple_09272021-pdf/"
+    title: "Apple collision report 2021-09-27 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

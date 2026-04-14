@@ -1,0 +1,28 @@
+id: "ROAM-DMV-2025-013"
+tier: 2
+date: "2025-03-20"
+time: "07:17"
+operator: "Waymo"
+location:
+  city: "Mountain View, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "N. Rengstorff Avenue near E. Charleston Road"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On March 20, 2025 at 7:17 PM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in Mountain View, California was in a
+  collision involving a bus on N. Rengstorff Avenue near E. Charleston Road.
+  
+  The Waymo AV was traveling north on N Rengstorff Avenue and came to a stop in a queue of traffic. While the Waymo AV remained
+  stationary, a bus traveling directly behind the Waymo AV attempted to maneuver around the stopped Waymo AV by crossing the double
+  yellow center line, entering the opposing lane of travel. As the bus proceeded alongside the stationary Waymo AV, the passenger side of the
+  bus made contact with the rear driver side of the Waymo AV. At the time of the impact, the Waymo AV’s Level 4 ADS was engaged in
+  autonomous mode. Both vehicles sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_032025-pdf/"
+    title: "Waymo collision report 2025-03-20 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

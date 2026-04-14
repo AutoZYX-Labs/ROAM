@@ -49,34 +49,45 @@ def parse_operator(filename: str) -> str:
 
 
 def parse_date(filename: str, text: str) -> str:
-    """Extract ISO date from narrative or filename."""
-    # Try narrative first (most reliable): "On April 1, 2026" or "On 03/30/2026"
+    """Extract ISO date from form field (most reliable), then narrative, then filename."""
+    # Best: form field "DATE OF ACCIDENT\n01/12/2024"
+    m = re.search(
+        r'DATE OF ACCIDENT[^\n]*\n\s*(\d{1,2})/(\d{1,2})/(\d{4})',
+        text
+    )
+    if m:
+        mm, dd, yyyy = m.groups()
+        yyyy_int = int(yyyy)
+        if 2010 <= yyyy_int <= 2030:
+            return f"{yyyy}-{int(mm):02d}-{int(dd):02d}"
+
+    # Narrative: "On April 1, 2026" or "On 03/30/2026"
     m = re.search(
         r'On\s+(?:(\d{1,2})/(\d{1,2})/(\d{4})|'
         r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),?\s+(\d{4}))',
         text
     )
     if m:
-        if m.group(1):  # MM/DD/YYYY
+        if m.group(1):
             mm, dd, yyyy = m.group(1), m.group(2), m.group(3)
             return f"{yyyy}-{int(mm):02d}-{int(dd):02d}"
-        else:  # Month DD, YYYY
+        else:
             months = {
                 "January": 1, "February": 2, "March": 3, "April": 4,
                 "May": 5, "June": 6, "July": 7, "August": 8,
                 "September": 9, "October": 10, "November": 11, "December": 12
             }
-            month = months[m.group(4)]
-            day = int(m.group(5))
-            year = int(m.group(6))
-            return f"{year}-{month:02d}-{day:02d}"
+            return f"{m.group(6)}-{months[m.group(4)]:02d}-{int(m.group(5)):02d}"
 
-    # Fallback: try filename (e.g., waymo_040126 = 04/01/26)
-    m = re.search(r'_(\d{2})(\d{2})(\d{2})', filename)
+    # Last resort: filename (e.g., waymo_040126 = 04/01/26)
+    # Only use 6-digit compact format, reject if adjacent to other digits
+    m = re.search(r'_(\d{6})(?!\d)', filename)
     if m:
-        mm, dd, yy = m.groups()
-        year = 2000 + int(yy) if int(yy) < 50 else 1900 + int(yy)
-        return f"{year}-{int(mm):02d}-{int(dd):02d}"
+        mmddyy = m.group(1)
+        mm, dd, yy = int(mmddyy[:2]), int(mmddyy[2:4]), int(mmddyy[4:6])
+        year = 2000 + yy if yy < 50 else 1900 + yy
+        if 1 <= mm <= 12 and 1 <= dd <= 31 and year >= 2014:
+            return f"{year}-{mm:02d}-{dd:02d}"
 
     return "UNKNOWN"
 
@@ -96,21 +107,36 @@ def parse_time(text: str) -> str:
     return None
 
 
-def parse_location(text: str) -> dict:
-    """Extract city, specific address from narrative."""
-    # City: "operating in {City}, California" or "in San Francisco"
-    city_match = re.search(
-        r'(?:operating in|traveling\s+\w+\s+on\s+[\w\s]+\s+in|in)\s+([A-Z][a-zA-Z\s]+?),?\s+(?:California|CA)',
-        text
+def parse_location(full_text: str, narrative: str) -> dict:
+    """Extract city, specific address from form fields or narrative."""
+    # Try form fields first (Section 2 has CITY, COUNTY, STATE, ZIP)
+    # Format: "Electric Avenue near Milwood Avenue     Venice            Los Angeles   CA    90291"
+    loc_match = re.search(
+        r'ADDRESS/LOCATION OF ACCIDENT.*?\n\s*([^\n]+?)\s{3,}([A-Z][a-zA-Z\s.]*?)\s{3,}([A-Z][a-zA-Z\s.]*?)\s+(CA)\s+(\d{5})',
+        full_text, re.IGNORECASE
     )
-    city = city_match.group(1).strip() if city_match else None
+    if loc_match:
+        address = loc_match.group(1).strip()
+        city = loc_match.group(2).strip()
+        return {
+            "city": f"{city}, USA",
+            "country": "USA",
+            "road_type": "urban_street",
+            "specific": address[:120],
+        }
 
-    # Specific location: "on X Street near Y"
-    specific_match = re.search(r'on\s+([^.]+?)(?:\.|,\s+(?:Vehicle|The))', text[:500])
+    # Fallback: narrative parsing
+    city_match = re.search(
+        r'(?:operating in|in)\s+([A-Z][a-zA-Z\s.]+?),?\s+(?:California|CA)\b',
+        narrative
+    )
+    city = city_match.group(1).strip() if city_match else "California"
+
+    specific_match = re.search(r'on\s+([A-Z][^.]{5,80}?)(?:\.|(?:\s+(?:in|near|when|while)))', narrative[:500])
     specific = specific_match.group(1).strip()[:120] if specific_match else None
 
     return {
-        "city": f"{city}, USA" if city else "California, USA",
+        "city": f"{city}, USA",
         "country": "USA",
         "road_type": "urban_street",
         "specific": specific,
@@ -132,14 +158,28 @@ def extract_narrative(text: str) -> str:
     return ""
 
 
-def is_autonomous(text: str, narrative: str) -> bool:
-    """Determine if vehicle was in autonomous mode."""
+def is_autonomous(narrative: str) -> bool:
+    """Determine if vehicle was in autonomous mode at time of collision.
+
+    Filter out incidents where the operator explicitly notes conventional/manual mode.
+    These are NOT autonomy failures and shouldn't dilute the dataset.
+    """
     n = narrative.lower()
-    if "manual mode" in n or "conventional mode" in n:
-        return False
-    if "autonomous mode" in n or "ads was engaged" in n or "auto mode" in n or "autonomous vehicle" in n:
-        return True
-    return True  # DMV requires AV reports — default yes
+    # Strong negative signals
+    manual_patterns = [
+        "in manual mode",
+        "operating in manual",
+        "in conventional mode",
+        "was in manual mode",
+        "was driving manually",
+        "test driver was operating",
+        "manually operated",
+        "under manual control",
+    ]
+    for p in manual_patterns:
+        if p in n:
+            return False
+    return True
 
 
 def classify_scenario(narrative: str) -> dict:
@@ -263,10 +303,14 @@ def process_pdf(pdf_path: Path, id_counter: dict) -> tuple[str, dict]:
     if not narrative:
         return None, None
 
+    # Skip if vehicle was in manual/conventional mode
+    if not is_autonomous(narrative):
+        return "MANUAL", None
+
     operator = parse_operator(pdf_path.stem)
     date = parse_date(pdf_path.stem, text)
     time = parse_time(narrative)
-    location = parse_location(narrative)
+    location = parse_location(text, narrative)
     scenario = classify_scenario(narrative)
     severity = parse_severity(narrative)
 
@@ -313,14 +357,17 @@ def main():
 
     id_counter = {}
     success = 0
-    skipped = 0
+    skipped_manual = 0
+    skipped_other = 0
 
     for pdf_path in sorted(pdf_dir.glob("*.pdf")):
         try:
             year, record = process_pdf(pdf_path, id_counter)
+            if year == "MANUAL":
+                skipped_manual += 1
+                continue
             if not record:
-                print(f"SKIP: {pdf_path.name} (no narrative or date)")
-                skipped += 1
+                skipped_other += 1
                 continue
 
             year_dir = out_dir / year
@@ -328,13 +375,12 @@ def main():
 
             yaml_path = year_dir / f"{record['id']}-{pdf_path.stem}.yaml"
             yaml_path.write_text(to_yaml(record))
-            print(f"OK: {record['id']} → {yaml_path.relative_to(out_dir.parent)}")
             success += 1
         except Exception as e:
             print(f"ERROR {pdf_path.name}: {e}")
-            skipped += 1
+            skipped_other += 1
 
-    print(f"\nTotal: {success} extracted, {skipped} skipped")
+    print(f"\n{success} extracted, {skipped_manual} skipped (manual mode), {skipped_other} other skips")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2025-037"
+tier: 2
+date: "2025-08-21"
+time: "12:04"
+operator: "Waymo"
+location:
+  city: "Inglewood, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Alley behind S. Turo Avenue"
+scenario:
+  primary: "C4"
+severity: "S1"
+urgency: "U0"
+description: |
+  On August 21, 2025 at 12:04 PM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in Inglewood, California was in a collision
+  involving vegetation in an alley behind S. Turo Avenue.
+  
+  The Waymo AV was traveling westbound in an alley behind S. Turo Avenue and proceeding to pass to the right of a passenger car that was
+  parked facing east. As the Waymo AV was maneuvering around the passenger car, the right of the Waymo AV made contact with
+  vegetation growing on the north wall of the alley and extending into the roadway. At the time of the impact, the Waymo AV’s Level 4 ADS
+  was engaged in autonomous mode. The Waymo AV sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_082125-3-pdf/"
+    title: "Waymo collision report 2025-08-21 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

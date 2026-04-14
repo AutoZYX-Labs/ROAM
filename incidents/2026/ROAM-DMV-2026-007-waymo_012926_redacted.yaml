@@ -1,0 +1,29 @@
+id: "ROAM-DMV-2026-007"
+tier: 2
+date: "2026-01-29"
+time: "09:00"
+operator: "Waymo"
+location:
+  city: "Los Angeles, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "W. Pico Boulevard near S. Sepulveda Boulevard"
+scenario:
+  primary: "C5"
+severity: "S1"
+urgency: "U0"
+description: |
+  On January 29, 2026 at 9:00 AM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in Los Angeles, California was in a collision
+  involving an SUV on W. Pico Boulevard near S. Sepulveda Boulevard.
+  
+  The Waymo AV was stopped facing northeast on W. Pico Boulevard in the second from the right lane in a queue of traffic for a red light at
+  the intersection with S. Sepulveda Boulevard when a pedestrian approached the stationary Waymo AV and made contact with the front right
+  sensor, causing the Waymo AV to remain stopped in lane. While the Waymo AV was stopped, an SUV that was stopped directly behind the
+  Waymo AV proceeded to change lanes to the left lane and the right side of the SUV made contact with the rear left side of the stationary
+  Waymo AV. At the time of the impact, the Waymo AV’s Level 4 ADS was engaged in autonomous mode. Both vehicles sustained
+  damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_012926_redacted-pdf/"
+    title: "Waymo collision report 2026-01-29 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

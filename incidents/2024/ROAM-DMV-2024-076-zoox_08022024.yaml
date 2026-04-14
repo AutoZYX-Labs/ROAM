@@ -1,0 +1,22 @@
+id: "ROAM-DMV-2024-076"
+tier: 2
+date: "2024-08-02"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Harrison St and 13th St"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1) in autonomous mode, traveling north on Harrison St and turning right onto 13th Street in San Francisco drove
+  over metal debris. The Zoox vehicle sustained minor damage to the undercarriage. There were no reported injuries and police were not
+  called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_08022024-pdf/"
+    title: "Zoox collision report 2024-08-02 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

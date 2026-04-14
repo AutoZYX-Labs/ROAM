@@ -1,0 +1,24 @@
+id: "ROAM-DMV-2023-029"
+tier: 2
+date: "2023-07-28"
+operator: "Cruise (GM)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "1698 Van Ness Ave"
+scenario:
+  primary: "C2"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Cruise autonomous vehicle ("Cruise AV"), operating in driverless autonomous mode, was traveling northbound on Van Ness Avenue
+  between California Street and Sacramento Street. As the Cruise AV was passing through the intersection with Sacramento Street on a green
+  light, a bag lying on the roadway blew in front of the Cruise AV. The Cruise AV braked for the object, and a white pickup truck traveling
+  behind the Cruise AV rear-ended the Cruise AV, damaging the rear right bumper, rear right quarter panel, and rear windshield. The driver
+  of the white pickup truck left the scene without exchanging information. There were no reported injuries and the Cruise AV was towed.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/cruise_07282023-pdf/"
+    title: "Cruise (GM) collision report 2023-07-28 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

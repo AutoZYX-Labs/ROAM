@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2024-058"
+tier: 2
+date: "2024-12-27"
+time: "10:16"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Larkin Street at Olive Street"
+scenario:
+  primary: "E1"
+severity: "S1"
+urgency: "U0"
+description: |
+  On December 27, 2024 at 10:16 PM PT a Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco, California was in a
+  collision involving a passenger car on Larkin Street at Olive Street.
+  
+  The Waymo AV was traveling northbound on Larkin Street when a passenger car traveling directly in front of the Waymo AV stopped in
+  lane, and began to reverse to parallel park at the curb. While the passenger car was reversing, the rear driver side of the passenger car made
+  contact with the front passenger side of the stationary Waymo AV. At the time of the impact, the Waymo AV’s Level 4 ADS was engaged
+  in autonomous mode, and a test driver was present (in the driver’s seating position). Both vehicles sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_12272024-pdf/"
+    title: "Waymo collision report 2024-12-27 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

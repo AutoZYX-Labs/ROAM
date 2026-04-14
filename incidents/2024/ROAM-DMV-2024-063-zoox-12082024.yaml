@@ -1,0 +1,27 @@
+id: "ROAM-DMV-2024-063"
+tier: 2
+date: "2024-12-08"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Intersection of 11th and Bryant St"
+scenario:
+  primary: "C3"
+severity: "S1"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1) in autonomy was stopped at a red light behind an SUV (Vehicle 2) in the right travel lane on southbound 11th
+  Street at the intersection with Bryant and Division Streets in San Francisco. After the light turned green, the SUV proceeded straight, in the
+  right lane, toward southbound Bryant Street. The Zoox vehicle also proceeded and transitioned into the left lane (also a through lane). While
+  almost through the intersection, the SUV suddenly veered left across the path of the Zoox vehicle toward Division Street. The Zoox vehicle
+  braked hard in response to the turning SUV and had almost reached a stop when the rear driver side of the SUV made contact with the
+  passenger side front fender of the Zoox vehicle. The Zoox vehicle then came to a full stop. The driver of the SUV left the scene without
+  exchanging information. The Zoox vehicle cleared the intersection, proceeded down Bryant Street, briefly stopped again, and then pulled
+  over on Bryant Street. The Zoox vehicle sustained minor damage to the passenger side front fender. The police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox-12082024-pdf/"
+    title: "Zoox collision report 2024-12-08 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

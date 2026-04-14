@@ -1,0 +1,28 @@
+id: "ROAM-DMV-2025-089"
+tier: 2
+date: "2025-05-13"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Bryant Street and 10th Street"
+scenario:
+  primary: "C5"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1), operating in autonomous mode and traveling northeast on Bryant Street, was preparing to make a right on red
+  traffic light on 10th Street in San Francisco. After fully stopping at the stop line, it advanced into the crosswalk before yielding to cross
+  traffic with the right of way. A bicyclist, riding northwest on the sidewalk along 10th Street, then approached the crosswalk. As the bicyclist
+  entered the crosswalk, the operator of the Zoox vehicle disengaged from autonomy and began to manually drive the vehicle forward. The
+  bicyclist veered right towards the front of the Zoox vehicle and made contact with the front passenger side door of the Zoox vehicle. The
+  bicycle then fell to the ground next to the Zoox vehicle. After stopping for a brief conversation with the bicyclist, the Zoox vehicle operator
+  proceeded to make the right turn onto 10th Street, inadvertently driving over the front wheel of the fallen bicycle. The operator completed
+  the turn and pulled over to check for damages and exchange information. The Zoox vehicle did not sustain any damage; however, the front
+  wheel rim of the bicycle was damaged. There were no reported injuries, and the police were not notified.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_05132025-pdf/"
+    title: "Zoox collision report 2025-05-13 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,30 @@
+id: "ROAM-DMV-2023-001"
+tier: 2
+date: "2023-06-29"
+time: "03:39"
+operator: "Apollo (Baidu)"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Moraga St near 34th Ave"
+scenario:
+  primary: "C5"
+severity: "S1"
+urgency: "U0"
+description: |
+  On June 29, 2023 at 3:39 PM PDT, an Apollo Autonomous Vehicle (“Apollo AV”) operating in San Francisco, California, was in a
+  collision involving a scooter on Moraga Street near 34th Ave.
+  
+  The Apollo AV was traveling westbound on Moraga Street passing the intersection with 34th Ave. The intersection has stop signs clearly
+  installed at all four ways, which require vehicles to make full stop before entering the intersection. The Apollo AV made a full stop, entered
+  and passed approximately 75% of the intersection. A person on scooter coming southbound from 34th Ave., approached the intersection.
+  The person on scooter entered the intersection without stopping, then made contact with the passenger rear-side of Apollo AV. Our Apollo
+  AV operator immediately disengaged the AV, pulled over to the closest safe place to park, got out of the car to check the person on scooter,
+  who already left the scene on his scooter without exchanging any information. The Apollo AV had small minor paint scratch, which do not
+  need repair. The police were not called.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/apollo_autonomous_driving_06292023-pdf/"
+    title: "Apollo (Baidu) collision report 2023-06-29 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

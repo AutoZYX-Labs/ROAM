@@ -1,0 +1,28 @@
+id: "ROAM-DMV-2023-086"
+tier: 2
+date: "2023-05-01"
+time: "11:41"
+operator: "WeRide"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Bay St and Columbus Ave"
+scenario:
+  primary: "E1"
+severity: "S0"
+urgency: "U0"
+description: |
+  On Monday May 1st at 11:41am a Weride autonomous vehicle (Vehicle 1) was in Autonomous Mode stopped at the intersection of Bay St
+  towards Columbus Ave appropriately yielding to a illegally U turning skateboard on Bay St North to South direction in front of the AV
+  (Vehicle 1). While yielding, a bicyclist was coming from behind our AV (Vehicle 1) head was turned left possibly looking for cross traffic.
+  When the cyclist turned his head forward, it was too late to react in time to our stopped vehicle(Vehicle 1) with the given distance and speed
+  they were traveling at in which the cyclist collided with our vehicle (Vehicle 1). Our Weride safety officer immediately disengaged and
+  hand signaled to the bicyclist to pull over to the closest safe place to park as to not obstruct traffic. As our safety officer parked and got out
+  of the car to check on the bicyclist, the bicyclist was already on in motion on his bicycle and "fist bumped" our safety officer while passing
+  by him and leaving the scene without exchanging any information.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/weride_050123-pdf/"
+    title: "WeRide collision report 2023-05-01 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,25 @@
+id: "ROAM-DMV-2021-027"
+tier: 2
+date: "2021-08-21"
+operator: "Waymo"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Scott Street and Sacramento Street"
+scenario:
+  primary: "C5"
+severity: "S1"
+urgency: "U0"
+description: |
+  A Waymo Autonomous Vehicle (“Waymo AV”) operating in San Francisco was in a collision involving a vehicle at Scott Street and
+  Sacramento Street. While operating in autonomous mode, the Waymo AV was stopped at a stop sign intersection yielding to a pedestrian in
+  the crosswalk as a passenger vehicle arrived at the intersection from the left. Once the pedestrian cleared the crosswalk, the Waymo AV
+  started to proceed at the same time as the passenger vehicle to the left. The driver of the Waymo AV transitioned into manual mode,
+  bringing the vehicle to a stop and the passenger vehicle behind the AV accelerated into the rear of the Waymo vehicle. The Waymo AV
+  sustained minor damage to the rear bumper.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_082121-pdf/"
+    title: "Waymo collision report 2021-08-21 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

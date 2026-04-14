@@ -1,0 +1,30 @@
+id: "ROAM-DMV-2025-018"
+tier: 2
+date: "2025-05-01"
+time: "07:52"
+operator: "Waymo"
+location:
+  city: "Portola Valley, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Interstate 280 near Exit 22"
+scenario:
+  primary: "C3"
+severity: "S1"
+urgency: "U0"
+description: |
+  On May 1, 2025 at 7:52 AM PT a Waymo Autonomous Vehicle ("Waymo AV") operating in Portola Valley, California was in a collision
+  involving a pickup truck tire on Junipero Serra Freeway near Exit 22.
+  
+  The Waymo AV was traveling northwestbound in the rightmost lane on Junipero Serra Freeway when the rear passenger side tire of a
+  pickup truck traveling directly in front of the Waymo AV became dislodged and rolled into the barrier on the right edge of the roadway,
+  then bounced off the barrier and into the Waymo AV's lane of travel. The Waymo AV activated its left turn signal and began to change
+  lanes into the adjacent lane to the left and the test driver assumed manual control of the AV to move more aggressively to the left. As the
+  AV was moving to the left, the tire made contact with the passenger side of the Waymo AV. At the time of the impact, the Waymo AV's
+  Level 4 ADS was not engaged in autonomous mode due to the test driver assuming manual control 0.8s before impact. A test driver was
+  present in the driver’s seating position. The Waymo AV and the tire sustained damage.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo_05012025-pdf/"
+    title: "Waymo collision report 2025-05-01 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

@@ -1,0 +1,25 @@
+id: "ROAM-DMV-2025-090"
+tier: 2
+date: "2025-05-21"
+operator: "Zoox"
+location:
+  city: "San Francisco, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Laguna Street near Market Street"
+scenario:
+  primary: "C2"
+severity: "S1"
+urgency: "U0"
+description: |
+  A Zoox vehicle (Vehicle 1) operating in autonomous mode turned right onto Laguna Street from eastbound Hermann Street, approaching the
+   intersection with Market Street in San Francisco. As it was entering the intersection, the Zoox vehicle briefly braked to a stop, and just as it
+  started to move, it was rear ended by a passenger car (Vehicle 2) traveling directly behind. The Zoox vehicle operator then disengaged from
+  autonomy, cleared the intersection, and pulled over to exchange information. The rear bumper of the Zoox vehicle sustained minor damage,
+  and its software operator, who was seated in the front passenger seat, reported "soreness in [the] right shoulder" after the collision. The
+  police were not called
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/zoox_05212025-pdf/"
+    title: "Zoox collision report 2025-05-21 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"

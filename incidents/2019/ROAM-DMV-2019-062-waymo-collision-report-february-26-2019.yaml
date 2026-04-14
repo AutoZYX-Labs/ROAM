@@ -1,0 +1,26 @@
+id: "ROAM-DMV-2019-062"
+tier: 2
+date: "2019-02-26"
+operator: "Waymo"
+location:
+  city: "Los Altos, USA"
+  country: "USA"
+  road_type: "urban_street"
+  specific: "Miramonte Avenue at Covington Road"
+scenario:
+  primary: "E1"
+severity: "S2"
+urgency: "U0"
+description: |
+  A Waymo Autonomous Vehicle (“Waymo AV”) was stopped in autonomous mode at the intersection of Miramonte Avenue and Covington
+  Road in Los Altos when it was involved in a collision. The Waymo AV was traveling northbound on Miramonte Avenue, when it reached a
+  four-way stop sign intersection. The Waymo AV stopped to yield to another vehicle at the intersection, at which time a passenger vehicle
+  rear-ended the Waymo AV at approximately 39 MPH. At the time of the collision the Waymo AV had been stopped for approximately 1.5
+  seconds. The Waymo AV sustained major damage to its rear bumper, rear hatch, and rear quarter panels, and the passenger vehicle
+  sustained major damage to its front bumper, hood, and front quarter panels. First responders attended to the scene, but neither party reported
+  injuries.
+sources:
+  - url: "https://www.dmv.ca.gov/portal/file/waymo-collision-report-february-26-2019-pdf/"
+    title: "Waymo collision report 2019-02-26 (CA DMV OL 316)"
+contributor: "CA DMV OL 316 (auto-imported)"
+last_updated: "2026-04-14"
