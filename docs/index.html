@@ -144,11 +144,11 @@ footer a { color:var(--accent); }
   <p class="desc cn"><span class="cn-title">L4 自动驾驶远程运营与异常管理开源框架</span><span class="cn-sub">事件数据库 · 场景分类 · 10 种运营模式 · 参考架构 · 评价基准 · 技术支柱</span></p>
   <p class="desc en">Open-source incident database, scenario taxonomy,<br>reference architecture & evaluation benchmarks for robotaxi remote operations</p>
   <div class="actions">
-    <a href="https://ROAM-explorer.autozyx.com" class="btn btn-primary" target="_blank" rel="noopener"><span class="cn">交互式探索</span><span class="en">Open Explorer</span></a>
-    <a href="https://github.com/AutoZYX/ROAM" class="btn btn-secondary"><span class="cn">GitHub 仓库</span><span class="en">GitHub Repo</span></a>
-    <a href="#incidents" class="btn btn-secondary"><span class="cn">浏览事件库</span><span class="en">Browse Incidents</span></a>
-    <a href="https://github.com/AutoZYX/ROAM/blob/main/docs/literature-review.md" class="btn btn-secondary cn-link" style="display:inline-block">文献综述</a>
-    <a href="https://github.com/AutoZYX/ROAM/blob/main/docs/literature-review-en.md" class="btn btn-secondary en-link" style="display:none">Literature Review</a>
+    <a href="https://ROAM-explorer.autozyx.com" class="btn btn-primary" target="_blank" rel="noopener"><span class="cn">打开 Explorer</span><span class="en">Open Explorer</span></a>
+    <a href="https://ROAM-explorer.autozyx.com/ask" class="btn btn-secondary" target="_blank" rel="noopener"><span class="cn">✨ Ask ROAM</span><span class="en">✨ Ask ROAM</span></a>
+    <a href="https://github.com/AutoZYX/ROAM" class="btn btn-secondary" target="_blank" rel="noopener"><span class="cn">GitHub</span><span class="en">GitHub</span></a>
+    <a href="https://github.com/AutoZYX/ROAM/blob/main/docs/literature-review.md" class="btn btn-secondary cn-link" target="_blank" rel="noopener" style="display:inline-block">文献综述</a>
+    <a href="https://github.com/AutoZYX/ROAM/blob/main/docs/literature-review-en.md" class="btn btn-secondary en-link" target="_blank" rel="noopener" style="display:none">Literature Review</a>
   </div>
 </header>
 
@@ -564,90 +564,39 @@ footer a { color:var(--accent); }
     </p>
   </section>
 
-  <!-- Taxonomy Detail -->
-  <section>
-    <h2 class="sec-title"><span class="cn">场景分类体系 v1.0</span><span class="en">Scenario Taxonomy v1.0</span></h2>
-    <p class="sec-sub"><span class="cn">6大类、27子场景，每个子场景对应推荐处置层级</span><span class="en">6 categories, 27 sub-scenarios, each mapped to a recommended response layer</span></p>
+  <!-- Explorer CTA (replaces detailed taxonomy + incidents) -->
+  <section id="incidents" style="background:linear-gradient(135deg,#fef8ec,#fdf0f0);border:1.5px solid var(--accent);border-radius:14px;padding:32px;margin:32px 0;">
+    <h2 class="sec-title" style="margin-top:0;"><span class="cn">数据与工具：ROAM Explorer</span><span class="en">Data &amp; Tools: ROAM Explorer</span></h2>
+    <p class="sec-sub"><span class="cn">全部数据、分类体系细节、架构映射、可视化和 AI 问答，均在交互式 Explorer 中</span><span class="en">All data, full taxonomy detail, architecture mapping, visualizations, and AI assistant — in the interactive Explorer</span></p>
 
-    <div class="tbl-wrap">
-    <table>
-      <thead><tr>
-        <th><span class="cn">编码</span><span class="en">Code</span></th>
-        <th><span class="cn">类别</span><span class="en">Category</span></th>
-        <th><span class="cn">子场景数</span><span class="en">Sub-scenarios</span></th>
-        <th><span class="cn">典型场景示例</span><span class="en">Typical Examples</span></th>
-        <th><span class="cn">推荐层级</span><span class="en">Layer</span></th>
-      </tr></thead>
-      <tbody>
-        <tr><td style="font-weight:700;color:var(--red);">A</td><td><span class="cn">系统性故障</span><span class="en">System-Wide Failure</span></td><td>A1–A4</td><td><span class="cn">云端中断致批量瘫痪、OTA推送异常、停电、服务器崩溃</span><span class="en">Cloud outage mass paralysis, OTA failure, power outage, server crash</span></td><td>L1→L3</td></tr>
-        <tr><td style="font-weight:700;color:var(--amber);">B</td><td><span class="cn">感知/决策失效</span><span class="en">Perception/Decision Failure</span></td><td>B1–B5</td><td><span class="cn">路口犹豫、异常物体误识、极端天气退化、行人闯红灯、GPS漂移</span><span class="en">Intersection hesitation, object misidentification, weather degradation, jaywalker, GPS drift</span></td><td>L1–L2</td></tr>
-        <tr><td style="font-weight:700;color:var(--amber);">C</td><td><span class="cn">规划/执行异常</span><span class="en">Planning/Execution Anomaly</span></td><td>C1–C5</td><td><span class="cn">路中停车、意外刹车、危险变道、碰撞静态物体、低速撞行人</span><span class="en">Mid-road freeze, unexpected braking, dangerous lane change, static collision, pedestrian contact</span></td><td>L1–L2</td></tr>
-        <tr><td style="font-weight:700;color:var(--text3);">D</td><td><span class="cn">车辆硬件故障</span><span class="en">Vehicle Hardware Failure</span></td><td>D1–D4</td><td><span class="cn">传感器失效、动力系统故障、车辆起火、制动/转向执行器失效</span><span class="en">Sensor failure, powertrain fault, vehicle fire, brake/steering actuator failure</span></td><td>L2–L3</td></tr>
-        <tr><td style="font-weight:700;color:var(--green);">E</td><td><span class="cn">外部环境冲突</span><span class="en">External Conflict</span></td><td>E1–E4</td><td><span class="cn">被他车碰撞、道路施工、阻碍应急车辆、交警手势不理解</span><span class="en">Struck by other vehicle, construction, emergency vehicle blocked, police gesture misread</span></td><td>L2–L3</td></tr>
-        <tr><td style="font-weight:700;color:var(--accent);">F</td><td><span class="cn">乘客端异常</span><span class="en">Passenger-Side Issue</span></td><td>F1–F4</td><td><span class="cn">乘客被困、危险位置上下车、乘客干扰车辆、乘客医疗紧急</span><span class="en">Passenger trapped, dangerous pickup, passenger interference, medical emergency</span></td><td>L1–L2</td></tr>
-      </tbody>
-    </table>
-    </div>
-
-    <!-- Severity + Urgency side by side -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px;">
-      <div>
-        <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:10px;"><span class="cn">严重度分级 Severity Scale</span><span class="en">Severity Scale</span></h3>
-        <table>
-          <thead><tr><th><span class="cn">等级</span><span class="en">Level</span></th><th><span class="cn">定义</span><span class="en">Definition</span></th><th><span class="cn">伤亡</span><span class="en">Injury</span></th></tr></thead>
-          <tbody>
-            <tr><td><span class="sev s1">S0</span></td><td><span class="cn">未遂事件</span><span class="en">Near-Miss</span></td><td><span class="cn">无</span><span class="en">None</span></td></tr>
-            <tr><td><span class="sev s1">S1</span></td><td><span class="cn">轻微：交通影响 &lt;5min</span><span class="en">Minor: disruption &lt;5min</span></td><td><span class="cn">无</span><span class="en">None</span></td></tr>
-            <tr><td><span class="sev s2">S2</span></td><td><span class="cn">中等：显著中断或轻伤</span><span class="en">Moderate: significant disruption or minor injury</span></td><td><span class="cn">轻伤</span><span class="en">Minor</span></td></tr>
-            <tr><td><span class="sev s3">S3</span></td><td><span class="cn">严重：大规模瘫痪或重伤</span><span class="en">Severe: mass paralysis or serious injury</span></td><td><span class="cn">重伤</span><span class="en">Serious</span></td></tr>
-            <tr><td><span class="sev s4">S4</span></td><td><span class="cn">致命：死亡或50+车受影响</span><span class="en">Critical: fatality or 50+ vehicles</span></td><td><span class="cn">致命</span><span class="en">Fatal</span></td></tr>
-          </tbody>
-        </table>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:24px 0;">
+      <div style="text-align:center;">
+        <div style="font-size:2rem;font-weight:700;color:var(--accent);font-family:'Playfair Display',serif;">567</div>
+        <div style="font-size:0.82rem;color:var(--text2);"><span class="cn">结构化事件</span><span class="en">structured incidents</span></div>
       </div>
-      <div>
-        <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:10px;"><span class="cn">紧急度分级 Urgency Scale</span><span class="en">Urgency Scale</span></h3>
-        <table>
-          <thead><tr><th><span class="cn">等级</span><span class="en">Level</span></th><th><span class="cn">响应窗口</span><span class="en">Response</span></th><th><span class="cn">典型场景</span><span class="en">Scenarios</span></th></tr></thead>
-          <tbody>
-            <tr><td><span class="tag">U0</span></td><td><span class="cn">下次维护周期</span><span class="en">Next maintenance</span></td><td><span class="cn">内部日志趋势</span><span class="en">Log trends</span></td></tr>
-            <tr><td><span class="tag">U1</span></td><td><span class="cn">30分钟内</span><span class="en">Within 30min</span></td><td><span class="cn">路边安全停车待救援</span><span class="en">Roadside safe stop</span></td></tr>
-            <tr><td><span class="tag">U2</span></td><td><span class="cn">10分钟内</span><span class="en">Within 10min</span></td><td><span class="cn">车道内停滞、乘客不安</span><span class="en">Lane blocked, passenger distressed</span></td></tr>
-            <tr><td><span class="tag">U3</span></td><td style="color:var(--red);font-weight:700;"><span class="cn">立即处置</span><span class="en">Immediate</span></td><td><span class="cn">乘客安全受威胁、阻碍应急车辆</span><span class="en">Passenger safety at risk, emergency blocked</span></td></tr>
-          </tbody>
-        </table>
+      <div style="text-align:center;">
+        <div style="font-size:2rem;font-weight:700;color:var(--accent);font-family:'Playfair Display',serif;">27</div>
+        <div style="font-size:0.82rem;color:var(--text2);"><span class="cn">子场景分类</span><span class="en">sub-scenarios</span></div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:2rem;font-weight:700;color:var(--accent);font-family:'Playfair Display',serif;">14</div>
+        <div style="font-size:0.82rem;color:var(--text2);"><span class="cn">运营商</span><span class="en">operators tracked</span></div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:2rem;font-weight:700;color:var(--accent);font-family:'Playfair Display',serif;">2019–2026</div>
+        <div style="font-size:0.82rem;color:var(--text2);"><span class="cn">覆盖年份</span><span class="en">years covered</span></div>
       </div>
     </div>
 
-    <p style="margin-top:16px;color:var(--text3);font-size:0.82rem;">
-      <span class="cn">完整场景定义见 <a href="https://github.com/AutoZYX/ROAM/blob/main/taxonomy/scenario-taxonomy-v1.0.md">scenario-taxonomy-v1.0.md</a> · <a href="https://github.com/AutoZYX/ROAM/blob/main/taxonomy/severity-scale.md">severity-scale.md</a> · <a href="https://github.com/AutoZYX/ROAM/blob/main/taxonomy/urgency-scale.md">urgency-scale.md</a></span>
-      <span class="en">Full definitions: <a href="https://github.com/AutoZYX/ROAM/blob/main/taxonomy/scenario-taxonomy-v1.0.md">scenario-taxonomy-v1.0.md</a> · <a href="https://github.com/AutoZYX/ROAM/blob/main/taxonomy/severity-scale.md">severity-scale.md</a> · <a href="https://github.com/AutoZYX/ROAM/blob/main/taxonomy/urgency-scale.md">urgency-scale.md</a></span>
+    <div class="actions" style="justify-content:center;margin-top:8px;">
+      <a href="https://ROAM-explorer.autozyx.com" class="btn btn-primary" target="_blank" rel="noopener"><span class="cn">打开 Explorer</span><span class="en">Open Explorer</span></a>
+      <a href="https://ROAM-explorer.autozyx.com/ask" class="btn btn-secondary" target="_blank" rel="noopener"><span class="cn">✨ Ask ROAM 智能问答</span><span class="en">✨ Ask ROAM AI</span></a>
+      <a href="https://ROAM-explorer.autozyx.com/subscribe" class="btn btn-secondary" target="_blank" rel="noopener"><span class="cn">订阅月报</span><span class="en">Subscribe</span></a>
+    </div>
+    <p style="margin-top:16px;text-align:center;color:var(--text3);font-size:0.82rem;">
+      <span class="cn">数据导出（CSV/JSON）、地图、运营商对比、完整场景分类与架构 KPI，全部在 Explorer 中</span>
+      <span class="en">Data export (CSV/JSON), map, operator comparison, full taxonomy, and KPIs — all in Explorer</span>
     </p>
-  </section>
-
-  <section id="incidents">
-    <h2 class="sec-title"><span class="cn">事件记录</span><span class="en">Incident Records</span></h2>
-    <p class="sec-sub"><span class="cn">来自公开渠道的结构化事件数据，持续更新</span><span class="en">Structured incident data from public sources, continuously updated</span></p>
-    <div class="tbl-wrap">
-    <table>
-      <thead><tr>
-        <th><span class="cn">日期</span><span class="en">Date</span></th>
-        <th><span class="cn">运营商</span><span class="en">Operator</span></th>
-        <th><span class="cn">地点</span><span class="en">Location</span></th>
-        <th><span class="cn">事件</span><span class="en">Incident</span></th>
-        <th><span class="cn">类型</span><span class="en">Type</span></th>
-        <th><span class="cn">严重度</span><span class="en">Sev.</span></th>
-      </tr></thead>
-      <tbody>
-        <tr><td>2026-03</td><td><span class="cn">百度Apollo</span><span class="en">Baidu Apollo</span></td><td><span class="cn">武汉</span><span class="en">Wuhan</span></td><td><span class="cn">近百辆车高架同时熄火，乘客被困2小时</span><span class="en">~100 vehicles mass shutdown, passengers trapped 2hrs</span></td><td><span class="tag">A1</span></td><td><span class="sev s3">S3</span></td></tr>
-        <tr><td>2026-03</td><td>Waymo</td><td><span class="cn">凤凰城</span><span class="en">Phoenix</span></td><td><span class="cn">横穿8车道停在路中央</span><span class="en">8-lane crossing, stopped mid-road</span></td><td><span class="tag">C3</span></td><td><span class="sev s2">S2</span></td></tr>
-        <tr><td>2026-03</td><td>Waymo</td><td><span class="cn">奥斯汀</span><span class="en">Austin</span></td><td><span class="cn">堵住救护车通道</span><span class="en">Blocked ambulance at shooting scene</span></td><td><span class="tag">E3</span></td><td><span class="sev s3">S3</span></td></tr>
-        <tr><td>2025-12</td><td>Waymo</td><td><span class="cn">旧金山</span><span class="en">San Francisco</span></td><td><span class="cn">停电致车队瘫痪，应急等待2.5h</span><span class="en">Blackout: fleet paralysis, 2.5h emergency wait</span></td><td><span class="tag">A3</span></td><td><span class="sev s3">S3</span></td></tr>
-        <tr><td>2025-05</td><td>Pony.ai</td><td><span class="cn">北京</span><span class="en">Beijing</span></td><td><span class="cn">测试车偏离道路后起火</span><span class="en">Test vehicle caught fire off-road</span></td><td><span class="tag">D3</span></td><td><span class="sev s2">S2</span></td></tr>
-        <tr><td>2023-10</td><td>Cruise</td><td><span class="cn">旧金山</span><span class="en">San Francisco</span></td><td><span class="cn">碾压并拖拽行人，运营全面暂停</span><span class="en">Ran over pedestrian, nationwide shutdown</span></td><td><span class="tag">C5</span></td><td><span class="sev s4">S4</span></td></tr>
-      </tbody>
-    </table>
-    </div>
-    <p style="margin-top:12px;color:var(--text3);font-size:0.82rem;"><span class="cn">展示6条典型事件，共16条。</span><span class="en">6 of 16 total incidents shown.</span> <a href="https://github.com/AutoZYX/ROAM/tree/main/incidents"><span class="cn">查看全部 →</span><span class="en">View all →</span></a></p>
   </section>
 
   <section>
