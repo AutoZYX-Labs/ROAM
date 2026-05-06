@@ -355,8 +355,71 @@ Where "validated" means:
 
 ---
 
+## Regulatory-Aligned Thresholds (v1.1, 2026-04-27)
+
+Following the publication of California DMV Article 3.7 (Express Terms 2026), ROAM has aligned several KPIs with regulatory thresholds. These are not ROAM-proposed targets but **legally binding values** for operators in California's jurisdiction. ROAM treats them as floor values that all operators should meet regardless of jurisdiction.
+
+### KPI 9: Emergency Response Phone Pickup Time (DMV-Aligned)
+
+**Definition:** Time from emergency response official's call to dedicated emergency response telephone line until pickup by remote operations support personnel with situational awareness.
+
+**Target:** < 30 seconds (DMV § 227.42(b)(3)(B), legally binding for California)
+
+**Measurement Method:** Per-call timestamp logging on dedicated emergency line. Audit monthly.
+
+**Data Source:** Emergency response telephone line system logs.
+
+### KPI 10: First Responder Two-Way Communication Reach Time (DMV-Aligned)
+
+**Definition:** Time from emergency response official's request through two-way voice communication device until reaching remote operations support personnel.
+
+**Target:** < 30 seconds (DMV § 227.42(b)(3)(D), legally binding)
+
+**Measurement Method:** Per-call timestamp on two-way device, paired with operator response confirmation.
+
+**Data Source:** Two-way voice communication device logs.
+
+### KPI 11: Emergency Geofencing Avoidance Compliance Time (DMV-Aligned)
+
+**Definition:** Time from receipt of emergency geofencing message (designating an avoidance area) until manufacturer issues fleet-wide directive to leave or avoid the identified area.
+
+**Target:** < 2 minutes (DMV § 227.42(b)(3)(F), legally binding)
+
+**Measurement Method:** Geofencing message timestamp paired with fleet directive issuance timestamp. Per-event audit.
+
+**Data Source:** ROC fleet management system + geofencing message receipt log.
+
+### KPI 12: Driverless Permit Pre-Application Test Mileage (DMV-Aligned)
+
+**Definition:** Cumulative autonomous miles driven on public roads with valid Drivered Testing Permit, throughout the operational design domain, prior to applying for Driverless Testing Permit.
+
+**Target:**
+- Standard AV (passenger): ≥ 50,000 miles (DMV § 227.42(a)(1))
+- Low-speed AV: ≥ 10,000 miles
+- Heavy-duty commercial: ≥ 500,000 miles total (≥ 100,000 miles in California)
+
+**Measurement Method:** Per-vehicle odometer reporting tied to autonomous-mode-engaged time, monthly cumulative report.
+
+**Data Source:** Vehicle telematics + DSSAD (Data Storage System for Automated Driving).
+
+### KPI 13: Operational Parameters Modification Pre-Application Mileage (DMV-Aligned)
+
+**Definition:** Cumulative autonomous miles driven with valid Drivered Testing Permit prior to applying for Driverless Testing Permit Operational Parameters Modification.
+
+**Target:**
+- Standard AV (passenger): ≥ 25,000 miles (DMV § 227.42(b)(1))
+- Low-speed AV: ≥ 10,000 miles
+- Heavy-duty commercial: ≥ 250,000 miles
+
+**Measurement Method:** Per-modification-application cumulative mileage report.
+
+**Data Source:** Vehicle telematics + DSSAD.
+
+---
+
 ## Changelog
 
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | 2026-04-02 | Initial release: 8 KPIs defined |
+| 1.1 | 2026-04-27 | Added KPIs 9-13 aligned with California DMV Article 3.7 (Express Terms 2026) regulatory thresholds: 30-second emergency response, 2-minute geofencing compliance, pre-application test mileage requirements |

@@ -140,6 +140,10 @@
 
 [52] MUTZENICH C, DURANT S, HELMAN S, et al. Updating our understanding of situation awareness in relation to remote operators of autonomous vehicles [J]. Cognitive Research: Principles and Implications, 2021, 6(1): 9.
 
+### 九、地方监管细则（[53]）
+
+[53] California Department of Motor Vehicles. Express Terms: Title 13, Division 1, Chapter 1, Article 3.7 — Testing of Autonomous Vehicles (Modified Text) [S/OL]. Sacramento, CA: California DMV, 2026. https://www.dmv.ca.gov/portal/vehicle-industry-services/autonomous-vehicles/. (含 PDF 见本项目 `docs/california-dmv-article-3-7-modified-text.pdf`)
+
 ---
 
 ## 核验说明

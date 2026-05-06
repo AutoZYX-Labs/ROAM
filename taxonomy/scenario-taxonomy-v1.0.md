@@ -1,14 +1,14 @@
-# ROAM Scenario Taxonomy v1.0
+# ROAM Scenario Taxonomy v1.1
 
-**Version:** 1.0
-**Last Updated:** 2026-04-02
-**Status:** Initial Release
+**Version:** 1.1
+**Last Updated:** 2026-04-27
+**Status:** Updated to align with California DMV Article 3.7 (Express Terms 2026)
 
 ---
 
 ## Overview
 
-This taxonomy classifies operational anomalies encountered by L4+ robotaxi fleets into 6 major categories and 27 sub-scenarios. Each sub-scenario is assigned a recommended response layer (1/2/3) based on the typical complexity and risk level.
+This taxonomy classifies operational anomalies encountered by L4+ robotaxi fleets into 6 major categories and **29 sub-scenarios** (v1.1 adds E5 Emergency Geofencing Avoidance and E6 First Responder Override System Activation, aligned with California DMV Article 3.7 Express Terms). Each sub-scenario is assigned a recommended response layer (1/2/3) based on the typical complexity and risk level.
 
 The taxonomy is designed to be:
 - **Exhaustive** — covers all known incident types from public reports and operator disclosures
@@ -23,7 +23,7 @@ The taxonomy is designed to be:
 | B | Perception/Decision Failure | 感知/决策失效 | B1 - B5 |
 | C | Planning/Execution Anomaly | 规划/执行异常 | C1 - C5 |
 | D | Vehicle Hardware Failure | 车辆硬件故障 | D1 - D4 |
-| E | External Conflict | 外部环境冲突 | E1 - E4 |
+| E | External Conflict | 外部环境冲突 | **E1 - E6** |
 | F | Passenger-Side Issue | 乘客端异常 | F1 - F4 |
 
 ### Response Layer Key
@@ -501,6 +501,55 @@ Anomalies caused by external events or road users that the ADS must respond to, 
 
 ---
 
+### E5 - Emergency Geofencing Avoidance (紧急地理围栏撤离)
+
+| Field | Value |
+|-------|-------|
+| **ID** | E5 |
+| **Name (EN)** | Emergency Geofencing Avoidance |
+| **Name (CN)** | 紧急地理围栏撤离 |
+| **Description** | Emergency response official issues a geofencing message defining an "avoidance area" that the manufacturer must direct its fleet to leave or avoid within a regulatory time window. Trigger events include public safety incidents (active shooter, hazardous spill), large-scale emergencies (fire, flood), or planned road closures with safety implications. |
+| **Real Example** | New scenario introduced by California DMV Article 3.7 (Express Terms 2026). § 227.42(b)(3)(F) requires manufacturers to direct fleet to leave or avoid the identified area **within 2 minutes** of receiving an emergency geofencing message. |
+| **Typical Frequency** | Low individually but high systemic impact when triggered |
+| **Recommended Layer** | **Layer 1** (fleet-wide automated avoidance routing) with **Layer 2** (operator monitoring for compliance) and **Layer 3** (manual intervention for stranded vehicles) |
+
+**Typical Handling:**
+- Manufacturer ROC receives geofencing message via dedicated channel from emergency response official
+- Fleet management system computes alternate routing for all affected vehicles within 2 minutes
+- AI executes fleet-wide reroute or pull-over outside the avoidance area
+- Operator monitors compliance and escalates to Layer 3 for any vehicle that cannot safely exit
+- Avoidance area remains in effect for the duration specified by the emergency official
+- Post-event audit log of fleet-wide compliance
+
+**Standard Reference:** California DMV Article 3.7 § 227.42(b)(3)(F-G)
+
+---
+
+### E6 - First Responder Override System Activation (执法人员 Override 触发)
+
+| Field | Value |
+|-------|-------|
+| **ID** | E6 |
+| **Name (EN)** | First Responder Override System Activation |
+| **Name (CN)** | 执法人员 Override 系统触发 |
+| **Description** | Law enforcement or fire department personnel, present at the scene, invoke the manufacturer's override system to immobilize the vehicle or move it as necessary to respond to an emergency. The override is a regulatory-required mechanism that allows trained first responders to take physical control independently of the ROC. |
+| **Real Example** | New scenario introduced by California DMV Article 3.7 § 227.42(b)(3)(H-I). Manufacturers must equip vehicles with override systems and provide training to law enforcement and firefighters. Triggered by post-collision scene management, refueling/recharging interference, or active emergency response where vehicle blocks access. |
+| **Typical Frequency** | Rare but high-criticality |
+| **Recommended Layer** | **Layer 3** (override is by definition external to ROAM's three-layer decision flow; ROC monitors and supports as needed) |
+
+**Typical Handling:**
+- First responder identifies vehicle requiring intervention
+- First responder uses trained procedure (per manufacturer's First Responder Interaction Plan) to invoke override
+- Override system immobilizes the vehicle, or moves it as directed
+- Manufacturer ROC is notified and provides supporting information (vehicle registration, telematics)
+- Post-event: ROC documents the override invocation, reviews training adequacy, updates First Responder Interaction Plan if needed
+
+**Standard Reference:** California DMV Article 3.7 § 227.42(b)(3)(H-I); manufacturer override system per Vehicle Code § 38751(b)(3)
+
+**Cross-cutting note:** E6 is one of the few scenarios where the ROAM three-layer decision architecture is partially bypassed — first responders act independently. This makes the override a critical safety net but also a potential source of unanticipated state changes that the ROC must reconcile after the fact.
+
+---
+
 ## F. Passenger-Side Issue (乘客端异常)
 
 Anomalies originating from or primarily affecting passengers. These scenarios require the operations platform to balance passenger safety, comfort, and operational efficiency.
@@ -617,6 +666,8 @@ Anomalies originating from or primarily affecting passengers. These scenarios re
 | E2 | Road Construction/Closure | 2 | 3 |
 | E3 | Emergency Vehicle Interaction | 2 | 3 |
 | E4 | Police Gesture Failure | 2 | 3 |
+| E5 | Emergency Geofencing Avoidance | 1 | 3 |
+| E6 | First Responder Override Activation | 3 | — |
 | F1 | Passenger Trapped | 2 | 3 |
 | F2 | Dangerous Pickup/Dropoff | 1 | 2 |
 | F3 | Passenger Interference | 2 | 3 |
@@ -629,6 +680,7 @@ Anomalies originating from or primarily affecting passengers. These scenarios re
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | 2026-04-02 | Initial release: 6 categories, 26 sub-scenarios |
+| 1.1 | 2026-04-27 | Added E5 (Emergency Geofencing Avoidance) and E6 (First Responder Override System Activation) per California DMV Article 3.7 Express Terms (2026). Total now 29 sub-scenarios. |
 
 ## Contributing
 

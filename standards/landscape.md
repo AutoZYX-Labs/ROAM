@@ -109,8 +109,56 @@ YD/T 4778—4783 系列共 6 项标准，由工信部 2024-07-05 批准发布、
 | Germany StVFernLV | 德国联邦 | **2025-12-01 生效** | 法规，仅覆盖远程驾驶 |
 | UK Automated Vehicles Act 2024 | 英国议会 | **2024-05 通过** | 法规，NUiC operator 许可 |
 | California CPUC AV Reporting 2024 | 加州公用事业委 | 2024 | 事故 / 停摆 / 脱离报告 |
+| **California DMV Article 3.7 (Express Terms)** | **加州 DMV** | **2026 年公示中（最详尽的远程运营监管文件）** | **最高 —— 详见 B.4** |
 
-**国际层面结论**：目前国际上**没有任何一部 ISO/SAE/IEC 标准**以"L4 远程运营与异常管理"为专门对象。德国 StVFernLV 和英国 AVA 是法规不是技术标准；UN GTR on ADS 仍在 2026 年草案阶段。
+**国际层面结论**：目前国际上**没有任何一部 ISO/SAE/IEC 标准**以"L4 远程运营与异常管理"为专门对象。德国 StVFernLV 和英国 AVA 是法规不是技术标准；UN GTR on ADS 仍在 2026 年草案阶段。**加州 DMV 在 2026 年发布的 Article 3.7 修订（Express Terms）是迄今为止全球最详尽的远程运营监管文件，详见 B.4。**
+
+### B.4 加州 DMV Article 3.7 修订（2026）—— 全球最详尽的远程运营监管文件
+
+加州 DMV 于 2026 年发布了 Title 13, Division 1, Chapter 1, Article 3.7（Testing of Autonomous Vehicles）的"Express Terms"修订版，对从定义、测试许可、人员资质培训、安全档案要求、应急响应到许可证限制的全链条监管规则进行了系统性重写。该修订是全球首部将"Remote Operations Support"作为正式法律术语写入条款的法规。
+
+**核心新增定义（与 ROAM 直接相关）**：
+
+| 术语 | 法定定义要点 | 与 ROAM 对应关系 |
+|------|------------|----------------|
+| Remote operations support | 包含 remote assistance、remote driving、customer support、dispatching | 在术语层面验证 ROAM 命名逻辑 |
+| Remote assistant | 提供信息或建议，不驾驶车辆 | 对应 ROAM Layer 2（AI 辅助 + 人工确认） |
+| Remote driver | 实时执行 DDT 或 fallback（含实时刹车、转向、加速） | 对应 ROAM Layer 3（远程驾驶） |
+| Automated driving system service | OEM 通过订阅向 end user 提供 ADS 能力的服务模式 | 验证 ROAM M4-M6 模式假设 |
+| End user | 注册车主或承租人（非制造商） | 验证 ROAM 个人所有类模式 |
+| Avoidance area | 应急官员通过紧急地理围栏指定的车队必须撤离区域 | 触发 ROAM 新增场景类别 |
+| Override system | 允许执法和消防人员手动控制车辆的物理装置 | ROAM 责任矩阵新增维度 |
+| Dynamic driving task performance relevant system failure | ADS 性能相关系统失效的法定定义 | 对接 ROAM 严重度分级 |
+| Vehicle immobilization | 车辆停在车道无法继续 DDT，需驾驶员或远程驾驶员驶离 | 对接 ROAM 场景 C1（路中停车） |
+
+**安全档案 14 项强制核心元素**（§ 227.04）：
+
+(1) Use Case Description；(2) ODD；(3) Non-Proprietary System Design；(4) Vehicle Integration；(5) Validation and Verification Testing；(6) Safety Relevant HMI；(7) Safety Management Systems（含安全政策/促进/风险管理/保证四子项）；(8) Fleet Operations and Maintenance；**(9) Remote Operations, including Remote Assistance（含激活流程、共享数据、通信延迟、培训四子项）**；(10) Incident Response and Post-Incident Analysis；(11) Post Crash Vehicle Response；(12) First Responder Safety Interactions；(13) Safety-Relevant Cybersecurity；(14) Misuse Mitigation。
+
+**首次写入法规层面的量化阈值**：
+
+| DMV 强制阈值 | 用途 |
+|------------|------|
+| **30 秒** | 应急响应官员拨打专线后的接通时间上限 |
+| **30 秒** | 应急响应官员通过双向语音触达 Remote Operations 人员的最长等待 |
+| **2 分钟** | 收到紧急地理围栏指令后，制造商必须指挥车队撤离的时间窗口 |
+| **50,000 英里** | 申请 Driverless Testing Permit 前的最低测试里程 |
+| **500,000 英里** | 重型商用车 Driverless 测试前的累计里程要求（其中 100,000 英里必须在加州） |
+| **10,000 英里** | 低速 AV 的最低测试里程要求 |
+
+**专章建立的人员监管体系**：
+
+- **§ 227.38 Remote Drivers**：9 项功能要求 + 5 项培训要求 + 8 项资质（含驾照、违章、用药、酒驾、Hours-of-Service 等）
+- **§ 227.40 Remote Assistants**：7 项功能要求 + 5 项培训要求 + 3 项资质
+- **§ 227.42 Driverless Testing Permit**：通信链路、冗余网络、应急响应、紧急地理围栏、override system、First Responder Interaction Plan 等完整要求
+- **§ 227.46 Restriction of Testing Permit**：建立"分级运营限制"机制（介于无处罚与吊销之间）
+
+**对 ROAM 的战略意义**：
+
+1. **正向**：法规层面验证了 ROAM 的核心命名逻辑（Remote Operations）、三层决策架构（Assistant ≠ Driver ≠ Operator）、十种运营模式假设（OEM 服务化）
+2. **挑战**：若中国国标晚于加州法规发布，可能面临"被加州术语体系裹挟"的风险（如 Remote Driver / Remote Assistant 二分法可能成为事实标准）
+3. **机会**：ROAM 的开源框架可作为企业满足 DMV 安全档案 14 项要求的实操工具
+4. **战略调整**：ROAM 标准提案的紧迫性进一步增强，TC114/SC34 立项时间窗口收紧
 
 ---
 
@@ -193,6 +241,7 @@ YD/T 4778—4783 系列共 6 项标准，由工信部 2024-07-05 批准发布、
 13. Germany StVFernLV - [Bird & Bird 法律解读](https://www.twobirds.com/en/insights/2026/germany/teleoperiertes-fahren-straenverkehr-fernlenk-verordnung-(stvfernlv)-seit-dezember-2025-in-kraft)
 14. UK Automated Vehicles Act 2024 - [legislation.gov.uk](https://www.legislation.gov.uk/ukpga/2024/10)
 15. California CPUC AV Reporting - [CPUC](https://www.cpuc.ca.gov/news-and-updates/all-news/cpuc-enhances-autonomous-vehicle-reporting-requirements-to-boost-safety-standards)
+16. **California DMV Article 3.7 (Express Terms, 2026)** - [California DMV Regulations](https://www.dmv.ca.gov/portal/vehicle-industry-services/autonomous-vehicles/) - 含 PDF 见 `docs/california-dmv-article-3-7-modified-text.pdf`
 
 ---
 
