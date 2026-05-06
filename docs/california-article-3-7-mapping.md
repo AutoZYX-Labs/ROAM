@@ -5,8 +5,8 @@
 ---
 
 > 作者：Yuxin Zhang
-> 日期：2026 年 4 月 27 日
-> 版本：v1.0
+> 日期：2026 年 4 月 27 日（v1.0）；2026 年 5 月 6 日（v1.2 更新）
+> 版本：v1.2
 
 ---
 
@@ -120,8 +120,8 @@ DMV 将 remote assistance、remote driving、customer support、dispatching 统�
 | Override system 责任划分 | § 227.42(b)(3)(H-I) | 责任矩阵新增第五维度 | ✅ v1.1 已添加 |
 | 法规对齐的 KPI 阈值 | § 227.42(b)(3)(B-D)、(F)、§ 227.42(a)(1)、(b)(1) | KPI 9-13 | ✅ v1.1 已添加 |
 | 安全档案 14 项实操对接 | § 227.04 | 本文档（california-article-3-7-mapping.md） | ✅ 本文档 |
-| 分级运营限制（监管反馈循环） | § 227.46 | 责任矩阵 + KPI 体系增加"监管反馈维度" | 🚧 v1.2 规划 |
-| First Responder Interaction Plan 模板 | § 227.42 多处 | 新增 `architecture/first-responder-interaction-plan-template.md` | 🚧 v1.2 规划 |
+| 分级运营限制（监管反馈循环） | § 227.46 | 责任矩阵新增第七维度 + KPI 14-16 | ✅ v1.2 已完成 |
+| First Responder Interaction Plan 模板 | § 227.42(i) | 新增 `architecture/first-responder-interaction-plan-template.md`（15 节 + 重型车扩展节） | ✅ v1.2 已完成 |
 
 ---
 
@@ -164,7 +164,9 @@ DMV § 227.04 安全档案 14 项强制元素的合规成本极高。ROAM 开源
 
 ## 版本历史
 
-- **v1.0**（2026-04-27）：初始发布，基于加州 DMV Article 3.7 Express Terms（2026）的全文映射
+- v1.0（2026-04-27）：初始发布，基于加州 DMV Article 3.7 Express Terms（2026）的全文映射
+- v1.1（2026-04-27）：场景分类增加 E5、E6；责任矩阵增加第五维度（Override）和第六维度（Avoidance Area）；KPI 体系增加 9-13
+- v1.2（2026-05-06）：响应 § 227.46 分级运营限制，责任矩阵增加第七维度（监管反馈），KPI 体系增加 14-16；响应 § 227.42(i)，新增 `architecture/first-responder-interaction-plan-template.md`（15 节主体 + 重型车扩展节）
 
 ---
 

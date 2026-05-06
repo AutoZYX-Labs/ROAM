@@ -417,9 +417,74 @@ Following the publication of California DMV Article 3.7 (Express Terms 2026), RO
 
 ---
 
+## Regulatory Feedback Dimension KPIs (v1.2, 2026-04-27)
+
+These KPIs operationalize the "regulatory feedback dimension" (responsibility-matrix.md Insight 7) introduced by California DMV Article 3.7 § 227.46. They are not about avoiding regulatory action — they are about **demonstrating, in real time, that the operator is responding to regulatory action with the speed and rigor required**.
+
+### KPI 14: Regulatory Restriction Compliance Time (DMV-Aligned)
+
+**Definition:** Time from receipt of a regulator-issued operational restriction notice (under DMV § 227.46(a)–(c) or equivalent) until the manufacturer's fleet management system has propagated the restriction to all affected vehicles and the restriction is observably in effect on the road.
+
+**Sub-categories:**
+- **14a Standard restriction**: applied per § 227.46(a) (incremental enforcement) — target ≤ 24 hours
+- **14b Imminent hazard restriction**: applied per § 227.46(c) — target ≤ 1 hour
+- **14c Restriction lift**: from DMV approval of lift application to vehicles resuming normal operation — target ≤ 4 hours
+
+**Formula:**
+```
+T_compliance = T_first_compliant_observation - T_restriction_notice_received
+```
+
+Where compliance is observed at the fleet level (e.g., daily fleet count drops below imposed cap; ODD restriction visible in routing decisions).
+
+**Measurement Method:**
+- Restriction notice timestamp logged at receipt (legal/regulatory affairs system)
+- Fleet management system logs the moment the restriction enters effect
+- Independent validation via vehicle telematics: ≥ 95% of fleet must demonstrate compliance within target time
+
+**Data Source:** Regulator notice log + fleet management system + vehicle telematics.
+
+**Why this matters:** Under § 227.46, failure to comply promptly can escalate the restriction or trigger full revocation. KPI 14 forces the manufacturer to design fleet management systems with first-class support for regulator-issued constraints — a capability previously not contemplated in most operators' architecture.
+
+### KPI 15: Restriction Lift Application Cycle Time
+
+**Definition:** Time from imposition of an operational restriction until manufacturer submits a complete restriction-lift application to the regulator, supported by data demonstrating the underlying deficiencies have been addressed.
+
+**Target:**
+- Standard restriction: ≤ 30 days (industry expectation, not legally binding)
+- Imminent hazard restriction: ≤ 7 days for initial lift application
+
+**Measurement Method:**
+- Restriction imposition date and lift application submission date both timestamped in regulator-facing systems
+- Application completeness verified by regulator (rejected applications do not count toward target)
+
+**Data Source:** Regulator submission portal + internal tracker.
+
+**Why this matters:** A long restriction-lift cycle indicates either (a) the underlying issue is harder to remediate than initially believed, or (b) the manufacturer's safety case framework is too weak to demonstrate remediation. Both signal capability gaps that should trigger root-cause investigation.
+
+### KPI 16: Regulatory Restriction Recurrence Rate
+
+**Definition:** Fraction of operational restrictions issued in the past 12 months that recur (i.e., restrictions imposed for the same root cause as a prior restriction lifted within the past 24 months).
+
+**Target:** < 10% (a recurring restriction indicates the lift was premature or remediation was insufficient)
+
+**Formula:**
+```
+Recurrence_Rate = N_recurring_restrictions / N_total_restrictions_12mo
+```
+
+**Measurement Method:** Each restriction is tagged with a root-cause classification (using ROAM scenario taxonomy or DMV's classification). Recurrence is determined when two restrictions in the lookback window share a root-cause tag.
+
+**Data Source:** Regulatory restriction log + root-cause classification per ROAM scenario taxonomy v1.1.
+
+**Why this matters:** A high recurrence rate suggests the manufacturer's safety case framework is treating symptoms rather than causes. Regulators may use this metric (or its inverse) when deciding whether to grant future lift applications.
+
+---
+
 ## Changelog
 
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | 2026-04-02 | Initial release: 8 KPIs defined |
 | 1.1 | 2026-04-27 | Added KPIs 9-13 aligned with California DMV Article 3.7 (Express Terms 2026) regulatory thresholds: 30-second emergency response, 2-minute geofencing compliance, pre-application test mileage requirements |
+| 1.2 | 2026-04-27 | Added KPIs 14-16 (Regulatory Feedback Dimension): restriction compliance time, restriction lift cycle time, restriction recurrence rate. These operationalize Insight 7 of responsibility-matrix.md v1.2 and align with DMV § 227.46 graduated restriction mechanism. |
