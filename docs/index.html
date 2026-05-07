@@ -156,6 +156,13 @@ footer a { color:var(--accent); }
   <p class="sub">Remote Operations &amp; Anomaly Management</p>
   <p class="desc cn"><span class="cn-title">L4 自动驾驶远程运营与异常管理开源框架</span><span class="cn-sub">事件数据库 · 场景分类 · 10 种运营模式 · 参考架构 · 评价基准 · 技术支柱</span></p>
   <p class="desc en">Open-source incident database, scenario taxonomy,<br>reference architecture & evaluation benchmarks for robotaxi remote operations</p>
+  <p style="font-size:0.95rem;color:var(--text3);margin:0 auto 28px;max-width:900px;letter-spacing:0.5px;">
+    <span style="display:inline-block;padding:3px 10px;border:1px solid var(--border);border-radius:14px;background:var(--bg2);font-weight:600;color:var(--text2);">v1.2</span>
+    <span style="margin:0 8px;">·</span>
+    <span class="cn">最后更新：2026-05-06</span><span class="en">Updated: 2026-05-06</span>
+    <span style="margin:0 8px;">·</span>
+    <span class="cn">已对齐加州 DMV Article 3.7（Express Terms 2026）</span><span class="en">Aligned with California DMV Article 3.7 (Express Terms 2026)</span>
+  </p>
   <div class="actions">
     <a href="https://ROAM-explorer.autozyx.com" class="btn btn-primary" target="_blank" rel="noopener"><span class="cn">打开 Explorer</span><span class="en">Open Explorer</span></a>
     <a href="https://ROAM-explorer.autozyx.com/ask" class="btn btn-secondary" target="_blank" rel="noopener"><span class="cn">✨ Ask ROAM</span><span class="en">✨ Ask ROAM</span></a>
@@ -173,10 +180,12 @@ footer a { color:var(--accent); }
         &bull; <strong>萝卜快跑</strong>：2026年3月31日，武汉近百辆萝卜快跑在高架路段同时熄火，乘客被困2小时，SOS无人应答，最终依靠交警逐车施救。事件后14天内，国家三部门召开全国安全监管会议，超10个试点城市同步收紧准入，行业监管逻辑从"包容审慎"转向"安全底线刚性化"。<br><br>
         &bull; <strong>Waymo</strong>：三个月前，旧金山停电导致Waymo大面积瘫痪，应急热线等待2.5小时。<br><br>
         &bull; <strong>美国国会调查</strong>：2026年3月，参议员Markey发布《Remote Back Seat Operators》报告，七家头部自动驾驶公司（Aurora、May Mobility、Motional、Nuro、Tesla、Waymo、Zoox）均拒绝披露其无人车需要远程人工干预的频率。<br><br>
+        &bull; <strong>加州 DMV Article 3.7</strong>：2026 年 Express Terms 修订版正式确立 "Remote Operations Support" 为法定术语，区分 Remote Driver 与 Remote Assistant 两类岗位，规定 14 项强制安全档案要素、30 秒紧急响应、§ 227.46 分级运营限制等可量化阈值——全球首部远程运营专门法规。<br><br>
         &bull; 当无人驾驶出租车规模化运营时，这种靠人力逐车施救的模式不可持续，而行业连最基本的透明度都无法保证。</span><span class="en"><strong>Why this project?</strong><br><br>
         &bull; <strong>Baidu Apollo</strong>: On March 31, 2026, ~100 robotaxis shut down simultaneously on Wuhan's elevated highways. Passengers trapped for 2 hours. SOS unanswered. Police rescued vehicles one by one.<br><br>
         &bull; <strong>Waymo</strong>: Three months earlier, a San Francisco blackout stranded Waymo's fleet — emergency services waited 2.5 hours on hold.<br><br>
         &bull; <strong>US Congress</strong>: In March 2026, Senator Markey's investigation revealed that all seven major AV companies (Aurora, May Mobility, Motional, Nuro, Tesla, Waymo, Zoox) refused to disclose how frequently their vehicles require remote human intervention.<br><br>
+        &bull; <strong>California DMV Article 3.7</strong>: The 2026 Express Terms amendment officially codified "Remote Operations Support" as a legal term, distinguished Remote Driver vs. Remote Assistant roles, and prescribed 14 mandatory safety case elements, 30-second emergency response, § 227.46 graduated restrictions, and other quantifiable thresholds — the first dedicated regulation worldwide for AV remote operations.<br><br>
         &bull; At scale, manual vehicle-by-vehicle rescue is unsustainable — and the industry cannot even guarantee basic transparency.</span></p>
     </div>
   </section>
@@ -272,28 +281,28 @@ footer a { color:var(--accent); }
     <p class="sec-sub"><span class="cn">构成 L4 自动驾驶远程运营的完整开源基线</span><span class="en">A complete open-source baseline for L4 autonomous mobility remote operations</span></p>
     <div class="pillars">
       <div class="pillar">
-        <div class="pillar-num"><span class="cn">模块一</span><span class="en">Module 1</span></div>
+        <div class="pillar-num"><span class="cn">模块一 · v1.0</span><span class="en">Module 1 · v1.0</span></div>
         <h3><span class="cn">事故 / 异常事件库</span><span class="en">Incident Database</span></h3>
         <p><span class="cn">16+ 结构化事件记录，覆盖 Waymo、Cruise、百度Apollo、Pony.ai 四家运营商，YAML标准格式，社区持续更新</span><span class="en">16+ structured records across 4 operators (Waymo, Cruise, Baidu Apollo, Pony.ai), standardized YAML format, community-maintained</span></p>
         <div class="align"><span class="cn">↳ 支撑GB标准附录D安全档案中的运营证据要求</span><span class="en">↳ Supports Safety Case evidence (GB Standard Appendix D)</span></div>
       </div>
       <div class="pillar">
-        <div class="pillar-num"><span class="cn">模块二</span><span class="en">Module 2</span></div>
+        <div class="pillar-num"><span class="cn">模块二 · v1.1</span><span class="en">Module 2 · v1.1</span></div>
         <h3><span class="cn">场景分类体系</span><span class="en">Scenario Taxonomy</span></h3>
-        <p><span class="cn">6大类、26子场景，含严重度 S0–S4 和紧急度 U0–U3 分级，对齐 ISO 34502 场景分层方法</span><span class="en">6 categories, 26 sub-scenarios with severity S0–S4 and urgency U0–U3 scales, aligned with ISO 34502</span></p>
-        <div class="align"><span class="cn">↳ 对齐GB标准表D.1整车危害分类体系</span><span class="en">↳ Aligned with GB Standard Table D.1 hazard categories</span></div>
+        <p><span class="cn">6大类、29子场景（含 v1.1 新增 E5 紧急地理围栏 / E6 第一响应人 Override 系统），含严重度 S0–S4 和紧急度 U0–U3 分级，对齐 ISO 34502 场景分层方法</span><span class="en">6 categories, 29 sub-scenarios (incl. v1.1-new E5 emergency geofencing / E6 first-responder override), with severity S0–S4 and urgency U0–U3 scales, aligned with ISO 34502</span></p>
+        <div class="align"><span class="cn">↳ 对齐 GB 标准表 D.1 + DMV § 227.42(b)(3)(F-I)</span><span class="en">↳ Aligned with GB Table D.1 + DMV § 227.42(b)(3)(F-I)</span></div>
       </div>
       <div class="pillar">
-        <div class="pillar-num"><span class="cn">模块三</span><span class="en">Module 3</span></div>
+        <div class="pillar-num"><span class="cn">模块三 · v1.2</span><span class="en">Module 3 · v1.2</span></div>
         <h3><span class="cn">参考架构</span><span class="en">Reference Architecture</span></h3>
-        <p><span class="cn">三层决策模型：AI自主处置 → AI辅助+人工确认 → 远程遥控/线下派人，含API接口规范和场景-处置映射表</span><span class="en">Three-layer decision model: AI autonomous → AI-assisted + human confirm → remote driving. Includes API spec and scenario-handler mapping</span></p>
-        <div class="align"><span class="cn">↳ 对齐GB标准附录C.2远程协助技术要求</span><span class="en">↳ Aligned with GB Standard Appendix C.2 remote assistance</span></div>
+        <p><span class="cn">三层决策模型 + 责任矩阵 v1.2（10 模式 × 3 层 × 7 维度，含 v1.2 新增"监管反馈维度"）+ FRIP 模板（紧急响应人员交互计划）</span><span class="en">Three-layer decision model + Responsibility matrix v1.2 (10 modes × 3 layers × 7 dimensions, v1.2 adds "regulatory feedback") + FRIP template (First Responder Interaction Plan)</span></p>
+        <div class="align"><span class="cn">↳ 对齐 GB 附录 C.2 + DMV § 227.42(i) / § 227.46</span><span class="en">↳ Aligned with GB Appendix C.2 + DMV § 227.42(i) / § 227.46</span></div>
       </div>
       <div class="pillar">
-        <div class="pillar-num"><span class="cn">模块四</span><span class="en">Module 4</span></div>
+        <div class="pillar-num"><span class="cn">模块四 · v1.2</span><span class="en">Module 4 · v1.2</span></div>
         <h3><span class="cn">评价基准</span><span class="en">Evaluation Benchmarks</span></h3>
-        <p><span class="cn">8项KPI（MTTR、AI处置率、误升级率等），含目标值与自然驾驶基线数据</span><span class="en">8 KPIs (MTTR, AI resolution rate, false escalation rate, etc.) with target values and naturalistic driving baselines</span></p>
-        <div class="align"><span class="cn">↳ 支撑残余风险接受准则（碰撞率 &lt;10⁻⁴/h）</span><span class="en">↳ Supports residual risk criteria (collision rate &lt;10⁻⁴/h)</span></div>
+        <p><span class="cn">16 项 KPI：8 项基线（MTTR、AI 处置率等）+ v1.1 新增 5 项法规对齐（KPI 9-13，含 30s 紧急响应阈值）+ v1.2 新增 3 项监管反馈（KPI 14-16，含限制合规时限、解除周期、复发率）</span><span class="en">16 KPIs: 8 baseline (MTTR, AI resolution rate, etc.) + v1.1 5 regulator-aligned (KPIs 9-13, incl. 30s emergency response threshold) + v1.2 3 regulatory feedback (KPIs 14-16: restriction compliance time, lift cycle, recurrence rate)</span></p>
+        <div class="align"><span class="cn">↳ 残余风险接受准则 &lt;10⁻⁴/h + DMV § 227.46 量化对齐</span><span class="en">↳ Residual risk &lt;10⁻⁴/h + DMV § 227.46 quantitative alignment</span></div>
       </div>
     </div>
   </section>
@@ -483,6 +492,56 @@ footer a { color:var(--accent); }
     </p>
   </section>
 
+  <!-- California DMV Article 3.7 (v1.2) -->
+  <section id="dmv-article-37">
+    <h2 class="sec-title"><span class="cn">加州 DMV Article 3.7：远程运营首部专门法规</span><span class="en">California DMV Article 3.7: First Dedicated Regulation for AV Remote Operations</span></h2>
+    <p class="sec-sub"><span class="cn">2026 年 Express Terms 修订版与 ROAM 框架在术语、岗位分工、量化阈值、紧急响应等四个维度全方位对齐</span><span class="en">2026 Express Terms aligned with ROAM v1.2 across terminology, role separation, quantitative thresholds, and emergency response</span></p>
+
+    <div class="alert" style="border-color:#a0c8d8; background:#eff7fa;">
+      <strong style="color:#1e4a5c;"><span class="cn">从 Markey 国会调查到加州监管落地</span><span class="en">From Markey Investigation to California Regulatory Action</span></strong>
+      <p style="color:#163a4a;"><span class="cn">Markey 报告揭示了行业的透明度缺失，加州 DMV 紧随其后给出了监管答案。Article 3.7（Express Terms 2026）是<strong>全球首部以"远程运营"为专门对象的法规</strong>，正式确立 "Remote Operations Support" 为法定术语，明确区分 Remote Driver（实时控制 / 9 项功能要求）与 Remote Assistant（提供信息建议 / 7 项功能要求），并规定 14 项强制安全档案要素与多项可量化阈值。ROAM v1.2 已系统对齐这一法规体系。</span><span class="en">Where Markey exposed the industry's transparency gap, California DMV provided the regulatory answer. Article 3.7 (Express Terms 2026) is the <strong>first regulation worldwide</strong> dedicated to AV remote operations: it codifies "Remote Operations Support" as a legal term, distinguishes Remote Driver (real-time control / 9 functional requirements) from Remote Assistant (information & advisory / 7 functional requirements), and prescribes 14 mandatory safety case elements plus quantitative thresholds. ROAM v1.2 has been systematically aligned with this regulatory framework.</span></p>
+    </div>
+
+    <div class="pillars" style="grid-template-columns:repeat(2,1fr);margin-top:24px;">
+      <div class="pillar" style="border-top:4px solid #1e4a5c;">
+        <div class="pillar-num"><span class="cn">对齐一</span><span class="en">Alignment 1</span></div>
+        <h3><span class="cn">14 项强制安全档案要素 ↔ ROAM 四个模块</span><span class="en">14 Safety Case Elements ↔ Four ROAM Modules</span></h3>
+        <p><span class="cn">DMV § 227.04 要求每家 driverless 测试 / 部署许可申请方提交涵盖 ODD、运营设计、网络安全、远程运营、事故应对等 14 项强制要素的安全档案。ROAM 四个模块（事件库 / 场景分类 / 参考架构 / 评价基准）逐项映射，可作为企业起草安全档案的开源工作底稿。</span><span class="en">DMV § 227.04 requires every driverless testing/deployment applicant to submit a safety case covering 14 mandatory elements (ODD, operational design, cybersecurity, remote operations, incident response, etc.). ROAM's four modules map item-by-item, serving as an open-source working baseline for safety case drafting.</span></p>
+        <div class="align"><span class="cn">完整映射：<a href="california-article-3-7-mapping.md">california-article-3-7-mapping.md</a> § C</span><span class="en">Full mapping: <a href="california-article-3-7-mapping.md">mapping doc</a> § C</span></div>
+      </div>
+
+      <div class="pillar" style="border-top:4px solid #1e4a5c;">
+        <div class="pillar-num"><span class="cn">对齐二</span><span class="en">Alignment 2</span></div>
+        <h3><span class="cn">Remote Driver / Remote Assistant 二分法 ↔ Layer 2 / Layer 3</span><span class="en">Remote Driver / Remote Assistant ↔ Layer 2 / Layer 3</span></h3>
+        <p><span class="cn">DMV § 227.38 定义 Remote Driver（实时控制车辆，承担完整驾驶员责任，对应 ROAM Layer 3）；§ 227.40 定义 Remote Assistant（仅提供信息和建议，对应 ROAM Layer 2 AI 辅助 + 人工确认）。ROAM 三层决策模型在法规层面得到验证。</span><span class="en">DMV § 227.38 defines Remote Driver (real-time control with full driver liability, mapped to ROAM Layer 3); § 227.40 defines Remote Assistant (information and advisory only, mapped to ROAM Layer 2 AI-assisted + human confirm). ROAM's three-layer model is validated at the regulatory level.</span></p>
+        <div class="align"><span class="cn">↳ 与 Koopman 六角色框架进一步互证</span><span class="en">↳ Cross-validates with Koopman's six-role framework</span></div>
+      </div>
+
+      <div class="pillar" style="border-top:4px solid #1e4a5c;">
+        <div class="pillar-num"><span class="cn">对齐三</span><span class="en">Alignment 3</span></div>
+        <h3><span class="cn">§ 227.46 分级运营限制 ↔ 责任矩阵第七维度（v1.2）</span><span class="en">§ 227.46 Graduated Restrictions ↔ Responsibility Matrix 7th Dim (v1.2)</span></h3>
+        <p><span class="cn">DMV § 227.46 在"无处罚"和"完全吊销"之间引入 5 档处置（整改通知 → 日常运营限制 → 强制人员介入 → 立即限制 → 完全吊销）。ROAM 责任矩阵 v1.2 新增"监管反馈维度"作为第七维度，对应 KPI 14（合规时限 ≤24h / 紧急 ≤1h）、KPI 15（解除申请周期）、KPI 16（复发率 &lt;10%）。</span><span class="en">DMV § 227.46 introduces 5 graduated tiers between "no action" and "full revocation" (rectification notice → daily restriction → mandatory personnel → imminent hazard → revocation). ROAM Matrix v1.2 adds "regulatory feedback dimension" as the 7th outer-layer dimension, mapped to KPI 14 (compliance time ≤24h / imminent ≤1h), KPI 15 (lift application cycle), KPI 16 (recurrence rate &lt;10%).</span></p>
+        <div class="align"><span class="cn">↳ <a href="https://github.com/AutoZYX/ROAM/blob/main/architecture/responsibility-matrix.md">责任矩阵</a> 洞察 7</span><span class="en">↳ <a href="https://github.com/AutoZYX/ROAM/blob/main/architecture/responsibility-matrix.md">Responsibility matrix</a> Insight 7</span></div>
+      </div>
+
+      <div class="pillar" style="border-top:4px solid #1e4a5c;">
+        <div class="pillar-num"><span class="cn">对齐四</span><span class="en">Alignment 4</span></div>
+        <h3><span class="cn">§ 227.42(i) 第一响应人交互计划 ↔ FRIP 模板（v1.2 新增）</span><span class="en">§ 227.42(i) First Responder Interaction Plan ↔ FRIP Template (v1.2 New)</span></h3>
+        <p><span class="cn">DMV § 227.42(i) 强制要求 driverless 申请方提交涵盖 15 项法定要素的 First Responder Interaction Plan（含 ODD、紧急联系电话、安全接近 / Override 程序、车辆移动协调、灭火、拖车等）。ROAM v1.2 新增完整模板，含 15 节主体 + 重型车扩展节，每节含法规依据、内容模板和 ROAM 框架对应关系。</span><span class="en">DMV § 227.42(i) requires driverless applicants to submit a First Responder Interaction Plan covering 15 mandatory elements (ODD, emergency phone, safe approach/override, vehicle movement coordination, fire, towing, etc.). ROAM v1.2 introduces a complete template with 15 main sections plus a heavy-duty extension, each section providing legal citation, content template, and ROAM framework cross-reference.</span></p>
+        <div class="align"><span class="cn">↳ <a href="https://github.com/AutoZYX/ROAM/blob/main/architecture/first-responder-interaction-plan-template.md">FRIP 模板</a></span><span class="en">↳ <a href="https://github.com/AutoZYX/ROAM/blob/main/architecture/first-responder-interaction-plan-template.md">FRIP Template</a></span></div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px; padding:16px 20px; background:var(--bg2); border-radius:6px; border-left:3px solid #1e4a5c;">
+      <p style="font-size:1.05rem; color:var(--text2); line-height:1.7;"><span class="cn"><strong>对中国标准化工作的启示：</strong>加州 DMV 的术语体系与量化阈值如果率先成为事实标准，中国 GB/T 立项可能面临"被加州术语裹挟"的风险。建议汽标委 TC114/SC34 加快《智能网联汽车 自动驾驶系统 远程运营与异常管理参考架构》立项节奏（2026 Q4 完成立项申请），在术语层面参照但不照搬 DMV 二分法，结合《自动驾驶汽车运输安全服务指南》和 YD/T 4778-4783 形成本地化定义；在量化阈值上对齐 30s/2min 等基线，但根据中国实际场景（如 1:3 安全员比例）适度调整。</span><span class="en"><strong>Implications for Chinese standardization:</strong> If California DMV's terminology and quantitative thresholds become the de facto global standard, Chinese GB/T proposals risk being "captured by California terminology". SAC/TC114/SC34 should accelerate the filing of "ICV ADS — Reference Architecture for Remote Operations and Anomaly Management" (target: Q4 2026), referencing but not copying DMV's binary classification, and combining the Chinese MoT "AV Transport Safety Service Guidelines" and YD/T 4778-4783 to form localized definitions; align on 30s/2min baselines but adjust for China-specific contexts (e.g., 1:3 safety operator ratio).</span></p>
+    </div>
+
+    <p style="margin-top:16px;color:var(--text3);font-size:0.95rem;">
+      <span class="cn">完整映射文档：<a href="california-article-3-7-mapping.md">california-article-3-7-mapping.md</a>（H 章节体系映射 + 14 项安全档案对接 + 9 大关键术语） · 法规原文：<a href="california-dmv-article-3-7-modified-text.pdf">DMV Article 3.7 Modified Text PDF</a></span>
+      <span class="en">Full mapping doc: <a href="california-article-3-7-mapping.md">mapping document</a> (8-chapter mapping + 14 safety case items + 9 key terms) · Original text: <a href="california-dmv-article-3-7-modified-text.pdf">DMV Article 3.7 Modified Text PDF</a></span>
+    </p>
+  </section>
+
   <!-- Technology Pillars -->
   <section id="technology-pillars">
     <h2 class="sec-title"><span class="cn">六大技术支柱</span><span class="en">Six Technology Pillars</span></h2>
@@ -590,8 +649,8 @@ footer a { color:var(--accent); }
         <div style="font-size:0.82rem;color:var(--text2);"><span class="cn">结构化事件</span><span class="en">structured incidents</span></div>
       </div>
       <div style="text-align:center;">
-        <div style="font-size:2rem;font-weight:700;color:var(--accent);font-family:'Playfair Display',serif;">27</div>
-        <div style="font-size:0.82rem;color:var(--text2);"><span class="cn">子场景分类</span><span class="en">sub-scenarios</span></div>
+        <div style="font-size:2rem;font-weight:700;color:var(--accent);font-family:'Playfair Display',serif;">29</div>
+        <div style="font-size:0.82rem;color:var(--text2);"><span class="cn">子场景分类（v1.1）</span><span class="en">sub-scenarios (v1.1)</span></div>
       </div>
       <div style="text-align:center;">
         <div style="font-size:2rem;font-weight:700;color:var(--accent);font-family:'Playfair Display',serif;">14</div>
@@ -707,23 +766,26 @@ footer a { color:var(--accent); }
 
   <section>
     <h2 class="sec-title"><span class="cn">对齐标准</span><span class="en">Standards Alignment</span></h2>
-    <p class="sec-sub"><span class="cn">四个模块与13项国内外标准形成系统性对齐</span><span class="en">Four modules systematically aligned with 13 standards</span></p>
+    <p class="sec-sub"><span class="cn">四个模块与 17 项国内外标准 / 法规 / 调查报告形成系统性对齐（v1.2 新增加州 DMV、YD/T 4778-4783、Markey RAOS 三组）</span><span class="en">Four modules systematically aligned with 17 standards / regulations / reports (v1.2 adds California DMV, YD/T 4778-4783, Markey RAOS)</span></p>
     <div class="tbl-wrap">
     <table>
-      <thead><tr><th><span class="cn">标准</span><span class="en">Standard</span></th><th><span class="cn">与ROAM的关联</span><span class="en">Relevance</span></th></tr></thead>
+      <thead><tr><th><span class="cn">标准 / 法规</span><span class="en">Standard / Regulation</span></th><th><span class="cn">与 ROAM 的关联</span><span class="en">Relevance</span></th></tr></thead>
       <tbody>
-        <tr><td>GB《自动驾驶系统安全要求》</td><td><span class="cn">附录C.2 L4远程协助要求 · 附录D 安全档案结构</span><span class="en">C.2: L4 remote assistance · D: Safety Case structure</span></td></tr>
+        <tr style="background:#fdf8ec;"><td><strong><span class="cn">加州 DMV Article 3.7（Express Terms 2026）</span><span class="en">California DMV Article 3.7 (Express Terms 2026)</span></strong> <span class="tag">v1.2</span></td><td><span class="cn">全球首部远程运营专门法规：14 项安全档案 + Remote Driver/Assistant 二分 + § 227.46 分级限制 + § 227.42(i) FRIP 模板</span><span class="en">First dedicated remote-ops regulation: 14 safety case elements + Remote Driver/Assistant dichotomy + § 227.46 graduated restrictions + § 227.42(i) FRIP template</span></td></tr>
+        <tr style="background:#fdf8ec;"><td><strong>YD/T 4778-4783</strong> <span class="tag">v1.2</span></td><td><span class="cn">中国 5G 远程遥控驾驶信息交互系列行业标准（6 部，覆盖系统架构、数据采集、信息编码、网络协议、安全要求、测试方法）</span><span class="en">CN 5G tele-driving information interaction industry standards (6 parts: system architecture, data acquisition, info encoding, network protocol, security, test methods)</span></td></tr>
+        <tr style="background:#fdf0f0;"><td><strong><span class="cn">美国国会 Markey RAOS 报告（2026-03）</span><span class="en">US Congress Markey RAOS Report (2026-03)</span></strong> <span class="tag">v1.1</span></td><td><span class="cn">首份针对 RAO 的国会调查，七家头部 AV 公司均拒绝披露干预频率，从立法层面印证 ROAM 透明度命题</span><span class="en">First Congressional investigation into RAOs; all seven major AV companies refused to disclose intervention frequency, validating ROAM's transparency thesis</span></td></tr>
+        <tr><td>GB《自动驾驶系统安全要求》</td><td><span class="cn">附录 C.2 L4 远程协助要求 · 附录 D 安全档案结构</span><span class="en">C.2: L4 remote assistance · D: Safety Case structure</span></td></tr>
         <tr><td>UN GTR on ADS (WP.29)</td><td><span class="cn">"称职且谨慎的人类驾驶员"全球安全基线</span><span class="en">"Competent and careful human driver" global safety baseline</span></td></tr>
-        <tr><td>ISO 34502 / ISO 21448</td><td><span class="cn">场景分类对齐 · SOTIF未知不安全场景识别</span><span class="en">Scenario taxonomy · SOTIF unknown unsafe scenarios</span></td></tr>
+        <tr><td>ISO 34502 / ISO 21448</td><td><span class="cn">场景分类对齐 · SOTIF 未知不安全场景识别</span><span class="en">Scenario taxonomy · SOTIF unknown unsafe scenarios</span></td></tr>
         <tr><td>ISO 22737 (LSAD)</td><td><span class="cn">含"无人驾驶运营调度员"角色定义</span><span class="en">Includes "driverless operation dispatcher" role</span></td></tr>
         <tr><td><span class="cn">德国 StVFernLV (2025-12)</span><span class="en">German StVFernLV (2025-12)</span></td><td><span class="cn">欧洲首个远程驾驶法律框架</span><span class="en">Europe's first teleoperated driving legal framework</span></td></tr>
-        <tr><td>NHTSA SGO</td><td><span class="cn">ADS事故30秒报告要求</span><span class="en">ADS crash reporting within 30 seconds</span></td></tr>
+        <tr><td>NHTSA SGO</td><td><span class="cn">ADS 事故 30 秒报告要求</span><span class="en">ADS crash reporting within 30 seconds</span></td></tr>
       </tbody>
     </table>
     </div>
     <p style="margin-top:12px;color:var(--text3);font-size:0.82rem;">
-      <span class="cn">完整13项映射见 <a href="https://github.com/AutoZYX/ROAM/blob/main/docs/related-standards.md">related-standards.md</a> · 文献综述：<a href="https://github.com/AutoZYX/ROAM/blob/main/docs/literature-review.md">中文</a> / <a href="https://github.com/AutoZYX/ROAM/blob/main/docs/literature-review-en.md">English</a></span>
-      <span class="en">Full mapping: <a href="https://github.com/AutoZYX/ROAM/blob/main/docs/related-standards.md">related-standards.md</a> · Literature review: <a href="https://github.com/AutoZYX/ROAM/blob/main/docs/literature-review-en.md">literature-review.md</a></span>
+      <span class="cn">完整 17 项映射见 <a href="https://github.com/AutoZYX/ROAM/blob/main/docs/related-standards.md">related-standards.md</a> · 加州 DMV 全文映射：<a href="california-article-3-7-mapping.md">california-article-3-7-mapping.md</a> · 文献综述：<a href="https://github.com/AutoZYX/ROAM/blob/main/docs/literature-review.md">中文</a> / <a href="https://github.com/AutoZYX/ROAM/blob/main/docs/literature-review-en.md">English</a></span>
+      <span class="en">Full 17-item mapping: <a href="https://github.com/AutoZYX/ROAM/blob/main/docs/related-standards.md">related-standards.md</a> · DMV full mapping: <a href="california-article-3-7-mapping.md">california-article-3-7-mapping.md</a> · Literature review: <a href="https://github.com/AutoZYX/ROAM/blob/main/docs/literature-review-en.md">literature-review.md</a></span>
     </p>
   </section>
 
