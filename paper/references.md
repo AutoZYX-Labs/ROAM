@@ -112,7 +112,7 @@
 
 [41] FENG D, HARAKEH A, WASLANDER S L, et al. A review and comparative study on probabilistic object detection in autonomous driving [J]. IEEE Transactions on Intelligent Transportation Systems, 2022, 23(8): 9961-9980.
 
-[42] 全国汽车标准化技术委员会. GB/T 44721-2024 智能网联汽车 预期功能安全 场景要素 [S]. 北京: 国家市场监督管理总局、国家标准化管理委员会, 2024.
+[42] 全国汽车标准化技术委员会. GB/T 43267-2023 道路车辆 预期功能安全 [S]. 北京: 国家市场监督管理总局、国家标准化管理委员会, 2023.
 
 ### 六、通信与 V2X 标准（[43]–[46]）
 
