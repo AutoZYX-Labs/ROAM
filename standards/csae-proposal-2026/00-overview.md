@@ -172,6 +172,7 @@ ROAM 不是与既有标准并列的新规范，而是为既有标准提供运营
 | 02-positioning-vs-gb-draft.md | 与 GB 讨论稿差异化定位 | 立项答辩 / 论文素材 |
 | 03-ppt-outline.md | 答辩 PPT 章节 outline | 用于制作 .pptx |
 | 04-standard-draft.md | 标准草案 v0.1 | 起草阶段起点 |
+| 05-call-for-participants.md | 起草工作组征集通知 | CAICV 公众号 / 官网发布 |
 | 99-changelog.md | 立项进度记录 | 持续更新 |
 
 ### 私有层（不进 git）
