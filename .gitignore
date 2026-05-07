@@ -13,3 +13,9 @@ tools/dmv-importer/*.txt
 # Reference documents (keep local, not public)
 GBT草案*.docx
 关于召开*.pdf
+
+# CSAE proposal sensitive materials (sealed application forms, defense pptx, coordination)
+standards/csae-proposal-2026/PRIVATE/
+*-PRIVATE.docx
+*-PRIVATE.pdf
+*盖章*
