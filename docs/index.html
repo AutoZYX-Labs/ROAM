@@ -638,6 +638,52 @@ footer a { color:var(--accent); }
     </p>
   </section>
 
+  <!-- ROAM vs CSAE Group Standard Boundary -->
+  <section id="roam-vs-csae-standard">
+    <h2 class="sec-title"><span class="cn">ROAM 与 CSAE 团标的关系</span><span class="en">ROAM Open Project vs CSAE Group Standard</span></h2>
+    <p class="sec-sub"><span class="cn">ROAM 是开源研究框架（superset），CSAE 团标是其中可标准化的子集（subset）</span><span class="en">ROAM is the open-source research framework (superset); the CSAE Group Standard is the standardizable subset</span></p>
+
+    <div class="alert" style="border-color:#e8d5a0;background:#fdf8ec;">
+      <strong style="color:#7a5c10;"><span class="cn">立项进展</span><span class="en">Standardization Status</span></strong>
+      <p style="color:#5c4a12;"><span class="cn">2026 年 5 月，CSAE 团标《智能网联汽车 高度自动驾驶车辆运营管理异常事件处置规范》正式启动预研。由中国智能网联汽车产业创新联盟（CAICV）提出，吉林大学、卓驭科技、一汽集团、国家智能网联汽车创新中心（CICV）联合牵头。<strong>ROAM 与该团标不等价</strong>：ROAM 是开源研究框架，持续国际化演化；CSAE 团标是中国本土的、由起草组共识决定的标准化产出。</span><span class="en">In May 2026, the CSAE Group Standard <em>Specification for Operations Anomaly Event Management of High-Automation Vehicles</em> entered pre-research, jointly led by Jilin University, ZYT, FAW Group, and the China Intelligent and Connected Vehicles Industry Innovation Center (CICV), proposed by CAICV. <strong>ROAM and the CSAE Group Standard are not equivalent</strong>: ROAM is an open-source research framework with international scope; the CSAE Group Standard is the Chinese-context, drafting-group-consensus standardization output.</span></p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px;">
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:6px;padding:20px;">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:12px;color:var(--green);"><span class="cn">ROAM 包含但超出团标的部分</span><span class="en">What ROAM Contains Beyond the Standard</span></h3>
+        <ul style="font-size:1rem;color:var(--text2);line-height:1.9;padding-left:20px;">
+          <li><span class="cn">国际化事件库（持续收集）</span><span class="en">International incident database</span></li>
+          <li><span class="cn">学术论文（TR-A / SAE / ISO 工作文档）</span><span class="en">Academic publications (TR-A / SAE / ISO)</span></li>
+          <li><span class="cn">关键技术研究（开源代码 / 模型 / 工具链）</span><span class="en">Key technology research (open-source code / models / toolchains)</span></li>
+          <li><span class="cn">商业模式探索（含 L4 数据驱动保险新模式）</span><span class="en">Business model exploration (e.g., L4 data-driven insurance)</span></li>
+          <li><span class="cn">跨域案例（无人机远程运营等方法论借鉴）</span><span class="en">Cross-domain case studies (drone remote ops, etc.)</span></li>
+          <li><span class="cn">国际标准对比（仅作为立项背景参考）</span><span class="en">International standard comparison (proposal background only)</span></li>
+        </ul>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:6px;padding:20px;">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:12px;color:var(--accent);"><span class="cn">团标待起草组共识决定的核心内容</span><span class="en">Standard Content Awaiting Drafting-Group Consensus</span></h3>
+        <ul style="font-size:1rem;color:var(--text2);line-height:1.9;padding-left:20px;">
+          <li><span class="cn">L4 运营模式分类（数量、边界、是否全部纳入）</span><span class="en">L4 operating-mode classification (count, boundary, scope)</span></li>
+          <li><span class="cn">决策架构层级（层数、定义、占比、是否分层）</span><span class="en">Decision architecture levels (count, definition, ratio, structure)</span></li>
+          <li><span class="cn">异常事件场景分类（分类粒度由起草组细化）</span><span class="en">Anomaly scenario taxonomy (granularity by drafting group)</span></li>
+          <li><span class="cn">责任划分维度（维度数量与定义）</span><span class="en">Responsibility-matrix dimensions (count and definitions)</span></li>
+          <li><span class="cn">KPI 具体阈值（需中国运营数据校准）</span><span class="en">KPI thresholds (calibrated against Chinese operational data)</span></li>
+          <li><span class="cn">责任矩阵法律维度（需中国判例与公安部道研主导）</span><span class="en">Legal aspects of responsibility matrix (Chinese case law)</span></li>
+          <li><span class="cn">FRIP 模板本土化、试验方法细则</span><span class="en">FRIP localization and test method details</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:20px; padding:16px 20px; background:var(--bg2); border-radius:6px; border-left:3px solid var(--accent);">
+      <p style="font-size:1.05rem; color:var(--text2); line-height:1.7;"><strong><span class="cn">材料状态披露：</span><span class="en">Material Status Disclosure: </span></strong><span class="cn">ROAM 框架 v1.2 是借助 AI 工具进行结构化整理的初步研究框架，基于公开的国内外标准、法规、行业报告以及作者团队的实践经验。ROAM 中的具体设计（10 种运营模式、三层决策架构、70/25/5 占比、29 子场景、7 维责任矩阵等）均为当前阶段的备选方案，<strong>后续可能由起草组进行调整、删减或重新定义</strong>。本框架不替代真实运营数据的实证校准、中国法律责任划分的判例支撑、跨企业协作中的真实摩擦点识别，以及监管侧的政治可行性评估。在 CSAE 团标起草过程中，所有条款的最终采纳由起草组专家审议确定。</span><span class="en">The ROAM v1.2 framework is an initial research framework structured with AI tools, based on publicly available standards, regulations, industry reports, and the author team's practical experience. ROAM's specific designs (10 operating modes, three-layer decision architecture, 70/25/5 split, 29 sub-scenarios, 7-dimension responsibility matrix) are current-stage proposals that <strong>may be adjusted, reduced, or redefined by the drafting group</strong>. This framework does not replace empirical calibration with real operational data, case-law support for Chinese legal liability allocation, identification of real friction points in cross-enterprise collaboration, or political feasibility assessment from the regulatory side. In the CSAE drafting process, the final adoption of all clauses is determined by expert review of the drafting group.</span></p>
+    </div>
+
+    <p style="margin-top:16px;color:var(--text3);font-size:0.95rem;">
+      <span class="cn">完整边界说明（中文，给起草组）：<a href="https://github.com/AutoZYX/ROAM/blob/main/standards/csae-proposal-2026/07-scope-boundary.md">07-scope-boundary.md</a> · 立项材料目录：<a href="https://github.com/AutoZYX/ROAM/tree/main/standards/csae-proposal-2026">standards/csae-proposal-2026/</a></span>
+      <span class="en">Full boundary doc (Chinese, for drafting group): <a href="https://github.com/AutoZYX/ROAM/blob/main/standards/csae-proposal-2026/07-scope-boundary.md">07-scope-boundary.md</a> · Standard proposal materials: <a href="https://github.com/AutoZYX/ROAM/tree/main/standards/csae-proposal-2026">standards/csae-proposal-2026/</a></span>
+    </p>
+  </section>
+
   <!-- Explorer CTA (replaces detailed taxonomy + incidents) -->
   <section id="incidents" style="background:linear-gradient(135deg,#fef8ec,#fdf0f0);border:1.5px solid var(--accent);border-radius:14px;padding:32px;margin:32px 0;">
     <h2 class="sec-title" style="margin-top:0;"><span class="cn">数据与工具：ROAM Explorer</span><span class="en">Data &amp; Tools: ROAM Explorer</span></h2>

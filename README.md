@@ -141,6 +141,36 @@ ROAM/
 - **Jilin University AD Safety Joint Lab** (吉林大学自动驾驶安全联合实验室) — Scenario taxonomy, SOTIF methodology, academic research
 - **DRIVEResearch** (驭研科技) — Naturalistic driving baseline data (750h+ aerial UAV, 10.5M+ trajectories)
 
+## ROAM Open Framework vs CSAE Group Standard
+
+> **Important: ROAM is the superset, CSAE Group Standard is the subset.**
+
+In May 2026, the CSAE Group Standard *Specification for Operations Anomaly Event Management of High-Automation Vehicles* (《智能网联汽车 高度自动驾驶车辆运营管理异常事件处置规范》) entered the pre-research stage, jointly led by Jilin University, ZYT, FAW Group, and the China Intelligent and Connected Vehicles Industry Innovation Center (CICV), proposed by CAICV.
+
+ROAM and the CSAE Group Standard are not equivalent. ROAM is an open-source research framework with international scope; the CSAE Group Standard is a Chinese-context, drafting-group-consensus standardization output that selects the standardizable subset from ROAM and adapts it to Chinese national conditions, commercial models, and regulatory reality.
+
+**What ROAM contains beyond the CSAE Group Standard:**
+
+- International incident database (continuously collected)
+- Academic publications (TR-A / SAE / ISO working documents)
+- Key technology research (open-source code, models, toolchains)
+- Business model exploration (e.g., L4 data-driven insurance)
+- Cross-domain case studies (drone remote operations, etc.)
+
+**Material Status Disclosure**
+
+The ROAM v1.2 framework is an initial research framework structured with AI tools, based on publicly available international standards, regulations, industry reports, and the author team's practical experience.
+
+Specific clauses of the CSAE Group Standard (operating-mode classification, decision architecture levels, KPI thresholds, responsibility-matrix dimensions, FRIP localization, test methods, etc.) require calibration by drafting-group members using real operational data and operational experience. The standard's content must align with Chinese national conditions, commercial models, and regulatory reality, decided by consensus of drafting-group member organizations — and is not equivalent to the ROAM framework itself.
+
+ROAM's specific designs (e.g., 10 operating modes, three-layer decision architecture, 70/25/5 split) are current-stage proposals that may be adjusted, reduced, or redefined by the drafting group.
+
+This framework does not replace professional judgment in: empirical calibration with real operational data, case-law support for Chinese legal liability allocation, identification of real friction points in cross-enterprise collaboration, or political feasibility assessment from the regulatory side. In the CSAE standard drafting process, the final adoption of all clauses is determined by expert review of the drafting group.
+
+> **Detailed Chinese version for drafting-group members:** [`standards/csae-proposal-2026/07-scope-boundary.md`](standards/csae-proposal-2026/07-scope-boundary.md)
+
+---
+
 ## Related Standards
 
 | Standard | Full Title | Relevance to ROAM |
