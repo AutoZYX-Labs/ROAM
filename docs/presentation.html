@@ -1,0 +1,1117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L4 自动驾驶远程运营与异常管理开源框架 — ROAM Presentation</title>
+  <meta name="description" content="ROAM 面向 CICV SOTIF 工作组的 20 分钟正式演示材料。">
+  <link rel="icon" href="https://autozyx.com/assets/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #17375e;
+      --blue-2: #4f81bd;
+      --red: #b30000;
+      --red-soft: #f7e8e8;
+      --blue-soft: #edf4fb;
+      --ink: #111111;
+      --muted: #5f6b7a;
+      --line: #cbd5df;
+      --paper: #ffffff;
+      --app-bg: #eef1f5;
+      --sans: "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--app-bg); color: var(--ink); font-family: var(--sans); }
+    body { overflow-x: hidden; }
+    a { color: inherit; }
+    button, select { font-family: inherit; }
+
+    .deck-app {
+      --fsw: 1280px;
+      --fsh: 720px;
+      --fss: 1;
+      min-height: 100vh;
+      padding: 16px 28px 22px;
+      background:
+        linear-gradient(90deg, rgba(23, 55, 94, 0.045) 1px, transparent 1px),
+        linear-gradient(180deg, #fafafa 0%, #e6ebf1 100%);
+      background-size: 44px 44px, auto;
+    }
+
+    .deck-app:fullscreen { padding: 0; overflow: hidden; background: #07101d; }
+    .deck-topbar, .deck-bottombar {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: #2d3a4b;
+    }
+    .deck-topbar { margin-bottom: 10px; }
+    .deck-title { display: flex; align-items: baseline; gap: 10px; font-size: 14px; color: #526173; }
+    .deck-title a { color: var(--blue); font-size: 18px; text-decoration: none; }
+    .deck-controls { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px; }
+    .deck-control, .deck-select, .deck-nav {
+      min-height: 34px;
+      border: 1px solid #bcc8d6;
+      border-radius: 6px;
+      padding: 5px 10px;
+      background: rgba(255,255,255,0.9);
+      color: #334155;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .deck-control:hover, .deck-nav:hover { border-color: var(--blue); color: var(--blue); }
+    .deck-primary { background: var(--blue); border-color: var(--blue); color: #fff; }
+    .deck-primary:hover { background: #0d2747; color: #fff; }
+
+    .deck-stage {
+      position: relative;
+      width: 100%;
+      max-width: 1280px;
+      height: min(720px, calc(100vh - 138px));
+      min-height: 620px;
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid rgba(23, 55, 94, 0.18);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 24px 70px rgba(15, 23, 42, 0.14);
+    }
+
+    .deck-stage[data-theme="paper"] .slide { background: #fffdf8; }
+    .deck-stage[data-theme="white"] .slide { background: #fff; }
+    .deck-stage[data-theme="blueprint"] .slide {
+      background:
+        linear-gradient(90deg, rgba(79,129,189,0.08) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(79,129,189,0.08) 1px, transparent 1px),
+        #fff;
+      background-size: 36px 36px;
+    }
+
+    .deck-app.is-fullscreen .deck-stage {
+      width: 100vw;
+      height: 100vh;
+      max-width: none;
+      min-height: 0;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      background: #07101d;
+    }
+    .deck-app.is-fullscreen .slide {
+      inset: auto;
+      left: 50%;
+      top: 50%;
+      width: var(--fsw);
+      height: var(--fsh);
+      transform: translate(-50%, -50%) scale(var(--fss));
+      transform-origin: center;
+    }
+    .deck-app.is-fullscreen .slide-body { align-content: start; }
+    .deck-app.is-fullscreen .body-two,
+    .deck-app.is-fullscreen .body-three,
+    .deck-app.is-fullscreen .body-figure { align-items: start; }
+    .deck-app.is-fullscreen .deck-topbar,
+    .deck-app.is-fullscreen .deck-bottombar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      max-width: none;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .16s ease, transform .16s ease;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .deck-app.is-fullscreen .deck-topbar { top: 0; padding: 10px 16px; transform: translateY(-110%); }
+    .deck-app.is-fullscreen .deck-bottombar { bottom: 0; justify-content: center; padding: 8px 14px; transform: translateY(110%); }
+    .deck-app.is-fullscreen.show-top .deck-topbar,
+    .deck-app.is-fullscreen.show-bottom .deck-bottombar {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: none;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #fff;
+      color: var(--ink);
+      font-weight: 400;
+    }
+    .slide.is-active { display: block; }
+    .slide-inner { position: relative; height: 100%; padding: 28px 46px 62px; display: flex; flex-direction: column; gap: 16px; }
+    .slide-body { flex: 1 1 auto; min-height: 0; display: grid; gap: 18px; align-content: start; }
+    .body-two,
+    .body-three,
+    .body-figure {
+      display: grid;
+      gap: 18px;
+      min-height: 0;
+    }
+    .body-two { grid-template-columns: minmax(0, 1fr) minmax(0, 0.96fr); }
+    .body-three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .body-figure { grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); align-items: stretch; }
+    .slide:not(.cover):not(.thanks)::after {
+      content: "Automated Driving Safety | Yuxin Zhang";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 46px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 15px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: .01em;
+    }
+    .kicker { margin: 0 0 7px; color: var(--blue); font-size: 14px; line-height: 1; letter-spacing: .02em; }
+    .slide h2 {
+      position: relative;
+      margin: 0;
+      min-height: 78px;
+      color: var(--blue);
+      font-size: 37px;
+      line-height: 1.12;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+    .slide h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 66px;
+      width: 110px;
+      height: 4px;
+      border: 1px solid var(--blue-2);
+      background: linear-gradient(90deg, #b5c6e0, #8eaadb 58%, var(--blue-2));
+    }
+    .lead { margin: 0; font-size: 20px; line-height: 1.66; color: #151515; }
+    .small { font-size: 15px; color: var(--muted); line-height: 1.55; }
+    .muted { color: var(--muted); }
+    .blue { color: var(--blue); }
+    .red { color: var(--red); }
+    .center { text-align: center; }
+
+    .cover { padding: 0; }
+    .cover-layout { height: 100%; display: grid; grid-template-rows: minmax(0, 0.53fr) minmax(0, 0.47fr); }
+    .cover-media { margin: 0; overflow: hidden; background: #d8dee7; }
+    .cover-media video, .cover-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .cover-bottom { display: grid; grid-template-rows: auto 1fr; gap: 18px; padding: 24px 46px 28px; background: #fff; box-shadow: 0 -18px 46px rgba(23,55,94,.1); }
+    .cover-title-cn { margin: 0; color: var(--blue); font-size: 42px; line-height: 1.15; font-weight: 400; }
+    .cover-title-en { margin: 5px 0 0; color: #315f93; font-size: 19px; line-height: 1.2; font-weight: 400; text-transform: uppercase; }
+    .cover-meta { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 0.38fr); gap: 36px; align-items: end; }
+    .speaker strong { display: block; font-size: 26px; line-height: 1.2; font-weight: 400; color: #111; }
+    .speaker p { margin: 6px 0 0; font-size: 19px; line-height: 1.38; color: #111; }
+    .speaker .date { display: block; margin-top: 16px; color: #9a9a9a; font-size: 15px; font-weight: 600; }
+    .logos { display: grid; gap: 10px; justify-items: end; align-content: end; }
+    .logos img { display: block; width: 100%; max-width: 390px; max-height: 68px; object-fit: contain; object-position: right center; }
+
+    .agenda .slide-inner { justify-content: flex-start; }
+    .agenda h2 { margin-top: 21px; }
+    .agenda-list { display: grid; gap: 18px; margin: 78px 0 0; padding: 0; list-style: none; }
+    .agenda-list li { display: grid; grid-template-columns: 70px minmax(0, 1fr); align-items: baseline; font-size: 28px; line-height: 1.35; color: #111; }
+    .agenda-list span { color: var(--blue); font-size: 18px; font-weight: 400; }
+    .agenda-list strong { font-weight: 400; }
+    .agenda-list li.current span, .agenda-list li.current strong { color: var(--red); }
+
+    .card, .metric, .panel, .mini-card, .source-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255,255,255,.94);
+      color: #111;
+    }
+    .card { padding: 16px 18px; }
+    .card h3, .panel h3 { margin: 0 0 8px; color: var(--blue); font-size: 23px; line-height: 1.28; font-weight: 500; }
+    .card p, .panel p { margin: 0; font-size: 16px; line-height: 1.55; color: #1f2937; }
+    .card.red { border-left: 6px solid var(--red); background: var(--red-soft); }
+    .card.blue { border-left: 6px solid var(--blue); background: var(--blue-soft); }
+    .card strong { color: var(--blue); font-weight: 600; }
+    .callout { margin: 0; padding: 14px 18px; border-left: 6px solid var(--red); border-radius: 8px; background: var(--red-soft); color: #111; font-size: 20px; line-height: 1.5; }
+    .list { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .list li { padding: 12px 14px; border-left: 5px solid var(--blue); border-radius: 6px; background: var(--blue-soft); font-size: 17px; line-height: 1.46; }
+    .list li.red { border-left-color: var(--red); background: var(--red-soft); }
+    .metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .metric { min-height: 96px; padding: 13px 14px; display: grid; place-content: center; text-align: center; }
+    .metric strong { display: block; color: var(--blue); font-size: 34px; line-height: 1; font-weight: 500; }
+    .metric span { display: block; margin-top: 8px; color: #111; font-size: 15px; line-height: 1.25; }
+
+    .figure { margin: 0; min-height: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; display: flex; align-items: center; justify-content: center; }
+    .figure img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .figure.cover-fit img { object-fit: cover; object-position: top center; }
+    .figure.tight { border: 0; }
+
+    .timeline { display: grid; gap: 10px; }
+    .timeline-row { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 14px; align-items: start; }
+    .timeline-row time { color: var(--red); font-size: 18px; line-height: 1.35; }
+    .timeline-row div { padding: 12px 14px; border-left: 5px solid var(--blue); background: var(--blue-soft); border-radius: 8px; font-size: 17px; line-height: 1.5; }
+
+    .comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .compare-card { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; }
+    .compare-card header { padding: 13px 16px; color: #fff; background: var(--blue); }
+    .compare-card:nth-child(2) header { background: var(--red); }
+    .compare-card h3 { margin: 0; font-size: 23px; line-height: 1.25; font-weight: 500; }
+    .compare-card ul { margin: 0; padding: 16px 18px 18px 34px; font-size: 16px; line-height: 1.55; }
+
+    .flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; align-items: stretch; }
+    .flow .step { position: relative; padding: 16px 14px; border-radius: 8px; border: 1px solid var(--line); background: #fff; min-height: 116px; }
+    .flow .step:not(:last-child)::after { content: ""; position: absolute; right: -12px; top: 50%; width: 12px; height: 2px; background: var(--red); }
+    .flow .step span { color: var(--red); font-size: 15px; font-weight: 700; }
+    .flow .step strong { display: block; margin: 5px 0; color: var(--blue); font-size: 19px; font-weight: 600; line-height: 1.3; }
+    .flow .step p { margin: 0; font-size: 14px; color: #4b5563; line-height: 1.45; }
+
+    .matrix { width: 100%; border-collapse: collapse; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; font-size: 15px; line-height: 1.38; }
+    .matrix th, .matrix td { border: 1px solid #d9e1ea; padding: 10px 12px; text-align: left; vertical-align: top; }
+    .matrix th { background: var(--blue-soft); color: var(--blue); font-weight: 600; }
+    .matrix .hl { color: var(--red); font-weight: 600; }
+
+    .proof-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .proof-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .proof-grid.stack { grid-template-columns: 1fr; }
+    .proof-card {
+      min-height: 112px;
+      padding: 14px 15px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .proof-card .tagline { color: var(--red); font-size: 14px; line-height: 1.2; font-weight: 600; }
+    .proof-card strong { color: var(--blue); font-size: 20px; line-height: 1.25; font-weight: 500; }
+    .proof-card p { margin: 0; color: #111; font-size: 15px; line-height: 1.45; }
+    .proof-card.red { border-left: 6px solid var(--red); background: var(--red-soft); }
+    .proof-card.blue { border-left: 6px solid var(--blue); background: var(--blue-soft); }
+    .source-line { margin: 0; color: #5f6b7a; font-size: 12px; line-height: 1.35; }
+    .source-line a { color: var(--blue); text-decoration: none; border-bottom: 1px solid rgba(23,55,94,.25); }
+    .compare-card .source-line { padding: 0 18px 14px 34px; }
+    .status-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .status-pill { display: inline-flex; align-items: center; min-height: 28px; padding: 4px 9px; border-radius: 999px; border: 1px solid var(--line); color: var(--blue); background: #fff; font-size: 13px; line-height: 1; }
+    .status-pill.red { border-color: #d8a0a0; color: var(--red); background: var(--red-soft); }
+    .formula { font-family: "SF Mono", Menlo, Consolas, monospace; color: #111; font-size: 13px; line-height: 1.42; background: #f8fafc; border: 1px solid #d9e1ea; border-radius: 6px; padding: 8px 10px; }
+
+    .standard-card { padding: 18px 20px; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 12px 28px rgba(23,55,94,.08); }
+    .standard-card .label { color: var(--red); font-size: 16px; font-weight: 700; }
+    .standard-card h3 { margin: 8px 0 10px; color: var(--blue); font-size: 27px; line-height: 1.28; font-weight: 400; }
+    .standard-card p { margin: 0; color: #111; font-size: 17px; line-height: 1.55; }
+    .stamp { display: inline-flex; align-items: center; min-height: 34px; padding: 5px 12px; border: 1px solid var(--red); border-radius: 999px; color: var(--red); background: var(--red-soft); font-size: 15px; font-weight: 700; }
+
+    .project-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .project { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; }
+    .project figure { margin: 0; aspect-ratio: 16 / 8; overflow: hidden; border-bottom: 1px solid var(--line); }
+    .project img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+    .project div { padding: 12px 14px; }
+    .project strong { display: block; color: var(--blue); font-size: 20px; font-weight: 500; }
+    .project p { margin: 6px 0 0; color: #111; font-size: 14px; line-height: 1.42; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .link-button { min-height: 36px; display: inline-flex; align-items: center; justify-content: center; padding: 7px 14px; border-radius: 4px; background: var(--blue); color: #fff; text-decoration: none; font-size: 15px; font-weight: 700; }
+    .link-button.red { background: var(--red); }
+
+    .thanks { padding: 0; }
+    .thanks-layout { height: 100%; display: grid; grid-template-rows: minmax(0, 0.54fr) minmax(0, 0.46fr); }
+    .thanks-hero { margin: 0; overflow: hidden; background: #111; }
+    .thanks-hero img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .thanks-bottom { display: grid; grid-template-columns: minmax(0, 1fr) minmax(350px, 0.38fr); gap: 34px; align-items: end; padding: 26px 46px 30px; background: #fff; box-shadow: 0 -18px 46px rgba(23,55,94,.1); }
+    .thanks-title { margin: 0 0 22px; color: var(--blue); font-size: 42px; line-height: 1.1; font-weight: 400; }
+    .thanks-statement { margin: 0 0 18px; color: var(--blue); font-size: 30px; line-height: 1.25; font-weight: 400; }
+    .thanks .speaker strong { font-size: 25px; }
+    .thanks .speaker p { font-size: 18px; }
+    .thanks-side { display: grid; gap: 13px; align-content: end; justify-items: end; }
+    .thanks-side .logos img { max-height: 66px; }
+
+    .notes-panel {
+      max-width: 1280px;
+      margin: 10px auto 0;
+      padding: 12px 15px;
+      border: 1px solid #bcc8d6;
+      border-radius: 8px;
+      background: rgba(255,255,255,.92);
+      color: #334155;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    .notes-panel[hidden] { display: none; }
+    .deck-bottombar { justify-content: center; margin-top: 10px; }
+    .counter { min-width: 82px; text-align: center; font-size: 14px; color: #526173; }
+    .progress { position: absolute; left: 0; right: 0; bottom: 38px; height: 0; display: none; }
+
+    .edit-mode .editable { outline: 1px dashed var(--red); outline-offset: 3px; cursor: text; }
+    .custom-layer { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 6px; }
+    .custom-text, .custom-media { border: 1px dashed var(--blue); border-radius: 8px; background: var(--blue-soft); padding: 10px 12px; font-size: 16px; line-height: 1.45; }
+    .custom-media { padding: 6px; display: grid; place-items: center; }
+    .custom-media img, .custom-media video { max-width: 100%; max-height: 180px; border-radius: 6px; }
+
+    @media (max-width: 960px) {
+      .deck-app { padding: 10px; }
+      .deck-stage { height: auto; min-height: 0; overflow: visible; }
+      .slide { position: relative; min-height: 720px; }
+      .slide:not(.is-active) { display: none; }
+      .slide-inner, .cover-bottom, .thanks-bottom { padding-left: 22px; padding-right: 22px; }
+      .body-two, .body-three, .body-figure, .comparison, .flow, .project-row, .cover-meta, .thanks-bottom, .custom-layer { grid-template-columns: 1fr; }
+      .flow .step:not(:last-child)::after { display: none; }
+    }
+
+    @page { size: 13.333in 7.5in; margin: 0; }
+    @media print {
+      html, body { width: 13.333in; margin: 0 !important; padding: 0 !important; background: #fff !important; }
+      .deck-topbar, .deck-bottombar, .notes-panel { display: none !important; }
+      .deck-app, .deck-stage { display: block !important; width: 13.333in !important; height: auto !important; min-height: 0 !important; max-width: none !important; margin: 0 !important; padding: 0 !important; border: 0 !important; border-radius: 0 !important; overflow: visible !important; box-shadow: none !important; background: #fff !important; }
+      .slide, .slide.is-active { position: relative !important; inset: auto !important; display: block !important; width: 13.333in !important; height: 7.5in !important; min-height: 0 !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; transform: none !important; break-after: page; page-break-after: always; box-shadow: none !important; }
+      .slide:last-of-type { break-after: auto; page-break-after: auto; }
+      .slide * { -webkit-print-color-adjust: exact; print-color-adjust: exact; box-shadow: none !important; text-shadow: none !important; }
+      .slide-inner { padding: 28px 46px 62px !important; height: 100% !important; }
+      .cover-layout, .thanks-layout { height: 100% !important; }
+      .body-two { grid-template-columns: minmax(0, 1fr) minmax(0, 0.96fr) !important; }
+      .body-three, .project-row { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+      .body-figure { grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr) !important; }
+      .comparison { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+      .flow { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+      .cover-meta { grid-template-columns: minmax(0, 1fr) minmax(320px, 0.38fr) !important; }
+      .thanks-bottom { grid-template-columns: minmax(0, 1fr) minmax(350px, 0.38fr) !important; }
+      .figure, .project, .card, .metric, .standard-card, .matrix { box-shadow: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck-app" id="deck-app" data-deck-id="roam-cicv-sotif-2026">
+    <div class="deck-topbar">
+      <div class="deck-title">
+        <a href="./index.html">ROAM</a>
+        <span> CICV SOTIF 工作组正式汇报</span>
+      </div>
+      <div class="deck-controls">
+        <select class="deck-select" id="theme">
+          <option value="white">白色</option>
+          <option value="paper">纸面</option>
+          <option value="blueprint">蓝图</option>
+        </select>
+        <button class="deck-control" id="edit">微调</button>
+        <button class="deck-control" id="add-text">加文字</button>
+        <button class="deck-control" id="add-media">加素材</button>
+        <input id="media-input" type="file" accept="image/*,video/*" hidden>
+        <button class="deck-control" id="notes">备注</button>
+        <button class="deck-control" id="export">导出 PDF</button>
+        <button class="deck-control deck-primary" id="fullscreen">全屏</button>
+      </div>
+    </div>
+
+    <section class="deck-stage" id="stage" data-theme="white" aria-live="polite"></section>
+
+    <aside class="notes-panel" id="notes-panel" hidden>
+      <div id="notes-content"></div>
+    </aside>
+
+    <div class="deck-bottombar">
+      <button class="deck-nav" id="prev">上一页</button>
+      <span class="counter" id="counter">1 / 25</span>
+      <button class="deck-nav" id="next">下一页</button>
+    </div>
+  </main>
+
+  <script>
+    const A = './assets/presentation/'
+    const agenda = [
+      'L4 运营异常为什么成为安全问题',
+      '现有标准覆盖了什么、还缺什么',
+      'ROAM 的方法论与参考架构',
+      '从案例、数据到标准化预研',
+      '开源共建与下一步工作'
+    ]
+
+    const slides = [
+      {
+        key: 'cover',
+        type: 'cover',
+        notes: '开场不要先讲项目功能，先把问题放在 L4 运行阶段安全治理上。',
+        html: `
+          <div class="cover-layout">
+            <figure class="cover-media">
+              <video src="${A}ad4che-vis-cover.mp4" poster="${A}ad4che-vis-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+            </figure>
+            <div class="cover-bottom">
+              <div>
+                <h1 class="cover-title-cn editable">L4 自动驾驶远程运营与异常管理开源框架</h1>
+                <p class="cover-title-en editable">ROAM: OPEN-SOURCE FRAMEWORK FOR L4 ADS OPERATIONS AND ANOMALY MANAGEMENT</p>
+              </div>
+              <div class="cover-meta">
+                <div class="speaker editable">
+                  <strong>张玉新</strong>
+                  <p>自动驾驶安全联合实验室</p>
+                  <p>吉林大学汽车底盘集成与仿生全国重点实验室</p>
+                  <span class="date">CICV SOTIF 工作组 · 2026年5月</span>
+                </div>
+                <div class="logos">
+                  <img src="${A}ad-safety-joint-lab-logo-transparent.png" alt="自动驾驶安全联合实验室">
+                  <img src="${A}state-key-lab-logo-transparent.png" alt="汽车底盘集成与仿生全国重点实验室">
+                </div>
+              </div>
+            </div>
+          </div>`
+      },
+      agendaSlide('agenda', -1, '目录', '这页只建立专业汇报结构，不解释故事。'),
+      contentSlide('problem', 'L4 运行阶段的 SOTIF 问题', `
+        <div class="body-two">
+          <div>
+            <p class="lead editable">当 L4 车辆从单车测试走向规模化示范运营，安全问题会从“车辆能否完成 DDT”扩展到“异常发生后能否被识别、分级、处置、恢复和追溯”。</p>
+            <ul class="list">
+              <li>车辆已通过测试，仍可能在真实运营中遭遇批量异常、通信中断、乘客求助失效。</li>
+              <li class="red">远程运营不是附加客服能力，而是 L4 运行阶段安全治理的一部分。</li>
+              <li>对 SOTIF 工作组而言，运营异常是触发条件、运行阶段监控和安全论证闭环的重要输入。</li>
+            </ul>
+            <p class="callout">团标预研稿拟在开源版基础上扩展为 6 类 29 子场景、16 项 KPI。</p>
+          </div>
+          <div class="metrics">
+            <div class="metric"><strong>584</strong><span>公开 AV 事件/碰撞记录</span></div>
+            <div class="metric"><strong>565</strong><span>DMV 格式记录</span></div>
+            <div class="metric"><strong>19</strong><span>非 DMV 典型事件</span></div>
+            <div class="metric"><strong>10</strong><span>L4 运营模式</span></div>
+            <div class="metric"><strong>6×26</strong><span>开源异常 taxonomy</span></div>
+            <div class="metric"><strong>8</strong><span>开源核心 KPI</span></div>
+          </div>
+        </div>`, '这一页把问题从“远程驾驶技术”抬升到“运行阶段安全治理”。'),
+      contentSlide('events', '批量异常与共因触发条件', `
+        <div class="comparison">
+          <div class="compare-card">
+            <header><h3>武汉萝卜快跑批量停摆</h3></header>
+            <ul>
+              <li>公开报道显示，多辆无人车在道路中异常停车。</li>
+              <li>事件焦点从单车能力转向批量异常、乘客沟通和现场处置。</li>
+              <li>公开信息尚不足以复核企业内部 KPI。</li>
+              <li>问题核心：车队级异常与应急联动不足。</li>
+            </ul>
+            <p class="source-line">证据等级：媒体报道与交管通报。建议正式引用时区分公开事实、ROAM 分析和待核验项。</p>
+          </div>
+          <div class="compare-card">
+            <header><h3>旧金山 Waymo 断电事件</h3></header>
+            <ul>
+              <li>城市电网故障触发车辆运行异常。</li>
+              <li>应急服务多次拨打热线，等待时间过长。</li>
+              <li>远程运营能力与城市应急体系脱节。</li>
+              <li>问题核心：外部共因故障下的责任和响应链条。</li>
+            </ul>
+            <p class="source-line">证据等级：SFCTA 听证材料、公开报告与 ROAM 事件映射。</p>
+          </div>
+        </div>
+        <p class="callout editable">这些事件不是“新闻案例”，而是 L4 运营异常管理标准化的真实输入。</p>`, '这页后续可以替换为授权新闻图或官方素材。当前先用结构化事件卡，避免版权风险。'),
+      contentSlide('sotif', '运行阶段 SOTIF 证据闭环', `
+        <div class="body-two">
+          <ul class="list">
+            <li>与功能不足、性能局限、合理可预见误用相关的运营异常，可进入 SOTIF 运行阶段监控。</li>
+            <li class="red">硬件故障、网络安全、纯客服失效不直接等同于 ISO 21448 问题，但会进入运营安全与 Safety Case 证据链。</li>
+            <li>ROAM 的价值是把公开事件、现场响应和 KPI 结果转化为可复核的 field monitoring evidence。</li>
+          </ul>
+          <table class="matrix">
+            <thead><tr><th>ROAM 字段</th><th>SOTIF / 安全论证用途</th></tr></thead>
+            <tbody>
+              <tr><td>scenario_code</td><td>触发条件与场景族识别</td></tr>
+              <tr><td>severity × urgency</td><td>已知/未知不安全场景排序</td></tr>
+              <tr><td>response_layer</td><td>问题解决与降风险策略</td></tr>
+              <tr><td>evidence.source</td><td>运行阶段证据来源与置信度</td></tr>
+              <tr><td>KPI / FRIP</td><td>验证确认、演练和 Safety Case 输入</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="flow">
+          <div class="step"><span>01</span><strong>Field monitoring</strong><p>发现运行阶段异常和触发条件。</p></div>
+          <div class="step"><span>02</span><strong>Scenario update</strong><p>更新已知/未知不安全场景库。</p></div>
+          <div class="step"><span>03</span><strong>Risk reduction</strong><p>定义降风险动作、升级条件和禁止动作。</p></div>
+          <div class="step"><span>04</span><strong>Safety case</strong><p>把处置结果转化为可审计证据。</p></div>
+        </div>`, '强调 ROAM 与 SOTIF 的衔接，避免听众觉得这是运营管理而非安全工程。'),
+      agendaSlide('agenda-standards', 1, '目录', '进入标准缺口部分。'),
+      contentSlide('standards-map', '标准覆盖边界与治理缺口', `
+        <div class="body-two">
+          <table class="matrix">
+            <thead><tr><th>标准或法规</th><th>主要覆盖内容</th><th>ROAM 不重叠边界</th></tr></thead>
+            <tbody>
+              <tr><td>GB/T 44721-2024</td><td>自动驾驶系统通用技术要求</td><td class="hl">运行异常后的企业运营处置闭环</td></tr>
+              <tr><td>高度自动驾驶无驾驶人乘用车团标</td><td>单车技术要求与测试方法</td><td class="hl">车队、ROC 与第一响应者协同</td></tr>
+              <tr><td>安全事件数据交互国标在研</td><td>车端、企业平台、监测/监管平台之间的数据采集、交互和管理</td><td class="hl">收到数据后如何分级决策</td></tr>
+              <tr><td>ISO 21448 / ISO 34502</td><td>SOTIF 论证与 ADS 场景化安全评价框架</td><td class="hl">运行阶段异常如何沉淀为证据</td></tr>
+              <tr><td>SAE J3016 / ISO 22737</td><td>自动化分级、远程支援和 DOD 角色</td><td class="hl">跨运营模式责任矩阵与 KPI 基准</td></tr>
+            </tbody>
+          </table>
+          <div class="proof-grid stack">
+            <div class="proof-card blue"><span class="tagline">能力要求</span><strong>车辆是否满足要求</strong><p>单车技术要求、ADS 通用技术要求、测试方法。</p></div>
+            <div class="proof-card blue"><span class="tagline">数据通道</span><strong>事件如何被上报</strong><p>数据元素、平台接口、监测/监管平台交互。</p></div>
+            <div class="proof-card red"><span class="tagline">ROAM 缺口</span><strong>异常如何被处置</strong><p>跨企业、跨模式、可审计的运营异常管理参考框架。</p></div>
+          </div>
+        </div>`, '这页建立 ROAM 与现有标准的互补关系。'),
+      contentSlide('data-vs-governance', '数据上报与运营治理的边界', `
+        <div class="body-two">
+          <div>
+            <div class="standard-card">
+              <span class="label">What happened</span>
+              <h3>安全事件数据交互与管理系统</h3>
+              <p>回答“什么数据、以什么格式、通过什么协议，在车端、企业平台和监测/监管平台之间流转”。</p>
+            </div>
+            <div class="status-strip">
+              <span class="status-pill">数据元素</span>
+              <span class="status-pill">通信协议</span>
+              <span class="status-pill">平台接口</span>
+            </div>
+          </div>
+          <div>
+            <div class="standard-card">
+              <span class="label">What should be done</span>
+              <h3>L4 运营异常管理</h3>
+              <p>回答“收到异常后，谁在何时、依据什么权限、采用什么处置层级完成恢复、沟通和留痕”。</p>
+            </div>
+            <div class="status-strip">
+              <span class="status-pill red">异常分级</span>
+              <span class="status-pill red">处置授权</span>
+              <span class="status-pill red">KPI 审计</span>
+            </div>
+          </div>
+        </div>
+        <p class="callout editable">ROAM 不重新定义数据字段，而是把安全事件作为运营异常输入信号，叠加分级处置流程、责任矩阵和 KPI 评价。</p>`, '这页是答辩防守页，避免被质疑与国标在研内容重叠。'),
+      contentSlide('need-spec', '从事故上报到异常处置', `
+        <div class="body-two">
+          <ul class="list">
+            <li>异常场景要有统一分类，否则企业、监管和研究机构无法对齐讨论对象。</li>
+            <li class="red">处置动作要有层级和时限，否则规模化车队会在共因故障下同时击穿远程运营中心。</li>
+            <li>责任要区分执行、决策、技术、法律、Override、Avoidance 和监管反馈。</li>
+            <li>评价要进入 KPI 和演练验证，而不是停留在“应急预案已建立”的描述。</li>
+          </ul>
+          <div class="card blue">
+            <h3>一句话</h3>
+            <p class="editable">L4 运营异常处置能力，应该像单车技术要求和数据交互要求一样，被结构化表达和行业共同审阅。</p>
+          </div>
+        </div>`, '这页为 CSAE 预研引出理由。'),
+      contentSlide('csae', '团体标准预研的最新进展', `
+        <div class="body-two">
+          <div class="standard-card">
+            <span class="stamp">已按 CSAE 团体标准流程启动预研</span>
+            <h3>智能网联汽车 高度自动驾驶车辆运营管理异常事件处置规范</h3>
+            <p>由中国智能网联汽车产业创新联盟提出，吉林大学、卓驭科技、一汽集团、国家智能网联汽车创新中心联合牵头发起，滴滴自动驾驶、同济大学、清华大学等单位参与。</p>
+            <p style="margin-top:10px;color:#b30000;">当前阶段：参研单位与起草专家征集；反馈截止：2026年5月25日。</p>
+            <p class="source-line" style="margin-top:8px;">说明：当前为预研和征集阶段，尚非正式发布标准。</p>
+          </div>
+          <div>
+            <table class="matrix">
+              <tbody>
+                <tr><th>定位</th><td>高度自动驾驶车辆运营治理类单项标准。</td></tr>
+                <tr><th>适用对象</th><td>Robotaxi、无人配送、L4 公交、个人 L4 服务、特定环境专用车辆等多模式运营。</td></tr>
+                <tr><th>方法框架</th><td>10 种 L4 运营模式、6 大类 29 子场景、三层决策参考架构。</td></tr>
+                <tr><th>核心产出</th><td>10×3×7 责任矩阵、16 项 KPI、FRIP 模板、文档审查 / 桌面推演 / 历史事件复盘。</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="flow">
+          <div class="step"><span>2026.05</span><strong>预研征集</strong><p>确认起草单位、专家和标准边界。</p></div>
+          <div class="step"><span>2026.07</span><strong>起草启动</strong><p>ROAM 方法框架转为标准文本。</p></div>
+          <div class="step"><span>2026.10</span><strong>征求意见</strong><p>行业反馈、试用和意见处理。</p></div>
+          <div class="step"><span>2026.12</span><strong>报批发布</strong><p>以实际流程审议为准。</p></div>
+        </div>`, '这里使用最新 V3 标准预研征集通知口径，不再使用旧题名。'),
+      agendaSlide('agenda-framework', 2, '目录', '进入 ROAM 方法论。'),
+      contentSlide('roam-overview', 'ROAM 方法论与证据结构', `
+        <div class="body-figure">
+          <div>
+            <p class="lead editable">ROAM 是一个面向 L4 自动驾驶远程运营与异常管理的开源框架，目标是把分散事件、运营经验和标准要求整理成可审阅、可比较、可迭代的公共证据结构。</p>
+            <div class="metrics">
+              <div class="metric"><strong>Apache 2.0</strong><span>开源许可</span></div>
+              <div class="metric"><strong>Taxonomy</strong><span>异常分类</span></div>
+              <div class="metric"><strong>Matrix</strong><span>责任与 KPI 证据</span></div>
+            </div>
+            <p class="callout">ROAM 的核心不是“远程接管”，而是异常 taxonomy、分层处置、责任矩阵和 KPI 的证据化。</p>
+          </div>
+          <figure class="figure"><img src="${A}roam-architecture.png" alt="ROAM 开源治理框架总体架构"></figure>
+        </div>`, '用 ROAM 总体架构图展示项目不是空概念。'),
+      contentSlide('operating-modes', '多模式 L4 运营对象', `
+        <div class="body-figure">
+          <div>
+            <p class="lead">ROAM 将 L4 运行对象扩展到 10 种运营模式，覆盖商业运营、个人所有、公共交通和专用环境。</p>
+            <p class="callout">关键变化：个人所有和 OEM 订阅类模式中，OEM 从制造商进一步承担运行服务提供者责任。</p>
+          </div>
+          <figure class="figure"><img src="${A}roam-operating-modes.png" alt="L4 自动驾驶十种运营模式分类矩阵"></figure>
+        </div>`, '这页最好用图，不用重新排满卡片。'),
+      contentSlide('taxonomy', '异常 taxonomy：从事件描述到处置对象', `
+        <div class="body-two">
+          <div class="flow">
+            <div class="step"><span>A</span><strong>系统性故障</strong><p>云端、网络、区域性故障、批量失效。</p></div>
+            <div class="step"><span>B</span><strong>感知/决策失效</strong><p>误识别、误判、决策迟疑。</p></div>
+            <div class="step"><span>C</span><strong>规划/执行异常</strong><p>停车、绕行、靠边、路径执行失败。</p></div>
+            <div class="step"><span>D</span><strong>车辆硬件故障</strong><p>制动、转向、动力、电气故障。</p></div>
+          </div>
+          <div class="flow" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+            <div class="step"><span>E</span><strong>外部环境冲突</strong><p>应急车辆、施工、阻塞、交通参与者冲突。</p></div>
+            <div class="step"><span>F</span><strong>乘客端异常</strong><p>乘客求助、车内安全、服务体验和通信失效。</p></div>
+          </div>
+        </div>
+        <div class="flow">
+          <div class="step"><span>事件</span><strong>公开记录</strong><p>新闻、监管报告、企业披露和 DMV 记录。</p></div>
+          <div class="step"><span>分类</span><strong>场景编码</strong><p>A-F 主类与二级子场景。</p></div>
+          <div class="step"><span>响应</span><strong>处置层级</strong><p>L1/L2/L3 和禁止远程驾驶条件。</p></div>
+          <div class="step"><span>证据</span><strong>KPI 留痕</strong><p>响应时间、升级路径和责任主体。</p></div>
+        </div>
+        <p class="callout">开源版当前以 6 大类、26 个已展开子场景作为基础；团标预研稿拟扩展为 6 大类 29 子场景。</p>`, '强调 taxonomy 服务于后面的处置和评价。'),
+      contentSlide('three-layer', '三层架构是降风险状态机', `
+        <div class="body-figure">
+          <div>
+            <ul class="list">
+              <li>Layer 1：AI 自主响应，面向低风险、低紧急度异常。</li>
+              <li>Layer 2：AI 辅助加人工确认，面向不确定、需判断或需授权的异常。</li>
+              <li class="red">Layer 3：远程驾驶或现场处置，面向高风险、硬件故障和复杂外部协同。</li>
+              <li>共因通信或云端失效时，远程驾驶可能不可用，应优先触发 MRM、区域管控、现场救援和车队级恢复。</li>
+            </ul>
+          </div>
+          <figure class="figure"><img src="${A}roam-three-layer-decision.png" alt="ROAM 三层决策参考架构流程图"></figure>
+        </div>`, '这页讲清楚不是所有异常都要远程驾驶，远程驾驶只是最后一层。'),
+      contentSlide('responsibility', '责任矩阵：技术执行与法律责任不能混在一起', `
+        <div class="body-two">
+          <table class="matrix">
+            <thead><tr><th>维度</th><th>回答的问题</th><th>典型责任主体</th></tr></thead>
+            <tbody>
+              <tr><td>执行责任</td><td>谁实际完成处置动作</td><td>ADS、远程助理、远程驾驶员、现场团队</td></tr>
+              <tr><td>决策责任</td><td>谁批准或触发处置策略</td><td>系统策略、运营中心、授权人员</td></tr>
+              <tr><td>技术责任</td><td>系统失效或设计不足由谁承担</td><td>OEM、ADS 供应商、平台方</td></tr>
+              <tr><td>法律责任</td><td>事故、服务和监管责任如何归属</td><td>运营主体、车辆所有者、服务提供者</td></tr>
+              <tr><td class="hl">扩展维度</td><td>Override、Avoidance、监管反馈</td><td>对接 DMV Article 3.7 等监管趋势</td></tr>
+            </tbody>
+          </table>
+          <table class="matrix">
+            <thead><tr><th>模式切片</th><th>L2 执行</th><th>责任变化</th></tr></thead>
+            <tbody>
+              <tr><td>M1 Robotaxi</td><td>运营商 ROC 操作员</td><td>运营商承担执行、决策、技术和法律闭环。</td></tr>
+              <tr><td>M4 个人 + OEM 订阅</td><td>OEM ROC 操作员</td><td class="hl">OEM 从制造商进一步成为运行服务提供者。</td></tr>
+              <tr><td>M5 个人 + 闲时共享</td><td>OEM / 平台动态切换</td><td>状态机必须记录当前运营权和事故责任窗口。</td></tr>
+              <tr><td>M7 L4 公交</td><td>公交监控中心 + 技术方</td><td>运营牌照主体与技术提供方责任分离。</td></tr>
+            </tbody>
+          </table>
+        </div>`, '这页为 10×3×7 矩阵铺垫。'),
+      contentSlide('kpi-frip', 'KPI、FRIP 与桌面推演', `
+        <div class="proof-grid">
+          <div class="proof-card blue">
+            <span class="tagline">开源版 8 项核心 KPI</span>
+            <strong>MTTR</strong>
+            <p>从异常检测到确认恢复的平均时间。</p>
+            <div class="formula">MTTR = Σ(t_resolve - t_detect) / N</div>
+          </div>
+          <div class="proof-card red">
+            <span class="tagline">预研稿拟扩展</span>
+            <strong>16 项运营 KPI</strong>
+            <p>含 AI 处置率、误升级率、漏升级率、30 秒紧急响应、geofence exit 等。</p>
+          </div>
+          <div class="proof-card blue">
+            <span class="tagline">验证方法</span>
+            <strong>FRIP + 桌面推演</strong>
+            <p>通过文档审查、桌面推演、历史事件复盘验证运营异常处置能力。</p>
+          </div>
+        </div>
+        <table class="matrix">
+          <thead><tr><th>KPI 类型</th><th>工程含义</th><th>数据来源</th></tr></thead>
+          <tbody>
+            <tr><td>误升级率</td><td>低层级本可解决，却占用人工资源</td><td>决策引擎日志 + 操作员动作</td></tr>
+            <tr><td>漏升级率</td><td>应升级未升级，可能造成安全风险</td><td>S2+ 事件复盘 + 乘客反馈</td></tr>
+            <tr><td>乘客被困时长</td><td>SOS 到可离车的时间窗口</td><td>车门状态 + App + ROC 日志</td></tr>
+          </tbody>
+        </table>
+        <p class="callout">运营异常管理不是“有没有预案”，而是异常能否被指标化、演练化和证据化。</p>`, '这页把标准评审最关心的可实施性讲清楚。'),
+      agendaSlide('agenda-evidence', 3, '目录', '进入证据与案例。'),
+      contentSlide('incident-db', '开源事件库与 Field Monitoring Evidence', `
+        <div class="body-two">
+          <div>
+            <p class="lead">ROAM 事件库以 YAML 结构化记录公开可查的 AV 事件与碰撞记录，并从中筛选典型 L4 运营异常，支持场景编码、严重度、紧急度、响应层级和证据置信度沉淀。</p>
+            <div class="metrics">
+              <div class="metric"><strong>584</strong><span>公开记录</span></div>
+              <div class="metric"><strong>565</strong><span>DMV 格式记录</span></div>
+              <div class="metric"><strong>19</strong><span>典型事件记录</span></div>
+            </div>
+            <p class="source-line">说明：公开记录不等同于全部为 L4 运营异常；团标预研案例库将从中精选典型事件。</p>
+          </div>
+          <pre class="card" style="margin:0;white-space:pre-wrap;font-size:14px;line-height:1.45;"><code>scenario_code:
+  primary: A1
+  secondary: C1 / F1
+severity: S3
+urgency: U3
+response:
+  remote_ops: degraded
+  first_responder: activated
+evidence:
+  source_type: public report
+  verification: structured review</code></pre>
+        </div>`, '这里用本地文件统计，后续可替换成 Explorer 截图。'),
+      contentSlide('wuhan-case', '武汉案例映射：公开事实、分析与待核验', `
+        <div class="body-two">
+          <div class="proof-grid stack">
+            <div class="proof-card blue">
+              <span class="tagline">公开事实</span>
+              <strong>多车异常停车</strong>
+              <p>公开报道显示，多辆无人车在道路中异常停车，地方监管随后要求强化自查整改。</p>
+            </div>
+            <div class="proof-card red">
+              <span class="tagline">ROAM 分析</span>
+              <strong>A / C / F 复合场景</strong>
+              <p>可映射为系统性故障、规划/执行异常和乘客端异常的复合事件。</p>
+            </div>
+            <div class="proof-card blue">
+              <span class="tagline">待核验</span>
+              <strong>企业内部 KPI</strong>
+              <p>AI 自恢复率、ROC 队列、MTTR、SOS 响应需以企业日志或监管数据复核。</p>
+            </div>
+          </div>
+          <figure class="figure"><img src="${A}roam-case-comparison.png" alt="武汉萝卜快跑与旧金山 Waymo 事件 ROAM 诊断对比"></figure>
+        </div>`, '这页以 ROAM 图 7 支撑，不直接使用版权不明的新闻图。'),
+      contentSlide('waymo-markey', '远程运营透明度成为治理问题', `
+        <div class="proof-grid">
+          <div class="proof-card blue">
+            <span class="tagline">SFCTA / Waymo blackout</span>
+            <strong>城市级外部扰动</strong>
+            <p>电力或交通基础设施异常会触发区域性运行风险，考验 ROC 与城市应急接口。</p>
+          </div>
+          <div class="proof-card red">
+            <span class="tagline">Markey RAO report</span>
+            <strong>介入频次不可比</strong>
+            <p>主要 AV 企业不披露远程人工介入频次，行业缺少公共 KPI 基准。</p>
+          </div>
+          <div class="proof-card blue">
+            <span class="tagline">CA DMV Article 3.7</span>
+            <strong>FRIP 与响应要求</strong>
+            <p>监管草案开始关注第一响应者交互、remote operations support 和应急响应时限。</p>
+          </div>
+        </div>
+        <p class="callout">远程运营能力不应只存在于企业内部系统中，也应转化为监管、标准和研究可以审阅的证据。</p>
+        <p class="source-line">参考：SFCTA Waymo blackout hearing、Markey RAO report、California DMV AV regulations。</p>`, '注意数值如果无法公开核验，正式汇报中应少用或标注来源。'),
+      contentSlide('ecosystem', 'ROAM 与 OpenODC、DRIVEResearch 形成安全证据链', `
+        <div class="project-row">
+          <div class="project">
+            <figure><img src="${A}project-openodc.png" alt="OpenODC"></figure>
+            <div><strong>OpenODC</strong><p>定义系统在什么边界内可以运行，把 ODC 从分散表述变成公共证据。</p></div>
+          </div>
+          <div class="project">
+            <figure><img src="${A}project-driveresearch.png" alt="DRIVEResearch"></figure>
+            <div><strong>DRIVEResearch</strong><p>提供自然驾驶和人类行为基线，为正常运行分布和场景参数提供支撑。</p></div>
+          </div>
+          <div class="project">
+            <figure><img src="${A}project-roam.png" alt="ROAM"></figure>
+            <div><strong>ROAM</strong><p>管理边界被触发后的运营异常、责任分配、KPI 和处置证据。</p></div>
+          </div>
+        </div>
+        <p class="callout">ODC 说明系统应该在哪里运行；ROAM 回答异常发生后如何治理；DRIVEResearch 提供正常行为与风险场景的数据基线。</p>`, '这页延续 OpenODC 中三个项目关系的表达。'),
+      agendaSlide('agenda-summary', 4, '目录', '进入最后总结。'),
+      contentSlide('summary', '把运行阶段证据转化为标准输入', `
+        <div class="body-three">
+          <div class="card blue">
+            <h3>问题</h3>
+            <p>L4 规模化后，安全挑战从单车能力扩展到运营异常处置、车队韧性和责任闭环。</p>
+          </div>
+          <div class="card red">
+            <h3>方法</h3>
+            <p>ROAM 提供异常分类、三层架构、责任矩阵、KPI、FRIP 和验证方法。</p>
+          </div>
+          <div class="card blue">
+            <h3>路径</h3>
+            <p>通过开源项目持续沉淀证据，并承接到团体标准预研和后续国家、国际标准讨论。</p>
+          </div>
+        </div>
+        <div class="button-row">
+          <a class="link-button" href="https://roam.autozyx.com/" target="_blank" rel="noopener">ROAM 官网</a>
+          <a class="link-button" href="https://github.com/AutoZYX-Labs/ROAM" target="_blank" rel="noopener">GitHub</a>
+          <a class="link-button red" href="https://ROAM-explorer.autozyx.com" target="_blank" rel="noopener">ROAM Explorer</a>
+        </div>`, '最后一页前，明确共建方式。'),
+      {
+        key: 'thanks',
+        type: 'thanks',
+        notes: '感谢页保持和 OpenODC 风格一致。',
+        html: `
+          <div class="thanks-layout">
+            <figure class="thanks-hero"><img src="${A}background-2.png" alt="自动驾驶安全联合实验室背景图"></figure>
+            <div class="thanks-bottom">
+              <div>
+                <h2 class="thanks-title editable">感谢关注</h2>
+                <p class="thanks-statement editable">ROAM 让 L4 运营异常从分散事件变成公共证据。</p>
+                <div class="speaker editable">
+                  <strong>张玉新</strong>
+                  <p>自动驾驶安全联合实验室</p>
+                  <p>吉林大学汽车底盘集成与仿生全国重点实验室</p>
+                  <p>微信公众号：张玉新-AutoZYX</p>
+                </div>
+              </div>
+              <div class="thanks-side">
+                <div class="logos">
+                  <img src="${A}ad-safety-joint-lab-logo-transparent.png" alt="自动驾驶安全联合实验室">
+                  <img src="${A}state-key-lab-logo-transparent.png" alt="汽车底盘集成与仿生全国重点实验室">
+                </div>
+                <div class="button-row" style="justify-content:flex-end;">
+                  <a class="link-button" href="https://roam.autozyx.com/" target="_blank" rel="noopener">ROAM</a>
+                  <a class="link-button" href="https://autozyx.com/" target="_blank" rel="noopener">个人主页</a>
+                  <a class="link-button red" href="https://github.com/AutoZYX-Labs/ROAM" target="_blank" rel="noopener">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </div>`
+      }
+    ]
+
+    function contentSlide(key, title, body, notes) {
+      return {
+        key,
+        type: 'content',
+        notes,
+        html: `<div class="slide-inner"><div><p class="kicker editable">ROAM · L4 运营异常管理</p><h2 class="editable">${title}</h2></div><div class="slide-body">${body}</div></div>`
+      }
+    }
+
+    function agendaSlide(key, current, title, notes) {
+      return {
+        key,
+        type: 'agenda',
+        notes,
+        html: `<div class="slide-inner"><h2 class="editable">${title}</h2><ol class="agenda-list">${agenda.map((item, i) => `<li class="${i === current ? 'current' : ''}"><span>0${i + 1}</span><strong class="editable">${item}</strong></li>`).join('')}</ol></div>`
+      }
+    }
+
+    const app = document.getElementById('deck-app')
+    const stage = document.getElementById('stage')
+    const counter = document.getElementById('counter')
+    const prev = document.getElementById('prev')
+    const next = document.getElementById('next')
+    const notesPanel = document.getElementById('notes-panel')
+    const notesContent = document.getElementById('notes-content')
+    const theme = document.getElementById('theme')
+    const edit = document.getElementById('edit')
+    const addText = document.getElementById('add-text')
+    const addMedia = document.getElementById('add-media')
+    const mediaInput = document.getElementById('media-input')
+    const notes = document.getElementById('notes')
+    const exportBtn = document.getElementById('export')
+    const fullscreen = document.getElementById('fullscreen')
+    const storagePrefix = app.dataset.deckId
+    const editKey = `${storagePrefix}:edits`
+    const addonKey = `${storagePrefix}:addons`
+    let current = initialIndex()
+    let editMode = false
+    let edits = readJson(editKey, {})
+    let addons = readJson(addonKey, {})
+    let hideTimer = null
+
+    renderDeck()
+    show(current)
+
+    prev.addEventListener('click', () => show(current - 1))
+    next.addEventListener('click', () => show(current + 1))
+    theme.addEventListener('change', () => stage.dataset.theme = theme.value)
+    edit.addEventListener('click', toggleEdit)
+    notes.addEventListener('click', toggleNotes)
+    exportBtn.addEventListener('click', exportPdf)
+    fullscreen.addEventListener('click', toggleFullscreen)
+    addText.addEventListener('click', addTextBlock)
+    addMedia.addEventListener('click', addMediaBlock)
+    mediaInput.addEventListener('change', handleMediaFile)
+    document.addEventListener('fullscreenchange', syncFullscreen)
+    window.addEventListener('resize', updateFullscreenScale)
+    app.addEventListener('pointermove', handlePointer)
+    document.addEventListener('keydown', handleKey)
+
+    function renderDeck() {
+      stage.innerHTML = slides.map((slide, i) => `<article class="slide ${slide.type} ${i === current ? 'is-active' : ''}" data-key="${slide.key}" aria-hidden="${i === current ? 'false' : 'true'}">${slide.html}</article>`).join('')
+      applyEdits()
+      renderAddons()
+    }
+
+    function show(nextIndex) {
+      current = Math.min(Math.max(nextIndex, 0), slides.length - 1)
+      document.querySelectorAll('.slide').forEach((slide, i) => {
+        slide.classList.toggle('is-active', i === current)
+        slide.setAttribute('aria-hidden', i === current ? 'false' : 'true')
+      })
+      counter.textContent = `${current + 1} / ${slides.length}`
+      prev.disabled = current === 0
+      next.disabled = current === slides.length - 1
+      notesContent.innerHTML = `<p>${slides[current].notes || ''}</p>`
+      history.replaceState(null, '', `#slide-${current + 1}`)
+    }
+
+    function initialIndex() {
+      const match = location.hash.match(/slide-(\d+)/)
+      return match ? Math.min(Math.max(Number(match[1]) - 1, 0), slides.length - 1) : 0
+    }
+
+    function toggleEdit() {
+      editMode = !editMode
+      document.body.classList.toggle('edit-mode', editMode)
+      edit.textContent = editMode ? '完成' : '微调'
+      document.querySelectorAll('.editable, .custom-text').forEach(node => {
+        node.contentEditable = editMode ? 'true' : 'false'
+        node.spellcheck = false
+      })
+      document.querySelectorAll('.editable').forEach((node, i) => {
+        node.dataset.editId ||= `${node.closest('.slide')?.dataset.key}:${i}`
+        node.oninput = () => {
+          edits[node.dataset.editId] = node.innerHTML
+          localStorage.setItem(editKey, JSON.stringify(edits))
+        }
+      })
+    }
+
+    function applyEdits() {
+      document.querySelectorAll('.editable').forEach((node, i) => {
+        node.dataset.editId ||= `${node.closest('.slide')?.dataset.key}:${i}`
+        if (edits[node.dataset.editId]) node.innerHTML = edits[node.dataset.editId]
+      })
+    }
+
+    function addTextBlock() {
+      const text = prompt('请输入要添加到当前页的大段文字：')
+      if (!text || !text.trim()) return
+      const key = slides[current].key
+      addons[key] ||= []
+      addons[key].push({ type: 'text', html: escapeHtml(text.trim()).replace(/\n/g, '<br>') })
+      saveAddons()
+      renderAddons()
+    }
+
+    function addMediaBlock() {
+      const url = prompt('粘贴图片或视频 URL；留空则选择本地文件。')
+      if (url === null) return
+      if (url.trim()) {
+        addAddon({ type: /\.(mp4|webm|mov|m4v)(\?|#|$)/i.test(url) ? 'video' : 'image', src: url.trim() })
+      } else {
+        mediaInput.click()
+      }
+    }
+
+    function handleMediaFile(event) {
+      const file = event.target.files?.[0]
+      if (!file) return
+      const reader = new FileReader()
+      reader.onload = () => addAddon({ type: file.type.startsWith('video/') ? 'video' : 'image', src: reader.result })
+      reader.readAsDataURL(file)
+      event.target.value = ''
+    }
+
+    function addAddon(item) {
+      const key = slides[current].key
+      addons[key] ||= []
+      addons[key].push(item)
+      saveAddons()
+      renderAddons()
+    }
+
+    function saveAddons() {
+      try {
+        localStorage.setItem(addonKey, JSON.stringify(addons))
+      } catch {
+        alert('浏览器本地存储空间不足。请使用更小的素材，或把素材加入项目资源目录。')
+      }
+    }
+
+    function renderAddons() {
+      document.querySelectorAll('.custom-layer').forEach(node => node.remove())
+      document.querySelectorAll('.slide').forEach(slide => {
+        const items = addons[slide.dataset.key] || []
+        if (!items.length) return
+        const layer = document.createElement('div')
+        layer.className = 'custom-layer'
+        items.forEach(item => {
+          if (item.type === 'text') {
+            const div = document.createElement('div')
+            div.className = 'custom-text'
+            div.innerHTML = item.html
+            div.contentEditable = editMode ? 'true' : 'false'
+            layer.appendChild(div)
+          } else {
+            const fig = document.createElement('figure')
+            fig.className = 'custom-media'
+            const el = document.createElement(item.type === 'video' ? 'video' : 'img')
+            el.src = item.src
+            if (item.type === 'video') el.controls = true
+            fig.appendChild(el)
+            layer.appendChild(fig)
+          }
+        })
+        slide.querySelector('.slide-inner')?.appendChild(layer)
+      })
+    }
+
+    function toggleNotes() {
+      notesPanel.hidden = !notesPanel.hidden
+      notes.classList.toggle('deck-primary', !notesPanel.hidden)
+    }
+
+    async function toggleFullscreen() {
+      if (document.fullscreenElement) {
+        await document.exitFullscreen()
+      } else {
+        await app.requestFullscreen()
+      }
+    }
+
+    function syncFullscreen() {
+      const on = document.fullscreenElement === app
+      app.classList.toggle('is-fullscreen', on)
+      fullscreen.textContent = on ? '退出全屏' : '全屏'
+      if (on) updateFullscreenScale()
+    }
+
+    function updateFullscreenScale() {
+      if (document.fullscreenElement !== app) return
+      const baseW = 1280
+      const baseH = 720
+      const s = Math.min(innerWidth / baseW, innerHeight / baseH)
+      app.style.setProperty('--fsw', `${baseW}px`)
+      app.style.setProperty('--fsh', `${baseH}px`)
+      app.style.setProperty('--fss', `${s}`)
+    }
+
+    function handlePointer(event) {
+      if (document.fullscreenElement !== app) return
+      app.classList.toggle('show-top', event.clientY <= 84)
+      app.classList.toggle('show-bottom', event.clientY >= innerHeight - 84)
+      clearTimeout(hideTimer)
+      hideTimer = setTimeout(() => {
+        app.classList.remove('show-top', 'show-bottom')
+      }, 1800)
+    }
+
+    function handleKey(event) {
+      const target = event.target
+      if (target?.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target?.tagName)) return
+      if (['ArrowRight', 'PageDown', ' '].includes(event.key)) { event.preventDefault(); show(current + 1) }
+      if (['ArrowLeft', 'PageUp'].includes(event.key)) { event.preventDefault(); show(current - 1) }
+      if (event.key === 'Home') { event.preventDefault(); show(0) }
+      if (event.key === 'End') { event.preventDefault(); show(slides.length - 1) }
+      if (event.key.toLowerCase() === 'f') { event.preventDefault(); toggleFullscreen() }
+      if (event.key.toLowerCase() === 'n') { event.preventDefault(); toggleNotes() }
+      if (event.key.toLowerCase() === 'e') { event.preventDefault(); toggleEdit() }
+    }
+
+    function exportPdf() {
+      if (document.fullscreenElement) document.exitFullscreen()
+      const oldTitle = document.title
+      document.title = 'ROAM-CICV-SOTIF-Presentation'
+      setTimeout(() => {
+        window.print()
+        setTimeout(() => document.title = oldTitle, 1000)
+      }, 120)
+    }
+
+    function readJson(key, fallback) {
+      try { return JSON.parse(localStorage.getItem(key) || JSON.stringify(fallback)) } catch { return fallback }
+    }
+
+    function escapeHtml(value) {
+      return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;')
+    }
+  </script>
+</body>
+</html>
