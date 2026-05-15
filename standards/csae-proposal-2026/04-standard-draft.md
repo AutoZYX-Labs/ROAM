@@ -120,9 +120,11 @@ d) 车端到国家平台的强制数据上报通道。
 - GB/T 40429-2021 汽车驾驶自动化分级
 - GB/T 41798-2022 智能网联汽车 自动驾驶功能场地试验方法及要求
 - GB/T 43267-2023 道路车辆 预期功能安全
+- GB/T 43766-2024 智能网联汽车 运行安全测试技术要求
 - GB/T 44721-2024 智能网联汽车 自动驾驶系统通用技术要求
 - GB 44495-2024 汽车整车信息安全技术要求
 - GB 44496-2024 汽车软件升级通用技术要求
+- GA/T 2388-2026 智能网联汽车 道路测试与示范应用安全通行规范
 - YD/T 4778-2024 基于 5G 的远程遥控驾驶信息交互系统 总体技术要求
 - YD/T 4779-2024 基于 5G 的远程遥控驾驶信息交互系统 城市运营车辆紧急接管
 - YD/T 4780-2024 基于 5G 的远程遥控驾驶信息交互系统 自动驾驶出租车云端控制
@@ -132,6 +134,11 @@ d) 车端到国家平台的强制数据上报通道。
 - ISO 22737:2021 Intelligent transport systems — Low-speed automated driving (LSAD) systems for predefined routes
 - ISO 21448:2022 Road vehicles — Safety of the intended functionality
 - SAE J3016_202104 Taxonomy and Definitions for Terms Related to Driving Automation Systems for On-Road Motor Vehicles
+
+引用关系说明：
+
+- GB/T 43766-2024《智能网联汽车 运行安全测试技术要求》规定智能网联汽车在测试阶段对测试车辆、测试主体、测试驾驶人或安全员、测试运行管理主体的要求。本文件承接其后的示范应用与商业化运营阶段，测试阶段的主体要求与应急响应机制适用 GB/T 43766-2024，本文件不重复规定。
+- GA/T 2388-2026《智能网联汽车 道路测试与示范应用安全通行规范》规定智能网联汽车在道路上的交通通行行为（速度、距离、信号装置使用、车道使用、特殊情况处置等）。本文件规定的运营异常事件处置流程触发车端动作时，车端的交通通行行为应符合 GA/T 2388-2026。
 
 > 注：本文件不引用《智能网联汽车安全事件数据交互与管理系统技术规范》（GB/T 推荐性国标，在研，TC114/SC34 归口），因二者属于互补关系而非依赖关系。
 
@@ -713,9 +720,11 @@ ADS 事件编码与 ROAM 场景代码的对照表如下：
 
 [8] National Transportation Safety Board (NTSB). Investigation Report on Waymo School Bus Incident. 2025.
 
-[9] 张玉新等. ROAM 开源框架 v1.2. https://github.com/AutoZYX-Labs/ROAM, 2026-05.
+[9] Swiss Federal Roads Office (FEDRO). Factsheet on conducting automated driving pilot schemes in Switzerland, Version V6.0. Bern, 2026-03-12.
 
-[10] 张玉新. L4 自动驾驶远程运营与异常管理：参考架构与中国标准化路径. 汽车维修, 2026, X(X): 待发表.
+[10] 张玉新等. ROAM 开源框架 v1.2. https://github.com/AutoZYX-Labs/ROAM, 2026-05.
+
+[11] 张玉新. L4 自动驾驶远程运营与异常管理：参考架构与中国标准化路径. 汽车维修, 2026, X(X): 待发表.
 
 ---
 
