@@ -114,6 +114,7 @@
       transform-origin: center;
     }
     .deck-app.is-fullscreen .slide-body { align-content: start; }
+    .deck-app.is-fullscreen [data-key="summary"] .slide-body { align-content: space-between; }
     .deck-app.is-fullscreen .body-two,
     .deck-app.is-fullscreen .body-three,
     .deck-app.is-fullscreen .body-figure { align-items: start; }
@@ -186,7 +187,7 @@
     .slide h2 {
       position: relative;
       margin: 0;
-      min-height: 78px;
+      min-height: 60px;
       color: var(--blue);
       font-size: 37px;
       line-height: 1.12;
@@ -197,7 +198,7 @@
       content: "";
       position: absolute;
       left: 0;
-      top: 66px;
+      top: 50px;
       width: 110px;
       height: 4px;
       border: 1px solid var(--blue-2);
@@ -252,6 +253,9 @@
     .metric { min-height: 96px; padding: 13px 14px; display: grid; place-content: center; text-align: center; }
     .metric strong { display: block; color: var(--blue); font-size: 34px; line-height: 1; font-weight: 500; }
     .metric span { display: block; margin-top: 8px; color: #111; font-size: 15px; line-height: 1.25; }
+    .metric.compact { min-height: 78px; padding: 10px 12px; }
+    .metric.compact strong { font-size: 24px; line-height: 1.12; }
+    .metric.compact span { margin-top: 6px; font-size: 14px; }
 
     .figure { margin: 0; min-height: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; display: flex; align-items: center; justify-content: center; }
     .figure img { display: block; width: 100%; height: 100%; object-fit: contain; }
@@ -281,6 +285,11 @@
     .matrix th, .matrix td { border: 1px solid #d9e1ea; padding: 10px 12px; text-align: left; vertical-align: top; }
     .matrix th { background: var(--blue-soft); color: var(--blue); font-weight: 600; }
     .matrix .hl { color: var(--red); font-weight: 600; }
+    .standards-table { font-size: 13.2px; line-height: 1.28; }
+    .standards-table th, .standards-table td { padding: 7px 9px; }
+    .standards-table col:nth-child(1) { width: 43%; }
+    .standards-table col:nth-child(2) { width: 25%; }
+    .standards-table col:nth-child(3) { width: 32%; }
 
     .proof-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
     .proof-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -309,6 +318,134 @@
     .status-pill.red { border-color: #d8a0a0; color: var(--red); background: var(--red-soft); }
     .formula { font-family: "SF Mono", Menlo, Consolas, monospace; color: #111; font-size: 13px; line-height: 1.42; background: #f8fafc; border: 1px solid #d9e1ea; border-radius: 6px; padding: 8px 10px; }
 
+    .sotif-map { display: grid; grid-template-columns: 1.02fr 1fr; gap: 14px; align-items: stretch; }
+    .sotif-cycle {
+      min-height: 360px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      align-content: center;
+    }
+    .sotif-node {
+      position: relative;
+      min-height: 88px;
+      padding: 13px 14px 13px 48px;
+      border: 1px solid #d9e1ea;
+      border-left: 6px solid var(--blue);
+      border-radius: 8px;
+      background: var(--blue-soft);
+      display: grid;
+      align-content: center;
+      gap: 4px;
+    }
+    .sotif-node .num {
+      position: absolute;
+      left: 13px;
+      top: 14px;
+      color: var(--blue);
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 700;
+    }
+    .sotif-node strong { color: var(--blue); font-size: 18px; line-height: 1.22; font-weight: 500; }
+    .sotif-node span { color: #334155; font-size: 13px; line-height: 1.35; }
+    .sotif-node.red { border-left-color: var(--red); background: var(--red-soft); }
+    .sotif-node.red .num, .sotif-node.red strong { color: var(--red); }
+    .framework-diagram {
+      min-height: 315px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      display: grid;
+      gap: 10px;
+    }
+    .framework-row { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 9px; align-items: stretch; }
+    .framework-node {
+      position: relative;
+      min-height: 108px;
+      padding: 12px 10px;
+      border: 1px solid #d9e1ea;
+      border-radius: 8px;
+      background: var(--blue-soft);
+      display: grid;
+      align-content: start;
+      gap: 6px;
+    }
+    .framework-node:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: -9px;
+      top: 50%;
+      width: 9px;
+      height: 2px;
+      background: var(--red);
+    }
+    .framework-node.red { background: var(--red-soft); border-color: #d8a0a0; }
+    .framework-node strong { color: var(--blue); font-size: 17px; line-height: 1.22; font-weight: 500; }
+    .framework-node.red strong { color: var(--red); }
+    .framework-node p { margin: 0; color: #334155; font-size: 12px; line-height: 1.34; }
+    .framework-bottom { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+    .mode-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .mode-card {
+      min-height: 96px;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--blue);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .mode-card.red { border-left-color: var(--red); background: var(--red-soft); }
+    .mode-card strong { display: block; color: var(--blue); font-size: 19px; line-height: 1.22; font-weight: 500; }
+    .mode-card.red strong { color: var(--red); }
+    .mode-card p { margin: 6px 0 0; color: #111; font-size: 14px; line-height: 1.42; }
+    .layer-diagram { display: grid; gap: 11px; }
+    .layer-card {
+      position: relative;
+      min-height: 104px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-left: 7px solid var(--blue);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .layer-card.red { border-left-color: var(--red); background: var(--red-soft); }
+    .layer-card strong { color: var(--blue); font-size: 21px; line-height: 1.22; font-weight: 500; }
+    .layer-card.red strong { color: var(--red); }
+    .layer-card p { margin: 7px 0 0; color: #111; font-size: 15px; line-height: 1.42; }
+    .case-map { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 14px; align-items: stretch; }
+    .case-chain { display: grid; gap: 10px; }
+    .case-step {
+      padding: 13px 15px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      display: grid;
+      gap: 5px;
+    }
+    .case-step strong { color: var(--blue); font-size: 19px; line-height: 1.25; font-weight: 500; }
+    .case-step p { margin: 0; color: #111; font-size: 14px; line-height: 1.4; }
+    .case-step.red { border-left: 6px solid var(--red); background: var(--red-soft); }
+    .summary-statement {
+      margin: 0;
+      padding: 18px 22px;
+      border-left: 7px solid var(--red);
+      border-radius: 8px;
+      background: var(--red-soft);
+      color: #111;
+      font-size: 30px;
+      line-height: 1.35;
+    }
+    [data-key="summary"] .slide-body { align-content: space-between; }
+
     .standard-card { padding: 18px 20px; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 12px 28px rgba(23,55,94,.08); }
     .standard-card .label { color: var(--red); font-size: 16px; font-weight: 700; }
     .standard-card h3 { margin: 8px 0 10px; color: var(--blue); font-size: 27px; line-height: 1.28; font-weight: 400; }
@@ -332,9 +469,10 @@
     .thanks-hero img { display: block; width: 100%; height: 100%; object-fit: cover; }
     .thanks-bottom { display: grid; grid-template-columns: minmax(0, 1fr) minmax(350px, 0.38fr); gap: 34px; align-items: end; padding: 26px 46px 30px; background: #fff; box-shadow: 0 -18px 46px rgba(23,55,94,.1); }
     .thanks-title { margin: 0 0 22px; color: var(--blue); font-size: 42px; line-height: 1.1; font-weight: 400; }
-    .thanks-statement { margin: 0 0 18px; color: var(--blue); font-size: 30px; line-height: 1.25; font-weight: 400; }
+    .thanks-title::after { display: none; }
     .thanks .speaker strong { font-size: 25px; }
     .thanks .speaker p { font-size: 18px; }
+    .thanks-contact-actions { margin: 14px 0 10px; }
     .thanks-side { display: grid; gap: 13px; align-content: end; justify-items: end; }
     .thanks-side .logos img { max-height: 66px; }
 
@@ -366,7 +504,8 @@
       .slide { position: relative; min-height: 720px; }
       .slide:not(.is-active) { display: none; }
       .slide-inner, .cover-bottom, .thanks-bottom { padding-left: 22px; padding-right: 22px; }
-      .body-two, .body-three, .body-figure, .comparison, .flow, .project-row, .cover-meta, .thanks-bottom, .custom-layer { grid-template-columns: 1fr; }
+      .body-two, .body-three, .body-figure, .comparison, .flow, .project-row, .cover-meta, .thanks-bottom, .custom-layer, .sotif-map, .case-map, .framework-row, .framework-bottom, .mode-grid { grid-template-columns: 1fr; }
+      .framework-node:not(:last-child)::after { display: none; }
       .flow .step:not(:last-child)::after { display: none; }
     }
 
@@ -468,26 +607,27 @@
           </div>`
       },
       agendaSlide('agenda', -1, '目录', '这页只建立专业汇报结构，不解释故事。'),
-      contentSlide('problem', 'L4 运行阶段的 SOTIF 问题', `
-        <div class="body-two">
+      agendaSlide('agenda-problem', 0, '目录', '进入第一部分。'),
+      contentSlide('problem', '远程运营异常与 SOTIF 的关联', `
+        <div class="sotif-map">
           <div>
-            <p class="lead editable">当 L4 车辆从单车测试走向规模化示范运营，安全问题会从“车辆能否完成 DDT”扩展到“异常发生后能否被识别、分级、处置、恢复和追溯”。</p>
+            <p class="lead editable">ISO 21448 关注预期功能安全：功能不足、性能局限、可合理预见误用，以及这些问题在特定触发条件下导致的危害。</p>
             <ul class="list">
-              <li>车辆已通过测试，仍可能在真实运营中遭遇批量异常、通信中断、乘客求助失效。</li>
-              <li class="red">远程运营不是附加客服能力，而是 L4 运行阶段安全治理的一部分。</li>
-              <li>对 SOTIF 工作组而言，运营异常是触发条件、运行阶段监控和安全论证闭环的重要输入。</li>
+              <li>远程运营异常不是单纯客服问题，而是运行阶段监控中暴露触发条件的重要来源。</li>
+              <li class="red">规模化 L4 运营会把“单车是否完成 DDT”扩展为“异常发生后能否识别、分级、处置、恢复和追溯”。</li>
+              <li>远程运营中心（Remote Operations Center，ROC）的响应能力，会影响风险暴露时间、处置层级和后续安全论证。</li>
             </ul>
-            <p class="callout">团标预研稿拟在开源版基础上扩展为 6 类 29 子场景、16 项 KPI。</p>
+            <p class="callout">建议后续替换为你常用的 ISO 21448 总流程图，并在图中标注运行阶段监控、触发条件识别和问题解决三个位置。</p>
           </div>
-          <div class="metrics">
-            <div class="metric"><strong>584</strong><span>公开 AV 事件/碰撞记录</span></div>
-            <div class="metric"><strong>565</strong><span>DMV 格式记录</span></div>
-            <div class="metric"><strong>19</strong><span>非 DMV 典型事件</span></div>
-            <div class="metric"><strong>10</strong><span>L4 运营模式</span></div>
-            <div class="metric"><strong>6×26</strong><span>开源异常 taxonomy</span></div>
-            <div class="metric"><strong>8</strong><span>开源核心 KPI</span></div>
+          <div class="sotif-cycle" aria-label="ISO 21448 运行阶段证据闭环示意图">
+            <div class="sotif-node"><span class="num">01</span><strong>功能定义与 ODD</strong><span>明确系统能力边界和使用条件</span></div>
+            <div class="sotif-node"><span class="num">02</span><strong>危害分析</strong><span>识别功能不足和可预见误用</span></div>
+            <div class="sotif-node red"><span class="num">03</span><strong>触发条件识别</strong><span>从事件中提取运行触发条件</span></div>
+            <div class="sotif-node"><span class="num">04</span><strong>验证与确认</strong><span>证明风险降低措施有效</span></div>
+            <div class="sotif-node red"><span class="num">05</span><strong>运行阶段监控</strong><span>持续发现未知和低频场景</span></div>
+            <div class="sotif-node red"><span class="num">06</span><strong>问题解决与安全论证</strong><span>把处置结果沉淀为证据</span></div>
           </div>
-        </div>`, '这一页把问题从“远程驾驶技术”抬升到“运行阶段安全治理”。'),
+        </div>`, '这一页用简化重绘图承接 ISO 21448；正式素材到位后可替换成用户常用流程图。'),
       contentSlide('events', '批量异常与共因触发条件', `
         <div class="comparison">
           <div class="compare-card">
@@ -512,49 +652,51 @@
           </div>
         </div>
         <p class="callout editable">这些事件不是“新闻案例”，而是 L4 运营异常管理标准化的真实输入。</p>`, '这页后续可以替换为授权新闻图或官方素材。当前先用结构化事件卡，避免版权风险。'),
-      contentSlide('sotif', '运行阶段 SOTIF 证据闭环', `
+      contentSlide('sotif', 'L4运行阶段安全事件的证据闭环', `
         <div class="body-two">
-          <ul class="list">
-            <li>与功能不足、性能局限、合理可预见误用相关的运营异常，可进入 SOTIF 运行阶段监控。</li>
-            <li class="red">硬件故障、网络安全、纯客服失效不直接等同于 ISO 21448 问题，但会进入运营安全与 Safety Case 证据链。</li>
-            <li>ROAM 的价值是把公开事件、现场响应和 KPI 结果转化为可复核的 field monitoring evidence。</li>
-          </ul>
-          <table class="matrix">
-            <thead><tr><th>ROAM 字段</th><th>SOTIF / 安全论证用途</th></tr></thead>
-            <tbody>
-              <tr><td>scenario_code</td><td>触发条件与场景族识别</td></tr>
-              <tr><td>severity × urgency</td><td>已知/未知不安全场景排序</td></tr>
-              <tr><td>response_layer</td><td>问题解决与降风险策略</td></tr>
-              <tr><td>evidence.source</td><td>运行阶段证据来源与置信度</td></tr>
-              <tr><td>KPI / FRIP</td><td>验证确认、演练和 Safety Case 输入</td></tr>
-            </tbody>
-          </table>
+          <div>
+            <div class="standard-card">
+              <span class="label">ROAM</span>
+              <h3>ROAM：L4 自动驾驶远程运营与异常管理开源框架</h3>
+              <p>从运行阶段 SOTIF 触发条件到运营治理参考架构。</p>
+              <p style="margin-top:10px;">ROAM 不是远程驾驶产品，而是把公开事件、运营异常、处置层级、责任矩阵和 KPI 整理为可复核的证据结构。</p>
+            </div>
+            <p class="callout" style="margin-top:12px;">硬件故障、网络安全和纯客服失效不直接等同于 ISO 21448 问题，但会进入运营安全与安全论证证据链。</p>
+          </div>
+          <div class="metrics">
+            <div class="metric"><strong>584</strong><span>公开 AV 事件/碰撞记录</span></div>
+            <div class="metric"><strong>565</strong><span>DMV 格式记录</span></div>
+            <div class="metric"><strong>19</strong><span>非 DMV 典型事件</span></div>
+            <div class="metric"><strong>10</strong><span>L4 运营模式</span></div>
+            <div class="metric"><strong>6×26</strong><span>开源异常分类体系</span></div>
+            <div class="metric"><strong>8</strong><span>开源核心 KPI</span></div>
+          </div>
         </div>
         <div class="flow">
-          <div class="step"><span>01</span><strong>Field monitoring</strong><p>发现运行阶段异常和触发条件。</p></div>
-          <div class="step"><span>02</span><strong>Scenario update</strong><p>更新已知/未知不安全场景库。</p></div>
-          <div class="step"><span>03</span><strong>Risk reduction</strong><p>定义降风险动作、升级条件和禁止动作。</p></div>
-          <div class="step"><span>04</span><strong>Safety case</strong><p>把处置结果转化为可审计证据。</p></div>
-        </div>`, '强调 ROAM 与 SOTIF 的衔接，避免听众觉得这是运营管理而非安全工程。'),
+          <div class="step"><span>01</span><strong>运行监控 Field monitoring</strong><p>发现运行阶段异常和触发条件。</p></div>
+          <div class="step"><span>02</span><strong>场景更新 Scenario update</strong><p>更新已知/未知不安全场景库。</p></div>
+          <div class="step"><span>03</span><strong>风险降低 Risk reduction</strong><p>定义降风险动作、升级条件和禁止动作。</p></div>
+          <div class="step"><span>04</span><strong>安全论证 Safety case</strong><p>把处置结果转化为可审计证据。</p></div>
+        </div>`, '这一页正式引入 ROAM，把项目数据从前面的 SOTIF 概念页移到这里。'),
       agendaSlide('agenda-standards', 1, '目录', '进入标准缺口部分。'),
       contentSlide('standards-map', '标准覆盖边界与治理缺口', `
-        <div class="body-two">
-          <table class="matrix">
+        <table class="matrix standards-table">
+          <colgroup><col><col><col></colgroup>
             <thead><tr><th>标准或法规</th><th>主要覆盖内容</th><th>ROAM 不重叠边界</th></tr></thead>
             <tbody>
-              <tr><td>GB/T 44721-2024</td><td>自动驾驶系统通用技术要求</td><td class="hl">运行异常后的企业运营处置闭环</td></tr>
-              <tr><td>高度自动驾驶无驾驶人乘用车团标</td><td>单车技术要求与测试方法</td><td class="hl">车队、ROC 与第一响应者协同</td></tr>
-              <tr><td>安全事件数据交互国标在研</td><td>车端、企业平台、监测/监管平台之间的数据采集、交互和管理</td><td class="hl">收到数据后如何分级决策</td></tr>
-              <tr><td>ISO 21448 / ISO 34502</td><td>SOTIF 论证与 ADS 场景化安全评价框架</td><td class="hl">运行阶段异常如何沉淀为证据</td></tr>
-              <tr><td>SAE J3016 / ISO 22737</td><td>自动化分级、远程支援和 DOD 角色</td><td class="hl">跨运营模式责任矩阵与 KPI 基准</td></tr>
+              <tr><td>GB/T 44721-2024《智能网联汽车 自动驾驶系统通用技术要求》</td><td>自动驾驶系统通用技术要求</td><td class="hl">运行异常后的企业运营处置闭环</td></tr>
+              <tr><td>《搭载高度自动驾驶系统（无驾驶人）乘用车技术要求及测试方法》团体标准</td><td>单车技术要求与测试方法</td><td class="hl">车队、远程运营中心（Remote Operations Center，ROC）与第一响应者协同</td></tr>
+              <tr><td>《智能网联汽车安全事件数据交互与管理系统技术规范》国家标准在研</td><td>车端、企业平台、监测/监管平台之间的数据采集、交互和管理</td><td class="hl">收到数据后如何分级决策</td></tr>
+              <tr><td>ISO 21448:2022《Road vehicles - Safety of the intended functionality》；ISO 34502:2022《Scenario based safety evaluation framework》</td><td>SOTIF 论证与 ADS 场景化安全评价框架</td><td class="hl">运行阶段异常如何沉淀为证据</td></tr>
+              <tr><td>SAE J3016:2024《Taxonomy and Definitions for Terms Related to Driving Automation Systems》；ISO 22737:2021《Low-speed automated driving systems》</td><td>自动化分级、远程支援和动态物体与事件检测响应角色</td><td class="hl">跨运营模式责任矩阵与 KPI 基准</td></tr>
             </tbody>
           </table>
-          <div class="proof-grid stack">
+          <div class="proof-grid">
             <div class="proof-card blue"><span class="tagline">能力要求</span><strong>车辆是否满足要求</strong><p>单车技术要求、ADS 通用技术要求、测试方法。</p></div>
             <div class="proof-card blue"><span class="tagline">数据通道</span><strong>事件如何被上报</strong><p>数据元素、平台接口、监测/监管平台交互。</p></div>
             <div class="proof-card red"><span class="tagline">ROAM 缺口</span><strong>异常如何被处置</strong><p>跨企业、跨模式、可审计的运营异常管理参考框架。</p></div>
           </div>
-        </div>`, '这页建立 ROAM 与现有标准的互补关系。'),
+        `, '这页建立 ROAM 与现有标准的互补关系。'),
       contentSlide('data-vs-governance', '数据上报与运营治理的边界', `
         <div class="body-two">
           <div>
@@ -611,7 +753,7 @@
                 <tr><th>定位</th><td>高度自动驾驶车辆运营治理类单项标准。</td></tr>
                 <tr><th>适用对象</th><td>Robotaxi、无人配送、L4 公交、个人 L4 服务、特定环境专用车辆等多模式运营。</td></tr>
                 <tr><th>方法框架</th><td>10 种 L4 运营模式、6 大类 29 子场景、三层决策参考架构。</td></tr>
-                <tr><th>核心产出</th><td>10×3×7 责任矩阵、16 项 KPI、FRIP 模板、文档审查 / 桌面推演 / 历史事件复盘。</td></tr>
+                <tr><th>核心产出</th><td>10×3×7 责任矩阵、16 项 KPI、第一响应者交互计划（First Responder Interaction Plan，FRIP）模板、文档审查 / 桌面推演 / 历史事件复盘。</td></tr>
               </tbody>
             </table>
           </div>
@@ -628,13 +770,26 @@
           <div>
             <p class="lead editable">ROAM 是一个面向 L4 自动驾驶远程运营与异常管理的开源框架，目标是把分散事件、运营经验和标准要求整理成可审阅、可比较、可迭代的公共证据结构。</p>
             <div class="metrics">
-              <div class="metric"><strong>Apache 2.0</strong><span>开源许可</span></div>
-              <div class="metric"><strong>Taxonomy</strong><span>异常分类</span></div>
-              <div class="metric"><strong>Matrix</strong><span>责任与 KPI 证据</span></div>
+              <div class="metric compact"><strong>开源许可</strong><span>Apache 2.0</span></div>
+              <div class="metric compact"><strong>异常分类</strong><span>6×26 开源版</span></div>
+              <div class="metric compact"><strong>责任矩阵</strong><span>模式 × 层级 × 维度</span></div>
             </div>
-            <p class="callout">ROAM 的核心不是“远程接管”，而是异常 taxonomy、分层处置、责任矩阵和 KPI 的证据化。</p>
+            <p class="callout">ROAM 的核心不是“远程接管”，而是异常分类体系、分层处置、责任矩阵和 KPI 的证据化。</p>
           </div>
-          <figure class="figure"><img src="${A}roam-architecture.png" alt="ROAM 开源治理框架总体架构"></figure>
+          <div class="framework-diagram" aria-label="ROAM 开源治理框架总体架构重绘图">
+            <div class="framework-row">
+              <div class="framework-node"><strong>公开事件输入</strong><p>监管记录、公开报道、企业披露、研究案例。</p></div>
+              <div class="framework-node red"><strong>异常分类体系</strong><p>系统性、感知决策、执行、硬件、外部环境、乘客端。</p></div>
+              <div class="framework-node"><strong>三层处置架构</strong><p>AI 自主、人工确认、远程驾驶或现场处置。</p></div>
+              <div class="framework-node red"><strong>责任矩阵与 KPI</strong><p>执行、决策、技术、法律、监管反馈和响应时限。</p></div>
+              <div class="framework-node"><strong>标准与安全论证</strong><p>沉淀为团标预研、演练验证和运行阶段证据。</p></div>
+            </div>
+            <div class="framework-bottom">
+              <div class="proof-card blue"><span class="tagline">数据层</span><strong>事件库</strong><p>统一记录来源、置信度和场景编码。</p></div>
+              <div class="proof-card red"><span class="tagline">方法层</span><strong>参考架构</strong><p>把异常处置拆成可审阅的层级和权限。</p></div>
+              <div class="proof-card blue"><span class="tagline">治理层</span><strong>公共证据</strong><p>服务标准、监管、企业复盘和科研比较。</p></div>
+            </div>
+          </div>
         </div>`, '用 ROAM 总体架构图展示项目不是空概念。'),
       contentSlide('operating-modes', '多模式 L4 运营对象', `
         <div class="body-figure">
@@ -642,9 +797,19 @@
             <p class="lead">ROAM 将 L4 运行对象扩展到 10 种运营模式，覆盖商业运营、个人所有、公共交通和专用环境。</p>
             <p class="callout">关键变化：个人所有和 OEM 订阅类模式中，OEM 从制造商进一步承担运行服务提供者责任。</p>
           </div>
-          <figure class="figure"><img src="${A}roam-operating-modes.png" alt="L4 自动驾驶十种运营模式分类矩阵"></figure>
-        </div>`, '这页最好用图，不用重新排满卡片。'),
-      contentSlide('taxonomy', '异常 taxonomy：从事件描述到处置对象', `
+          <div class="mode-grid" aria-label="L4 自动驾驶十种运营模式分类矩阵重绘图">
+            <div class="mode-card"><strong>商业出行服务</strong><p>M1 Robotaxi；M2 固定路线接驳；M3 特定区域巡游。</p></div>
+            <div class="mode-card red"><strong>个人所有与订阅</strong><p>M4 个人 L4 + OEM 订阅；M5 闲时共享，责任窗口动态切换。</p></div>
+            <div class="mode-card"><strong>公共交通与物流</strong><p>M6 无人配送；M7 L4 公交；M8 干线或园区物流。</p></div>
+            <div class="mode-card red"><strong>专用环境与混合运营</strong><p>M9 矿区、港口、环卫等专用场景；M10 多主体混合运营。</p></div>
+          </div>
+        </div>
+        <div class="proof-grid">
+          <div class="proof-card blue"><span class="tagline">车辆所有权</span><strong>谁拥有车辆</strong><p>决定维护、保险、故障召回和长期安全责任。</p></div>
+          <div class="proof-card red"><span class="tagline">服务运营权</span><strong>谁提供运行服务</strong><p>决定远程运营中心、调度、乘客沟通和应急联动。</p></div>
+          <div class="proof-card blue"><span class="tagline">异常处置权</span><strong>谁能授权处置</strong><p>决定人工确认、远程驾驶、现场救援和监管反馈。</p></div>
+        </div>`, '这一页改为投影友好的重绘矩阵，避免论文图文字过小。'),
+      contentSlide('taxonomy', '异常分类体系：从事件描述到处置对象', `
         <div class="body-two">
           <div class="flow">
             <div class="step"><span>A</span><strong>系统性故障</strong><p>云端、网络、区域性故障、批量失效。</p></div>
@@ -663,18 +828,23 @@
           <div class="step"><span>响应</span><strong>处置层级</strong><p>L1/L2/L3 和禁止远程驾驶条件。</p></div>
           <div class="step"><span>证据</span><strong>KPI 留痕</strong><p>响应时间、升级路径和责任主体。</p></div>
         </div>
-        <p class="callout">开源版当前以 6 大类、26 个已展开子场景作为基础；团标预研稿拟扩展为 6 大类 29 子场景。</p>`, '强调 taxonomy 服务于后面的处置和评价。'),
+        <p class="callout">开源版当前以 6 大类、26 个已展开子场景作为基础；团标预研稿拟扩展为 6 大类 29 子场景。</p>`, '强调异常分类体系服务于后面的处置和评价。'),
       contentSlide('three-layer', '三层架构是降风险状态机', `
         <div class="body-figure">
           <div>
             <ul class="list">
-              <li>Layer 1：AI 自主响应，面向低风险、低紧急度异常。</li>
-              <li>Layer 2：AI 辅助加人工确认，面向不确定、需判断或需授权的异常。</li>
-              <li class="red">Layer 3：远程驾驶或现场处置，面向高风险、硬件故障和复杂外部协同。</li>
+              <li>第一层：AI 自主响应，面向低风险、低紧急度异常。</li>
+              <li>第二层：AI 辅助加人工确认，面向不确定、需判断或需授权的异常。</li>
+              <li class="red">第三层：远程驾驶或现场处置，面向高风险、硬件故障和复杂外部协同。</li>
               <li>共因通信或云端失效时，远程驾驶可能不可用，应优先触发 MRM、区域管控、现场救援和车队级恢复。</li>
             </ul>
           </div>
-          <figure class="figure"><img src="${A}roam-three-layer-decision.png" alt="ROAM 三层决策参考架构流程图"></figure>
+          <div class="layer-diagram" aria-label="ROAM 三层决策参考架构重绘图">
+            <div class="layer-card"><strong>第一层：AI 自主响应</strong><p>车辆可自行完成降速、靠边、路径重规划、乘客提示和日志记录。</p></div>
+            <div class="layer-card red"><strong>第二层：AI 辅助 + 人工确认</strong><p>远程运营中心（Remote Operations Center，ROC）确认系统建议，完成授权、沟通和升级。</p></div>
+            <div class="layer-card"><strong>第三层：远程驾驶 / 现场处置</strong><p>远程驾驶只适用于通信、视野、法规和人员资质满足条件的异常；否则转入 MRM、区域管控或现场救援。</p></div>
+            <div class="proof-card red"><span class="tagline">关键原则</span><strong>远程驾驶不是万能兜底</strong><p>共因故障下，系统必须能证明何时禁止远程驾驶，以及谁负责恢复和留痕。</p></div>
+          </div>
         </div>`, '这页讲清楚不是所有异常都要远程驾驶，远程驾驶只是最后一层。'),
       contentSlide('responsibility', '责任矩阵：技术执行与法律责任不能混在一起', `
         <div class="body-two">
@@ -691,14 +861,14 @@
           <table class="matrix">
             <thead><tr><th>模式切片</th><th>L2 执行</th><th>责任变化</th></tr></thead>
             <tbody>
-              <tr><td>M1 Robotaxi</td><td>运营商 ROC 操作员</td><td>运营商承担执行、决策、技术和法律闭环。</td></tr>
-              <tr><td>M4 个人 + OEM 订阅</td><td>OEM ROC 操作员</td><td class="hl">OEM 从制造商进一步成为运行服务提供者。</td></tr>
+              <tr><td>M1 Robotaxi</td><td>运营商远程运营中心操作员</td><td>运营商承担执行、决策、技术和法律闭环。</td></tr>
+              <tr><td>M4 个人 + OEM 订阅</td><td>OEM 远程运营中心操作员</td><td class="hl">OEM 从制造商进一步成为运行服务提供者。</td></tr>
               <tr><td>M5 个人 + 闲时共享</td><td>OEM / 平台动态切换</td><td>状态机必须记录当前运营权和事故责任窗口。</td></tr>
               <tr><td>M7 L4 公交</td><td>公交监控中心 + 技术方</td><td>运营牌照主体与技术提供方责任分离。</td></tr>
             </tbody>
           </table>
         </div>`, '这页为 10×3×7 矩阵铺垫。'),
-      contentSlide('kpi-frip', 'KPI、FRIP 与桌面推演', `
+      contentSlide('kpi-frip', 'KPI、第一响应者交互计划与桌面推演', `
         <div class="proof-grid">
           <div class="proof-card blue">
             <span class="tagline">开源版 8 项核心 KPI</span>
@@ -713,7 +883,7 @@
           </div>
           <div class="proof-card blue">
             <span class="tagline">验证方法</span>
-            <strong>FRIP + 桌面推演</strong>
+            <strong>第一响应者交互计划 + 桌面推演</strong>
             <p>通过文档审查、桌面推演、历史事件复盘验证运营异常处置能力。</p>
           </div>
         </div>
@@ -722,12 +892,12 @@
           <tbody>
             <tr><td>误升级率</td><td>低层级本可解决，却占用人工资源</td><td>决策引擎日志 + 操作员动作</td></tr>
             <tr><td>漏升级率</td><td>应升级未升级，可能造成安全风险</td><td>S2+ 事件复盘 + 乘客反馈</td></tr>
-            <tr><td>乘客被困时长</td><td>SOS 到可离车的时间窗口</td><td>车门状态 + App + ROC 日志</td></tr>
+            <tr><td>乘客被困时长</td><td>SOS 到可离车的时间窗口</td><td>车门状态 + App + 远程运营中心日志</td></tr>
           </tbody>
         </table>
         <p class="callout">运营异常管理不是“有没有预案”，而是异常能否被指标化、演练化和证据化。</p>`, '这页把标准评审最关心的可实施性讲清楚。'),
       agendaSlide('agenda-evidence', 3, '目录', '进入证据与案例。'),
-      contentSlide('incident-db', '开源事件库与 Field Monitoring Evidence', `
+      contentSlide('incident-db', '开源事件库与运行阶段监控证据', `
         <div class="body-two">
           <div>
             <p class="lead">ROAM 事件库以 YAML 结构化记录公开可查的 AV 事件与碰撞记录，并从中筛选典型 L4 运营异常，支持场景编码、严重度、紧急度、响应层级和证据置信度沉淀。</p>
@@ -751,7 +921,7 @@ evidence:
   verification: structured review</code></pre>
         </div>`, '这里用本地文件统计，后续可替换成 Explorer 截图。'),
       contentSlide('wuhan-case', '武汉案例映射：公开事实、分析与待核验', `
-        <div class="body-two">
+        <div class="case-map">
           <div class="proof-grid stack">
             <div class="proof-card blue">
               <span class="tagline">公开事实</span>
@@ -766,17 +936,23 @@ evidence:
             <div class="proof-card blue">
               <span class="tagline">待核验</span>
               <strong>企业内部 KPI</strong>
-              <p>AI 自恢复率、ROC 队列、MTTR、SOS 响应需以企业日志或监管数据复核。</p>
+              <p>AI 自恢复率、远程运营中心队列、MTTR、SOS 响应需以企业日志或监管数据复核。</p>
             </div>
           </div>
-          <figure class="figure"><img src="${A}roam-case-comparison.png" alt="武汉萝卜快跑与旧金山 Waymo 事件 ROAM 诊断对比"></figure>
-        </div>`, '这页以 ROAM 图 7 支撑，不直接使用版权不明的新闻图。'),
+          <div class="case-chain" aria-label="武汉萝卜快跑事件 ROAM 映射重绘图">
+            <div class="case-step"><strong>事件输入</strong><p>公开报道、地方监管要求、用户端反馈。</p></div>
+            <div class="case-step red"><strong>ROAM 场景编码</strong><p>A 类系统性异常 + C 类规划执行异常 + F 类乘客端异常。</p></div>
+            <div class="case-step"><strong>处置链条</strong><p>车辆降风险、远程运营中心分级处置、乘客沟通、现场清障和监管反馈。</p></div>
+            <div class="case-step red"><strong>待复核证据</strong><p>异常检测时间、人工接入排队、乘客可离车时间、恢复完成时间。</p></div>
+            <div class="case-step"><strong>标准化输出</strong><p>映射到异常分类、三层处置、责任矩阵和 KPI，形成可审阅案例。</p></div>
+          </div>
+        </div>`, '这页改为投影友好的重绘图，不直接使用论文小图或版权不明的新闻图。'),
       contentSlide('waymo-markey', '远程运营透明度成为治理问题', `
         <div class="proof-grid">
           <div class="proof-card blue">
             <span class="tagline">SFCTA / Waymo blackout</span>
             <strong>城市级外部扰动</strong>
-            <p>电力或交通基础设施异常会触发区域性运行风险，考验 ROC 与城市应急接口。</p>
+            <p>电力或交通基础设施异常会触发区域性运行风险，考验远程运营中心与城市应急接口。</p>
           </div>
           <div class="proof-card red">
             <span class="tagline">Markey RAO report</span>
@@ -785,8 +961,8 @@ evidence:
           </div>
           <div class="proof-card blue">
             <span class="tagline">CA DMV Article 3.7</span>
-            <strong>FRIP 与响应要求</strong>
-            <p>监管草案开始关注第一响应者交互、remote operations support 和应急响应时限。</p>
+            <strong>第一响应者交互与响应要求</strong>
+            <p>监管草案开始关注第一响应者交互、远程运营支持和应急响应时限。</p>
           </div>
         </div>
         <p class="callout">远程运营能力不应只存在于企业内部系统中，也应转化为监管、标准和研究可以审阅的证据。</p>
@@ -816,13 +992,14 @@ evidence:
           </div>
           <div class="card red">
             <h3>方法</h3>
-            <p>ROAM 提供异常分类、三层架构、责任矩阵、KPI、FRIP 和验证方法。</p>
+            <p>ROAM 提供异常分类、三层架构、责任矩阵、KPI、第一响应者交互计划和验证方法。</p>
           </div>
           <div class="card blue">
             <h3>路径</h3>
             <p>通过开源项目持续沉淀证据，并承接到团体标准预研和后续国家、国际标准讨论。</p>
           </div>
         </div>
+        <p class="summary-statement editable">ROAM<br>让 L4 运营异常从分散事件变成公共证据。</p>
         <div class="button-row">
           <a class="link-button" href="https://roam.autozyx.com/" target="_blank" rel="noopener">ROAM 官网</a>
           <a class="link-button" href="https://github.com/AutoZYX-Labs/ROAM" target="_blank" rel="noopener">GitHub</a>
@@ -838,11 +1015,15 @@ evidence:
             <div class="thanks-bottom">
               <div>
                 <h2 class="thanks-title editable">感谢关注</h2>
-                <p class="thanks-statement editable">ROAM 让 L4 运营异常从分散事件变成公共证据。</p>
                 <div class="speaker editable">
                   <strong>张玉新</strong>
                   <p>自动驾驶安全联合实验室</p>
                   <p>吉林大学汽车底盘集成与仿生全国重点实验室</p>
+                  <div class="button-row thanks-contact-actions">
+                    <a class="link-button" href="https://roam.autozyx.com/" target="_blank" rel="noopener">ROAM</a>
+                    <a class="link-button" href="https://autozyx.com/" target="_blank" rel="noopener">个人主页</a>
+                    <a class="link-button red" href="https://github.com/AutoZYX-Labs/ROAM" target="_blank" rel="noopener">GitHub</a>
+                  </div>
                   <p>微信公众号：张玉新-AutoZYX</p>
                 </div>
               </div>
@@ -850,11 +1031,6 @@ evidence:
                 <div class="logos">
                   <img src="${A}ad-safety-joint-lab-logo-transparent.png" alt="自动驾驶安全联合实验室">
                   <img src="${A}state-key-lab-logo-transparent.png" alt="汽车底盘集成与仿生全国重点实验室">
-                </div>
-                <div class="button-row" style="justify-content:flex-end;">
-                  <a class="link-button" href="https://roam.autozyx.com/" target="_blank" rel="noopener">ROAM</a>
-                  <a class="link-button" href="https://autozyx.com/" target="_blank" rel="noopener">个人主页</a>
-                  <a class="link-button red" href="https://github.com/AutoZYX-Labs/ROAM" target="_blank" rel="noopener">GitHub</a>
                 </div>
               </div>
             </div>
