@@ -11,6 +11,8 @@ This document defines 8 key performance indicators (KPIs) for evaluating robotax
 
 Each KPI includes: definition, formula, target value, measurement method, and data source.
 
+> 2026-05 standards note: this open-source v1.0 document keeps 8 core KPIs as the public baseline. The CSAE / CAICV pre-research draft is exploring an expanded 16-KPI structure for the group standard track; final KPI items and thresholds require drafting-group consensus and calibration with real operating data.
+
 ---
 
 ## KPI 1: MTTR (Mean Time To Resolution)

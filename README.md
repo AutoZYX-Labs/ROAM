@@ -3,13 +3,16 @@
 **Open-Source Framework for L4 Autonomous Mobility Remote Operations, Incident Management & Safety Governance**
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Incidents](https://img.shields.io/badge/Incidents-16-red.svg)](#incident-database)
+[![Records](https://img.shields.io/badge/Public%20Records-584-red.svg)](incidents/)
 [![Scenarios](https://img.shields.io/badge/Scenarios-6%20categories-orange.svg)](#scenario-taxonomy)
 [![Operating Models](https://img.shields.io/badge/Operating%20Models-10-blue.svg)](taxonomy/operating-models-v1.0.md)
+[![Standards Track](https://img.shields.io/badge/CSAE-Pre--research-blue.svg)](#roam-open-framework-vs-csae-group-standard)
 
-🌐 **Website:** [AutoZYX.github.io/ROAM](https://AutoZYX.github.io/ROAM)
+> **📜 Positioning Notice (2026-05):** The ROAM three-layer reference architecture (Advisory / Assisted / Control), inter-layer state machine, forced-degradation semantics, and fleet-level coordination constraints are intentionally **published as open-source under Apache 2.0** — *not as a commercial proprietary IP*. The maintainer's deliberate choice is to position ROAM as a **standards-proposal-track common-good infrastructure** for the global L4 mobility safety community, suitable for adoption by SAE / ISO / GB / CSAE working groups, by regulators, by independent third-party assurance bodies, and by inter-OEM consortia. Commercial productization on top of ROAM is explicitly welcomed under Apache 2.0 — please cite the framework when you do.
 
-> **Scope (Updated 2026-04):** ROAM started as a Robotaxi-focused framework but has expanded to cover **all L4 autonomous mobility operating models** — including Robotaxi fleets, OEM direct fleets, personally-owned L4 with OEM subscription services, shared-use vehicles, public transit, logistics, and specialized environments. See [Operating Models v1.0](taxonomy/operating-models-v1.0.md) for the 10 modes we currently cover.
+🌐 **Website:** [roam.autozyx.com](https://roam.autozyx.com) · [CICV 2026 Presentation](https://roam.autozyx.com/presentation.html)
+
+> **Scope (Updated 2026-05):** ROAM started as a Robotaxi-focused framework but has expanded to cover **all L4 autonomous mobility operating models** — including Robotaxi fleets, OEM direct fleets, personally-owned L4 with OEM subscription services, shared-use vehicles, public transit, logistics, and specialized environments. See [Operating Models v1.0](taxonomy/operating-models-v1.0.md) for the 10 modes we currently cover.
 
 ---
 
@@ -25,12 +28,12 @@ In March 2026, a [US Congressional investigation](docs/Markey-Remote-Back-Seat-O
 
 **ROAM provides the open-source foundation for solving this problem:**
 
-1. 📋 **Incident Database** — Structured, searchable records of every known L4 anomaly
-2. 🏷️ **Scenario Taxonomy + Operating Models** — 6 scenario categories + 10 operating modes
+1. 📋 **Incident Database** — 584 structured public incident / collision records, including 565 California DMV collision reports
+2. 🏷️ **Scenario Taxonomy + Operating Models** — 6 scenario categories, 29 sub-scenarios, and 10 operating modes
 3. 🏗️ **Reference Architecture** — Three-layer decision model with mode-specific responsibility matrix
 4. 📊 **Evaluation Benchmarks** — Mode-differentiated KPIs and baseline data
 5. 🔧 **Technology Pillars** — Six-pillar technical foundation (perception, teleop, wireless, AI trust, cybersecurity, human factors)
-6. 📜 **Standards Roadmap** — Three-tier proposal path to formalize ROAM as a group / national / international standard ([`standards/`](standards/))
+6. 📜 **Standards Roadmap** — CSAE / CAICV pre-research track plus long-term GB / ISO transfer options ([`standards/`](standards/))
 
 ## L4 is Not Only Robotaxi
 
@@ -123,11 +126,12 @@ ROAM/
 │   ├── reference-architecture.md      # Three-layer decision model
 │   └── responsibility-matrix.md       # 10 modes × 3 layers
 ├── benchmarks/             # KPIs and baseline data
-├── standards/              # Standards landscape & proposal roadmap (NEW)
+├── standards/              # Standards landscape & proposal roadmap
 │   ├── README.md                      # Standards strategy overview
 │   ├── landscape.md                   # Standards landscape survey
-│   ├── proposal-roadmap.md            # 3-tier proposal roadmap
-│   └── gb-draft-comments-2026-04.md   # Mandatory GB enhancement proposal
+│   ├── proposal-roadmap.md            # CSAE + GB / ISO roadmap
+│   ├── gb-draft-comments-2026-04.md   # Historical GB enhancement proposal
+│   └── csae-proposal-2026/            # CSAE pre-research public materials
 ├── website/                # GitHub Pages website (archived design)
 └── docs/                   # Deployed site + white papers and research
     ├── technology-pillars.md          # Six technology pillars
@@ -145,7 +149,7 @@ ROAM/
 
 > **Important: ROAM is the superset, CSAE Group Standard is the subset.**
 
-In May 2026, the CSAE Group Standard *Specification for Operations Anomaly Event Management of High-Automation Vehicles* (《智能网联汽车 高度自动驾驶车辆运营管理异常事件处置规范》) entered the pre-research stage, jointly led by Jilin University, ZYT, FAW Group, and the China Intelligent and Connected Vehicles Industry Innovation Center (CICV), proposed by CAICV.
+In May 2026, the CSAE Group Standard *Specification for Operations Anomaly Event Management of High-Automation Vehicles* (《智能网联汽车 高度自动驾驶车辆运营管理异常事件处置规范》) entered the pre-research stage, jointly led by Jilin University, Zhuoyu Technology, FAW Group, and the China Intelligent and Connected Vehicles Industry Innovation Center (CICV), proposed by CAICV.
 
 ROAM and the CSAE Group Standard are not equivalent. ROAM is an open-source research framework with international scope; the CSAE Group Standard is a Chinese-context, drafting-group-consensus standardization output that selects the standardizable subset from ROAM and adapts it to Chinese national conditions, commercial models, and regulatory reality.
 
@@ -226,9 +230,9 @@ If you use ROAM in your research, please cite:
 
 ```bibtex
 @misc{roam2026,
-  title={ROAM: RoboTaxi Operations Anomaly Management},
+  title={ROAM: Remote Operations and Anomaly Management},
   author={Zhang, Yuxin and Contributors},
   year={2026},
-  url={https://github.com/AutoZYX/ROAM}
+  url={https://github.com/AutoZYX-Labs/ROAM}
 }
 ```

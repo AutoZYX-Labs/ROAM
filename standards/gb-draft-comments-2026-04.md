@@ -6,7 +6,7 @@
 
 > 作者：Yuxin Zhang
 > 日期：2026 年 4 月
-> 状态：**❌ 已废弃 —— 经战略评估后放弃此窗口**
+> 状态：**❌ 已废弃 —— 经战略评估后放弃此窗口；2026-05 已被 CSAE / CAICV 团标预研路线取代**
 
 ---
 
@@ -18,7 +18,7 @@
 2. **周期不可控**：在强制 GB 征求意见阶段加入系统性新内容，势必引发大量技术讨论，导致 GB 发布周期延长
 3. **角色冲突**：作者本身也是该强制 GB 起草组的参与者之一，在此阶段提交增量建议存在程序性问题
 
-**v1.1 战略**：不参与强制 GB，直接瞄准 TC114/SC34 国家推荐标准 GB/T 立项（预计 2027 Q1 启动）。详见 [`README.md`](README.md) 和 [`proposal-roadmap.md`](proposal-roadmap.md)。
+**v1.2 战略**：不参与强制 GB 征求意见嵌入窗口；当前主路径为 CSAE / CAICV 团标预研，后续再根据起草组共识择优转化为 TC114/SC34 GB/T、交通部 ITS 或国际标准。详见 [`README.md`](README.md)、[`proposal-roadmap.md`](proposal-roadmap.md) 和 [`csae-proposal-2026/00-overview.md`](csae-proposal-2026/00-overview.md)。
 
 本文档保留仅作历史记录。
 
@@ -86,7 +86,7 @@ D. 车辆硬件故障（Vehicle Hardware Failure）
 E. 外部环境冲突（External Conflict）
 F. 乘客端异常（Passenger-Side Issue）
 
-G.2 每大类下细分为 4-5 个子场景，共 27 个子场景（见 ROAM 开源框架 taxonomy/scenario-taxonomy-v1.0.md）。
+G.2 每大类下细分为 4-6 个子场景，当前开源版为 29 个子场景（见 ROAM 开源框架 taxonomy/scenario-taxonomy-v1.0.md）。
 
 G.3 每个子场景应对应推荐的处置层级（L1 AI 自主 / L2 AI 辅助+人工确认 / L3 远程驾驶+线下派人）。
 ```

@@ -15,8 +15,8 @@
   <!-- Roof / Platform name -->
   <polygon points="60,80 500,20 940,80" fill="url(#roof)"/>
   <rect x="60" y="80" width="880" height="56" fill="#0f1629"/>
-  <text x="500" y="68" text-anchor="middle" fill="white" font-size="18" font-weight="800">L4 Robotaxi 远程运营异常管理平台</text>
-  <text x="500" y="58" text-anchor="middle" fill="#94a3b8" font-size="11">ROAM — RoboTaxi Operations Anomaly Management</text>
+  <text x="500" y="68" text-anchor="middle" fill="white" font-size="18" font-weight="800">L4 自动驾驶远程运营与异常管理平台</text>
+  <text x="500" y="58" text-anchor="middle" fill="#94a3b8" font-size="11">ROAM — Remote Operations &amp; Anomaly Management</text>
   <text x="500" y="116" text-anchor="middle" fill="white" font-size="14" font-weight="600">开源基线 · 行业共建 · 标准对齐</text>
 
   <!-- Four Pillars -->

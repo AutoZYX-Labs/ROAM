@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ROAM — RoboTaxi Operations Anomaly Management Platform</title>
-  <meta name="description" content="Open-source incident database, scenario taxonomy & reference architecture for L4+ robotaxi remote operations.">
+  <title>ROAM — Remote Operations &amp; Anomaly Management Platform</title>
+  <meta name="description" content="Open-source incident database, scenario taxonomy & reference architecture for L4+ autonomous mobility remote operations.">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -18,8 +18,8 @@
 <!-- Hero -->
 <header class="hero container">
   <h1>ROAM</h1>
-  <p class="tagline cn-block" style="font-size:2vw; font-weight:500; letter-spacing:4px; color:var(--muted);">无人驾驶出租车运营异常管理平台</p>
-  <p class="tagline en-block" style="font-size:2vw; font-weight:500; letter-spacing:5px; text-transform:uppercase; color:var(--muted);">RoboTaxi Operations Anomaly Management Platform</p>
+  <p class="tagline cn-block" style="font-size:2vw; font-weight:500; letter-spacing:4px; color:var(--muted);">L4自动驾驶远程运营与异常管理平台</p>
+  <p class="tagline en-block" style="font-size:2vw; font-weight:500; letter-spacing:5px; text-transform:uppercase; color:var(--muted);">Remote Operations &amp; Anomaly Management Platform</p>
   <p class="tagline" style="margin-top:18px; font-size:clamp(1.2rem,1rem+0.6vw,1.6rem); color:var(--text); font-weight:400;">
     <span class="cn">开源事件数据库、场景分类体系与参考架构</span>
     <span class="en">Open-source incident database, scenario taxonomy &amp; reference architecture for L4+ remote operations</span>
@@ -28,7 +28,7 @@
     <a href="https://ROAM-explorer.autozyx.com" class="btn" target="_blank" rel="noopener">
       <span class="cn">交互式探索</span><span class="en">Open Explorer</span>
     </a>
-    <a href="https://github.com/AutoZYX/ROAM" class="btn btn-outline" target="_blank" rel="noopener">
+    <a href="https://github.com/AutoZYX-Labs/ROAM" class="btn btn-outline" target="_blank" rel="noopener">
       <span class="cn">GitHub 仓库</span><span class="en">GitHub Repo</span>
     </a>
     <a href="#incidents" class="btn btn-outline">
@@ -40,19 +40,19 @@
 <!-- Stats Bar -->
 <div class="stats container">
   <div class="stat">
-    <span class="stat-number">16</span>
-    <span class="stat-label"><span class="cn">事件记录</span><span class="en">Incidents</span></span>
+    <span class="stat-number">584</span>
+    <span class="stat-label"><span class="cn">公开记录</span><span class="en">Public Records</span></span>
   </div>
   <div class="stat">
-    <span class="stat-number">4</span>
+    <span class="stat-number">14+</span>
     <span class="stat-label"><span class="cn">运营商</span><span class="en">Operators</span></span>
   </div>
   <div class="stat">
-    <span class="stat-number">5</span>
-    <span class="stat-label"><span class="cn">国家</span><span class="en">Countries</span></span>
+    <span class="stat-number">565</span>
+    <span class="stat-label"><span class="cn">DMV碰撞记录</span><span class="en">DMV Reports</span></span>
   </div>
   <div class="stat">
-    <span class="stat-number">26</span>
+    <span class="stat-number">29</span>
     <span class="stat-label"><span class="cn">场景类型</span><span class="en">Scenario Types</span></span>
   </div>
 </div>
@@ -77,15 +77,15 @@
         <span class="pillar-icon">📋</span>
         <h3><span class="cn">事件数据库</span><span class="en">Incident Database</span></h3>
         <p><span class="cn">结构化YAML事件记录，社区维护</span><span class="en">Structured, searchable YAML records. Community-maintained.</span></p>
-        <a class="card-link" href="https://github.com/AutoZYX/ROAM/tree/main/incidents">
+        <a class="card-link" href="https://github.com/AutoZYX-Labs/ROAM/tree/main/incidents">
           <span class="cn">浏览事件 →</span><span class="en">Browse incidents →</span>
         </a>
       </div>
       <div class="pillar-card">
         <span class="pillar-icon">🏷️</span>
         <h3><span class="cn">场景分类</span><span class="en">Scenario Taxonomy</span></h3>
-        <p><span class="cn">6大类、26个子场景的标准化分类</span><span class="en">6 categories, 26 sub-scenarios. Standardized classification.</span></p>
-        <a class="card-link" href="https://github.com/AutoZYX/ROAM/blob/main/taxonomy/scenario-taxonomy-v1.0.md">
+        <p><span class="cn">6大类、29个子场景的标准化分类</span><span class="en">6 categories, 29 sub-scenarios. Standardized classification.</span></p>
+        <a class="card-link" href="https://github.com/AutoZYX-Labs/ROAM/blob/main/taxonomy/scenario-taxonomy-v1.0.md">
           <span class="cn">查看分类 →</span><span class="en">View taxonomy →</span>
         </a>
       </div>
@@ -93,7 +93,7 @@
         <span class="pillar-icon">🏗️</span>
         <h3><span class="cn">参考架构</span><span class="en">Reference Architecture</span></h3>
         <p><span class="cn">三层AI优先决策模型</span><span class="en">Three-layer AI-first decision model.</span></p>
-        <a class="card-link" href="https://github.com/AutoZYX/ROAM/blob/main/architecture/reference-architecture.md">
+        <a class="card-link" href="https://github.com/AutoZYX-Labs/ROAM/blob/main/architecture/reference-architecture.md">
           <span class="cn">查看架构 →</span><span class="en">View architecture →</span>
         </a>
       </div>
@@ -101,7 +101,7 @@
         <span class="pillar-icon">📊</span>
         <h3><span class="cn">评估基准</span><span class="en">Benchmarks</span></h3>
         <p><span class="cn">8个KPI指标定义</span><span class="en">8 KPIs with target values and baselines.</span></p>
-        <a class="card-link" href="https://github.com/AutoZYX/ROAM/blob/main/benchmarks/kpi-definitions.md">
+        <a class="card-link" href="https://github.com/AutoZYX-Labs/ROAM/blob/main/benchmarks/kpi-definitions.md">
           <span class="cn">查看KPI →</span><span class="en">View KPIs →</span>
         </a>
       </div>
@@ -134,8 +134,8 @@
     </table>
     </div>
     <p style="margin-top:14px; color:var(--muted); font-size:0.9rem;">
-      <span class="cn">显示 6/16 条事件。</span><span class="en">Showing 6 of 16 incidents. </span>
-      <a href="https://github.com/AutoZYX/ROAM/tree/main/incidents"><span class="cn">在 GitHub 查看全部 →</span><span class="en">View all on GitHub →</span></a>
+      <span class="cn">显示 6 条代表性事件。</span><span class="en">Showing 6 representative incidents. </span>
+      <a href="https://github.com/AutoZYX-Labs/ROAM/tree/main/incidents"><span class="cn">在 GitHub 查看全部 →</span><span class="en">View all on GitHub →</span></a>
     </p>
   </section>
 
@@ -222,7 +222,7 @@
   <div class="container">
     <p>&copy; 2026 Yuxin Zhang &nbsp;|&nbsp; Apache 2.0</p>
     <p style="margin-top: 6px;">
-      <a href="https://github.com/AutoZYX/ROAM" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/AutoZYX-Labs/ROAM" target="_blank" rel="noopener">GitHub</a>
       &nbsp;&middot;&nbsp;
       <a href="https://autozyx.com" target="_blank" rel="noopener">autozyx.com</a>
     </p>

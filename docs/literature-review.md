@@ -268,7 +268,7 @@ ROAM项目的四个模块恰好对应了Robotaxi保险生态中的关键基础�
 
 ## 8 ROAM项目定位
 
-基于上述分析，ROAM（RoboTaxi Operations Anomaly Management）项目旨在填补该领域的关键空白。ROAM定位为开源的参考架构与分析工具集，核心贡献包括三个层面：
+基于上述分析，ROAM（Remote Operations & Anomaly Management）项目旨在填补该领域的关键空白。ROAM定位为开源的参考架构与分析工具集，核心贡献包括三个层面：
 
 **事件追踪基线。** 建立L4级Robotaxi远程运营事件的结构化记录与分类体系，覆盖通信故障、系统宕机、人机交互失效等典型事件类型，为行业提供可比较的事件分析框架。
 

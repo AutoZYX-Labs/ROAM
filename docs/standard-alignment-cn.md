@@ -1,7 +1,7 @@
 # ROAM项目与自动驾驶安全标准的对齐分析
 
-**版本：** 1.0
-**更新日期：** 2026-04-03
+**版本：** 1.1
+**更新日期：** 2026-05-16
 **维护人：** 张玉新
 
 ---
@@ -10,7 +10,7 @@
 
 2026年2月，《智能网联汽车 自动驾驶系统安全要求》征求意见稿（以下简称"GB草案"）正式发布。这是中国首个针对L3/L4自动驾驶系统的强制性国家标准草案，其附录C.2（远程协助要求）和附录D（安全档案结构）对Robotaxi远程运营提出了明确的技术要求和安全论证框架。
 
-ROAM（RoboTaxi Operations Anomaly Management）项目的四个核心模块——事件数据库、场景分类体系、参考架构、评价基准——与GB草案的要求存在系统性的对齐关系。本文从四个维度展开分析。
+ROAM（Remote Operations & Anomaly Management）项目的四个核心模块——事件数据库、场景分类体系、参考架构、评价基准——与GB草案的要求存在系统性的对齐关系。本文从四个维度展开分析。
 
 ---
 
@@ -109,4 +109,5 @@ ROAM与GB草案的对齐不是巧合。ROAM的设计理念从一开始就以标�
 随着GB标准从征求意见稿走向正式发布，ROAM将持续更新标准映射关系。欢迎行业同仁参与贡献。
 
 > 详细的英文标准映射表见 [related-standards.md](related-standards.md)。
-> 项目主页：[https://github.com/AutoZYX/ROAM](https://github.com/AutoZYX/ROAM)
+> 项目主页：[https://roam.autozyx.com](https://roam.autozyx.com)
+> GitHub：[https://github.com/AutoZYX-Labs/ROAM](https://github.com/AutoZYX-Labs/ROAM)
