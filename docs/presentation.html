@@ -700,6 +700,608 @@
     .report-insight.red strong { color: var(--red); }
     .report-insight p { margin: 7px 0 0; color: #111; font-size: 14px; line-height: 1.42; }
 
+    .sotif-proof {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+      gap: 18px;
+      min-height: 0;
+      align-items: stretch;
+    }
+    .iso-board, .event-board, .loop-board, .coverage-board, .bridge-board, .gap-board, .standard-plan, .framework-canvas, .mode-map, .taxonomy-board, .responsibility-board, .case-board, .ecosystem-board, .summary-board {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      min-height: 0;
+    }
+    .iso-board {
+      padding: 16px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 12px;
+    }
+    .board-title { color: var(--blue); font-size: 22px; line-height: 1.25; font-weight: 500; margin: 0; }
+    .iso-path {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      align-content: center;
+    }
+    .iso-step {
+      min-height: 102px;
+      padding: 12px;
+      border: 1px solid #d9e1ea;
+      border-left: 6px solid var(--blue);
+      border-radius: 8px;
+      background: var(--blue-soft);
+      display: grid;
+      align-content: center;
+      gap: 5px;
+    }
+    .iso-step.red { border-left-color: var(--red); background: var(--red-soft); }
+    .iso-step span { color: var(--red); font-size: 13px; line-height: 1; font-weight: 700; }
+    .iso-step strong { color: var(--blue); font-size: 18px; line-height: 1.25; font-weight: 500; }
+    .iso-step.red strong { color: var(--red); }
+    .iso-step p { margin: 0; color: #111; font-size: 13px; line-height: 1.35; }
+    .roam-insert {
+      padding: 12px 14px;
+      border-left: 6px solid var(--red);
+      border-radius: 8px;
+      background: var(--red-soft);
+      color: #111;
+      font-size: 17px;
+      line-height: 1.42;
+    }
+    .trigger-panel { display: grid; gap: 10px; align-content: start; }
+    .trigger-card {
+      padding: 14px 15px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .trigger-card.main { background: var(--blue); color: #fff; }
+    .trigger-card.red { border-left: 6px solid var(--red); background: var(--red-soft); }
+    .trigger-card strong { display: block; color: var(--blue); font-size: 19px; line-height: 1.25; font-weight: 500; }
+    .trigger-card.main strong { color: #fff; font-size: 22px; }
+    .trigger-card.red strong { color: var(--red); }
+    .trigger-card p { margin: 7px 0 0; color: #111; font-size: 14px; line-height: 1.42; }
+    .trigger-card.main p { color: rgba(255,255,255,.92); }
+
+    .event-board {
+      padding: 16px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .event-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+    .event-card header { padding: 14px 16px; background: var(--blue); color: #fff; }
+    .event-card.red header { background: var(--red); }
+    .event-card h3 { margin: 0; font-size: 24px; line-height: 1.2; font-weight: 500; }
+    .event-card header span { display: block; margin-top: 4px; font-size: 12px; opacity: .9; }
+    .event-ladder { padding: 14px; display: grid; gap: 9px; }
+    .event-ladder div {
+      min-height: 62px;
+      padding: 10px 12px;
+      border: 1px solid #d9e1ea;
+      border-left: 5px solid var(--blue);
+      border-radius: 8px;
+      background: var(--blue-soft);
+    }
+    .event-card.red .event-ladder div { border-left-color: var(--red); }
+    .event-ladder strong { display: block; color: var(--blue); font-size: 16px; line-height: 1.2; font-weight: 500; }
+    .event-card.red .event-ladder strong { color: var(--red); }
+    .event-ladder p { margin: 4px 0 0; color: #111; font-size: 12.5px; line-height: 1.32; }
+    .event-gap {
+      margin: 0 14px 14px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: var(--red-soft);
+      color: #111;
+      font-size: 14px;
+      line-height: 1.36;
+    }
+
+    .loop-board {
+      padding: 16px;
+      display: grid;
+      grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr);
+      gap: 15px;
+      align-items: stretch;
+    }
+    .loop-wheel {
+      position: relative;
+      min-height: 340px;
+      border: 1px solid #d9e1ea;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--blue-soft), #fff);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .loop-center {
+      width: 176px;
+      height: 176px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: var(--blue);
+      color: #fff;
+      font-size: 23px;
+      line-height: 1.25;
+      padding: 18px;
+    }
+    .loop-node {
+      position: absolute;
+      width: 150px;
+      min-height: 68px;
+      padding: 10px 11px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--red);
+      border-radius: 8px;
+      background: #fff;
+      color: #111;
+      font-size: 13px;
+      line-height: 1.3;
+    }
+    .loop-node strong { display: block; color: var(--red); font-size: 15px; line-height: 1.2; font-weight: 500; }
+    .loop-node.n1 { top: 18px; left: 26px; }
+    .loop-node.n2 { top: 18px; right: 26px; border-left-color: var(--blue); }
+    .loop-node.n2 strong, .loop-node.n4 strong { color: var(--blue); }
+    .loop-node.n3 { bottom: 18px; right: 26px; }
+    .loop-node.n4 { bottom: 18px; left: 26px; border-left-color: var(--blue); }
+    .roam-stats-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; align-content: start; }
+    .stat-card {
+      min-height: 110px;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      display: grid;
+      align-content: center;
+      gap: 7px;
+    }
+    .stat-card strong { color: var(--blue); font-size: 30px; line-height: 1; font-weight: 500; }
+    .stat-card.red strong { color: var(--red); }
+    .stat-card span { color: #111; font-size: 15px; line-height: 1.35; }
+
+    .coverage-board {
+      padding: 16px;
+      display: grid;
+      grid-template-rows: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .coverage-row {
+      display: grid;
+      grid-template-columns: 158px minmax(0, 1fr) minmax(210px, .42fr);
+      gap: 10px;
+      align-items: stretch;
+    }
+    .coverage-label {
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: var(--blue);
+      color: #fff;
+      display: grid;
+      align-content: center;
+      font-size: 17px;
+      line-height: 1.25;
+    }
+    .coverage-row.red .coverage-label { background: var(--red); }
+    .coverage-standards {
+      padding: 9px 10px;
+      border: 1px solid #d9e1ea;
+      border-radius: 8px;
+      background: var(--blue-soft);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+    .std-pill { padding: 5px 8px; border-radius: 999px; background: #fff; border: 1px solid #cbd5df; color: var(--blue); font-size: 12px; line-height: 1; }
+    .coverage-gap {
+      padding: 9px 10px;
+      border: 1px solid #d8a0a0;
+      border-radius: 8px;
+      background: var(--red-soft);
+      color: #111;
+      font-size: 13px;
+      line-height: 1.35;
+      display: grid;
+      align-content: center;
+    }
+
+    .bridge-board {
+      padding: 16px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 72px minmax(0, 1fr);
+      gap: 12px;
+      align-items: stretch;
+    }
+    .bridge-col {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 15px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 12px;
+    }
+    .bridge-col h3 { margin: 0; color: var(--blue); font-size: 24px; line-height: 1.25; font-weight: 500; }
+    .bridge-col.red h3 { color: var(--red); }
+    .bridge-tags { display: grid; gap: 9px; align-content: center; }
+    .bridge-tags span { display: block; padding: 11px 12px; border-radius: 8px; background: var(--blue-soft); color: #111; font-size: 15px; line-height: 1.35; }
+    .bridge-col.red .bridge-tags span { background: var(--red-soft); }
+    .bridge-col p { margin: 0; color: #111; font-size: 15px; line-height: 1.45; }
+    .bridge-arrow {
+      height: 100%;
+      display: grid;
+      place-items: center;
+      color: var(--red);
+      font-size: 36px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .gap-board {
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1.12fr 1fr;
+      gap: 12px;
+      align-items: stretch;
+    }
+    .gap-column { display: grid; gap: 10px; }
+    .gap-card {
+      min-height: 88px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--blue);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .gap-card.red { border-left-color: var(--red); background: var(--red-soft); }
+    .gap-card strong { color: var(--blue); font-size: 18px; line-height: 1.2; font-weight: 500; }
+    .gap-card.red strong { color: var(--red); }
+    .gap-card p { margin: 6px 0 0; color: #111; font-size: 13px; line-height: 1.35; }
+    .gap-core {
+      padding: 18px;
+      border-radius: 8px;
+      background: var(--blue);
+      color: #fff;
+      display: grid;
+      align-content: center;
+      gap: 12px;
+    }
+    .gap-core strong { font-size: 30px; line-height: 1.22; font-weight: 500; }
+    .gap-core p { margin: 0; font-size: 17px; line-height: 1.48; color: rgba(255,255,255,.92); }
+
+    .standard-plan {
+      padding: 16px;
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+    .standard-doc {
+      padding: 18px;
+      border-radius: 8px;
+      background: linear-gradient(180deg, var(--blue-soft), #fff);
+      border: 1px solid #d9e1ea;
+      display: grid;
+      align-content: start;
+      gap: 12px;
+    }
+    .standard-doc .stamp { justify-self: start; }
+    .standard-doc h3 { margin: 0; color: var(--blue); font-size: 27px; line-height: 1.28; font-weight: 500; }
+    .standard-doc p { margin: 0; color: #111; font-size: 15px; line-height: 1.48; }
+    .plan-right { display: grid; grid-template-rows: auto 1fr; gap: 12px; min-height: 0; }
+    .deliverable-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .deliverable {
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--blue);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .deliverable.red { border-left-color: var(--red); background: var(--red-soft); }
+    .deliverable strong { color: var(--blue); font-size: 16px; line-height: 1.25; font-weight: 500; }
+    .deliverable.red strong { color: var(--red); }
+    .deliverable p { margin: 5px 0 0; color: #111; font-size: 12.5px; line-height: 1.34; }
+    .plan-timeline { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; align-items: stretch; }
+    .plan-mile {
+      padding: 11px 9px;
+      border-radius: 8px;
+      background: var(--blue-soft);
+      border: 1px solid #d9e1ea;
+    }
+    .plan-mile.red { background: var(--red-soft); border-color: #d8a0a0; }
+    .plan-mile span { color: var(--red); font-size: 13px; font-weight: 700; }
+    .plan-mile strong { display: block; margin-top: 5px; color: var(--blue); font-size: 15px; line-height: 1.25; font-weight: 500; }
+
+    .framework-canvas {
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr) 220px;
+      gap: 12px;
+      align-items: stretch;
+    }
+    .canvas-side { display: grid; gap: 10px; align-content: stretch; }
+    .canvas-node {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--blue-soft);
+    }
+    .canvas-node.red { background: var(--red-soft); border-left: 5px solid var(--red); }
+    .canvas-node strong { display: block; color: var(--blue); font-size: 17px; line-height: 1.22; font-weight: 500; }
+    .canvas-node.red strong { color: var(--red); }
+    .canvas-node p { margin: 6px 0 0; color: #111; font-size: 12.5px; line-height: 1.35; }
+    .canvas-core {
+      padding: 16px;
+      border-radius: 8px;
+      background: var(--blue);
+      color: #fff;
+      display: grid;
+      align-content: center;
+      text-align: center;
+      gap: 12px;
+    }
+    .canvas-core strong { font-size: 32px; line-height: 1.15; font-weight: 500; }
+    .canvas-core span { font-size: 17px; line-height: 1.45; color: rgba(255,255,255,.92); }
+    .canvas-core .button-row { justify-content: center; }
+    .canvas-core .status-pill {
+      color: var(--blue);
+      background: #fff;
+      border-color: rgba(255,255,255,.75);
+      font-size: 12px;
+    }
+    .canvas-core .status-pill.red {
+      color: var(--red);
+      background: #fff2f2;
+      border-color: #f0c6c6;
+    }
+
+    .mode-map {
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      gap: 10px;
+      align-items: stretch;
+      min-height: 365px;
+    }
+    .mode-axis {
+      display: grid;
+      place-items: center;
+      color: var(--blue);
+      font-size: 14px;
+      line-height: 1.25;
+      writing-mode: vertical-rl;
+      border-right: 2px solid var(--blue);
+    }
+    .mode-quads { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .mode-quad {
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--blue);
+      border-radius: 8px;
+      background: #fff;
+      display: grid;
+      align-content: center;
+      gap: 8px;
+    }
+    .mode-quad.red { border-left-color: var(--red); background: var(--red-soft); }
+    .mode-quad strong { color: var(--blue); font-size: 20px; line-height: 1.25; font-weight: 500; }
+    .mode-quad.red strong { color: var(--red); }
+    .mode-quad p { margin: 0; color: #111; font-size: 13.5px; line-height: 1.38; }
+    .mode-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .mode-pills span { padding: 4px 7px; border-radius: 999px; background: var(--blue-soft); color: var(--blue); border: 1px solid #d9e1ea; font-size: 12px; line-height: 1; }
+    .mode-quad.red .mode-pills span { background: #fff; color: var(--red); border-color: #d8a0a0; }
+
+    .taxonomy-board {
+      padding: 16px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+    .taxonomy-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+    .taxon {
+      min-height: 110px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .taxon.red { background: var(--red-soft); border-left: 5px solid var(--red); }
+    .taxon span { color: var(--red); font-size: 16px; line-height: 1; font-weight: 700; }
+    .taxon strong { display: block; margin-top: 8px; color: var(--blue); font-size: 17px; line-height: 1.22; font-weight: 500; }
+    .taxon.red strong { color: var(--red); }
+    .taxon p { margin: 6px 0 0; color: #111; font-size: 12.5px; line-height: 1.32; }
+    .taxonomy-pipe { display: grid; gap: 9px; align-content: stretch; }
+    .pipe-step {
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--blue);
+      border-radius: 8px;
+      background: var(--blue-soft);
+    }
+    .pipe-step.red { border-left-color: var(--red); background: var(--red-soft); }
+    .pipe-step strong { display: block; color: var(--blue); font-size: 17px; line-height: 1.22; font-weight: 500; }
+    .pipe-step.red strong { color: var(--red); }
+    .pipe-step p { margin: 5px 0 0; color: #111; font-size: 12.5px; line-height: 1.34; }
+
+    .responsibility-board {
+      padding: 16px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+    .resp-grid {
+      display: grid;
+      grid-template-columns: 132px repeat(3, minmax(0, 1fr));
+      gap: 7px;
+      align-content: start;
+    }
+    .resp-cell {
+      min-height: 54px;
+      padding: 8px 9px;
+      border-radius: 7px;
+      border: 1px solid #d9e1ea;
+      background: #fff;
+      color: #111;
+      font-size: 12px;
+      line-height: 1.25;
+      display: grid;
+      align-content: center;
+    }
+    .resp-cell.head { background: var(--blue); color: #fff; font-size: 13px; font-weight: 500; text-align: center; }
+    .resp-cell.rowhead { background: var(--blue-soft); color: var(--blue); font-size: 13px; font-weight: 500; }
+    .resp-cell.red { background: var(--red-soft); border-color: #d8a0a0; color: var(--red); font-weight: 500; }
+    .resp-side { display: grid; gap: 10px; align-content: start; }
+
+    .case-board {
+      padding: 16px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 12px;
+      align-items: stretch;
+    }
+    .case-triage { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .triage-card {
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--blue);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .triage-card.red { border-left-color: var(--red); background: var(--red-soft); }
+    .triage-card strong { color: var(--blue); font-size: 18px; line-height: 1.25; font-weight: 500; }
+    .triage-card.red strong { color: var(--red); }
+    .triage-card p { margin: 6px 0 0; color: #111; font-size: 13px; line-height: 1.34; }
+    .case-flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; align-items: stretch; }
+    .case-flow .case-step {
+      min-height: 156px;
+      display: grid;
+      align-content: start;
+      gap: 7px;
+      padding: 12px 10px;
+      position: relative;
+    }
+    .case-flow .case-step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: -8px;
+      top: 50%;
+      width: 8px;
+      height: 2px;
+      background: var(--red);
+    }
+    .case-flow .case-step span { color: var(--red); font-size: 13px; font-weight: 700; }
+
+    .ecosystem-board {
+      padding: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: auto 1fr;
+      gap: 12px;
+      align-items: stretch;
+    }
+    .ecosystem-node {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+      display: grid;
+      grid-template-rows: 126px auto 1fr;
+    }
+    .ecosystem-node figure { margin: 0; overflow: hidden; border-bottom: 1px solid #d9e1ea; }
+    .ecosystem-node img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+    .ecosystem-node h3 { margin: 0; padding: 12px 13px 5px; color: var(--blue); font-size: 22px; line-height: 1.2; font-weight: 500; }
+    .ecosystem-node.red h3 { color: var(--red); }
+    .ecosystem-node p { margin: 0; padding: 0 13px 13px; color: #111; font-size: 13px; line-height: 1.38; }
+    .ecosystem-node .mode-pills { padding: 0 13px 12px; }
+    .ecosystem-chain {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      align-items: stretch;
+    }
+    .ecosystem-chain .chain-step {
+      padding: 12px 13px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--blue);
+      border-radius: 8px;
+      background: var(--blue-soft);
+      position: relative;
+    }
+    .ecosystem-chain .chain-step.red {
+      border-left-color: var(--red);
+      background: var(--red-soft);
+    }
+    .ecosystem-chain .chain-step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      width: 10px;
+      height: 2px;
+      background: var(--red);
+    }
+    .ecosystem-chain span { color: var(--red); font-size: 13px; line-height: 1; font-weight: 700; }
+    .ecosystem-chain strong { display: block; margin-top: 6px; color: var(--blue); font-size: 17px; line-height: 1.25; font-weight: 500; }
+    .ecosystem-chain .red strong { color: var(--red); }
+    .ecosystem-chain p { margin: 6px 0 0; color: #111; font-size: 12.5px; line-height: 1.35; }
+
+    .summary-board {
+      padding: 16px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 12px;
+      align-items: stretch;
+    }
+    .summary-path { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .summary-step {
+      padding: 14px 13px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      position: relative;
+    }
+    .summary-step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      width: 10px;
+      height: 2px;
+      background: var(--red);
+    }
+    .summary-step span { color: var(--red); font-size: 14px; line-height: 1; font-weight: 700; }
+    .summary-step strong { display: block; margin-top: 8px; color: var(--blue); font-size: 20px; line-height: 1.22; font-weight: 500; }
+    .summary-step p { margin: 7px 0 0; color: #111; font-size: 13px; line-height: 1.36; }
+    .summary-claim {
+      padding: 18px;
+      border-radius: 8px;
+      background: var(--red-soft);
+      border-left: 7px solid var(--red);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      align-content: center;
+      gap: 14px;
+      min-height: 134px;
+    }
+    .summary-claim p { margin: 0; color: #111; font-size: 28px; line-height: 1.35; }
+    .summary-claim .button-row { align-self: end; }
+
     .timeline { display: grid; gap: 10px; }
     .timeline-row { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 14px; align-items: start; }
     .timeline-row time { color: var(--red); font-size: 18px; line-height: 1.35; }
@@ -945,10 +1547,11 @@
       .slide { position: relative; min-height: 720px; }
       .slide:not(.is-active) { display: none; }
       .slide-inner, .cover-bottom, .thanks-bottom { padding-left: 22px; padding-right: 22px; }
-      .body-two, .body-three, .body-figure, .comparison, .flow, .project-row, .cover-meta, .thanks-bottom, .custom-layer, .sotif-map, .case-map, .framework-row, .framework-bottom, .mode-grid, .layer-state-layout, .frip-layout, .dash-head, .dash-grid, .report-layout { grid-template-columns: 1fr; }
+      .body-two, .body-three, .body-figure, .comparison, .flow, .project-row, .cover-meta, .thanks-bottom, .custom-layer, .sotif-map, .case-map, .framework-row, .framework-bottom, .mode-grid, .layer-state-layout, .frip-layout, .dash-head, .dash-grid, .report-layout, .sotif-proof, .iso-path, .event-board, .loop-board, .coverage-row, .bridge-board, .gap-board, .standard-plan, .deliverable-grid, .plan-timeline, .framework-canvas, .mode-map, .mode-quads, .taxonomy-board, .taxonomy-grid, .responsibility-board, .case-board, .case-triage, .case-flow, .ecosystem-board, .ecosystem-chain, .summary-board, .summary-path { grid-template-columns: 1fr; }
       .framework-node:not(:last-child)::after { display: none; }
       .flow .step:not(:last-child)::after { display: none; }
       .frip-node:not(:last-child)::after { display: none; }
+      .summary-step:not(:last-child)::after, .case-flow .case-step:not(:last-child)::after, .ecosystem-chain .chain-step:not(:last-child)::after { display: none; }
       .report-frame { height: auto; }
     }
 
@@ -1009,7 +1612,7 @@
 
     <div class="deck-bottombar">
       <button class="deck-nav" id="prev">上一页</button>
-      <span class="counter" id="counter">1 / 25</span>
+      <span class="counter" id="counter">1 / 26</span>
       <button class="deck-nav" id="next">下一页</button>
     </div>
   </main>
@@ -1057,226 +1660,199 @@
       agendaSlide('agenda', -1, '目录', '这页只建立专业汇报结构，不解释故事。'),
       agendaSlide('agenda-problem', 0, '目录', '进入第一部分。'),
       contentSlide('problem', '远程运营异常与 SOTIF 的关联', `
-        <div class="sotif-map">
-          <div>
-            <p class="lead editable">ISO 21448 关注预期功能安全：功能不足、性能局限、可合理预见误用，以及这些问题在特定触发条件下导致的危害。</p>
-            <ul class="list">
-              <li>远程运营异常不是单纯客服问题，而是运行阶段监控中暴露触发条件的重要来源。</li>
-              <li class="red">规模化 L4 运营会把“单车是否完成 DDT”扩展为“异常发生后能否识别、分级、处置、恢复和追溯”。</li>
-              <li>远程运营中心（Remote Operations Center，ROC）的响应能力，会影响风险暴露时间、处置层级和后续安全论证。</li>
-            </ul>
-            <p class="callout">建议后续替换为你常用的 ISO 21448 总流程图，并在图中标注运行阶段监控、触发条件识别和问题解决三个位置。</p>
+        <div class="sotif-proof">
+          <div class="iso-board" aria-label="ISO 21448 与运行阶段异常证据关系图">
+            <p class="board-title">ISO 21448 的关键不是“事故后解释”，而是持续识别触发条件并关闭安全论证缺口</p>
+            <div class="iso-path">
+              <div class="iso-step"><span>01</span><strong>功能定义与 ODD</strong><p>明确系统能力边界和使用条件。</p></div>
+              <div class="iso-step"><span>02</span><strong>危害分析</strong><p>识别功能不足、性能局限和可预见误用。</p></div>
+              <div class="iso-step red"><span>03</span><strong>触发条件识别</strong><p>从运行事件中提取新的触发条件。</p></div>
+              <div class="iso-step"><span>04</span><strong>验证与确认</strong><p>证明风险降低措施有效。</p></div>
+              <div class="iso-step red"><span>05</span><strong>运行阶段监控</strong><p>发现未知、低频和组合场景。</p></div>
+              <div class="iso-step red"><span>06</span><strong>问题解决与安全论证</strong><p>把处置过程转化为可审计证据。</p></div>
+            </div>
+            <div class="roam-insert">ROAM 插入的位置：把远程运营异常转化为“触发条件、处置层级、责任主体、KPI 留痕”。</div>
           </div>
-          <div class="sotif-cycle" aria-label="ISO 21448 运行阶段证据闭环示意图">
-            <div class="sotif-node"><span class="num">01</span><strong>功能定义与 ODD</strong><span>明确系统能力边界和使用条件</span></div>
-            <div class="sotif-node"><span class="num">02</span><strong>危害分析</strong><span>识别功能不足和可预见误用</span></div>
-            <div class="sotif-node red"><span class="num">03</span><strong>触发条件识别</strong><span>从事件中提取运行触发条件</span></div>
-            <div class="sotif-node"><span class="num">04</span><strong>验证与确认</strong><span>证明风险降低措施有效</span></div>
-            <div class="sotif-node red"><span class="num">05</span><strong>运行阶段监控</strong><span>持续发现未知和低频场景</span></div>
-            <div class="sotif-node red"><span class="num">06</span><strong>问题解决与安全论证</strong><span>把处置结果沉淀为证据</span></div>
+          <div class="trigger-panel">
+            <div class="trigger-card main"><strong>L4 运行阶段的风险形态变了</strong><p>从“单车是否完成动态驾驶任务”扩展为“异常发生后能否识别、分级、处置、恢复和追溯”。</p></div>
+            <div class="trigger-card"><strong>远程运营不是客服后台</strong><p>ROC 响应能力会直接影响风险暴露时间、升级路径和后续安全论证。</p></div>
+            <div class="trigger-card red"><strong>需要单独标注边界</strong><p>硬件、网络安全、纯客服失效不必直接归入 SOTIF，但会进入运营安全与 Safety Case 证据链。</p></div>
+            <div class="trigger-card"><strong>正式素材建议</strong><p>后续可替换为你常用的 ISO 21448 总流程图，并标注运行阶段监控、触发条件识别和问题解决。</p></div>
           </div>
         </div>`, '这一页用简化重绘图承接 ISO 21448；正式素材到位后可替换成用户常用流程图。'),
       contentSlide('events', '批量异常与共因触发条件', `
-        <div class="comparison">
-          <div class="compare-card">
-            <header><h3>武汉萝卜快跑批量停摆</h3></header>
-            <ul>
-              <li>公开报道显示，多辆无人车在道路中异常停车。</li>
-              <li>事件焦点从单车能力转向批量异常、乘客沟通和现场处置。</li>
-              <li>公开信息尚不足以复核企业内部 KPI。</li>
-              <li>问题核心：车队级异常与应急联动不足。</li>
-            </ul>
-            <p class="source-line">证据等级：媒体报道与交管通报。建议正式引用时区分公开事实、ROAM 分析和待核验项。</p>
-          </div>
-          <div class="compare-card">
-            <header><h3>旧金山 Waymo 断电事件</h3></header>
-            <ul>
-              <li>城市电网故障触发车辆运行异常。</li>
-              <li>应急服务多次拨打热线，等待时间过长。</li>
-              <li>远程运营能力与城市应急体系脱节。</li>
-              <li>问题核心：外部共因故障下的责任和响应链条。</li>
-            </ul>
-            <p class="source-line">证据等级：SFCTA 听证材料、公开报告与 ROAM 事件映射。</p>
-          </div>
-        </div>
-        <p class="callout editable">这些事件不是“新闻案例”，而是 L4 运营异常管理标准化的真实输入。</p>`, '这页后续可以替换为授权新闻图或官方素材。当前先用结构化事件卡，避免版权风险。'),
-      contentSlide('sotif', 'L4运行阶段安全事件的证据闭环', `
-        <div class="body-two">
-          <div>
-            <div class="standard-card">
-              <span class="label">ROAM</span>
-              <h3>ROAM：L4 自动驾驶远程运营与异常管理开源框架</h3>
-              <p>从运行阶段 SOTIF 触发条件到运营治理参考架构。</p>
-              <p style="margin-top:10px;">ROAM 不是远程驾驶产品，而是把公开事件、运营异常、处置层级、责任矩阵和 KPI 整理为可复核的证据结构。</p>
+        <div class="event-board" aria-label="两个典型批量异常和共因触发条件对比">
+          <div class="event-card red">
+            <header><h3>武汉萝卜快跑批量停摆</h3><span>公开报道 + 地方监管要求</span></header>
+            <div class="event-ladder">
+              <div><strong>触发形态</strong><p>多车在道路中异常停车，事件焦点从单车能力转向车队级运行韧性。</p></div>
+              <div><strong>运营冲击</strong><p>乘客沟通、远程调度、现场清障和监管反馈同时被放大。</p></div>
+              <div><strong>证据缺口</strong><p>公开信息不足以复核 AI 自恢复率、ROC 队列和 MTTR。</p></div>
             </div>
-            <p class="callout" style="margin-top:12px;">硬件故障、网络安全和纯客服失效不直接等同于 ISO 21448 问题，但会进入运营安全与安全论证证据链。</p>
+            <p class="event-gap">ROAM 价值：把公开事实、分析判断和待核验 KPI 分层记录。</p>
           </div>
-          <div class="metrics">
-            <div class="metric"><strong>584</strong><span>公开 AV 事件/碰撞记录</span></div>
-            <div class="metric"><strong>565</strong><span>DMV 格式记录</span></div>
-            <div class="metric"><strong>19</strong><span>非 DMV 典型事件</span></div>
-            <div class="metric"><strong>10</strong><span>L4 运营模式</span></div>
-            <div class="metric"><strong>6×26</strong><span>开源异常分类体系</span></div>
-            <div class="metric"><strong>8</strong><span>开源核心 KPI</span></div>
+          <div class="event-card">
+            <header><h3>旧金山 Waymo 断电事件</h3><span>城市基础设施扰动 + 应急接口</span></header>
+            <div class="event-ladder">
+              <div><strong>触发形态</strong><p>电力或交通基础设施异常导致区域性运行风险。</p></div>
+              <div><strong>运营冲击</strong><p>应急服务、城市管理和企业远程运营之间出现响应链条压力。</p></div>
+              <div><strong>证据缺口</strong><p>外部看不到统一口径的响应时限、升级条件和恢复完成时间。</p></div>
+            </div>
+            <p class="event-gap">ROAM 价值：把外部共因故障映射到异常分类、责任矩阵和 KPI。</p>
           </div>
-        </div>
-        <div class="flow">
-          <div class="step"><span>01</span><strong>运行监控 Field monitoring</strong><p>发现运行阶段异常和触发条件。</p></div>
-          <div class="step"><span>02</span><strong>场景更新 Scenario update</strong><p>更新已知/未知不安全场景库。</p></div>
-          <div class="step"><span>03</span><strong>风险降低 Risk reduction</strong><p>定义降风险动作、升级条件和禁止动作。</p></div>
-          <div class="step"><span>04</span><strong>安全论证 Safety case</strong><p>把处置结果转化为可审计证据。</p></div>
+        </div>`, '这页后续可以替换为授权新闻图或官方素材。当前先用结构化事件图，避免版权风险。'),
+      contentSlide('sotif', 'L4运行阶段安全事件的证据闭环', `
+        <div class="loop-board" aria-label="ROAM 运行阶段安全事件证据闭环">
+          <div class="loop-wheel">
+            <div class="loop-center">ROAM<br>证据闭环</div>
+            <div class="loop-node n1"><strong>Field monitoring</strong>运行监控发现异常和触发条件。</div>
+            <div class="loop-node n2"><strong>Scenario update</strong>更新场景库和边界假设。</div>
+            <div class="loop-node n3"><strong>Risk reduction</strong>定义降风险动作和升级条件。</div>
+            <div class="loop-node n4"><strong>Safety case</strong>形成可审计的安全论证证据。</div>
+          </div>
+          <div class="roam-stats-grid">
+            <div class="stat-card red"><strong>ROAM</strong><span>L4 自动驾驶远程运营与异常管理开源框架。</span></div>
+            <div class="stat-card"><strong>584</strong><span>公开 AV 事件与碰撞记录。</span></div>
+            <div class="stat-card"><strong>565</strong><span>DMV 格式记录，可用于结构化导入。</span></div>
+            <div class="stat-card red"><strong>19</strong><span>非 DMV 典型事件，用于运营异常案例库。</span></div>
+            <div class="stat-card"><strong>10</strong><span>L4 运营模式，覆盖多主体责任窗口。</span></div>
+            <div class="stat-card red"><strong>6×26</strong><span>开源异常分类体系，连接处置与 KPI。</span></div>
+          </div>
         </div>`, '这一页正式引入 ROAM，把项目数据从前面的 SOTIF 概念页移到这里。'),
       agendaSlide('agenda-standards', 1, '目录', '进入标准缺口部分。'),
       contentSlide('standards-map', '标准覆盖边界与治理缺口', `
-        <table class="matrix standards-table">
-          <colgroup><col><col><col></colgroup>
-            <thead><tr><th>标准或法规</th><th>主要覆盖内容</th><th>ROAM 不重叠边界</th></tr></thead>
-            <tbody>
-              <tr><td>GB/T 44721-2024《智能网联汽车 自动驾驶系统通用技术要求》</td><td>自动驾驶系统通用技术要求</td><td class="hl">运行异常后的企业运营处置闭环</td></tr>
-              <tr><td>《搭载高度自动驾驶系统（无驾驶人）乘用车技术要求及测试方法》团体标准</td><td>单车技术要求与测试方法</td><td class="hl">车队、远程运营中心（Remote Operations Center，ROC）与第一响应者协同</td></tr>
-              <tr><td>《智能网联汽车安全事件数据交互与管理系统技术规范》国家标准在研</td><td>车端、企业平台、监测/监管平台之间的数据采集、交互和管理</td><td class="hl">收到数据后如何分级决策</td></tr>
-              <tr><td>ISO 21448:2022《Road vehicles - Safety of the intended functionality》；ISO 34502:2022《Scenario based safety evaluation framework》</td><td>SOTIF 论证与 ADS 场景化安全评价框架</td><td class="hl">运行阶段异常如何沉淀为证据</td></tr>
-              <tr><td>SAE J3016:2024《Taxonomy and Definitions for Terms Related to Driving Automation Systems》；ISO 22737:2021《Low-speed automated driving systems》</td><td>自动化分级、远程支援和动态物体与事件检测响应角色</td><td class="hl">跨运营模式责任矩阵与 KPI 基准</td></tr>
-            </tbody>
-          </table>
-          <div class="proof-grid">
-            <div class="proof-card blue"><span class="tagline">能力要求</span><strong>车辆是否满足要求</strong><p>单车技术要求、ADS 通用技术要求、测试方法。</p></div>
-            <div class="proof-card blue"><span class="tagline">数据通道</span><strong>事件如何被上报</strong><p>数据元素、平台接口、监测/监管平台交互。</p></div>
-            <div class="proof-card red"><span class="tagline">ROAM 缺口</span><strong>异常如何被处置</strong><p>跨企业、跨模式、可审计的运营异常管理参考框架。</p></div>
+        <div class="coverage-board" aria-label="现有标准覆盖边界与 ROAM 缺口地图">
+          <div class="coverage-row">
+            <div class="coverage-label">车辆能力与测试</div>
+            <div class="coverage-standards"><span class="std-pill">GB/T 44721-2024</span><span class="std-pill">搭载高度自动驾驶系统乘用车团标</span></div>
+            <div class="coverage-gap">回答车辆与 ADS 是否满足通用技术要求。</div>
           </div>
-        `, '这页建立 ROAM 与现有标准的互补关系。'),
+          <div class="coverage-row">
+            <div class="coverage-label">数据上报与平台接口</div>
+            <div class="coverage-standards"><span class="std-pill">安全事件数据交互国标在研</span><span class="std-pill">企业平台</span><span class="std-pill">监管平台</span></div>
+            <div class="coverage-gap">回答事件数据如何采集、传输和管理。</div>
+          </div>
+          <div class="coverage-row">
+            <div class="coverage-label">SOTIF 与场景评价</div>
+            <div class="coverage-standards"><span class="std-pill">ISO 21448:2022</span><span class="std-pill">ISO 34502:2022</span><span class="std-pill">SAE J3016:2024</span><span class="std-pill">ISO 22737:2021</span></div>
+            <div class="coverage-gap">回答功能不足、场景触发和自动化术语边界。</div>
+          </div>
+          <div class="coverage-row red">
+            <div class="coverage-label">ROAM 补位</div>
+            <div class="coverage-standards"><span class="std-pill">异常分类</span><span class="std-pill">三层处置</span><span class="std-pill">责任矩阵</span><span class="std-pill">KPI</span><span class="std-pill">FRIP</span></div>
+            <div class="coverage-gap">回答收到异常后，谁在何时依据什么权限完成恢复、沟通和留痕。</div>
+          </div>
+        </div>`, '这页建立 ROAM 与现有标准的互补关系。'),
       contentSlide('data-vs-governance', '数据上报与运营治理的边界', `
-        <div class="body-two">
-          <div>
-            <div class="standard-card">
-              <span class="label">What happened</span>
-              <h3>安全事件数据交互与管理系统</h3>
-              <p>回答“什么数据、以什么格式、通过什么协议，在车端、企业平台和监测/监管平台之间流转”。</p>
+        <div class="bridge-board" aria-label="安全事件数据上报与运营治理边界图">
+          <div class="bridge-col">
+            <h3>What happened<br>安全事件数据交互</h3>
+            <div class="bridge-tags">
+              <span>数据元素：时间、地点、车辆、系统状态、事件类型。</span>
+              <span>传输接口：车端、企业平台、监测/监管平台。</span>
+              <span>管理对象：数据采集、上报、存储、查询和追溯。</span>
             </div>
-            <div class="status-strip">
-              <span class="status-pill">数据元素</span>
-              <span class="status-pill">通信协议</span>
-              <span class="status-pill">平台接口</span>
-            </div>
+            <p>重点是“事实如何进入系统”。</p>
           </div>
-          <div>
-            <div class="standard-card">
-              <span class="label">What should be done</span>
-              <h3>L4 运营异常管理</h3>
-              <p>回答“收到异常后，谁在何时、依据什么权限、采用什么处置层级完成恢复、沟通和留痕”。</p>
+          <div class="bridge-arrow">→</div>
+          <div class="bridge-col red">
+            <h3>What should be done<br>L4 运营异常管理</h3>
+            <div class="bridge-tags">
+              <span>异常分级：风险、紧急度、可恢复性、共因影响。</span>
+              <span>处置授权：AI 自主、人工确认、远程驾驶或现场处置。</span>
+              <span>证据审计：KPI、责任主体、沟通记录和恢复时间线。</span>
             </div>
-            <div class="status-strip">
-              <span class="status-pill red">异常分级</span>
-              <span class="status-pill red">处置授权</span>
-              <span class="status-pill red">KPI 审计</span>
-            </div>
+            <p>重点是“收到事实后如何做决策”。</p>
           </div>
-        </div>
-        <p class="callout editable">ROAM 不重新定义数据字段，而是把安全事件作为运营异常输入信号，叠加分级处置流程、责任矩阵和 KPI 评价。</p>`, '这页是答辩防守页，避免被质疑与国标在研内容重叠。'),
+        </div>`, '这页是答辩防守页，避免被质疑与国标在研内容重叠。'),
       contentSlide('need-spec', '从事故上报到异常处置', `
-        <div class="body-two">
-          <ul class="list">
-            <li>异常场景要有统一分类，否则企业、监管和研究机构无法对齐讨论对象。</li>
-            <li class="red">处置动作要有层级和时限，否则规模化车队会在共因故障下同时击穿远程运营中心。</li>
-            <li>责任要区分执行、决策、技术、法律、Override、Avoidance 和监管反馈。</li>
-            <li>评价要进入 KPI 和演练验证，而不是停留在“应急预案已建立”的描述。</li>
-          </ul>
-          <div class="card blue">
-            <h3>一句话</h3>
-            <p class="editable">L4 运营异常处置能力，应该像单车技术要求和数据交互要求一样，被结构化表达和行业共同审阅。</p>
+        <div class="gap-board" aria-label="从事故上报到异常处置的标准化缺口">
+          <div class="gap-column">
+            <div class="gap-card"><strong>分类不统一</strong><p>企业、监管和研究机构无法对齐讨论对象。</p></div>
+            <div class="gap-card red"><strong>处置无层级</strong><p>共因故障下，远程运营中心可能被同时击穿。</p></div>
+            <div class="gap-card"><strong>责任混在一起</strong><p>执行、决策、技术、法律和监管反馈常被合并表述。</p></div>
+          </div>
+          <div class="gap-core">
+            <strong>L4 运营异常处置能力<br>需要被结构化表达</strong>
+            <p>它应该像单车技术要求和数据交互要求一样，成为行业可共同审阅、可演练、可复盘的对象。</p>
+          </div>
+          <div class="gap-column">
+            <div class="gap-card"><strong>指标不可比</strong><p>只有“建立预案”，没有响应时限、恢复时间和误升级口径。</p></div>
+            <div class="gap-card red"><strong>演练不足</strong><p>缺少文档审查、桌面推演和历史事件复盘的统一模板。</p></div>
+            <div class="gap-card"><strong>证据难沉淀</strong><p>运行异常不能稳定进入安全论证和标准修订闭环。</p></div>
           </div>
         </div>`, '这页为 CSAE 预研引出理由。'),
       contentSlide('csae', '团体标准预研的最新进展', `
-        <div class="body-two">
-          <div class="standard-card">
+        <div class="standard-plan" aria-label="CSAE 团体标准预研计划图">
+          <div class="standard-doc">
             <span class="stamp">已按 CSAE 团体标准流程启动预研</span>
-            <h3>智能网联汽车 高度自动驾驶车辆运营管理异常事件处置规范</h3>
-            <p>由中国智能网联汽车产业创新联盟提出，吉林大学、卓驭科技、一汽集团、国家智能网联汽车创新中心联合牵头发起，滴滴自动驾驶、同济大学、清华大学等单位参与。</p>
-            <p style="margin-top:10px;color:#b30000;">当前阶段：参研单位与起草专家征集；反馈截止：2026年5月25日。</p>
-            <p class="source-line" style="margin-top:8px;">说明：当前为预研和征集阶段，尚非正式发布标准。</p>
+            <h3>智能网联汽车<br>高度自动驾驶车辆运营管理异常事件处置规范</h3>
+            <p>提出方：中国智能网联汽车产业创新联盟。牵头发起：吉林大学、卓驭科技、一汽集团、国家智能网联汽车创新中心等。</p>
+            <p style="color:#b30000;">当前阶段：参研单位与起草专家征集；反馈截止：2026年5月25日。</p>
+            <p class="source-line">说明：当前为预研和征集阶段，尚非正式发布标准。</p>
           </div>
-          <div>
-            <table class="matrix">
-              <tbody>
-                <tr><th>定位</th><td>高度自动驾驶车辆运营治理类单项标准。</td></tr>
-                <tr><th>适用对象</th><td>Robotaxi、无人配送、L4 公交、个人 L4 服务、特定环境专用车辆等多模式运营。</td></tr>
-                <tr><th>方法框架</th><td>10 种 L4 运营模式、6 大类 29 子场景、三层决策参考架构。</td></tr>
-                <tr><th>核心产出</th><td>10×3×7 责任矩阵、16 项 KPI、第一响应者交互计划（First Responder Interaction Plan，FRIP）模板、文档审查 / 桌面推演 / 历史事件复盘。</td></tr>
-              </tbody>
-            </table>
+          <div class="plan-right">
+            <div class="deliverable-grid">
+              <div class="deliverable"><strong>适用对象</strong><p>Robotaxi、无人配送、L4 公交、个人 L4 服务、特定环境车辆。</p></div>
+              <div class="deliverable red"><strong>方法框架</strong><p>10 种 L4 运营模式、6 大类 29 子场景、三层决策参考架构。</p></div>
+              <div class="deliverable"><strong>核心产出</strong><p>10×3×7 责任矩阵、16 项 KPI、FRIP 模板。</p></div>
+              <div class="deliverable red"><strong>验证方式</strong><p>文档审查、桌面推演、历史事件复盘和案例库维护。</p></div>
+            </div>
+            <div class="plan-timeline">
+              <div class="plan-mile red"><span>2026.05</span><strong>预研征集</strong></div>
+              <div class="plan-mile"><span>2026.07</span><strong>起草启动</strong></div>
+              <div class="plan-mile"><span>2026.10</span><strong>征求意见</strong></div>
+              <div class="plan-mile"><span>2026.12</span><strong>报批发布</strong></div>
+            </div>
           </div>
-        </div>
-        <div class="flow">
-          <div class="step"><span>2026.05</span><strong>预研征集</strong><p>确认起草单位、专家和标准边界。</p></div>
-          <div class="step"><span>2026.07</span><strong>起草启动</strong><p>ROAM 方法框架转为标准文本。</p></div>
-          <div class="step"><span>2026.10</span><strong>征求意见</strong><p>行业反馈、试用和意见处理。</p></div>
-          <div class="step"><span>2026.12</span><strong>报批发布</strong><p>以实际流程审议为准。</p></div>
         </div>`, '这里使用最新 V3 标准预研征集通知口径，不再使用旧题名。'),
       agendaSlide('agenda-framework', 2, '目录', '进入 ROAM 方法论。'),
       contentSlide('roam-overview', 'ROAM 方法论与证据结构', `
-        <div class="body-figure">
-          <div>
-            <p class="lead editable">ROAM 是一个面向 L4 自动驾驶远程运营与异常管理的开源框架，目标是把分散事件、运营经验和标准要求整理成可审阅、可比较、可迭代的公共证据结构。</p>
-            <div class="metrics">
-              <div class="metric compact"><strong>开源许可</strong><span>Apache 2.0</span></div>
-              <div class="metric compact"><strong>异常分类</strong><span>6×26 开源版</span></div>
-              <div class="metric compact"><strong>责任矩阵</strong><span>模式 × 层级 × 维度</span></div>
-            </div>
-            <p class="callout">ROAM 的核心不是“远程接管”，而是异常分类体系、分层处置、责任矩阵和 KPI 的证据化。</p>
+        <div class="framework-canvas" aria-label="ROAM 方法论三层证据结构画布">
+          <div class="canvas-side">
+            <div class="canvas-node"><strong>公开事件输入</strong><p>监管记录、公开报道、企业披露、研究案例。</p></div>
+            <div class="canvas-node red"><strong>结构化事件库</strong><p>来源、置信度、场景编码、严重度和紧急度。</p></div>
+            <div class="canvas-node"><strong>运行监控证据</strong><p>把公开事件转为触发条件和处置记录。</p></div>
           </div>
-          <div class="framework-diagram" aria-label="ROAM 开源治理框架总体架构重绘图">
-            <div class="framework-row">
-              <div class="framework-node"><strong>公开事件输入</strong><p>监管记录、公开报道、企业披露、研究案例。</p></div>
-              <div class="framework-node red"><strong>异常分类体系</strong><p>系统性、感知决策、执行、硬件、外部环境、乘客端。</p></div>
-              <div class="framework-node"><strong>三层处置架构</strong><p>AI 自主、人工确认、远程驾驶或现场处置。</p></div>
-              <div class="framework-node red"><strong>责任矩阵与 KPI</strong><p>执行、决策、技术、法律、监管反馈和响应时限。</p></div>
-              <div class="framework-node"><strong>标准与安全论证</strong><p>沉淀为团标预研、演练验证和运行阶段证据。</p></div>
-            </div>
-            <div class="framework-bottom">
-              <div class="proof-card blue"><span class="tagline">数据层</span><strong>事件库</strong><p>统一记录来源、置信度和场景编码。</p></div>
-              <div class="proof-card red"><span class="tagline">方法层</span><strong>参考架构</strong><p>把异常处置拆成可审阅的层级和权限。</p></div>
-              <div class="proof-card blue"><span class="tagline">治理层</span><strong>公共证据</strong><p>服务标准、监管、企业复盘和科研比较。</p></div>
-            </div>
+          <div class="canvas-core">
+            <strong>ROAM</strong>
+            <span>把分散事件、运营经验和标准要求整理成可审阅、可比较、可迭代的公共证据结构。</span>
+            <div class="button-row"><span class="status-pill">Apache 2.0</span><span class="status-pill red">6×26 taxonomy</span><span class="status-pill">责任矩阵</span></div>
+          </div>
+          <div class="canvas-side">
+            <div class="canvas-node red"><strong>三层处置架构</strong><p>AI 自主、人工确认、远程驾驶或现场处置。</p></div>
+            <div class="canvas-node"><strong>责任矩阵与 KPI</strong><p>执行、决策、技术、法律、监管反馈和响应时限。</p></div>
+            <div class="canvas-node red"><strong>标准与安全论证</strong><p>沉淀为团标预研、演练验证和运行阶段证据。</p></div>
           </div>
         </div>`, '用 ROAM 总体架构图展示项目不是空概念。'),
       contentSlide('operating-modes', '多模式 L4 运营对象', `
-        <div class="body-figure">
-          <div>
-            <p class="lead">ROAM 将 L4 运行对象扩展到 10 种运营模式，覆盖商业运营、个人所有、公共交通和专用环境。</p>
-            <p class="callout">关键变化：个人所有和 OEM 订阅类模式中，OEM 从制造商进一步承担运行服务提供者责任。</p>
+        <div class="mode-map" aria-label="L4 自动驾驶十种运营模式地图">
+          <div class="mode-axis">车辆所有权 / 服务运营权 / 异常处置权动态变化</div>
+          <div class="mode-quads">
+            <div class="mode-quad"><strong>商业出行服务</strong><div class="mode-pills"><span>M1 Robotaxi</span><span>M2 固定路线接驳</span><span>M3 特定区域巡游</span></div><p>运营商同时承担调度、远程运营中心、乘客沟通和异常恢复闭环。</p></div>
+            <div class="mode-quad red"><strong>个人所有与订阅</strong><div class="mode-pills"><span>M4 个人 L4 + OEM 订阅</span><span>M5 闲时共享</span></div><p>OEM 从制造商进一步承担运行服务提供者责任，责任窗口动态切换。</p></div>
+            <div class="mode-quad"><strong>公共交通与物流</strong><div class="mode-pills"><span>M6 无人配送</span><span>M7 L4 公交</span><span>M8 干线/园区物流</span></div><p>运营牌照主体、技术方、调度中心和现场处置团队可能分离。</p></div>
+            <div class="mode-quad red"><strong>专用环境与混合运营</strong><div class="mode-pills"><span>M9 矿区/港口/环卫</span><span>M10 多主体混合运营</span></div><p>封闭或半封闭环境降低部分交通风险，但放大多主体协同和现场救援责任。</p></div>
           </div>
-          <div class="mode-grid" aria-label="L4 自动驾驶十种运营模式分类矩阵重绘图">
-            <div class="mode-card"><strong>商业出行服务</strong><p>M1 Robotaxi；M2 固定路线接驳；M3 特定区域巡游。</p></div>
-            <div class="mode-card red"><strong>个人所有与订阅</strong><p>M4 个人 L4 + OEM 订阅；M5 闲时共享，责任窗口动态切换。</p></div>
-            <div class="mode-card"><strong>公共交通与物流</strong><p>M6 无人配送；M7 L4 公交；M8 干线或园区物流。</p></div>
-            <div class="mode-card red"><strong>专用环境与混合运营</strong><p>M9 矿区、港口、环卫等专用场景；M10 多主体混合运营。</p></div>
-          </div>
-        </div>
-        <div class="proof-grid">
-          <div class="proof-card blue"><span class="tagline">车辆所有权</span><strong>谁拥有车辆</strong><p>决定维护、保险、故障召回和长期安全责任。</p></div>
-          <div class="proof-card red"><span class="tagline">服务运营权</span><strong>谁提供运行服务</strong><p>决定远程运营中心、调度、乘客沟通和应急联动。</p></div>
-          <div class="proof-card blue"><span class="tagline">异常处置权</span><strong>谁能授权处置</strong><p>决定人工确认、远程驾驶、现场救援和监管反馈。</p></div>
-        </div>`, '这一页改为投影友好的重绘矩阵，避免论文图文字过小。'),
+        </div>`, '这一页改为投影友好的运营模式地图，避免论文图文字过小。'),
       contentSlide('taxonomy', '异常分类体系：从事件描述到处置对象', `
-        <div class="body-two">
-          <div class="flow">
-            <div class="step"><span>A</span><strong>系统性故障</strong><p>云端、网络、区域性故障、批量失效。</p></div>
-            <div class="step"><span>B</span><strong>感知/决策失效</strong><p>误识别、误判、决策迟疑。</p></div>
-            <div class="step"><span>C</span><strong>规划/执行异常</strong><p>停车、绕行、靠边、路径执行失败。</p></div>
-            <div class="step"><span>D</span><strong>车辆硬件故障</strong><p>制动、转向、动力、电气故障。</p></div>
+        <div class="taxonomy-board" aria-label="ROAM 异常分类体系与证据管线">
+          <div class="taxonomy-grid">
+            <div class="taxon red"><span>A</span><strong>系统性故障</strong><p>云端、网络、区域性故障、批量失效。</p></div>
+            <div class="taxon"><span>B</span><strong>感知 / 决策失效</strong><p>误识别、误判、决策迟疑。</p></div>
+            <div class="taxon red"><span>C</span><strong>规划 / 执行异常</strong><p>停车、绕行、靠边、路径执行失败。</p></div>
+            <div class="taxon"><span>D</span><strong>车辆硬件故障</strong><p>制动、转向、动力、电气故障。</p></div>
+            <div class="taxon red"><span>E</span><strong>外部环境冲突</strong><p>应急车辆、施工、阻塞、交通参与者冲突。</p></div>
+            <div class="taxon"><span>F</span><strong>乘客端异常</strong><p>乘客求助、车内安全、服务体验和通信失效。</p></div>
           </div>
-          <div class="flow" style="grid-template-columns:repeat(2,minmax(0,1fr));">
-            <div class="step"><span>E</span><strong>外部环境冲突</strong><p>应急车辆、施工、阻塞、交通参与者冲突。</p></div>
-            <div class="step"><span>F</span><strong>乘客端异常</strong><p>乘客求助、车内安全、服务体验和通信失效。</p></div>
+          <div class="taxonomy-pipe">
+            <div class="pipe-step"><strong>01 公开记录</strong><p>新闻、监管报告、企业披露和 DMV 记录。</p></div>
+            <div class="pipe-step red"><strong>02 场景编码</strong><p>A-F 主类、二级子场景、严重度和紧急度。</p></div>
+            <div class="pipe-step"><strong>03 处置层级</strong><p>L1/L2/L3、禁止远程驾驶条件和升级触发。</p></div>
+            <div class="pipe-step red"><strong>04 KPI 留痕</strong><p>响应时间、升级路径、责任主体和恢复完成时间。</p></div>
+            <div class="pipe-step"><strong>开源版 / 预研稿</strong><p>当前 6 大类、26 个已展开子场景；团标预研拟扩展为 6 大类 29 子场景。</p></div>
           </div>
-        </div>
-        <div class="flow">
-          <div class="step"><span>事件</span><strong>公开记录</strong><p>新闻、监管报告、企业披露和 DMV 记录。</p></div>
-          <div class="step"><span>分类</span><strong>场景编码</strong><p>A-F 主类与二级子场景。</p></div>
-          <div class="step"><span>响应</span><strong>处置层级</strong><p>L1/L2/L3 和禁止远程驾驶条件。</p></div>
-          <div class="step"><span>证据</span><strong>KPI 留痕</strong><p>响应时间、升级路径和责任主体。</p></div>
-        </div>
-        <p class="callout">开源版当前以 6 大类、26 个已展开子场景作为基础；团标预研稿拟扩展为 6 大类 29 子场景。</p>`, '强调异常分类体系服务于后面的处置和评价。'),
+        </div>`, '强调异常分类体系服务于后面的处置和评价。'),
       contentSlide('three-layer', '三层架构是降风险状态机', `
         <div class="layer-state-layout">
           <div class="layer-state-map" aria-label="ROAM 三层降风险状态机重绘图">
@@ -1311,26 +1887,20 @@
           </div>
         </div>`, '这页讲清楚不是所有异常都要远程驾驶，远程驾驶只是最后一层。'),
       contentSlide('responsibility', '责任矩阵：技术执行与法律责任不能混在一起', `
-        <div class="body-two">
-          <table class="matrix">
-            <thead><tr><th>维度</th><th>回答的问题</th><th>典型责任主体</th></tr></thead>
-            <tbody>
-              <tr><td>执行责任</td><td>谁实际完成处置动作</td><td>ADS、远程助理、远程驾驶员、现场团队</td></tr>
-              <tr><td>决策责任</td><td>谁批准或触发处置策略</td><td>系统策略、运营中心、授权人员</td></tr>
-              <tr><td>技术责任</td><td>系统失效或设计不足由谁承担</td><td>OEM、ADS 供应商、平台方</td></tr>
-              <tr><td>法律责任</td><td>事故、服务和监管责任如何归属</td><td>运营主体、车辆所有者、服务提供者</td></tr>
-              <tr><td class="hl">扩展维度</td><td>Override、Avoidance、监管反馈</td><td>对接 DMV Article 3.7 等监管趋势</td></tr>
-            </tbody>
-          </table>
-          <table class="matrix">
-            <thead><tr><th>模式切片</th><th>L2 执行</th><th>责任变化</th></tr></thead>
-            <tbody>
-              <tr><td>M1 Robotaxi</td><td>运营商远程运营中心操作员</td><td>运营商承担执行、决策、技术和法律闭环。</td></tr>
-              <tr><td>M4 个人 + OEM 订阅</td><td>OEM 远程运营中心操作员</td><td class="hl">OEM 从制造商进一步成为运行服务提供者。</td></tr>
-              <tr><td>M5 个人 + 闲时共享</td><td>OEM / 平台动态切换</td><td>状态机必须记录当前运营权和事故责任窗口。</td></tr>
-              <tr><td>M7 L4 公交</td><td>公交监控中心 + 技术方</td><td>运营牌照主体与技术提供方责任分离。</td></tr>
-            </tbody>
-          </table>
+        <div class="responsibility-board" aria-label="ROAM 责任矩阵热力图">
+          <div class="resp-grid">
+            <div class="resp-cell head">责任维度</div><div class="resp-cell head">L1 AI 自主</div><div class="resp-cell head">L2 人工确认</div><div class="resp-cell head">L3 远程/现场</div>
+            <div class="resp-cell rowhead">执行责任</div><div class="resp-cell">ADS 执行动作</div><div class="resp-cell red">ROC 操作员确认</div><div class="resp-cell red">远程驾驶员 / 现场团队</div>
+            <div class="resp-cell rowhead">决策责任</div><div class="resp-cell">系统策略触发</div><div class="resp-cell red">授权人员批准</div><div class="resp-cell">应急预案与现场指挥</div>
+            <div class="resp-cell rowhead">技术责任</div><div class="resp-cell">ADS / 供应商</div><div class="resp-cell">OEM / 平台</div><div class="resp-cell red">通信、视野、控制链路</div>
+            <div class="resp-cell rowhead">法律责任</div><div class="resp-cell">运营主体</div><div class="resp-cell">运营主体 / OEM</div><div class="resp-cell red">事故责任窗口需留痕</div>
+            <div class="resp-cell rowhead">监管反馈</div><div class="resp-cell">事件日志</div><div class="resp-cell red">升级原因</div><div class="resp-cell">现场处置和恢复结论</div>
+          </div>
+          <div class="resp-side">
+            <div class="trigger-card main"><strong>关键不是“谁负责一切”</strong><p>而是把执行、决策、技术、法律和监管反馈拆开，才能形成可审查责任链。</p></div>
+            <div class="trigger-card red"><strong>M4 / M5 是责任变化重点</strong><p>个人所有与 OEM 订阅模式中，OEM 从制造商进一步成为运行服务提供者。</p></div>
+            <div class="trigger-card"><strong>10×3×7 矩阵</strong><p>10 种运营模式 × 3 个处置层级 × 7 个责任维度，构成团标讨论的基本表格。</p></div>
+          </div>
         </div>`, '这页为 10×3×7 矩阵铺垫。'),
       contentSlide('kpi-frip', 'KPI、第一响应者交互计划与桌面推演', `
         <div class="frip-layout">
@@ -1439,30 +2009,19 @@
           </div>
         </div>`, '这里用本地事件库统计生成看板，展示 Explorer 应该服务的核心证据视角。'),
       contentSlide('wuhan-case', '武汉案例映射：公开事实、分析与待核验', `
-        <div class="case-map">
-          <div class="proof-grid stack">
-            <div class="proof-card blue">
-              <span class="tagline">公开事实</span>
-              <strong>多车异常停车</strong>
-              <p>公开报道显示，多辆无人车在道路中异常停车，地方监管随后要求强化自查整改。</p>
-            </div>
-            <div class="proof-card red">
-              <span class="tagline">ROAM 分析</span>
-              <strong>A / C / F 复合场景</strong>
-              <p>可映射为系统性故障、规划/执行异常和乘客端异常的复合事件。</p>
-            </div>
-            <div class="proof-card blue">
-              <span class="tagline">待核验</span>
-              <strong>企业内部 KPI</strong>
-              <p>AI 自恢复率、远程运营中心队列、MTTR、SOS 响应需以企业日志或监管数据复核。</p>
-            </div>
+        <div class="case-board" aria-label="武汉萝卜快跑事件从公开事实到标准化输出的证据映射">
+          <div class="case-triage">
+            <div class="triage-card"><strong>公开事实</strong><p>多辆无人车在道路中异常停车，地方监管要求强化自查整改。</p></div>
+            <div class="triage-card red"><strong>ROAM 分析</strong><p>可映射为 A 类系统性异常、C 类规划/执行异常和 F 类乘客端异常的复合事件。</p></div>
+            <div class="triage-card"><strong>待核验 KPI</strong><p>AI 自恢复率、ROC 队列、MTTR、SOS 响应、乘客可离车时间需要企业日志或监管数据复核。</p></div>
+            <div class="triage-card red"><strong>表达边界</strong><p>正式汇报中区分公开事实、ROAM 推断和待核验项，避免把推断讲成事实。</p></div>
           </div>
-          <div class="case-chain" aria-label="武汉萝卜快跑事件 ROAM 映射重绘图">
-            <div class="case-step"><strong>事件输入</strong><p>公开报道、地方监管要求、用户端反馈。</p></div>
-            <div class="case-step red"><strong>ROAM 场景编码</strong><p>A 类系统性异常 + C 类规划执行异常 + F 类乘客端异常。</p></div>
-            <div class="case-step"><strong>处置链条</strong><p>车辆降风险、远程运营中心分级处置、乘客沟通、现场清障和监管反馈。</p></div>
-            <div class="case-step red"><strong>待复核证据</strong><p>异常检测时间、人工接入排队、乘客可离车时间、恢复完成时间。</p></div>
-            <div class="case-step"><strong>标准化输出</strong><p>映射到异常分类、三层处置、责任矩阵和 KPI，形成可审阅案例。</p></div>
+          <div class="case-flow">
+            <div class="case-step"><span>01</span><strong>事件输入</strong><p>报道、监管要求、用户端反馈。</p></div>
+            <div class="case-step red"><span>02</span><strong>场景编码</strong><p>A + C + F 复合异常。</p></div>
+            <div class="case-step"><span>03</span><strong>处置链条</strong><p>降风险、远程运营、乘客沟通、现场清障。</p></div>
+            <div class="case-step red"><span>04</span><strong>证据缺口</strong><p>检测时间、人工接入、恢复时间、责任主体。</p></div>
+            <div class="case-step"><span>05</span><strong>标准输出</strong><p>案例库、演练脚本、KPI 和审阅包。</p></div>
           </div>
         </div>`, '这页改为投影友好的重绘图，不直接使用论文小图或版权不明的新闻图。'),
       contentSlide('waymo-markey', '远程运营透明度成为治理问题', `
@@ -1497,42 +2056,49 @@
           </div>
         </div>`, '注意数值如果无法公开核验，正式汇报中应少用或标注来源。'),
       contentSlide('ecosystem', 'ROAM 与 OpenODC、DRIVEResearch 形成安全证据链', `
-        <div class="project-row">
-          <div class="project">
+        <div class="ecosystem-board" aria-label="OpenODC DRIVEResearch ROAM 三项目安全证据链">
+          <div class="ecosystem-node">
             <figure><img src="${A}project-openodc.png" alt="OpenODC"></figure>
-            <div><strong>OpenODC</strong><p>定义系统在什么边界内可以运行，把 ODC 从分散表述变成公共证据。</p></div>
+            <h3>OpenODC</h3>
+            <p>定义系统应该在什么边界内运行，把 ODC 从分散表述变成公共证据。</p>
+            <div class="mode-pills"><span>ODD / ODC</span><span>边界</span><span>触发条件</span></div>
           </div>
-          <div class="project">
-            <figure><img src="${A}project-driveresearch.png" alt="DRIVEResearch"></figure>
-            <div><strong>DRIVEResearch</strong><p>提供自然驾驶和人类行为基线，为正常运行分布和场景参数提供支撑。</p></div>
-          </div>
-          <div class="project">
+          <div class="ecosystem-node red">
             <figure><img src="${A}project-roam.png" alt="ROAM"></figure>
-            <div><strong>ROAM</strong><p>管理边界被触发后的运营异常、责任分配、KPI 和处置证据。</p></div>
+            <h3>ROAM</h3>
+            <p>管理边界被触发后的运营异常、处置层级、责任分配、KPI 和审阅证据。</p>
+            <div class="mode-pills"><span>异常</span><span>处置</span><span>治理</span></div>
           </div>
-        </div>
-        <p class="callout">ODC 说明系统应该在哪里运行；ROAM 回答异常发生后如何治理；DRIVEResearch 提供正常行为与风险场景的数据基线。</p>`, '这页延续 OpenODC 中三个项目关系的表达。'),
+          <div class="ecosystem-node">
+            <figure><img src="${A}project-driveresearch.png" alt="DRIVEResearch"></figure>
+            <h3>DRIVEResearch</h3>
+            <p>提供自然驾驶和人类行为基线，为正常运行分布和风险场景参数提供支撑。</p>
+            <div class="mode-pills"><span>基线</span><span>场景参数</span><span>行为分布</span></div>
+          </div>
+          <div class="ecosystem-chain" aria-label="三个项目之间的安全证据链">
+            <div class="chain-step"><span>01</span><strong>边界定义</strong><p>OpenODC 给出 ODD / ODC 与触发条件，回答系统何时仍在可接受运行范围内。</p></div>
+            <div class="chain-step red"><span>02</span><strong>异常触发</strong><p>ROAM 接住边界被触发后的异常事件，记录处置层级、责任主体和恢复过程。</p></div>
+            <div class="chain-step"><span>03</span><strong>基线支撑</strong><p>DRIVEResearch 提供人类驾驶分布和风险参数，让异常判断不脱离真实交通行为。</p></div>
+            <div class="chain-step red"><span>04</span><strong>标准输入</strong><p>三者共同形成运行阶段 SOTIF 证据，服务团标预研、案例库和工程审阅包。</p></div>
+          </div>
+        </div>`, '这页延续 OpenODC 中三个项目关系的表达。'),
       agendaSlide('agenda-summary', 4, '目录', '进入最后总结。'),
       contentSlide('summary', '把运行阶段证据转化为标准输入', `
-        <div class="body-three">
-          <div class="card blue">
-            <h3>问题</h3>
-            <p>L4 规模化后，安全挑战从单车能力扩展到运营异常处置、车队韧性和责任闭环。</p>
+        <div class="summary-board" aria-label="ROAM 从事件到标准输入的总结路径">
+          <div class="summary-path">
+            <div class="summary-step"><span>01</span><strong>事件</strong><p>L4 规模化后，安全挑战扩展到运营异常、车队韧性和责任闭环。</p></div>
+            <div class="summary-step"><span>02</span><strong>结构化</strong><p>异常分类、严重度、紧急度、来源置信度和处置层级。</p></div>
+            <div class="summary-step"><span>03</span><strong>证据化</strong><p>责任矩阵、KPI、FRIP、桌面推演和历史事件复盘。</p></div>
+            <div class="summary-step"><span>04</span><strong>标准输入</strong><p>开源项目持续沉淀证据，承接到团体标准预研和后续讨论。</p></div>
           </div>
-          <div class="card red">
-            <h3>方法</h3>
-            <p>ROAM 提供异常分类、三层架构、责任矩阵、KPI、第一响应者交互计划和验证方法。</p>
+          <div class="summary-claim">
+            <p class="editable">ROAM<br>让 L4 运营异常从分散事件变成公共证据。</p>
+            <div class="button-row">
+              <a class="link-button" href="https://roam.autozyx.com/" target="_blank" rel="noopener">ROAM 官网</a>
+              <a class="link-button" href="https://github.com/AutoZYX-Labs/ROAM" target="_blank" rel="noopener">GitHub</a>
+              <a class="link-button red" href="https://ROAM-explorer.autozyx.com" target="_blank" rel="noopener">ROAM Explorer</a>
+            </div>
           </div>
-          <div class="card blue">
-            <h3>路径</h3>
-            <p>通过开源项目持续沉淀证据，并承接到团体标准预研和后续国家、国际标准讨论。</p>
-          </div>
-        </div>
-        <p class="summary-statement editable">ROAM<br>让 L4 运营异常从分散事件变成公共证据。</p>
-        <div class="button-row">
-          <a class="link-button" href="https://roam.autozyx.com/" target="_blank" rel="noopener">ROAM 官网</a>
-          <a class="link-button" href="https://github.com/AutoZYX-Labs/ROAM" target="_blank" rel="noopener">GitHub</a>
-          <a class="link-button red" href="https://ROAM-explorer.autozyx.com" target="_blank" rel="noopener">ROAM Explorer</a>
         </div>`, '最后一页前，明确共建方式。'),
       {
         key: 'thanks',
