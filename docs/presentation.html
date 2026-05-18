@@ -261,6 +261,11 @@
     .figure img { display: block; width: 100%; height: 100%; object-fit: contain; }
     .figure.cover-fit img { object-fit: cover; object-position: top center; }
     .figure.tight { border: 0; }
+    .figure.document-shot { display: block; background: #f8fafc; }
+    .figure.document-shot img { object-fit: cover; object-position: top center; }
+    .figure.report-cover { background: #06111f; }
+    .figure.report-cover img { object-fit: cover; object-position: center; }
+    .visual-stack { min-height: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 6px; }
 
     .timeline { display: grid; gap: 10px; }
     .timeline-row { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 14px; align-items: start; }
@@ -310,6 +315,9 @@
     .proof-card p { margin: 0; color: #111; font-size: 15px; line-height: 1.45; }
     .proof-card.red { border-left: 6px solid var(--red); background: var(--red-soft); }
     .proof-card.blue { border-left: 6px solid var(--blue); background: var(--blue-soft); }
+    .proof-card.compact { min-height: 92px; padding: 12px 14px; }
+    .proof-card.compact strong { font-size: 18px; }
+    .proof-card.compact p { font-size: 14px; }
     .source-line { margin: 0; color: #5f6b7a; font-size: 12px; line-height: 1.35; }
     .source-line a { color: var(--blue); text-decoration: none; border-bottom: 1px solid rgba(23,55,94,.25); }
     .compare-card .source-line { padding: 0 18px 14px 34px; }
@@ -869,33 +877,32 @@
           </table>
         </div>`, '这页为 10×3×7 矩阵铺垫。'),
       contentSlide('kpi-frip', 'KPI、第一响应者交互计划与桌面推演', `
-        <div class="proof-grid">
-          <div class="proof-card blue">
-            <span class="tagline">开源版 8 项核心 KPI</span>
-            <strong>MTTR</strong>
-            <p>从异常检测到确认恢复的平均时间。</p>
-            <div class="formula">MTTR = Σ(t_resolve - t_detect) / N</div>
+        <div class="body-figure">
+          <div class="proof-grid stack">
+            <div class="proof-card blue">
+              <span class="tagline">开源版 8 项核心 KPI</span>
+              <strong>MTTR</strong>
+              <p>从异常检测到确认恢复的平均时间。</p>
+              <div class="formula">MTTR = Σ(t_resolve - t_detect) / N</div>
+            </div>
+            <div class="proof-card red">
+              <span class="tagline">预研稿拟扩展</span>
+              <strong>16 项运营 KPI</strong>
+              <p>含 AI 处置率、误升级率、漏升级率、30 秒紧急响应、乘客被困时长等。</p>
+            </div>
+            <div class="proof-card blue">
+              <span class="tagline">法规证据</span>
+              <strong>First Responder Interaction Plan</strong>
+              <p>California DMV Article 3.7 已把远程运营支持、第一响应者交互和车辆识别/处置要求写入草案。</p>
+            </div>
+            <p class="callout">运营异常管理不是“有没有预案”，而是异常能否被指标化、演练化和证据化。</p>
           </div>
-          <div class="proof-card red">
-            <span class="tagline">预研稿拟扩展</span>
-            <strong>16 项运营 KPI</strong>
-            <p>含 AI 处置率、误升级率、漏升级率、30 秒紧急响应、geofence exit 等。</p>
-          </div>
-          <div class="proof-card blue">
-            <span class="tagline">验证方法</span>
-            <strong>第一响应者交互计划 + 桌面推演</strong>
-            <p>通过文档审查、桌面推演、历史事件复盘验证运营异常处置能力。</p>
+          <div class="visual-stack">
+            <figure class="figure document-shot"><img src="${A}dmv-frip-excerpt.jpg" alt="California DMV Article 3.7 第一响应者交互计划条款截图"></figure>
+            <p class="source-line">图源：California DMV Article 3.7 modified text，First Responder Interaction Plan 相关条款。</p>
           </div>
         </div>
-        <table class="matrix">
-          <thead><tr><th>KPI 类型</th><th>工程含义</th><th>数据来源</th></tr></thead>
-          <tbody>
-            <tr><td>误升级率</td><td>低层级本可解决，却占用人工资源</td><td>决策引擎日志 + 操作员动作</td></tr>
-            <tr><td>漏升级率</td><td>应升级未升级，可能造成安全风险</td><td>S2+ 事件复盘 + 乘客反馈</td></tr>
-            <tr><td>乘客被困时长</td><td>SOS 到可离车的时间窗口</td><td>车门状态 + App + 远程运营中心日志</td></tr>
-          </tbody>
-        </table>
-        <p class="callout">运营异常管理不是“有没有预案”，而是异常能否被指标化、演练化和证据化。</p>`, '这页把标准评审最关心的可实施性讲清楚。'),
+        `, '这页把标准评审最关心的可实施性讲清楚，并加入本地法规 PDF 截图作为视觉证据。'),
       agendaSlide('agenda-evidence', 3, '目录', '进入证据与案例。'),
       contentSlide('incident-db', '开源事件库与运行阶段监控证据', `
         <div class="body-two">
@@ -948,25 +955,28 @@ evidence:
           </div>
         </div>`, '这页改为投影友好的重绘图，不直接使用论文小图或版权不明的新闻图。'),
       contentSlide('waymo-markey', '远程运营透明度成为治理问题', `
-        <div class="proof-grid">
-          <div class="proof-card blue">
-            <span class="tagline">SFCTA / Waymo blackout</span>
-            <strong>城市级外部扰动</strong>
-            <p>电力或交通基础设施异常会触发区域性运行风险，考验远程运营中心与城市应急接口。</p>
+        <div class="body-figure">
+          <figure class="figure report-cover"><img src="${A}markey-remote-back-seat-cover.jpg" alt="Senator Markey Remote Back Seat Operators report cover"></figure>
+          <div class="proof-grid stack">
+            <div class="proof-card red compact">
+              <span class="tagline">Markey RAO report</span>
+              <strong>介入频次不可比</strong>
+              <p>七家主要 AV 企业均拒绝披露远程人工介入频次，公共 KPI 基准缺失。</p>
+            </div>
+            <div class="proof-card blue compact">
+              <span class="tagline">SFCTA / Waymo blackout</span>
+              <strong>城市级外部扰动</strong>
+              <p>电力或交通基础设施异常会触发区域性运行风险，考验远程运营中心与城市应急接口。</p>
+            </div>
+            <div class="proof-card blue compact">
+              <span class="tagline">CA DMV Article 3.7</span>
+              <strong>第一响应者交互与响应要求</strong>
+              <p>监管草案开始关注第一响应者交互、远程运营支持和应急响应时限。</p>
+            </div>
+            <p class="callout">远程运营能力不应只存在于企业内部系统中，也应转化为监管、标准和研究可以审阅的证据。</p>
+            <p class="source-line">图源：Senator Edward J. Markey, Remote Back Seat Operators report, 2026。</p>
           </div>
-          <div class="proof-card red">
-            <span class="tagline">Markey RAO report</span>
-            <strong>介入频次不可比</strong>
-            <p>主要 AV 企业不披露远程人工介入频次，行业缺少公共 KPI 基准。</p>
-          </div>
-          <div class="proof-card blue">
-            <span class="tagline">CA DMV Article 3.7</span>
-            <strong>第一响应者交互与响应要求</strong>
-            <p>监管草案开始关注第一响应者交互、远程运营支持和应急响应时限。</p>
-          </div>
-        </div>
-        <p class="callout">远程运营能力不应只存在于企业内部系统中，也应转化为监管、标准和研究可以审阅的证据。</p>
-        <p class="source-line">参考：SFCTA Waymo blackout hearing、Markey RAO report、California DMV AV regulations。</p>`, '注意数值如果无法公开核验，正式汇报中应少用或标注来源。'),
+        </div>`, '注意数值如果无法公开核验，正式汇报中应少用或标注来源。'),
       contentSlide('ecosystem', 'ROAM 与 OpenODC、DRIVEResearch 形成安全证据链', `
         <div class="project-row">
           <div class="project">
