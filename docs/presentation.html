@@ -267,6 +267,439 @@
     .figure.report-cover img { object-fit: cover; object-position: center; }
     .visual-stack { min-height: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 6px; }
 
+    .layer-state-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr);
+      gap: 18px;
+      min-height: 0;
+      align-items: stretch;
+    }
+    .layer-state-map {
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: 12px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: linear-gradient(90deg, rgba(237,244,251,.92), #fff 34%);
+    }
+    .risk-axis {
+      position: relative;
+      display: grid;
+      place-items: center;
+      color: var(--blue);
+      font-size: 13px;
+      line-height: 1.15;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      letter-spacing: .04em;
+    }
+    .risk-axis::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      bottom: 20px;
+      left: 50%;
+      width: 2px;
+      background: linear-gradient(180deg, var(--red), var(--blue));
+      transform: translateX(-50%);
+    }
+    .risk-axis::after {
+      content: "";
+      position: absolute;
+      top: 13px;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 10px solid var(--red);
+      transform: translateX(-50%);
+    }
+    .state-rail { display: grid; gap: 10px; align-content: stretch; }
+    .state-band {
+      position: relative;
+      min-height: 96px;
+      display: grid;
+      grid-template-columns: 60px minmax(0, 1.04fr) minmax(190px, .96fr);
+      gap: 14px;
+      align-items: center;
+      padding: 13px 16px;
+      border: 1px solid #d7e1ec;
+      border-left: 8px solid var(--blue);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .state-band.red { border-left-color: var(--red); background: var(--red-soft); }
+    .state-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--blue);
+      color: #fff;
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 700;
+    }
+    .state-band.red .state-num { background: var(--red); }
+    .state-main strong { display: block; color: var(--blue); font-size: 23px; line-height: 1.15; font-weight: 500; }
+    .state-band.red .state-main strong { color: var(--red); }
+    .state-main span { display: block; margin-top: 5px; color: #111; font-size: 15px; line-height: 1.35; }
+    .state-meta {
+      padding: 10px 12px;
+      border-radius: 6px;
+      background: var(--blue-soft);
+      color: #1f2937;
+      font-size: 14px;
+      line-height: 1.38;
+    }
+    .state-band.red .state-meta { background: #fff; }
+    .fallback-strip {
+      min-height: 76px;
+      display: grid;
+      grid-template-columns: 128px minmax(0, 1fr);
+      gap: 12px;
+      align-items: center;
+      padding: 12px 15px;
+      border: 1px solid #d8a0a0;
+      border-left: 8px solid var(--red);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .fallback-strip strong { color: var(--red); font-size: 20px; line-height: 1.2; font-weight: 500; }
+    .fallback-strip span { color: #111; font-size: 15px; line-height: 1.42; }
+    .state-side {
+      min-height: 0;
+      display: grid;
+      grid-template-rows: auto repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .state-thesis {
+      margin: 0;
+      padding: 15px 17px;
+      border-radius: 8px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 20px;
+      line-height: 1.42;
+    }
+    .side-note {
+      padding: 13px 15px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .side-note.red { border-left: 6px solid var(--red); background: var(--red-soft); }
+    .side-note strong { display: block; color: var(--blue); font-size: 18px; line-height: 1.25; font-weight: 500; }
+    .side-note.red strong { color: var(--red); }
+    .side-note p { margin: 6px 0 0; color: #111; font-size: 14px; line-height: 1.42; }
+
+    .frip-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
+      gap: 18px;
+      min-height: 0;
+      align-items: stretch;
+    }
+    .kpi-rack { display: grid; gap: 10px; align-content: start; }
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: 12px;
+      align-items: center;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .kpi-strip strong { color: var(--blue); font-size: 30px; line-height: 1; font-weight: 500; text-align: center; }
+    .kpi-strip.red strong { color: var(--red); }
+    .kpi-strip span { display: block; color: #111; font-size: 17px; line-height: 1.35; }
+    .kpi-strip em { display: block; margin-top: 4px; color: var(--muted); font-style: normal; font-size: 13px; line-height: 1.3; }
+    .frip-board {
+      min-height: 0;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: linear-gradient(180deg, #fff, #f9fbfd);
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 13px;
+    }
+    .frip-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      border-bottom: 1px solid #d9e1ea;
+      padding-bottom: 10px;
+    }
+    .frip-header strong { color: var(--blue); font-size: 24px; line-height: 1.2; font-weight: 500; }
+    .frip-header span { color: var(--red); font-size: 13px; line-height: 1.2; font-weight: 700; }
+    .frip-flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .frip-node {
+      position: relative;
+      min-height: 74px;
+      padding: 11px 10px;
+      border: 1px solid #d7e1ec;
+      border-radius: 8px;
+      background: var(--blue-soft);
+    }
+    .frip-node:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      width: 10px;
+      height: 2px;
+      background: var(--red);
+    }
+    .frip-node span { color: var(--red); font-size: 13px; font-weight: 700; }
+    .frip-node strong { display: block; margin-top: 4px; color: var(--blue); font-size: 15px; line-height: 1.25; font-weight: 500; }
+    .frip-requirements { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .req-card {
+      min-height: 88px;
+      padding: 11px 12px;
+      border: 1px solid #d9e1ea;
+      border-left: 5px solid var(--blue);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .req-card.red { border-left-color: var(--red); background: var(--red-soft); }
+    .req-card strong { display: block; color: var(--blue); font-size: 16px; line-height: 1.25; font-weight: 500; }
+    .req-card.red strong { color: var(--red); }
+    .req-card p { margin: 6px 0 0; color: #111; font-size: 13px; line-height: 1.36; }
+    .source-chip {
+      justify-self: start;
+      padding: 6px 10px;
+      border: 1px solid rgba(179,0,0,.35);
+      border-radius: 999px;
+      background: var(--red-soft);
+      color: var(--red);
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .incident-dashboard {
+      height: 100%;
+      min-height: 0;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      gap: 13px;
+    }
+    [data-key="incident-db"] .slide-body { align-content: stretch; }
+    .dash-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) repeat(3, 116px);
+      gap: 10px;
+      align-items: stretch;
+    }
+    .dash-title {
+      padding: 12px 14px;
+      border-radius: 8px;
+      background: var(--blue);
+      color: #fff;
+    }
+    .dash-title strong { display: block; font-size: 24px; line-height: 1.18; font-weight: 500; }
+    .dash-title span { display: block; margin-top: 5px; font-size: 13px; line-height: 1.35; opacity: .92; }
+    .dash-metric {
+      padding: 11px 8px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--blue-soft);
+      text-align: center;
+    }
+    .dash-metric strong { display: block; color: var(--blue); font-size: 29px; line-height: 1; font-weight: 500; }
+    .dash-metric span { display: block; margin-top: 6px; color: #111; font-size: 12px; line-height: 1.2; }
+    .dash-grid {
+      min-height: 0;
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.12fr) minmax(0, .98fr);
+      gap: 12px;
+      align-items: stretch;
+    }
+    .dash-card {
+      min-height: 0;
+      padding: 13px;
+      border: 1px solid #d9e1ea;
+      border-radius: 8px;
+      background: #fdfefe;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .dash-card h3 { margin: 0; color: var(--blue); font-size: 18px; line-height: 1.25; font-weight: 500; }
+    .donut-wrap { display: grid; grid-template-columns: 164px minmax(0, 1fr); gap: 10px; align-items: center; }
+    .donut {
+      position: relative;
+      width: 164px;
+      height: 164px;
+      border-radius: 50%;
+      background: conic-gradient(var(--blue) 0 64.9%, var(--red) 64.9% 99.3%, #8eaadb 99.3% 99.8%, #d8a0a0 99.8% 100%);
+    }
+    .donut::after {
+      content: "";
+      position: absolute;
+      inset: 32px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid #d9e1ea;
+    }
+    .donut span {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      color: var(--blue);
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 500;
+    }
+    .legend { display: grid; gap: 7px; }
+    .legend-row { display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; gap: 8px; align-items: center; color: #111; font-size: 13px; line-height: 1.25; }
+    .legend-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--blue); }
+    .legend-dot.red { background: var(--red); }
+    .legend-dot.light-blue { background: #8eaadb; }
+    .legend-dot.light-red { background: #d8a0a0; }
+    .bar-list { display: grid; gap: 9px; }
+    .bar-row { display: grid; grid-template-columns: 92px minmax(0, 1fr) 34px; gap: 8px; align-items: center; font-size: 13px; color: #111; }
+    .bar-track { height: 12px; border-radius: 999px; background: #edf2f7; overflow: hidden; }
+    .bar-fill { display: block; height: 100%; border-radius: inherit; background: var(--blue); }
+    .bar-fill.red { background: var(--red); }
+    .evidence-list { display: grid; gap: 7px; }
+    .evidence-item {
+      display: grid;
+      grid-template-columns: 30px minmax(0, 1fr);
+      gap: 7px;
+      align-items: start;
+      padding: 7px 9px;
+      border-radius: 8px;
+      background: var(--blue-soft);
+    }
+    .evidence-item.red { background: var(--red-soft); }
+    .evidence-item span {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--blue);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .evidence-item.red span { background: var(--red); }
+    .evidence-item strong { display: block; color: var(--blue); font-size: 14px; line-height: 1.2; font-weight: 500; }
+    .evidence-item.red strong { color: var(--red); }
+    .evidence-item p { margin: 3px 0 0; color: #111; font-size: 11.5px; line-height: 1.25; }
+    .mini-stat-row {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 6px;
+    }
+    .mini-stat {
+      min-height: 54px;
+      padding: 7px 6px;
+      border: 1px solid #d9e1ea;
+      border-radius: 7px;
+      background: #fff;
+      text-align: center;
+    }
+    .mini-stat strong { display: block; color: var(--blue); font-size: 17px; line-height: 1; font-weight: 500; }
+    .mini-stat span { display: block; margin-top: 5px; color: #334155; font-size: 10.5px; line-height: 1.2; }
+    .trend-bars {
+      margin-top: auto;
+      min-height: 58px;
+      padding: 6px 6px 0;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      align-items: flex-end;
+      gap: 6px;
+    }
+    .trend-bar {
+      flex: 1 1 0;
+      min-width: 0;
+      height: 48px;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: 5px;
+      align-items: end;
+      text-align: center;
+      color: #334155;
+      font-size: 10px;
+      line-height: 1;
+    }
+    .trend-bar i {
+      display: block;
+      width: 100%;
+      height: var(--h);
+      border-radius: 5px 5px 0 0;
+      background: var(--blue);
+    }
+    .trend-bar.red i { background: var(--red); }
+
+    .report-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+      gap: 18px;
+      min-height: 0;
+      align-items: stretch;
+    }
+    .report-frame {
+      position: relative;
+      min-height: 0;
+      height: 428px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: linear-gradient(135deg, #eef4fb, #fff 42%, #f7e8e8);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .report-frame img {
+      display: block;
+      position: absolute;
+      inset: 16px;
+      width: calc(100% - 32px);
+      height: calc(100% - 32px);
+      object-fit: contain;
+      border: 1px solid #d9e1ea;
+      border-radius: 6px;
+      background: #fff;
+    }
+    .report-insights {
+      min-height: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 11px;
+      align-content: start;
+    }
+    .report-insight {
+      min-height: 118px;
+      padding: 14px 15px;
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--blue);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .report-insight.red { border-left-color: var(--red); background: var(--red-soft); }
+    .report-insight.wide { grid-column: 1 / -1; min-height: 96px; }
+    .report-insight .num { display: block; color: var(--red); font-size: 28px; line-height: 1; font-weight: 500; }
+    .report-insight strong { display: block; margin-top: 6px; color: var(--blue); font-size: 19px; line-height: 1.25; font-weight: 500; }
+    .report-insight.red strong { color: var(--red); }
+    .report-insight p { margin: 7px 0 0; color: #111; font-size: 14px; line-height: 1.42; }
+
     .timeline { display: grid; gap: 10px; }
     .timeline-row { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 14px; align-items: start; }
     .timeline-row time { color: var(--red); font-size: 18px; line-height: 1.35; }
@@ -512,9 +945,11 @@
       .slide { position: relative; min-height: 720px; }
       .slide:not(.is-active) { display: none; }
       .slide-inner, .cover-bottom, .thanks-bottom { padding-left: 22px; padding-right: 22px; }
-      .body-two, .body-three, .body-figure, .comparison, .flow, .project-row, .cover-meta, .thanks-bottom, .custom-layer, .sotif-map, .case-map, .framework-row, .framework-bottom, .mode-grid { grid-template-columns: 1fr; }
+      .body-two, .body-three, .body-figure, .comparison, .flow, .project-row, .cover-meta, .thanks-bottom, .custom-layer, .sotif-map, .case-map, .framework-row, .framework-bottom, .mode-grid, .layer-state-layout, .frip-layout, .dash-head, .dash-grid, .report-layout { grid-template-columns: 1fr; }
       .framework-node:not(:last-child)::after { display: none; }
       .flow .step:not(:last-child)::after { display: none; }
+      .frip-node:not(:last-child)::after { display: none; }
+      .report-frame { height: auto; }
     }
 
     @page { size: 13.333in 7.5in; margin: 0; }
@@ -534,6 +969,11 @@
       .flow { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
       .cover-meta { grid-template-columns: minmax(0, 1fr) minmax(320px, 0.38fr) !important; }
       .thanks-bottom { grid-template-columns: minmax(0, 1fr) minmax(350px, 0.38fr) !important; }
+      .layer-state-layout { grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr) !important; }
+      .frip-layout { grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr) !important; }
+      .dash-head { grid-template-columns: minmax(0, 1fr) repeat(3, 116px) !important; }
+      .dash-grid { grid-template-columns: minmax(0, .9fr) minmax(0, 1.12fr) minmax(0, .98fr) !important; }
+      .report-layout { grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr) !important; }
       .figure, .project, .card, .metric, .standard-card, .matrix { box-shadow: none !important; }
     }
   </style>
@@ -838,20 +1278,36 @@
         </div>
         <p class="callout">开源版当前以 6 大类、26 个已展开子场景作为基础；团标预研稿拟扩展为 6 大类 29 子场景。</p>`, '强调异常分类体系服务于后面的处置和评价。'),
       contentSlide('three-layer', '三层架构是降风险状态机', `
-        <div class="body-figure">
-          <div>
-            <ul class="list">
-              <li>第一层：AI 自主响应，面向低风险、低紧急度异常。</li>
-              <li>第二层：AI 辅助加人工确认，面向不确定、需判断或需授权的异常。</li>
-              <li class="red">第三层：远程驾驶或现场处置，面向高风险、硬件故障和复杂外部协同。</li>
-              <li>共因通信或云端失效时，远程驾驶可能不可用，应优先触发 MRM、区域管控、现场救援和车队级恢复。</li>
-            </ul>
+        <div class="layer-state-layout">
+          <div class="layer-state-map" aria-label="ROAM 三层降风险状态机重绘图">
+            <div class="risk-axis">风险与紧急度升高</div>
+            <div class="state-rail">
+              <div class="state-band">
+                <div class="state-num">L1</div>
+                <div class="state-main"><strong>AI 自主响应</strong><span>降速、靠边、路径重规划、乘客提示、日志记录。</span></div>
+                <div class="state-meta">适用：低风险、可局部恢复、无需外部授权的异常。</div>
+              </div>
+              <div class="state-band red">
+                <div class="state-num">L2</div>
+                <div class="state-main"><strong>AI 辅助 + 人工确认</strong><span>远程运营中心（ROC）确认系统建议，完成授权、沟通和升级。</span></div>
+                <div class="state-meta">适用：不确定、需判断、需乘客或第一响应者协同的异常。</div>
+              </div>
+              <div class="state-band">
+                <div class="state-num">L3</div>
+                <div class="state-main"><strong>远程驾驶 / 现场处置</strong><span>远程驾驶只适用于通信、视野、法规和人员资质满足条件的场景。</span></div>
+                <div class="state-meta">适用：高风险、硬件故障、复杂交通冲突和外部协同处置。</div>
+              </div>
+              <div class="fallback-strip">
+                <strong>退出远程驾驶</strong>
+                <span>通信、云端、定位或车队级共因失效时，优先触发最小风险状态（MRM）、区域管控、现场救援和车队级恢复。</span>
+              </div>
+            </div>
           </div>
-          <div class="layer-diagram" aria-label="ROAM 三层决策参考架构重绘图">
-            <div class="layer-card"><strong>第一层：AI 自主响应</strong><p>车辆可自行完成降速、靠边、路径重规划、乘客提示和日志记录。</p></div>
-            <div class="layer-card red"><strong>第二层：AI 辅助 + 人工确认</strong><p>远程运营中心（Remote Operations Center，ROC）确认系统建议，完成授权、沟通和升级。</p></div>
-            <div class="layer-card"><strong>第三层：远程驾驶 / 现场处置</strong><p>远程驾驶只适用于通信、视野、法规和人员资质满足条件的异常；否则转入 MRM、区域管控或现场救援。</p></div>
-            <div class="proof-card red"><span class="tagline">关键原则</span><strong>远程驾驶不是万能兜底</strong><p>共因故障下，系统必须能证明何时禁止远程驾驶，以及谁负责恢复和留痕。</p></div>
+          <div class="state-side">
+            <p class="state-thesis">这不是三个部门的分工，而是一套根据风险、紧急度和可恢复性动态升级的运行阶段状态机。</p>
+            <div class="side-note"><strong>输入</strong><p>异常分类、车辆状态、乘客状态、道路环境、通信质量和外部应急约束。</p></div>
+            <div class="side-note red"><strong>判定</strong><p>系统必须证明何时升级、何时禁止远程驾驶、何时转入现场或区域处置。</p></div>
+            <div class="side-note"><strong>输出</strong><p>处置层级、责任主体、KPI 留痕、监管可审阅的事件证据。</p></div>
           </div>
         </div>`, '这页讲清楚不是所有异常都要远程驾驶，远程驾驶只是最后一层。'),
       contentSlide('responsibility', '责任矩阵：技术执行与法律责任不能混在一起', `
@@ -877,56 +1333,111 @@
           </table>
         </div>`, '这页为 10×3×7 矩阵铺垫。'),
       contentSlide('kpi-frip', 'KPI、第一响应者交互计划与桌面推演', `
-        <div class="body-figure">
-          <div class="proof-grid stack">
-            <div class="proof-card blue">
-              <span class="tagline">开源版 8 项核心 KPI</span>
-              <strong>MTTR</strong>
-              <p>从异常检测到确认恢复的平均时间。</p>
-              <div class="formula">MTTR = Σ(t_resolve - t_detect) / N</div>
+        <div class="frip-layout">
+          <div class="kpi-rack">
+            <div class="kpi-strip">
+              <strong>8</strong>
+              <span>开源版核心 KPI<em>覆盖检测、确认、升级、恢复和乘客影响。</em></span>
             </div>
-            <div class="proof-card red">
-              <span class="tagline">预研稿拟扩展</span>
-              <strong>16 项运营 KPI</strong>
-              <p>含 AI 处置率、误升级率、漏升级率、30 秒紧急响应、乘客被困时长等。</p>
+            <div class="kpi-strip red">
+              <strong>16</strong>
+              <span>团标预研 KPI 候选<em>含 AI 处置率、误升级率、漏升级率、30 秒紧急响应等。</em></span>
             </div>
-            <div class="proof-card blue">
-              <span class="tagline">法规证据</span>
-              <strong>First Responder Interaction Plan</strong>
-              <p>California DMV Article 3.7 已把远程运营支持、第一响应者交互和车辆识别/处置要求写入草案。</p>
+            <div class="kpi-strip">
+              <strong>FRIP</strong>
+              <span>First Responder Interaction Plan<em>第一响应者交互计划：车辆识别、应急联系、远程支持和安全处置。</em></span>
             </div>
             <p class="callout">运营异常管理不是“有没有预案”，而是异常能否被指标化、演练化和证据化。</p>
           </div>
-          <div class="visual-stack">
-            <figure class="figure document-shot"><img src="${A}dmv-frip-excerpt.jpg" alt="California DMV Article 3.7 第一响应者交互计划条款截图"></figure>
-            <p class="source-line">图源：California DMV Article 3.7 modified text，First Responder Interaction Plan 相关条款。</p>
+          <div class="frip-board" aria-label="California DMV Article 3.7 第一响应者交互计划要求重绘图">
+            <div class="frip-header">
+              <strong>法规要求被转译为可演练的运营证据</strong>
+              <span>CA DMV Article 3.7</span>
+            </div>
+            <div class="frip-flow">
+              <div class="frip-node"><span>01</span><strong>异常识别</strong></div>
+              <div class="frip-node"><span>02</span><strong>远程运营支持</strong></div>
+              <div class="frip-node"><span>03</span><strong>第一响应者交互</strong></div>
+              <div class="frip-node"><span>04</span><strong>恢复、拖移或解除</strong></div>
+            </div>
+            <div class="frip-requirements">
+              <div class="req-card"><strong>车辆与系统识别</strong><p>让消防、交警、救援人员能快速识别 ADS 状态和车辆安全入口。</p></div>
+              <div class="req-card red"><strong>应急联系人与响应时限</strong><p>把远程运营中心联系人、响应窗口和升级路径纳入计划。</p></div>
+              <div class="req-card"><strong>远程支持边界</strong><p>区分 Remote Assistant 与 Remote Driver，避免把建议支持误写成驾驶控制。</p></div>
+              <div class="req-card red"><strong>安全靠近与断电处置</strong><p>说明如何靠近车辆、稳定车辆、解除乘客风险和现场危险。</p></div>
+              <div class="req-card"><strong>桌面推演</strong><p>用典型异常场景验证人、车、云、运营中心和第一响应者协同。</p></div>
+              <div class="req-card"><strong>日志与审阅包</strong><p>留存处置时间线、沟通记录、系统状态和责任主体。</p></div>
+            </div>
+            <div class="source-chip">Source: California DMV Article 3.7 modified text, §227.42(i)</div>
           </div>
         </div>
-        `, '这页把标准评审最关心的可实施性讲清楚，并加入本地法规 PDF 截图作为视觉证据。'),
+        `, '这页把标准评审最关心的可实施性讲清楚，避免直接展示难以阅读的法规原文截图。'),
       agendaSlide('agenda-evidence', 3, '目录', '进入证据与案例。'),
       contentSlide('incident-db', '开源事件库与运行阶段监控证据', `
-        <div class="body-two">
-          <div>
-            <p class="lead">ROAM 事件库以 YAML 结构化记录公开可查的 AV 事件与碰撞记录，并从中筛选典型 L4 运营异常，支持场景编码、严重度、紧急度、响应层级和证据置信度沉淀。</p>
-            <div class="metrics">
-              <div class="metric"><strong>584</strong><span>公开记录</span></div>
-              <div class="metric"><strong>565</strong><span>DMV 格式记录</span></div>
-              <div class="metric"><strong>19</strong><span>典型事件记录</span></div>
+        <div class="incident-dashboard" aria-label="ROAM 事件库结构化监控看板重绘图">
+          <div class="dash-head">
+            <div class="dash-title">
+              <strong>事件库不是 YAML 仓库，而是运行阶段证据看板</strong>
+              <span>从公开记录进入分类、主体、严重度和处置层级，形成可筛选、可复核、可用于标准讨论的数据对象。</span>
             </div>
-            <p class="source-line">说明：公开记录不等同于全部为 L4 运营异常；团标预研案例库将从中精选典型事件。</p>
+            <div class="dash-metric"><strong>584</strong><span>公开记录</span></div>
+            <div class="dash-metric"><strong>565</strong><span>DMV 格式记录</span></div>
+            <div class="dash-metric"><strong>19</strong><span>典型事件记录</span></div>
           </div>
-          <pre class="card" style="margin:0;white-space:pre-wrap;font-size:14px;line-height:1.45;"><code>scenario_code:
-  primary: A1
-  secondary: C1 / F1
-severity: S3
-urgency: U3
-response:
-  remote_ops: degraded
-  first_responder: activated
-evidence:
-  source_type: public report
-  verification: structured review</code></pre>
-        </div>`, '这里用本地文件统计，后续可替换成 Explorer 截图。'),
+          <div class="dash-grid">
+            <div class="dash-card">
+              <h3>异常分类分布</h3>
+              <div class="donut-wrap">
+                <div class="donut"><span>584</span></div>
+                <div class="legend">
+                  <div class="legend-row"><i class="legend-dot"></i><span>E 外部环境冲突</span><strong>379</strong></div>
+                  <div class="legend-row"><i class="legend-dot red"></i><span>C 规划/执行异常</span><strong>201</strong></div>
+                  <div class="legend-row"><i class="legend-dot light-blue"></i><span>A 系统性故障</span><strong>3</strong></div>
+                  <div class="legend-row"><i class="legend-dot light-red"></i><span>D 车辆硬件故障</span><strong>1</strong></div>
+                </div>
+              </div>
+              <p class="source-line">统计对象：当前仓库已跟踪的 584 条结构化 incident YAML。</p>
+              <div class="mini-stat-row" aria-label="严重度分布">
+                <div class="mini-stat"><strong>8</strong><span>S0</span></div>
+                <div class="mini-stat"><strong>285</strong><span>S1</span></div>
+                <div class="mini-stat"><strong>283</strong><span>S2</span></div>
+                <div class="mini-stat"><strong>5</strong><span>S3</span></div>
+                <div class="mini-stat"><strong>3</strong><span>S4</span></div>
+              </div>
+            </div>
+            <div class="dash-card">
+              <h3>主要运营主体</h3>
+              <div class="bar-list">
+                <div class="bar-row"><span>Waymo</span><div class="bar-track"><i class="bar-fill" style="width:100%"></i></div><strong>298</strong></div>
+                <div class="bar-row"><span>Cruise</span><div class="bar-track"><i class="bar-fill red" style="width:43%"></i></div><strong>129</strong></div>
+                <div class="bar-row"><span>Zoox</span><div class="bar-track"><i class="bar-fill" style="width:32%"></i></div><strong>94</strong></div>
+                <div class="bar-row"><span>Mercedes</span><div class="bar-track"><i class="bar-fill" style="width:3%"></i></div><strong>10</strong></div>
+                <div class="bar-row"><span>WeRide</span><div class="bar-track"><i class="bar-fill red" style="width:3%"></i></div><strong>10</strong></div>
+                <div class="bar-row"><span>Pony.ai</span><div class="bar-track"><i class="bar-fill" style="width:3%"></i></div><strong>9</strong></div>
+              </div>
+              <p class="source-line">这类看板比单条 YAML 更适合在汇报中展示事件库价值。</p>
+              <div class="trend-bars" aria-label="按年份统计的公开记录数量">
+                <div class="trend-bar"><i style="--h:22px"></i><span>2019</span></div>
+                <div class="trend-bar"><i style="--h:4px"></i><span>2020</span></div>
+                <div class="trend-bar"><i style="--h:14px"></i><span>2021</span></div>
+                <div class="trend-bar"><i style="--h:27px"></i><span>2022</span></div>
+                <div class="trend-bar"><i style="--h:29px"></i><span>2023</span></div>
+                <div class="trend-bar"><i style="--h:24px"></i><span>2024</span></div>
+                <div class="trend-bar red"><i style="--h:36px"></i><span>2025</span></div>
+                <div class="trend-bar"><i style="--h:17px"></i><span>2026</span></div>
+              </div>
+            </div>
+            <div class="dash-card">
+              <h3>从公开资料到审阅包</h3>
+              <div class="evidence-list">
+                <div class="evidence-item"><span>1</span><div><strong>公开记录</strong><p>DMV 报告、新闻、监管文件、企业披露。</p></div></div>
+                <div class="evidence-item red"><span>2</span><div><strong>结构化标注</strong><p>场景主类、严重度、紧急度、运营主体和来源置信度。</p></div></div>
+                <div class="evidence-item"><span>3</span><div><strong>运行处置映射</strong><p>L1/L2/L3 处置层级、KPI、责任主体和升级条件。</p></div></div>
+                <div class="evidence-item red"><span>4</span><div><strong>标准输入</strong><p>形成案例库、演练脚本、审阅包和团标条款依据。</p></div></div>
+              </div>
+            </div>
+          </div>
+        </div>`, '这里用本地事件库统计生成看板，展示 Explorer 应该服务的核心证据视角。'),
       contentSlide('wuhan-case', '武汉案例映射：公开事实、分析与待核验', `
         <div class="case-map">
           <div class="proof-grid stack">
@@ -955,26 +1466,34 @@ evidence:
           </div>
         </div>`, '这页改为投影友好的重绘图，不直接使用论文小图或版权不明的新闻图。'),
       contentSlide('waymo-markey', '远程运营透明度成为治理问题', `
-        <div class="body-figure">
-          <figure class="figure report-cover"><img src="${A}markey-remote-back-seat-cover.jpg" alt="Senator Markey Remote Back Seat Operators report cover"></figure>
-          <div class="proof-grid stack">
-            <div class="proof-card red compact">
-              <span class="tagline">Markey RAO report</span>
-              <strong>介入频次不可比</strong>
-              <p>七家主要 AV 企业均拒绝披露远程人工介入频次，公共 KPI 基准缺失。</p>
+        <div class="report-layout">
+          <figure class="report-frame"><img src="${A}markey-remote-back-seat-cover.jpg" alt="Senator Markey Remote Back Seat Operators report cover"></figure>
+          <div class="report-insights">
+            <div class="report-insight red">
+              <span class="num">7/7</span>
+              <strong>远程人工介入频次未披露</strong>
+              <p>Markey 报告指出，被询问的主要 AV 企业均未提供可比较的远程人工介入频次。</p>
             </div>
-            <div class="proof-card blue compact">
-              <span class="tagline">SFCTA / Waymo blackout</span>
+            <div class="report-insight">
+              <span class="num">RAO</span>
+              <strong>Remote Assistance Operator</strong>
+              <p>远程辅助人员已成为 L4 运营安全的一部分，但外部缺少统一定义和指标口径。</p>
+            </div>
+            <div class="report-insight">
+              <span class="num">City</span>
               <strong>城市级外部扰动</strong>
-              <p>电力或交通基础设施异常会触发区域性运行风险，考验远程运营中心与城市应急接口。</p>
+              <p>电力、通信、道路事件或应急车辆会把单车异常放大为区域运行治理问题。</p>
             </div>
-            <div class="proof-card blue compact">
-              <span class="tagline">CA DMV Article 3.7</span>
-              <strong>第一响应者交互与响应要求</strong>
-              <p>监管草案开始关注第一响应者交互、远程运营支持和应急响应时限。</p>
+            <div class="report-insight red">
+              <span class="num">KPI</span>
+              <strong>公共基准缺失</strong>
+              <p>如果没有公开 KPI，远程运营能力就只能停留在企业内部承诺，难以进入标准审阅。</p>
             </div>
-            <p class="callout">远程运营能力不应只存在于企业内部系统中，也应转化为监管、标准和研究可以审阅的证据。</p>
-            <p class="source-line">图源：Senator Edward J. Markey, Remote Back Seat Operators report, 2026。</p>
+            <div class="report-insight wide">
+              <strong>ROAM 的定位</strong>
+              <p>把远程运营透明度转化为异常分类、处置层级、责任矩阵和指标证据，让“远程支持”从口号变成可讨论的工程对象。</p>
+              <p class="source-line">图源：Senator Edward J. Markey, Remote Back Seat Operators report, 2026。</p>
+            </div>
           </div>
         </div>`, '注意数值如果无法公开核验，正式汇报中应少用或标注来源。'),
       contentSlide('ecosystem', 'ROAM 与 OpenODC、DRIVEResearch 形成安全证据链', `
