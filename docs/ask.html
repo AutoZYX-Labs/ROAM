@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ask ROAM</title>
+<link rel="icon" href="https://autozyx.com/assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf9f5;
+  --panel:#fff;
+  --ink:#1f2933;
+  --muted:#667085;
+  --line:#dedbd2;
+  --blue:#17375e;
+  --red:#b30000;
+  --soft:#eaf1f8;
+  --red-soft:#f7e6e6;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Inter","Noto Sans SC",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 26px;
+  background:rgba(250,249,245,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(222,219,210,.7);
+}
+.brand{font-weight:800;letter-spacing:.04em;color:var(--blue)}
+.nav-links{display:flex;gap:18px;font-size:14px}
+.wrap{max-width:1120px;margin:0 auto;padding:64px 24px 80px}
+.hero{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);
+  gap:28px;
+  align-items:stretch;
+}
+.hero-card,.panel{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:var(--panel);
+  box-shadow:0 18px 50px rgba(23,55,94,.08);
+}
+.hero-card{padding:38px}
+.eyebrow{margin:0 0 16px;color:var(--red);font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:0;color:var(--blue);font-size:clamp(42px,7vw,82px);line-height:.96;letter-spacing:-.03em}
+.subtitle{margin:22px 0 0;color:#111;font-size:22px;line-height:1.55}
+.note{margin:20px 0 0;color:var(--muted);font-size:15px;line-height:1.65}
+.status{
+  padding:28px;
+  display:grid;
+  align-content:center;
+  gap:16px;
+  background:linear-gradient(135deg,#fff,#f8fbff);
+}
+.status h2{margin:0;color:var(--blue);font-size:28px;line-height:1.25}
+.status p{margin:0;color:#111;font-size:16px;line-height:1.65}
+.badge{
+  display:inline-flex;
+  width:max-content;
+  padding:7px 12px;
+  border-radius:999px;
+  border:1px solid #d8a0a0;
+  background:var(--red-soft);
+  color:var(--red);
+  font-size:13px;
+  font-weight:700;
+}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:10px 18px;
+  border-radius:6px;
+  border:1px solid var(--blue);
+  background:var(--blue);
+  color:#fff;
+  font-weight:700;
+}
+.btn:hover{text-decoration:none;filter:brightness(1.05)}
+.btn.red{border-color:var(--red);background:var(--red)}
+.btn.ghost{background:#fff;color:var(--blue)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px}
+.panel{padding:24px}
+.panel h3{margin:0;color:var(--blue);font-size:21px;line-height:1.25}
+.panel p{margin:12px 0 0;color:#111;font-size:15px;line-height:1.6}
+.panel.red{background:var(--red-soft);border-color:#d8a0a0}
+.panel.red h3{color:var(--red)}
+.formbox{margin-top:30px;padding:26px;border-left:6px solid var(--blue);background:var(--soft);border-radius:10px}
+.formbox h2{margin:0;color:var(--blue);font-size:24px}
+.formbox ul{margin:16px 0 0;padding-left:20px;color:#111;line-height:1.7}
+footer{padding:32px 24px;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  .nav{align-items:flex-start;gap:10px;flex-direction:column}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="./index.html">ROAM</a>
+  <div class="nav-links">
+    <a href="./index.html">主页</a>
+    <a href="./presentation.html">会议演示</a>
+    <a href="https://github.com/AutoZYX-Labs/ROAM" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-card">
+      <p class="eyebrow">Question Entry</p>
+      <h1>Ask ROAM</h1>
+      <p class="subtitle">围绕 L4 远程运营、异常管理、SOTIF 触发条件、事件库和团标预研提出问题。</p>
+      <p class="note">原独立 Explorer / Ask ROAM 部署正在迁移。为了避免会议期间出现 404，本页作为稳定入口保留在 ROAM 主站内。</p>
+      <div class="actions">
+        <a class="btn red" href="https://github.com/AutoZYX-Labs/ROAM/issues/new?title=Ask%20ROAM%3A%20&body=%E8%AF%B7%E6%8F%8F%E8%BF%B0%E4%BD%A0%E6%83%B3%E8%AF%A2%E9%97%AE%20ROAM%20%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9A%0A%0A-%20%E8%83%8C%E6%99%AF%EF%BC%9A%0A-%20%E5%85%B3%E8%81%94%E4%BA%8B%E4%BB%B6%20%2F%20%E6%A0%87%E5%87%86%20%2F%20%E5%9C%BA%E6%99%AF%EF%BC%9A%0A-%20%E6%9C%9F%E6%9C%9B%E8%BE%93%E5%87%BA%EF%BC%9A" target="_blank" rel="noopener">在 GitHub 提问</a>
+        <a class="btn" href="https://github.com/AutoZYX-Labs/ROAM/tree/main/incidents" target="_blank" rel="noopener">查看事件库</a>
+        <a class="btn ghost" href="./index.html#incidents">返回数据入口</a>
+      </div>
+    </div>
+    <div class="panel status">
+      <span class="badge">Stable fallback</span>
+      <h2>当前可用方式</h2>
+      <p>如果问题涉及某条公开事件、某类异常、某个 KPI 或标准条款，请优先在 GitHub Issue 中提出。这样问题、来源、讨论和后续修订都能被公开追踪。</p>
+      <p>正式交互式问答恢复后，本页会改回 AI 问答入口。</p>
+    </div>
+  </section>
+
+  <section class="grid" aria-label="Ask ROAM topics">
+    <div class="panel">
+      <h3>事件与证据</h3>
+      <p>针对 DMV 报告、新闻事件、监管文件和企业披露，讨论来源置信度、事实边界和待核验项。</p>
+    </div>
+    <div class="panel red">
+      <h3>异常分类与处置</h3>
+      <p>讨论系统性故障、外部环境冲突、乘客端异常、三层处置架构和责任矩阵。</p>
+    </div>
+    <div class="panel">
+      <h3>标准与 SOTIF</h3>
+      <p>围绕运行阶段监控证据、触发条件、KPI、FRIP 和 CSAE 团标预研提出问题。</p>
+    </div>
+  </section>
+
+  <section class="formbox">
+    <h2>建议提问格式</h2>
+    <ul>
+      <li>先说明问题背景，例如具体事件、标准条款或运营模式。</li>
+      <li>附上来源链接或文件名，便于复核证据。</li>
+      <li>说明希望得到的输出：分类判断、KPI 建议、责任矩阵映射、案例复盘或标准条款建议。</li>
+    </ul>
+  </section>
+</main>
+
+<footer>ROAM · Remote Operations &amp; Anomaly Management · <a href="https://github.com/AutoZYX-Labs/ROAM" target="_blank" rel="noopener">GitHub</a></footer>
+</body>
+</html>
