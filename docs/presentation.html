@@ -1657,7 +1657,7 @@
     .tax-node strong { display: block; color: var(--blue); font-size: 15px; line-height: 1.2; font-weight: 500; }
     .tax-node.red { border-left-color: var(--red); background: var(--red-soft); }
     .tax-node.red strong { color: var(--red); }
-    .tax-tree { display: grid; grid-template-rows: auto 1fr auto; gap: 10px; }
+    .tax-tree { display: grid; grid-template-rows: auto 1fr auto auto; gap: 10px; }
     .tax-root { padding: 13px; border-radius: 8px; color: #fff; background: var(--blue); text-align: center; font-size: 22px; line-height: 1.25; }
     .tax-branches { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
     .tax-branch { padding: 11px; border: 1px solid var(--line); border-radius: 8px; background: var(--blue-soft); }
@@ -1668,6 +1668,34 @@
     .tax-branch small { display: block; margin-top: 8px; color: #111; font-size: 11.5px; line-height: 1.32; }
     .tax-output { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
     .tax-output div { padding: 10px; border-radius: 8px; background: #fff; border: 1px solid var(--line); color: var(--blue); font-size: 14px; line-height: 1.3; text-align: center; }
+    .tax-decision-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .tax-decision-card {
+      min-height: 86px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--blue);
+      border-radius: 8px;
+      background: var(--blue-soft);
+      display: grid;
+      align-content: center;
+      gap: 5px;
+    }
+    .tax-decision-card.red { border-left-color: var(--red); background: var(--red-soft); }
+    .tax-decision-card span { color: var(--red); font-size: 13px; line-height: 1; font-weight: 700; }
+    .tax-decision-card strong { color: var(--blue); font-size: 17px; line-height: 1.2; font-weight: 500; }
+    .tax-decision-card.red strong { color: var(--red); }
+    .tax-decision-card small { color: #111; font-size: 12px; line-height: 1.32; }
+    .tax-example {
+      padding: 11px 13px;
+      border: 1px solid #d8a0a0;
+      border-left: 6px solid var(--red);
+      border-radius: 8px;
+      background: var(--red-soft);
+      color: #111;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .tax-example strong { color: var(--red); font-weight: 500; }
 
     .responsibility-visual { padding: 16px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, .34fr); gap: 14px; align-items: stretch; }
     .heatmap { display: grid; grid-template-columns: 142px repeat(3, minmax(0, 1fr)); gap: 6px; align-content: stretch; }
@@ -2306,20 +2334,19 @@
             <div class="tax-node n6"><strong>F 乘客端异常</strong>乘客被困、求助、下车和交互失败。</div>
           </div>
           <div class="tax-tree">
-            <div class="tax-root">公开事件 → 异常分类 → 处置对象</div>
-            <div class="tax-branches">
-              <div class="tax-branch red"><span>A</span><strong>系统性故障</strong><small>车队级共因、云端、通信或调度异常。</small></div>
-              <div class="tax-branch"><span>B</span><strong>感知 / 决策失效</strong><small>识别、预测、让行和交互判断错误。</small></div>
-              <div class="tax-branch red"><span>C</span><strong>规划 / 执行异常</strong><small>停车、绕行、汇入、避让和轨迹执行。</small></div>
-              <div class="tax-branch"><span>D</span><strong>车辆硬件故障</strong><small>制动、转向、传感器或动力系统失效。</small></div>
-              <div class="tax-branch red"><span>E</span><strong>外部环境冲突</strong><small>施工、应急车辆、天气与交通组织变化。</small></div>
-              <div class="tax-branch"><span>F</span><strong>乘客端异常</strong><small>乘客被困、求助、下车和交互失败。</small></div>
+            <div class="tax-root">公开事件 → 异常分类 → 处置路径</div>
+            <div class="tax-decision-grid">
+              <div class="tax-decision-card red"><span>01</span><strong>影响范围</strong><small>单车、车队、区域或外部基础设施扰动，决定是否进入车队级协调。</small></div>
+              <div class="tax-decision-card"><span>02</span><strong>严重度 / 紧急度</strong><small>结合伤害风险、乘客暴露、交通阻断和恢复窗口，形成处置优先级。</small></div>
+              <div class="tax-decision-card"><span>03</span><strong>处置层级</strong><small>L1 AI 自主响应、L2 人工确认、L3 远程驾驶或现场处置。</small></div>
+              <div class="tax-decision-card red"><span>04</span><strong>证据输出</strong><small>记录 KPI、责任主体、升级原因、沟通记录和恢复时间线。</small></div>
             </div>
             <div class="tax-output">
-              <div>严重度 / 紧急度</div>
-              <div>处置层级 L1-L3</div>
-              <div>KPI 与责任留痕</div>
+              <div>分类标签</div>
+              <div>处置策略</div>
+              <div>审阅证据</div>
             </div>
+            <div class="tax-example"><strong>示例：</strong>A 系统性故障 + C 规划/执行异常 + F 乘客端异常，不应只写成“车辆异常停车”，而应触发车队级恢复、乘客沟通、现场协同和责任留痕。</div>
             <p class="source-line">分类体系：ROAM v1.2。该页为演示用重绘图，不复用具体新闻截图。</p>
           </div>
         </div>`, '异常分类体系应看起来像分类树，而不是六张说明卡。'),
