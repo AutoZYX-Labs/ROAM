@@ -2029,6 +2029,7 @@
       .slide, .slide.is-active { position: relative !important; inset: auto !important; display: block !important; width: 13.333in !important; height: 7.5in !important; min-height: 0 !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; transform: none !important; break-after: page; page-break-after: always; box-shadow: none !important; }
       .slide:last-of-type { break-after: auto; page-break-after: auto; }
       .slide * { -webkit-print-color-adjust: exact; print-color-adjust: exact; box-shadow: none !important; text-shadow: none !important; }
+      .slide:not(.cover):not(.thanks)::after { display: flex !important; background: var(--blue) !important; color: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; z-index: 5; }
       .slide-inner { padding: 28px 46px 62px !important; height: 100% !important; }
       .cover-layout, .thanks-layout { height: 100% !important; }
       .body-two { grid-template-columns: minmax(0, 1fr) minmax(0, 0.96fr) !important; }
