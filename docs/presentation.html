@@ -1239,7 +1239,7 @@
       overflow: hidden;
       background: #fff;
       display: grid;
-      grid-template-rows: 126px auto 1fr;
+      grid-template-rows: 120px auto 1fr auto auto;
     }
     .ecosystem-node figure { margin: 0; overflow: hidden; border-bottom: 1px solid #d9e1ea; }
     .ecosystem-node img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
@@ -1247,6 +1247,21 @@
     .ecosystem-node.red h3 { color: var(--red); }
     .ecosystem-node p { margin: 0; padding: 0 13px 13px; color: #111; font-size: 13px; line-height: 1.38; }
     .ecosystem-node .mode-pills { padding: 0 13px 12px; }
+    .ecosystem-link {
+      margin: 0 13px 13px;
+      min-height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      background: var(--blue);
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 600;
+    }
+    .ecosystem-node.red .ecosystem-link { background: var(--red); }
     .ecosystem-chain {
       grid-column: 1 / -1;
       display: grid;
@@ -2531,18 +2546,21 @@
             <h3>OpenODC</h3>
             <p>定义系统应该在什么边界内运行，把 ODC 从分散表述变成公共证据。</p>
             <div class="mode-pills"><span>ODD / ODC</span><span>边界</span><span>触发条件</span></div>
+            <a class="ecosystem-link" href="https://openodc.autozyx.com/" target="_blank" rel="noopener">OpenODC</a>
           </div>
           <div class="ecosystem-node red">
             <figure><img src="${A}project-roam.png" alt="ROAM"></figure>
             <h3>ROAM</h3>
             <p>管理边界被触发后的运营异常、处置层级、责任分配、KPI 和审阅证据。</p>
             <div class="mode-pills"><span>异常</span><span>处置</span><span>治理</span></div>
+            <a class="ecosystem-link" href="https://roam.autozyx.com/" target="_blank" rel="noopener">ROAM</a>
           </div>
           <div class="ecosystem-node">
             <figure><img src="${A}project-driveresearch.png" alt="DRIVEResearch"></figure>
             <h3>DRIVEResearch</h3>
             <p>提供自然驾驶和人类行为基线，为正常运行分布和风险场景参数提供支撑。</p>
             <div class="mode-pills"><span>基线</span><span>场景参数</span><span>行为分布</span></div>
+            <a class="ecosystem-link" href="https://www.driveresearch.tech/" target="_blank" rel="noopener">DRIVEResearch 公司官网</a>
           </div>
           <div class="ecosystem-chain" aria-label="三个项目之间的安全证据链">
             <div class="chain-step"><span>01</span><strong>边界定义</strong><p>OpenODC 给出 ODD / ODC 与触发条件，回答系统何时仍在可接受运行范围内。</p></div>
