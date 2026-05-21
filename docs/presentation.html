@@ -1324,6 +1324,7 @@
     .photo-compare {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: minmax(0, 1fr) auto;
       gap: 16px;
       align-items: stretch;
     }
@@ -1354,7 +1355,22 @@
     .photo-card h3 { margin: 0; color: var(--blue); font-size: 23px; line-height: 1.2; font-weight: 500; }
     .photo-card.red h3 { color: var(--red); }
     .photo-card p { margin: 0; color: #111; font-size: 13px; line-height: 1.34; }
+    .event-bridge {
+      grid-column: 1 / -1;
+      padding: 13px 16px;
+      border: 1px solid #d8a0a0;
+      border-left: 7px solid var(--red);
+      border-radius: 8px;
+      background: var(--red-soft);
+      display: grid;
+      grid-template-columns: minmax(0, .54fr) minmax(0, .46fr);
+      gap: 14px;
+      align-items: center;
+    }
+    .event-bridge strong { color: var(--red); font-size: 20px; line-height: 1.25; font-weight: 500; }
+    .event-bridge span { color: #111; font-size: 14px; line-height: 1.38; }
     [data-key="events"] .slide-body,
+    [data-key="sotif"] .slide-body,
     [data-key="data-vs-governance"] .slide-body,
     [data-key="need-spec"] .slide-body,
     [data-key="csae"] .slide-body,
@@ -1367,6 +1383,7 @@
       align-content: stretch;
     }
     [data-key="events"] .photo-compare,
+    [data-key="sotif"] .loop-board,
     [data-key="data-vs-governance"] .bridge-board,
     [data-key="need-spec"] .visual-gap,
     [data-key="csae"] .notice-visual,
@@ -1380,6 +1397,7 @@
       min-height: 0;
     }
     [data-key="events"] .photo-card { grid-template-rows: minmax(0, 1fr) auto; }
+    [data-key="sotif"] .loop-board { height: 100%; }
 
     .visual-gap {
       border: 1px solid var(--line);
@@ -1590,6 +1608,11 @@
     .taxonomy-photo .tax-source { position: absolute; left: 14px; bottom: 14px; right: 14px; color: #fff; font-size: 22px; line-height: 1.25; }
     .taxonomy-radar {
       position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: auto repeat(3, minmax(0, 1fr));
+      gap: 9px;
+      padding: 14px;
       border-radius: 8px;
       background:
         radial-gradient(circle at center, rgba(142,170,219,.28) 0 18%, transparent 19%),
@@ -1600,25 +1623,27 @@
       min-height: 0;
     }
     .tax-center {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 128px;
-      height: 128px;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
+      position: relative;
+      z-index: 1;
+      grid-column: 1 / -1;
+      width: auto;
+      min-height: 58px;
+      border-radius: 8px;
       display: grid;
       place-items: center;
       text-align: center;
       color: #fff;
       background: var(--blue);
-      font-size: 20px;
+      font-size: 23px;
       line-height: 1.25;
     }
     .tax-node {
-      position: absolute;
-      width: 126px;
-      padding: 10px;
+      position: relative;
+      z-index: 1;
+      width: auto;
+      min-width: 0;
+      min-height: 70px;
+      padding: 9px 10px;
       border: 1px solid var(--line);
       border-left: 5px solid var(--blue);
       border-radius: 8px;
@@ -1627,16 +1652,12 @@
       color: #111;
       font-size: 12px;
       line-height: 1.25;
+      display: grid;
+      align-content: center;
     }
     .tax-node strong { display: block; color: var(--blue); font-size: 15px; line-height: 1.2; font-weight: 500; }
     .tax-node.red { border-left-color: var(--red); background: var(--red-soft); }
     .tax-node.red strong { color: var(--red); }
-    .tax-node.n1 { left: 18px; top: 26px; }
-    .tax-node.n2 { right: 18px; top: 26px; }
-    .tax-node.n3 { left: 18px; top: 142px; }
-    .tax-node.n4 { right: 18px; top: 142px; }
-    .tax-node.n5 { left: 18px; bottom: 24px; }
-    .tax-node.n6 { right: 18px; bottom: 24px; }
     .tax-tree { display: grid; grid-template-rows: auto 1fr auto; gap: 10px; }
     .tax-root { padding: 13px; border-radius: 8px; color: #fff; background: var(--blue); text-align: center; font-size: 22px; line-height: 1.25; }
     .tax-branches { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
@@ -1645,6 +1666,7 @@
     .tax-branch span { color: var(--red); font-size: 15px; font-weight: 700; }
     .tax-branch strong { display: block; margin-top: 5px; color: var(--blue); font-size: 16px; line-height: 1.2; font-weight: 500; }
     .tax-branch.red strong { color: var(--red); }
+    .tax-branch small { display: block; margin-top: 8px; color: #111; font-size: 11.5px; line-height: 1.32; }
     .tax-output { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
     .tax-output div { padding: 10px; border-radius: 8px; background: #fff; border: 1px solid var(--line); color: var(--blue); font-size: 14px; line-height: 1.3; text-align: center; }
 
@@ -2022,7 +2044,7 @@
   <script>
     const A = './assets/presentation/'
     const agenda = [
-      'L4 运营异常为什么成为安全问题',
+      '从真实事件到运行阶段 SOTIF 问题',
       '现有标准覆盖了什么、还缺什么',
       'ROAM 的方法论与参考架构',
       '从案例、数据到标准化预研',
@@ -2061,28 +2083,7 @@
       },
       agendaSlide('agenda', -1, '目录', '这页只建立专业汇报结构，不解释故事。'),
       agendaSlide('agenda-problem', 0, '目录', '进入第一部分。'),
-      contentSlide('problem', '远程运营异常与 SOTIF 的关联', `
-        <div class="sotif-proof">
-          <div class="iso-board" aria-label="ISO 21448 与运行阶段异常证据关系图">
-            <p class="board-title">ISO 21448 的关键不是“事故后解释”，而是持续识别触发条件并关闭安全论证缺口</p>
-            <div class="iso-path">
-              <div class="iso-step"><span>01</span><strong>功能定义与 ODD</strong><p>明确系统能力边界和使用条件。</p></div>
-              <div class="iso-step"><span>02</span><strong>危害分析</strong><p>识别功能不足、性能局限和可预见误用。</p></div>
-              <div class="iso-step red"><span>03</span><strong>触发条件识别</strong><p>从运行事件中提取新的触发条件。</p></div>
-              <div class="iso-step"><span>04</span><strong>验证与确认</strong><p>证明风险降低措施有效。</p></div>
-              <div class="iso-step red"><span>05</span><strong>运行阶段监控</strong><p>发现未知、低频和组合场景。</p></div>
-              <div class="iso-step red"><span>06</span><strong>问题解决与安全论证</strong><p>把处置过程转化为可审计证据。</p></div>
-            </div>
-            <div class="roam-insert">ROAM 插入的位置：把远程运营异常转化为“触发条件、处置层级、责任主体、KPI 留痕”。</div>
-          </div>
-          <div class="trigger-panel">
-            <div class="trigger-card main"><strong>L4 运行阶段的风险形态变了</strong><p>从“单车是否完成动态驾驶任务”扩展为“异常发生后能否识别、分级、处置、恢复和追溯”。</p></div>
-            <div class="trigger-card"><strong>远程运营不是客服后台</strong><p>ROC 响应能力会直接影响风险暴露时间、升级路径和后续安全论证。</p></div>
-            <div class="trigger-card red"><strong>需要单独标注边界</strong><p>硬件、网络安全、纯客服失效不必直接归入 SOTIF，但会进入运营安全与 Safety Case 证据链。</p></div>
-            <div class="trigger-card"><strong>正式素材建议</strong><p>后续可替换为你常用的 ISO 21448 总流程图，并标注运行阶段监控、触发条件识别和问题解决。</p></div>
-          </div>
-        </div>`, '这一页用简化重绘图承接 ISO 21448；正式素材到位后可替换成用户常用流程图。'),
-      contentSlide('events', '批量异常与共因触发条件', `
+      contentSlide('events', '两个事件暴露的远程运营问题', `
         <div class="photo-compare" aria-label="武汉和旧金山两类 L4 运营异常的真实素材对照">
           <article class="photo-card red">
             <figure>
@@ -2106,15 +2107,40 @@
               <p class="source-line">图源：<a href="https://waymo.com/press/" target="_blank" rel="noopener">Waymo Press Kit</a>。</p>
             </footer>
           </article>
-        </div>`, '这页用真实公开素材先建立问题冲击，再引出 ROAM 需要记录触发条件、恢复过程和 KPI。'),
-      contentSlide('sotif', 'L4运行阶段安全事件的证据闭环', `
+          <div class="event-bridge">
+            <strong>共同点不是“车辆坏了”，而是 L4 运行阶段出现了新的安全管理对象。</strong>
+            <span>异常识别、远程响应、乘客沟通、现场协同、恢复时间线和责任留痕，已经从企业内部运维问题变成 SOTIF 工作组需要讨论的运行阶段证据问题。</span>
+          </div>
+        </div>`, '开场先用两个事件建立问题：L4 扩大规模后，远程运营不是后台客服，而是运行阶段安全治理能力。'),
+      contentSlide('problem', '从远程运营异常到 SOTIF 触发条件', `
+        <div class="sotif-proof">
+          <div class="iso-board" aria-label="ISO 21448 与运行阶段异常证据关系图">
+            <p class="board-title">ISO 21448 的关键不是“事故后解释”，而是持续识别触发条件并关闭安全论证缺口</p>
+            <div class="iso-path">
+              <div class="iso-step"><span>01</span><strong>功能定义与 ODD</strong><p>明确系统能力边界和使用条件。</p></div>
+              <div class="iso-step"><span>02</span><strong>危害分析</strong><p>识别功能不足、性能局限和可预见误用。</p></div>
+              <div class="iso-step red"><span>03</span><strong>触发条件识别</strong><p>从运行事件中提取新的触发条件。</p></div>
+              <div class="iso-step"><span>04</span><strong>验证与确认</strong><p>证明风险降低措施有效。</p></div>
+              <div class="iso-step red"><span>05</span><strong>运行阶段监控</strong><p>发现未知、低频和组合场景。</p></div>
+              <div class="iso-step red"><span>06</span><strong>问题解决与安全论证</strong><p>把处置过程转化为可审计证据。</p></div>
+            </div>
+            <div class="roam-insert">ROAM 插入的位置：把远程运营异常转化为“触发条件、处置层级、责任主体、KPI 留痕”。</div>
+          </div>
+          <div class="trigger-panel">
+            <div class="trigger-card main"><strong>L4 运行阶段的风险形态变了</strong><p>从“单车是否完成动态驾驶任务”扩展为“异常发生后能否识别、分级、处置、恢复和追溯”。</p></div>
+            <div class="trigger-card"><strong>远程运营不是客服后台</strong><p>远程运营中心（ROC）的响应能力会直接影响风险暴露时间、升级路径和后续安全论证。</p></div>
+            <div class="trigger-card red"><strong>需要单独标注边界</strong><p>硬件、网络安全、纯客服失效不必直接归入 SOTIF，但会进入运营安全与 Safety Case 证据链。</p></div>
+            <div class="trigger-card"><strong>SOTIF 工作组的切入点</strong><p>把运行阶段发现的低频、组合和系统性触发条件，转化为可复盘、可改进、可审阅的证据闭环。</p></div>
+          </div>
+        </div>`, '第二步再把两个事件抽象到 ISO 21448：讲清楚远程运营不是强行归入 SOTIF，而是给运行阶段触发条件和问题解决提供证据。'),
+      contentSlide('sotif', 'ROAM：运行阶段安全事件证据闭环', `
         <div class="loop-board" aria-label="ROAM 运行阶段安全事件证据闭环">
           <div class="loop-wheel">
             <div class="loop-center">ROAM<br>证据闭环</div>
-            <div class="loop-node n1"><strong>Field monitoring</strong>运行监控发现异常和触发条件。</div>
-            <div class="loop-node n2"><strong>Scenario update</strong>更新场景库和边界假设。</div>
-            <div class="loop-node n3"><strong>Risk reduction</strong>定义降风险动作和升级条件。</div>
-            <div class="loop-node n4"><strong>Safety case</strong>形成可审计的安全论证证据。</div>
+            <div class="loop-node n1"><strong>运行监控</strong>Field monitoring：发现异常和触发条件。</div>
+            <div class="loop-node n2"><strong>场景更新</strong>Scenario update：更新场景库和边界假设。</div>
+            <div class="loop-node n3"><strong>风险降低</strong>Risk reduction：定义降风险动作和升级条件。</div>
+            <div class="loop-node n4"><strong>安全论证</strong>Safety case：形成可审计证据。</div>
           </div>
           <div class="roam-stats-grid">
             <div class="stat-card red"><strong>ROAM</strong><span>L4 自动驾驶远程运营与异常管理开源框架。</span></div>
@@ -2124,7 +2150,7 @@
             <div class="stat-card"><strong>10</strong><span>L4 运营模式，覆盖多主体责任窗口。</span></div>
             <div class="stat-card red"><strong>6×26</strong><span>开源异常分类体系，连接处置与 KPI。</span></div>
           </div>
-        </div>`, '这一页正式引入 ROAM，把项目数据从前面的 SOTIF 概念页移到这里。'),
+        </div>`, '第三步正式引入 ROAM：它不是单独多做一个项目，而是把事件、SOTIF 触发条件和运营治理证据串成闭环。'),
       agendaSlide('agenda-standards', 1, '目录', '进入标准缺口部分。'),
       contentSlide('standards-map', '标准覆盖边界与治理缺口', `
         <div class="coverage-board" aria-label="现有标准覆盖边界与 ROAM 缺口地图">
@@ -2272,12 +2298,12 @@
           <div class="tax-tree">
             <div class="tax-root">公开事件 → 异常分类 → 处置对象</div>
             <div class="tax-branches">
-              <div class="tax-branch red"><span>A</span><strong>系统性故障</strong></div>
-              <div class="tax-branch"><span>B</span><strong>感知 / 决策失效</strong></div>
-              <div class="tax-branch red"><span>C</span><strong>规划 / 执行异常</strong></div>
-              <div class="tax-branch"><span>D</span><strong>车辆硬件故障</strong></div>
-              <div class="tax-branch red"><span>E</span><strong>外部环境冲突</strong></div>
-              <div class="tax-branch"><span>F</span><strong>乘客端异常</strong></div>
+              <div class="tax-branch red"><span>A</span><strong>系统性故障</strong><small>车队级共因、云端、通信或调度异常。</small></div>
+              <div class="tax-branch"><span>B</span><strong>感知 / 决策失效</strong><small>识别、预测、让行和交互判断错误。</small></div>
+              <div class="tax-branch red"><span>C</span><strong>规划 / 执行异常</strong><small>停车、绕行、汇入、避让和轨迹执行。</small></div>
+              <div class="tax-branch"><span>D</span><strong>车辆硬件故障</strong><small>制动、转向、传感器或动力系统失效。</small></div>
+              <div class="tax-branch red"><span>E</span><strong>外部环境冲突</strong><small>施工、应急车辆、天气与交通组织变化。</small></div>
+              <div class="tax-branch"><span>F</span><strong>乘客端异常</strong><small>乘客被困、求助、下车和交互失败。</small></div>
             </div>
             <div class="tax-output">
               <div>严重度 / 紧急度</div>
