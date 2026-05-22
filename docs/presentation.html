@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ROAM: L4 自动驾驶远程运营与异常管理开源框架 — ROAM Presentation</title>
   <meta name="description" content="ROAM 面向 CICV SOTIF 工作组的 20 分钟正式演示材料。">
+  <meta name="theme-color" content="#17375e">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ROAM Presentation">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./assets/presentation/roam-touch-icon.png">
   <link rel="icon" href="https://autozyx.com/assets/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +34,7 @@
     * { box-sizing: border-box; }
     html, body { margin: 0; min-height: 100%; background: var(--app-bg); color: var(--ink); font-family: var(--sans); }
     body { overflow-x: hidden; }
+    body.mobile-presenting { overflow: hidden; touch-action: none; }
     a { color: inherit; }
     button, select { font-family: inherit; }
 
@@ -43,6 +51,15 @@
     }
 
     .deck-app:fullscreen { padding: 0; overflow: hidden; background: #07101d; }
+    .deck-app.is-mobile-presenting {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      min-height: 100dvh;
+      padding: 0;
+      overflow: hidden;
+      background: #07101d;
+    }
     .deck-topbar, .deck-bottombar {
       max-width: 1280px;
       margin: 0 auto;
@@ -105,11 +122,13 @@
       background: #07101d;
     }
     .deck-app.is-fullscreen .slide {
+      position: absolute;
       inset: auto;
       left: 50%;
       top: 50%;
       width: var(--fsw);
       height: var(--fsh);
+      min-height: 0;
       transform: translate(-50%, -50%) scale(var(--fss));
       transform-origin: center;
     }
@@ -140,6 +159,21 @@
       pointer-events: auto;
       transform: translateY(0);
     }
+    .orientation-hint {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      background: #07101d;
+      color: #fff;
+      text-align: center;
+    }
+    .orientation-hint div { max-width: 320px; }
+    .orientation-hint strong { display: block; font-size: 24px; font-weight: 500; }
+    .orientation-hint span { display: block; margin-top: 10px; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.72); }
 
     .slide {
       position: absolute;
@@ -2008,17 +2042,25 @@
     .custom-media img, .custom-media video { max-width: 100%; max-height: 180px; border-radius: 6px; }
 
     @media screen and (max-width: 960px) {
-      .deck-app { padding: 10px; }
-      .deck-stage { height: auto; min-height: 0; overflow: visible; }
-      .slide { position: relative; min-height: 720px; }
-      .slide:not(.is-active) { display: none; }
-      .slide-inner, .cover-bottom, .thanks-bottom { padding-left: 22px; padding-right: 22px; }
-      .body-two, .body-three, .body-figure, .comparison, .flow, .project-row, .cover-meta, .thanks-bottom, .custom-layer, .sotif-map, .case-map, .framework-row, .framework-bottom, .mode-grid, .layer-state-layout, .frip-layout, .dash-head, .dash-grid, .report-layout, .sotif-proof, .iso-path, .event-board, .loop-board, .coverage-row, .bridge-board, .gap-board, .standard-plan, .deliverable-grid, .plan-timeline, .framework-canvas, .mode-map, .mode-quads, .taxonomy-board, .taxonomy-grid, .responsibility-board, .case-board, .case-triage, .case-flow, .ecosystem-board, .ecosystem-chain, .summary-board, .summary-path, .photo-compare, .visual-gap, .notice-visual, .notice-timeline, .notice-list, .method-visual, .mode-visual, .axis-map, .taxonomy-visual, .tax-branches, .tax-output, .responsibility-visual, .case-visual, .case-mini-flow, .final-visual { grid-template-columns: 1fr; }
-      .framework-node:not(:last-child)::after { display: none; }
-      .flow .step:not(:last-child)::after { display: none; }
-      .frip-node:not(:last-child)::after { display: none; }
-      .summary-step:not(:last-child)::after, .case-flow .case-step:not(:last-child)::after, .ecosystem-chain .chain-step:not(:last-child)::after { display: none; }
-      .report-frame { height: auto; }
+      .deck-app:not(.is-fullscreen) { padding: 10px; }
+      .deck-app:not(.is-fullscreen) .deck-stage { height: auto; min-height: 0; overflow: visible; }
+      .deck-app:not(.is-fullscreen) .slide { position: relative; min-height: 720px; }
+      .deck-app:not(.is-fullscreen) .slide:not(.is-active) { display: none; }
+      .deck-app:not(.is-fullscreen) .slide-inner,
+      .deck-app:not(.is-fullscreen) .cover-bottom,
+      .deck-app:not(.is-fullscreen) .thanks-bottom { padding-left: 22px; padding-right: 22px; }
+      .deck-app:not(.is-fullscreen) :is(.body-two, .body-three, .body-figure, .comparison, .flow, .project-row, .cover-meta, .thanks-bottom, .custom-layer, .sotif-map, .case-map, .framework-row, .framework-bottom, .mode-grid, .layer-state-layout, .frip-layout, .dash-head, .dash-grid, .report-layout, .sotif-proof, .iso-path, .event-board, .loop-board, .coverage-row, .bridge-board, .gap-board, .standard-plan, .deliverable-grid, .plan-timeline, .framework-canvas, .mode-map, .mode-quads, .taxonomy-board, .taxonomy-grid, .responsibility-board, .case-board, .case-triage, .case-flow, .ecosystem-board, .ecosystem-chain, .summary-board, .summary-path, .photo-compare, .visual-gap, .notice-visual, .notice-timeline, .notice-list, .method-visual, .mode-visual, .axis-map, .taxonomy-visual, .tax-branches, .tax-output, .responsibility-visual, .case-visual, .case-mini-flow, .final-visual) { grid-template-columns: 1fr; }
+      .deck-app:not(.is-fullscreen) .framework-node:not(:last-child)::after { display: none; }
+      .deck-app:not(.is-fullscreen) .flow .step:not(:last-child)::after { display: none; }
+      .deck-app:not(.is-fullscreen) .frip-node:not(:last-child)::after { display: none; }
+      .deck-app:not(.is-fullscreen) .summary-step:not(:last-child)::after,
+      .deck-app:not(.is-fullscreen) .case-flow .case-step:not(:last-child)::after,
+      .deck-app:not(.is-fullscreen) .ecosystem-chain .chain-step:not(:last-child)::after { display: none; }
+      .deck-app:not(.is-fullscreen) .report-frame { height: auto; }
+    }
+
+    @media screen and (orientation: portrait) and (max-width: 960px) {
+      .deck-app.is-mobile-presenting .orientation-hint { display: flex; }
     }
 
     @page { size: 13.333in 7.5in; margin: 0; }
@@ -2081,6 +2123,13 @@
       <button class="deck-nav" id="prev">上一页</button>
       <span class="counter" id="counter">1 / 25</span>
       <button class="deck-nav" id="next">下一页</button>
+    </div>
+
+    <div class="orientation-hint" id="orientation-hint" aria-hidden="true">
+      <div>
+        <strong>请横屏观看</strong>
+        <span>手机端会按 16:9 演示比例缩放页面。横屏后可左右滑动翻页。</span>
+      </div>
     </div>
   </main>
 
@@ -2666,6 +2715,9 @@
     let edits = readJson(editKey, {})
     let addons = readJson(addonKey, {})
     let hideTimer = null
+    let touchStartX = 0
+    let touchStartY = 0
+    let touchStartTime = 0
 
     renderDeck()
     show(current)
@@ -2682,7 +2734,11 @@
     mediaInput.addEventListener('change', handleMediaFile)
     document.addEventListener('fullscreenchange', syncFullscreen)
     window.addEventListener('resize', updateFullscreenScale)
+    window.addEventListener('orientationchange', () => setTimeout(updateFullscreenScale, 250))
     app.addEventListener('pointermove', handlePointer)
+    app.addEventListener('pointerdown', handlePointer)
+    stage.addEventListener('touchstart', handleTouchStart, { passive: true })
+    stage.addEventListener('touchend', handleTouchEnd, { passive: true })
     document.addEventListener('keydown', handleKey)
 
     function renderDeck() {
@@ -2814,36 +2870,86 @@
     async function toggleFullscreen() {
       if (document.fullscreenElement) {
         await document.exitFullscreen()
+      } else if (app.classList.contains('is-mobile-presenting')) {
+        exitMobilePresentation()
       } else {
-        await app.requestFullscreen()
+        try {
+          if (!app.requestFullscreen) throw new Error('Fullscreen API is not available')
+          await app.requestFullscreen({ navigationUI: 'hide' })
+        } catch {
+          enterMobilePresentation()
+        }
       }
     }
 
     function syncFullscreen() {
       const on = document.fullscreenElement === app
       app.classList.toggle('is-fullscreen', on)
-      fullscreen.textContent = on ? '退出全屏' : '全屏'
+      if (!on && !app.classList.contains('is-mobile-presenting')) document.body.classList.remove('mobile-presenting')
+      fullscreen.textContent = isPresentationMode() ? '退出全屏' : '全屏'
       if (on) updateFullscreenScale()
     }
 
+    function enterMobilePresentation() {
+      document.body.classList.add('mobile-presenting')
+      app.classList.add('is-fullscreen', 'is-mobile-presenting')
+      fullscreen.textContent = '退出全屏'
+      updateFullscreenScale()
+    }
+
+    function exitMobilePresentation() {
+      document.body.classList.remove('mobile-presenting')
+      app.classList.remove('is-fullscreen', 'is-mobile-presenting', 'show-top', 'show-bottom')
+      fullscreen.textContent = '全屏'
+    }
+
+    function isPresentationMode() {
+      return document.fullscreenElement === app || app.classList.contains('is-mobile-presenting')
+    }
+
     function updateFullscreenScale() {
-      if (document.fullscreenElement !== app) return
+      if (!isPresentationMode()) return
       const baseW = 1280
       const baseH = 720
-      const s = Math.min(innerWidth / baseW, innerHeight / baseH)
+      const viewport = window.visualViewport
+      const w = viewport?.width || innerWidth
+      const h = viewport?.height || innerHeight
+      const s = Math.min(w / baseW, h / baseH)
       app.style.setProperty('--fsw', `${baseW}px`)
       app.style.setProperty('--fsh', `${baseH}px`)
       app.style.setProperty('--fss', `${s}`)
     }
 
     function handlePointer(event) {
-      if (document.fullscreenElement !== app) return
+      if (!isPresentationMode()) return
       app.classList.toggle('show-top', event.clientY <= 84)
       app.classList.toggle('show-bottom', event.clientY >= innerHeight - 84)
       clearTimeout(hideTimer)
       hideTimer = setTimeout(() => {
         app.classList.remove('show-top', 'show-bottom')
       }, 1800)
+    }
+
+    function handleTouchStart(event) {
+      const touch = event.changedTouches?.[0]
+      if (!touch || isInteractiveTarget(event.target)) return
+      touchStartX = touch.clientX
+      touchStartY = touch.clientY
+      touchStartTime = Date.now()
+    }
+
+    function handleTouchEnd(event) {
+      const touch = event.changedTouches?.[0]
+      if (!touch || isInteractiveTarget(event.target)) return
+      const dx = touch.clientX - touchStartX
+      const dy = touch.clientY - touchStartY
+      const dt = Date.now() - touchStartTime
+      if (dt > 900 || Math.abs(dx) < 52 || Math.abs(dx) < Math.abs(dy) * 1.4) return
+      show(current + (dx < 0 ? 1 : -1))
+    }
+
+    function isInteractiveTarget(target) {
+      return target?.isContentEditable || ['A', 'BUTTON', 'INPUT', 'TEXTAREA', 'SELECT', 'VIDEO'].includes(target?.tagName)
     }
 
     function handleKey(event) {
@@ -2860,6 +2966,7 @@
 
     function exportPdf() {
       if (document.fullscreenElement) document.exitFullscreen()
+      if (app.classList.contains('is-mobile-presenting')) exitMobilePresentation()
       const oldTitle = document.title
       document.title = 'ROAM-CICV-SOTIF-Presentation'
       setTimeout(() => {

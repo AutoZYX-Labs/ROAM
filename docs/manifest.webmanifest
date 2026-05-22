@@ -1,0 +1,19 @@
+{
+  "name": "ROAM Presentation",
+  "short_name": "ROAM Deck",
+  "description": "ROAM: L4 自动驾驶远程运营与异常管理开源框架",
+  "start_url": "./presentation.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#07101d",
+  "theme_color": "#17375e",
+  "icons": [
+    {
+      "src": "./assets/presentation/roam-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
