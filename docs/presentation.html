@@ -1585,7 +1585,7 @@
     .notice-sheet .stamp { justify-self: start; }
     .notice-sheet h3 { margin: 0; color: var(--blue); font-size: 27px; line-height: 1.24; font-weight: 500; }
     .notice-sheet p { margin: 0; color: #111; font-size: 14px; line-height: 1.42; }
-    .notice-right { padding: 18px 18px 18px 0; display: grid; grid-template-rows: auto 1fr; gap: 12px; }
+    .notice-right { padding: 18px 18px 18px 0; display: grid; grid-template-rows: auto auto 1fr; gap: 10px; }
     .notice-timeline { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; align-items: stretch; }
     .notice-timeline .mile { padding: 12px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--blue-soft); }
     .notice-timeline .mile.red { background: var(--red-soft); border-left: 5px solid var(--red); }
@@ -1595,6 +1595,27 @@
     .notice-list div { padding: 12px; border-radius: 8px; border: 1px solid var(--line); background: #fff; }
     .notice-list strong { display: block; color: var(--blue); font-size: 17px; line-height: 1.24; font-weight: 500; }
     .notice-list p { margin: 6px 0 0; color: #111; font-size: 12.5px; line-height: 1.35; }
+    .notice-lead-logos {
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--blue);
+      border-radius: 8px;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 76px minmax(0, 1fr);
+      gap: 10px;
+      align-items: center;
+    }
+    .notice-lead-logos > span {
+      color: var(--blue);
+      font-size: 13px;
+      line-height: 1.25;
+    }
+    .lead-logo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 14px; align-items: center; }
+    .lead-logo-grid img { display: block; max-width: 100%; max-height: 28px; object-fit: contain; object-position: left center; }
+    .lead-logo-grid img.jlu { max-height: 34px; }
+    .lead-logo-grid img.faw { max-height: 30px; }
+    .lead-logo-grid img.cicv { max-height: 24px; }
 
     .method-visual, .mode-visual, .taxonomy-visual, .responsibility-visual, .case-visual, .final-visual {
       border: 1px solid var(--line);
@@ -2343,6 +2364,15 @@
               <div><strong>核心问题</strong><p>什么是异常、谁来处置、用什么 KPI 衡量。</p></div>
               <div><strong>起草机制</strong><p>产学研用共同参与，公开征集起草单位与专家。</p></div>
               <div><strong>ROAM 角色</strong><p>为预研提供事件库、分类体系、责任矩阵和公开证据。</p></div>
+            </div>
+            <div class="notice-lead-logos" aria-label="团体标准牵头发起单位 logo">
+              <span>牵头<br>发起单位</span>
+              <div class="lead-logo-grid">
+                <img class="jlu" src="${A}csae-lead-jlu-logo.png" alt="吉林大学">
+                <img src="${A}csae-lead-zhuoyu-logo.png" alt="卓驭科技">
+                <img class="faw" src="${A}csae-lead-faw-logo.png" alt="一汽集团">
+                <img class="cicv" src="${A}csae-lead-cicv-logo.png" alt="国家智能网联汽车创新中心">
+              </div>
             </div>
             <div class="notice-timeline">
               <div class="mile red"><span>2026.05</span><strong>预研征集</strong></div>
