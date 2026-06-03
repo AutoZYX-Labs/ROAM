@@ -1,6 +1,6 @@
 # Contributing to ROAM
 
-Thank you for your interest in contributing to ROAM (RoboTaxi Operations Anomaly Management). This project aims to build the open-source foundation for robotaxi remote operations safety, and community contributions are essential to that mission.
+Thank you for your interest in contributing to ROAM (Remote Operations & Anomaly Management). This project aims to build the open-source foundation for L4 autonomous mobility remote-operations safety, and community contributions are essential to that mission.
 
 ---
 
