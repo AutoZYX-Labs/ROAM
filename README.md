@@ -6,13 +6,15 @@
 [![Records](https://img.shields.io/badge/Public%20Records-584-red.svg)](incidents/)
 [![Scenarios](https://img.shields.io/badge/Scenarios-6%20categories-orange.svg)](#scenario-taxonomy)
 [![Operating Models](https://img.shields.io/badge/Operating%20Models-10-blue.svg)](taxonomy/operating-models-v1.0.md)
-[![Standards Track](https://img.shields.io/badge/CSAE-Pre--research-blue.svg)](#roam-open-framework-vs-csae-group-standard)
+[![Standards Track](https://img.shields.io/badge/CSAE-Drafting%20track-blue.svg)](#roam-open-framework-vs-csae-group-standard)
 
 > **📜 Positioning Notice (2026-05):** The ROAM three-layer reference architecture (Advisory / Assisted / Control), inter-layer state machine, forced-degradation semantics, and fleet-level coordination constraints are intentionally **published as open-source under Apache 2.0** — *not as a commercial proprietary IP*. The maintainer's deliberate choice is to position ROAM as a **standards-proposal-track common-good infrastructure** for the global L4 mobility safety community, suitable for adoption by SAE / ISO / GB / CSAE working groups, by regulators, by independent third-party assurance bodies, and by inter-OEM consortia. Commercial productization on top of ROAM is explicitly welcomed under Apache 2.0 — please cite the framework when you do.
 
 🌐 **Website:** [roam.autozyx.com](https://roam.autozyx.com) · [CICV 2026 Presentation](https://roam.autozyx.com/presentation.html)
 
 > **Scope (Updated 2026-05):** ROAM started as a Robotaxi-focused framework but has expanded to cover **all L4 autonomous mobility operating models** — including Robotaxi fleets, OEM direct fleets, personally-owned L4 with OEM subscription services, shared-use vehicles, public transit, logistics, and specialized environments. See [Operating Models v1.0](taxonomy/operating-models-v1.0.md) for the 10 modes we currently cover.
+
+> **Public alignment note (2026-06):** The ROAM framework has been updated to absorb the latest CSAE drafting direction without publishing unpublished standard text. The key change is a clearer relationship between **operations management anomaly events** and **traffic safety emergency events**: anomaly event is the umbrella concept; traffic safety emergency event is the high-impact, high-urgency, or strong external-coordination subset that requires stricter escalation, external coordination, data preservation, FRIP, special review, and corrective-action verification. See [`docs/operational-anomaly-emergency-framework.md`](docs/operational-anomaly-emergency-framework.md).
 
 ---
 
@@ -32,8 +34,9 @@ In March 2026, a [US Congressional investigation](docs/Markey-Remote-Back-Seat-O
 2. 🏷️ **Scenario Taxonomy + Operating Models** — 6 scenario categories, 29 sub-scenarios, and 10 operating modes
 3. 🏗️ **Reference Architecture** — Three-layer decision model with mode-specific responsibility matrix
 4. 📊 **Evaluation Benchmarks** — Mode-differentiated KPIs and baseline data
-5. 🔧 **Technology Pillars** — Six-pillar technical foundation (perception, teleop, wireless, AI trust, cybersecurity, human factors)
-6. 📜 **Standards Roadmap** — CSAE / CAICV pre-research track plus long-term GB / ISO transfer options ([`standards/`](standards/))
+5. 🚨 **Emergency Upgrade Framework** — Traffic-safety-emergency upgrade gate, external coordination, FRIP, and evidence preservation
+6. 🔧 **Technology Pillars** — Six-pillar technical foundation (perception, teleop, wireless, AI trust, cybersecurity, human factors)
+7. 📜 **Standards Roadmap** — CSAE drafting track, CAICV proposal context, and long-term GB / ISO transfer options ([`standards/`](standards/))
 
 ## L4 is Not Only Robotaxi
 
@@ -102,6 +105,8 @@ Layer 2: AI-Assisted + Human Confirm (target: 25%)
 Layer 3: Remote Driving / On-Site    (target: 5%)
 ```
 
+The public v1.3 update adds an emergency-upgrade gate above normal layer routing: when an anomaly reaches traffic-safety-emergency conditions, the operator must activate a stricter command chain, external coordination, data preservation, stakeholder communication, and special post-event review.
+
 ## Contributing
 
 We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
@@ -131,10 +136,11 @@ ROAM/
 │   ├── landscape.md                   # Standards landscape survey
 │   ├── proposal-roadmap.md            # CSAE + GB / ISO roadmap
 │   ├── gb-draft-comments-2026-04.md   # Historical GB enhancement proposal
-│   └── csae-proposal-2026/            # CSAE pre-research public materials
+│   └── csae-proposal-2026/            # CSAE drafting-track public materials
 ├── website/                # GitHub Pages website (archived design)
 └── docs/                   # Deployed site + white papers and research
     ├── technology-pillars.md          # Six technology pillars
+    ├── operational-anomaly-emergency-framework.md
     ├── literature-review-en.md
     ├── literature-review.md
     └── related-standards.md
@@ -149,7 +155,7 @@ ROAM/
 
 > **Important: ROAM is the superset, CSAE Group Standard is the subset.**
 
-In May 2026, the CSAE Group Standard *Specification for Operations Anomaly Event Management of High-Automation Vehicles* (《智能网联汽车 高度自动驾驶车辆运营管理异常事件处置规范》) entered the pre-research stage, jointly led by Jilin University, Zhuoyu Technology, FAW Group, and the China Intelligent and Connected Vehicles Industry Innovation Center (CICV), proposed by CAICV.
+In May 2026, the CSAE Group Standard *Specification for Operations Anomaly Event Management of High-Automation Vehicles* (《智能网联汽车 高度自动驾驶车辆运营管理异常事件处置规范》) entered the pre-research stage, jointly led by Jilin University, Zhuoyu Technology, FAW Group, and the China Intelligent and Connected Vehicles Industry Innovation Center (CICV), proposed by CAICV. By June 2026, an internal v0.96 working draft had been prepared for drafting-group discussion and CSAE process review.
 
 ROAM and the CSAE Group Standard are not equivalent. ROAM is an open-source research framework with international scope; the CSAE Group Standard is a Chinese-context, drafting-group-consensus standardization output that selects the standardizable subset from ROAM and adapts it to Chinese national conditions, commercial models, and regulatory reality.
 
@@ -163,15 +169,18 @@ ROAM and the CSAE Group Standard are not equivalent. ROAM is an open-source rese
 
 **Material Status Disclosure**
 
-The ROAM v1.2 framework is an initial research framework structured with AI tools, based on publicly available international standards, regulations, industry reports, and the author team's practical experience.
+The ROAM v1.3 framework is an initial research framework structured with AI tools, based on publicly available international standards, regulations, industry reports, and the author team's practical experience.
 
 Specific clauses of the CSAE Group Standard (operating-mode classification, decision architecture levels, KPI thresholds, responsibility-matrix dimensions, FRIP localization, test methods, etc.) require calibration by drafting-group members using real operational data and operational experience. The standard's content must align with Chinese national conditions, commercial models, and regulatory reality, decided by consensus of drafting-group member organizations — and is not equivalent to the ROAM framework itself.
 
-ROAM's specific designs (e.g., 10 operating modes, three-layer decision architecture, 70/25/5 split) are current-stage proposals that may be adjusted, reduced, or redefined by the drafting group.
+ROAM's specific designs (e.g., 10 operating modes, three-layer decision architecture, 70/25/5 split, emergency-upgrade triggers, KPI groups) are current-stage proposals that may be adjusted, reduced, or redefined by the drafting group.
+
+The latest public framework update does not cite or publish unpublished CSAE drafting-group material. It only reflects the reusable conceptual direction: ordinary anomaly events require operational closure; traffic safety emergency events require a stricter escalation layer with external coordination, data preservation, FRIP, special review, and corrective-action verification.
 
 This framework does not replace professional judgment in: empirical calibration with real operational data, case-law support for Chinese legal liability allocation, identification of real friction points in cross-enterprise collaboration, or political feasibility assessment from the regulatory side. In the CSAE standard drafting process, the final adoption of all clauses is determined by expert review of the drafting group.
 
 > **Detailed Chinese version for drafting-group members:** [`standards/csae-proposal-2026/07-scope-boundary.md`](standards/csae-proposal-2026/07-scope-boundary.md)
+> **Public v1.3 alignment note:** [`docs/operational-anomaly-emergency-framework.md`](docs/operational-anomaly-emergency-framework.md)
 
 ---
 

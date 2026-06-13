@@ -6,7 +6,7 @@
 <link rel="icon" href="https://autozyx.com/assets/favicon.png" type="image/png">
 <title>ROAM — L4 自动驾驶远程运营与异常管理开源框架</title>
     <meta property="og:title" content="ROAM — L4 自动驾驶远程运营与异常管理开源框架">
-    <meta property="og:description" content="Remote Operations and Anomaly Management framework for L4 automated driving operations.">
+    <meta property="og:description" content="Remote Operations and Anomaly Management framework for L4 automated driving operations, emergency escalation, FRIP and safety governance.">
     <meta property="og:image" content="https://roam.autozyx.com/assets/logo.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://roam.autozyx.com/">
@@ -163,16 +163,17 @@ footer a { color:var(--accent); }
   <p class="desc cn"><span class="cn-title">L4 自动驾驶远程运营与异常管理开源框架</span><span class="cn-sub">事件数据库 · 场景分类 · 10 种运营模式 · 参考架构 · 评价基准 · 技术支柱</span></p>
   <p class="desc en">Open-source incident database, scenario taxonomy,<br>reference architecture & evaluation benchmarks for robotaxi remote operations</p>
   <p style="font-size:0.95rem;color:var(--text3);margin:0 auto 28px;max-width:900px;letter-spacing:0.5px;">
-    <span style="display:inline-block;padding:3px 10px;border:1px solid var(--border);border-radius:14px;background:var(--bg2);font-weight:600;color:var(--text2);">v1.2</span>
+    <span style="display:inline-block;padding:3px 10px;border:1px solid var(--border);border-radius:14px;background:var(--bg2);font-weight:600;color:var(--text2);">v1.3</span>
     <span style="margin:0 8px;">·</span>
-    <span class="cn">最后更新：2026-05-06</span><span class="en">Updated: 2026-05-06</span>
+    <span class="cn">最后更新：2026-06-13</span><span class="en">Updated: 2026-06-13</span>
     <span style="margin:0 8px;">·</span>
-    <span class="cn">已对齐加州 DMV Article 3.7（Express Terms 2026）</span><span class="en">Aligned with California DMV Article 3.7 (Express Terms 2026)</span>
+    <span class="cn">新增交通安全突发事件升级框架 · 对齐 CSAE 起草轨道</span><span class="en">Adds traffic-safety-emergency escalation · aligned with CSAE drafting track</span>
   </p>
   <div class="actions">
     <a href="#incidents" class="btn btn-primary"><span class="cn">浏览数据入口</span><span class="en">Browse Data</span></a>
     <a href="presentation.html" class="btn btn-secondary"><span class="cn">会议演示</span><span class="en">Presentation</span></a>
     <a href="ask.html" class="btn btn-secondary"><span class="cn">✨ Ask ROAM</span><span class="en">✨ Ask ROAM</span></a>
+    <a href="#emergency-framework" class="btn btn-secondary"><span class="cn">v1.3 更新</span><span class="en">v1.3 Update</span></a>
     <a href="https://github.com/AutoZYX-Labs/ROAM" class="btn btn-secondary" target="_blank" rel="noopener"><span class="cn">GitHub</span><span class="en">GitHub</span></a>
     <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/docs/literature-review.md" class="btn btn-secondary cn-link" target="_blank" rel="noopener" style="display:inline-block">文献综述</a>
     <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/docs/literature-review-en.md" class="btn btn-secondary en-link" target="_blank" rel="noopener" style="display:none">Literature Review</a>
@@ -294,24 +295,70 @@ footer a { color:var(--accent); }
         <div class="align"><span class="cn">↳ 支撑GB标准附录D安全档案中的运营证据要求</span><span class="en">↳ Supports Safety Case evidence (GB Standard Appendix D)</span></div>
       </div>
       <div class="pillar">
-        <div class="pillar-num"><span class="cn">模块二 · v1.1</span><span class="en">Module 2 · v1.1</span></div>
+        <div class="pillar-num"><span class="cn">模块二 · v1.3</span><span class="en">Module 2 · v1.3</span></div>
         <h3><span class="cn">场景分类体系</span><span class="en">Scenario Taxonomy</span></h3>
-        <p><span class="cn">6大类、29子场景（含 v1.1 新增 E5 紧急地理围栏 / E6 第一响应人 Override 系统），含严重度 S0–S4 和紧急度 U0–U3 分级，对齐 ISO 34502 场景分层方法</span><span class="en">6 categories, 29 sub-scenarios (incl. v1.1-new E5 emergency geofencing / E6 first-responder override), with severity S0–S4 and urgency U0–U3 scales, aligned with ISO 34502</span></p>
+        <p><span class="cn">6大类、29子场景（含 E5 紧急地理围栏 / E6 第一响应人 Override 系统），并新增横跨各类场景的交通安全突发事件升级判定门</span><span class="en">6 categories, 29 sub-scenarios (incl. E5 emergency geofencing / E6 first-responder override), now with a cross-cutting traffic-safety-emergency upgrade gate</span></p>
         <div class="align"><span class="cn">↳ 对齐 GB 标准表 D.1 + DMV § 227.42(b)(3)(F-I)</span><span class="en">↳ Aligned with GB Table D.1 + DMV § 227.42(b)(3)(F-I)</span></div>
       </div>
       <div class="pillar">
-        <div class="pillar-num"><span class="cn">模块三 · v1.2</span><span class="en">Module 3 · v1.2</span></div>
+        <div class="pillar-num"><span class="cn">模块三 · v1.3</span><span class="en">Module 3 · v1.3</span></div>
         <h3><span class="cn">参考架构</span><span class="en">Reference Architecture</span></h3>
-        <p><span class="cn">三层决策模型 + 责任矩阵 v1.2（10 模式 × 3 层 × 7 维度，含 v1.2 新增"监管反馈维度"）+ FRIP 模板（紧急响应人员交互计划）</span><span class="en">Three-layer decision model + Responsibility matrix v1.2 (10 modes × 3 layers × 7 dimensions, v1.2 adds "regulatory feedback") + FRIP template (First Responder Interaction Plan)</span></p>
+        <p><span class="cn">三层决策模型 + 责任矩阵 v1.3（新增突发事件升级责任）+ FRIP 模板，覆盖普通异常闭环和交通安全突发事件升级处置</span><span class="en">Three-layer decision model + Responsibility matrix v1.3 (adds emergency-upgrade responsibility) + FRIP template for ordinary anomaly closure and traffic-safety-emergency escalation</span></p>
         <div class="align"><span class="cn">↳ 对齐 GB 附录 C.2 + DMV § 227.42(i) / § 227.46</span><span class="en">↳ Aligned with GB Appendix C.2 + DMV § 227.42(i) / § 227.46</span></div>
       </div>
       <div class="pillar">
-        <div class="pillar-num"><span class="cn">模块四 · v1.2</span><span class="en">Module 4 · v1.2</span></div>
+        <div class="pillar-num"><span class="cn">模块四 · v1.3</span><span class="en">Module 4 · v1.3</span></div>
         <h3><span class="cn">评价基准</span><span class="en">Evaluation Benchmarks</span></h3>
-        <p><span class="cn">16 项 KPI：8 项基线（MTTR、AI 处置率等）+ v1.1 新增 5 项法规对齐（KPI 9-13，含 30s 紧急响应阈值）+ v1.2 新增 3 项监管反馈（KPI 14-16，含限制合规时限、解除周期、复发率）</span><span class="en">16 KPIs: 8 baseline (MTTR, AI resolution rate, etc.) + v1.1 5 regulator-aligned (KPIs 9-13, incl. 30s emergency response threshold) + v1.2 3 regulatory feedback (KPIs 14-16: restriction compliance time, lift cycle, recurrence rate)</span></p>
+        <p><span class="cn">基线 KPI + 法规对齐 KPI + 监管反馈 KPI，并新增突发事件升级处置指标组：识别准确率、升级及时率、外部协同、数据保全、专项复盘和整改关闭</span><span class="en">Baseline KPIs + regulator-aligned KPIs + regulatory-feedback KPIs, with a new emergency-escalation group: identification, upgrade timeliness, external coordination, data preservation, special review and corrective-action closure</span></p>
         <div class="align"><span class="cn">↳ 残余风险接受准则 &lt;10⁻⁴/h + DMV § 227.46 量化对齐</span><span class="en">↳ Residual risk &lt;10⁻⁴/h + DMV § 227.46 quantitative alignment</span></div>
       </div>
     </div>
+  </section>
+
+  <!-- Emergency Framework v1.3 -->
+  <section id="emergency-framework">
+    <h2 class="sec-title"><span class="cn">异常事件与交通安全突发事件</span><span class="en">Operational Anomaly vs Traffic Safety Emergency</span></h2>
+    <p class="sec-sub"><span class="cn">v1.3 吸收 CSAE 起草工作中的公开框架口径：异常事件是总概念，突发事件是高影响、高紧急度或强外部协同的子集</span><span class="en">v1.3 absorbs the public CSAE drafting direction: anomaly event is the umbrella concept; traffic safety emergency is the high-impact, high-urgency or strong external-coordination subset</span></p>
+
+    <div class="alert" style="border-color:#a0c8d8;background:#eff7fa;">
+      <strong style="color:#1e4a5c;"><span class="cn">为什么这一步重要</span><span class="en">Why this matters</span></strong>
+      <p style="color:#163a4a;"><span class="cn">过去行业容易把“异常事件”“事故”“应急预案”“安全事件上报”混在一起。ROAM v1.3 把治理层级拆清楚：多数异常只需要运营闭环、记录留痕和复盘改进；一旦达到交通安全突发事件条件，就必须升级到更严格的指挥、外部协同、数据保全、FRIP、专项复盘和整改验证。</span><span class="en">The industry often mixes anomaly events, crashes, emergency plans and safety-data reporting. ROAM v1.3 separates the governance levels: most anomalies need operational closure, evidence and review; once traffic-safety-emergency conditions are met, the event must move into stricter command, external coordination, data preservation, FRIP, special review and corrective-action verification.</span></p>
+    </div>
+
+    <div class="pillars" style="grid-template-columns:1fr 1fr 1fr;margin-top:24px;">
+      <div class="pillar" style="border-top:4px solid var(--green);">
+        <div class="pillar-num"><span class="cn">概念关系</span><span class="en">Concept</span></div>
+        <h3><span class="cn">异常事件包含突发事件</span><span class="en">Anomaly Includes Emergency</span></h3>
+        <p><span class="cn">运营管理异常事件覆盖一般运营偏差、系统降级、远程协助、服务中断和需要外部协同处置的交通安全突发事件。并非所有异常都是突发事件，但所有突发事件都必须进入异常事件证据链。</span><span class="en">Operations management anomaly events cover routine deviations, degradation, remote assistance, service interruption and traffic safety emergencies requiring external coordination. Not every anomaly is an emergency, but every emergency remains inside the anomaly evidence chain.</span></p>
+      </div>
+      <div class="pillar" style="border-top:4px solid var(--amber);">
+        <div class="pillar-num"><span class="cn">升级判定</span><span class="en">Upgrade Gate</span></div>
+        <h3><span class="cn">何时进入更高级处置</span><span class="en">When to Escalate</span></h3>
+        <p><span class="cn">S3/S4、U3、第一响应者参与、道路阻断、乘客救助、火灾热失控、批量异常、地方平台或监管要求升级，均应触发交通安全突发事件判定。</span><span class="en">S3/S4, U3, first-responder participation, road blockage, passenger rescue, fire or thermal runaway, fleet-level anomaly, or regulator/local-platform request should trigger traffic-safety-emergency review.</span></p>
+      </div>
+      <div class="pillar" style="border-top:4px solid var(--red);">
+        <div class="pillar-num"><span class="cn">处置要求</span><span class="en">Response</span></div>
+        <h3><span class="cn">更严格但不越界</span><span class="en">Stricter, Not Broader</span></h3>
+        <p><span class="cn">突发事件处置强调升级指挥、外部协同、数据保全、现场处置、公众沟通和专项整改，但不替代交警执法、事故责任认定、车辆型式认证或数据上报规则。</span><span class="en">Emergency handling emphasizes command escalation, external coordination, data preservation, site handling, public communication and corrective actions, without replacing law enforcement, liability determination, type approval or data-reporting rules.</span></p>
+      </div>
+    </div>
+
+    <div class="tbl-wrap" style="margin-top:24px;">
+      <table>
+        <thead><tr><th><span class="cn">升级触发因素</span><span class="en">Upgrade trigger</span></th><th><span class="cn">典型例子</span><span class="en">Typical examples</span></th><th><span class="cn">ROAM 响应</span><span class="en">ROAM response</span></th></tr></thead>
+        <tbody>
+          <tr><td><span class="cn">道路交通影响</span><span class="en">Road traffic impact</span></td><td><span class="cn">路中停滞、车道长期占用、二次事故风险</span><span class="en">Mid-road freeze, long lane occupation, secondary-crash risk</span></td><td><span class="cn">升级链路 + 交通协同 + 记录留痕</span><span class="en">Escalation chain + traffic coordination + evidence logging</span></td></tr>
+          <tr><td><span class="cn">乘客或公众安全</span><span class="en">Passenger or public safety</span></td><td><span class="cn">乘客滞留、突发疾病、儿童或行动不便乘客救助</span><span class="en">Passenger trapped, medical emergency, child or mobility-impaired passenger rescue</span></td><td><span class="cn">FRIP + 客服/ROC/现场救援联动</span><span class="en">FRIP + customer support / ROC / field rescue coordination</span></td></tr>
+          <tr><td><span class="cn">能源和火灾风险</span><span class="en">Energy and fire risk</span></td><td><span class="cn">冒烟、起火、热失控、高压系统风险</span><span class="en">Smoke, fire, thermal runaway, high-voltage risk</span></td><td><span class="cn">消防协同 + 车型救援卡 + 数据保全</span><span class="en">Fire-rescue coordination + rescue card + data preservation</span></td></tr>
+          <tr><td><span class="cn">批量或区域异常</span><span class="en">Fleet or regional anomaly</span></td><td><span class="cn">多车停驶、区域服务暂停、平台故障</span><span class="en">Multi-vehicle stop, regional service pause, platform outage</span></td><td><span class="cn">车队级指挥 + 区域恢复 + 公众沟通</span><span class="en">Fleet command + regional recovery + public communication</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:16px;color:var(--text3);font-size:0.95rem;">
+      <span class="cn">公开框架说明：<a href="operational-anomaly-emergency-framework.md">operational-anomaly-emergency-framework.md</a> · 责任矩阵：<a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/architecture/responsibility-matrix.md">responsibility-matrix.md</a> · FRIP 模板：<a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/architecture/first-responder-interaction-plan-template.md">first-responder-interaction-plan-template.md</a></span>
+      <span class="en">Public framework note: <a href="operational-anomaly-emergency-framework.md">operational-anomaly-emergency-framework.md</a> · Responsibility matrix: <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/architecture/responsibility-matrix.md">responsibility-matrix.md</a> · FRIP template: <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/architecture/first-responder-interaction-plan-template.md">first-responder-interaction-plan-template.md</a></span>
+    </p>
   </section>
 
   <section>
@@ -502,11 +549,11 @@ footer a { color:var(--accent); }
   <!-- California DMV Article 3.7 (v1.2) -->
   <section id="dmv-article-37">
     <h2 class="sec-title"><span class="cn">加州 DMV Article 3.7：远程运营首部专门法规</span><span class="en">California DMV Article 3.7: First Dedicated Regulation for AV Remote Operations</span></h2>
-    <p class="sec-sub"><span class="cn">2026 年 Express Terms 修订版与 ROAM 框架在术语、岗位分工、量化阈值、紧急响应等四个维度全方位对齐</span><span class="en">2026 Express Terms aligned with ROAM v1.2 across terminology, role separation, quantitative thresholds, and emergency response</span></p>
+    <p class="sec-sub"><span class="cn">2026 年 Express Terms 修订版与 ROAM 框架在术语、岗位分工、量化阈值、紧急响应等四个维度全方位对齐</span><span class="en">2026 Express Terms aligned with ROAM since v1.2 across terminology, role separation, quantitative thresholds, and emergency response</span></p>
 
     <div class="alert" style="border-color:#a0c8d8; background:#eff7fa;">
       <strong style="color:#1e4a5c;"><span class="cn">从 Markey 国会调查到加州监管落地</span><span class="en">From Markey Investigation to California Regulatory Action</span></strong>
-      <p style="color:#163a4a;"><span class="cn">Markey 报告揭示了行业的透明度缺失，加州 DMV 紧随其后给出了监管答案。Article 3.7（Express Terms 2026）是<strong>全球首部以"远程运营"为专门对象的法规</strong>，正式确立 "Remote Operations Support" 为法定术语，明确区分 Remote Driver（实时控制 / 9 项功能要求）与 Remote Assistant（提供信息建议 / 7 项功能要求），并规定 14 项强制安全档案要素与多项可量化阈值。ROAM v1.2 已系统对齐这一法规体系。</span><span class="en">Where Markey exposed the industry's transparency gap, California DMV provided the regulatory answer. Article 3.7 (Express Terms 2026) is the <strong>first regulation worldwide</strong> dedicated to AV remote operations: it codifies "Remote Operations Support" as a legal term, distinguishes Remote Driver (real-time control / 9 functional requirements) from Remote Assistant (information & advisory / 7 functional requirements), and prescribes 14 mandatory safety case elements plus quantitative thresholds. ROAM v1.2 has been systematically aligned with this regulatory framework.</span></p>
+      <p style="color:#163a4a;"><span class="cn">Markey 报告揭示了行业的透明度缺失，加州 DMV 紧随其后给出了监管答案。Article 3.7（Express Terms 2026）是<strong>全球首部以"远程运营"为专门对象的法规</strong>，正式确立 "Remote Operations Support" 为法定术语，明确区分 Remote Driver（实时控制 / 9 项功能要求）与 Remote Assistant（提供信息建议 / 7 项功能要求），并规定 14 项强制安全档案要素与多项可量化阈值。ROAM 自 v1.2 起已系统对齐这一法规体系，v1.3 在此基础上补充中国语境下的突发事件升级框架。</span><span class="en">Where Markey exposed the industry's transparency gap, California DMV provided the regulatory answer. Article 3.7 (Express Terms 2026) is the <strong>first regulation worldwide</strong> dedicated to AV remote operations: it codifies "Remote Operations Support" as a legal term, distinguishes Remote Driver (real-time control / 9 functional requirements) from Remote Assistant (information & advisory / 7 functional requirements), and prescribes 14 mandatory safety case elements plus quantitative thresholds. ROAM has been aligned with this regulatory framework since v1.2; v1.3 adds the China-context emergency-upgrade framework.</span></p>
     </div>
 
     <div class="pillars" style="grid-template-columns:repeat(2,1fr);margin-top:24px;">
@@ -534,13 +581,13 @@ footer a { color:var(--accent); }
       <div class="pillar" style="border-top:4px solid #1e4a5c;">
         <div class="pillar-num"><span class="cn">对齐四</span><span class="en">Alignment 4</span></div>
         <h3><span class="cn">§ 227.42(i) 第一响应人交互计划 ↔ FRIP 模板（v1.2 新增）</span><span class="en">§ 227.42(i) First Responder Interaction Plan ↔ FRIP Template (v1.2 New)</span></h3>
-        <p><span class="cn">DMV § 227.42(i) 强制要求 driverless 申请方提交涵盖 15 项法定要素的 First Responder Interaction Plan（含 ODD、紧急联系电话、安全接近 / Override 程序、车辆移动协调、灭火、拖车等）。ROAM v1.2 新增完整模板，含 15 节主体 + 重型车扩展节，每节含法规依据、内容模板和 ROAM 框架对应关系。</span><span class="en">DMV § 227.42(i) requires driverless applicants to submit a First Responder Interaction Plan covering 15 mandatory elements (ODD, emergency phone, safe approach/override, vehicle movement coordination, fire, towing, etc.). ROAM v1.2 introduces a complete template with 15 main sections plus a heavy-duty extension, each section providing legal citation, content template, and ROAM framework cross-reference.</span></p>
+        <p><span class="cn">DMV § 227.42(i) 强制要求 driverless 申请方提交涵盖 15 项法定要素的 First Responder Interaction Plan（含 ODD、紧急联系电话、安全接近 / Override 程序、车辆移动协调、灭火、拖车等）。ROAM 自 v1.2 起提供完整模板，v1.3 进一步把 FRIP 定位为交通安全突发事件和外部协同事件的一线响应接口。</span><span class="en">DMV § 227.42(i) requires driverless applicants to submit a First Responder Interaction Plan covering 15 mandatory elements (ODD, emergency phone, safe approach/override, vehicle movement coordination, fire, towing, etc.). ROAM has provided a full FRIP template since v1.2; v1.3 further positions FRIP as the first-responder-facing interface for traffic safety emergencies and external-coordination events.</span></p>
         <div class="align"><span class="cn">↳ <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/architecture/first-responder-interaction-plan-template.md">FRIP 模板</a></span><span class="en">↳ <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/architecture/first-responder-interaction-plan-template.md">FRIP Template</a></span></div>
       </div>
     </div>
 
     <div style="margin-top:20px; padding:16px 20px; background:var(--bg2); border-radius:6px; border-left:3px solid #1e4a5c;">
-      <p style="font-size:1.05rem; color:var(--text2); line-height:1.7;"><span class="cn"><strong>对中国标准化工作的启示：</strong>加州 DMV 的术语体系与量化阈值如果率先成为事实标准，中国标准化工作可能面临"被加州术语裹挟"的风险。当前更现实的路径是先通过 CSAE / CAICV 团标预研形成中国本土共识：在术语层面参照但不照搬 DMV 二分法，结合《自动驾驶汽车运输安全服务指南》和 YD/T 4778-4783 形成本地化定义；在量化阈值上对齐 30s/2min 等基线，但根据中国实际场景（如 1:3 安全员比例）适度调整。</span><span class="en"><strong>Implications for Chinese standardization:</strong> If California DMV's terminology and quantitative thresholds become the de facto global standard, Chinese standards may risk being "captured by California terminology". The more practical near-term path is to build Chinese-context consensus through the CSAE / CAICV group-standard pre-research: reference but do not copy DMV's binary classification, combine the Chinese MoT "AV Transport Safety Service Guidelines" and YD/T 4778-4783 to form localized definitions, and align on 30s/2min baselines while adjusting for China-specific contexts such as the 1:3 safety-operator ratio.</span></p>
+      <p style="font-size:1.05rem; color:var(--text2); line-height:1.7;"><span class="cn"><strong>对中国标准化工作的启示：</strong>加州 DMV 的术语体系与量化阈值如果率先成为事实标准，中国标准化工作可能面临"被加州术语裹挟"的风险。当前更现实的路径是通过 CSAE 团标起草轨道形成中国本土共识：在术语层面参照但不照搬 DMV 二分法，结合《自动驾驶汽车运输安全服务指南》和 YD/T 4778-4783 形成本地化定义；在量化阈值上对齐 30s/2min 等基线，但根据中国实际场景（如 1:3 安全员比例）适度调整。</span><span class="en"><strong>Implications for Chinese standardization:</strong> If California DMV's terminology and quantitative thresholds become the de facto global standard, Chinese standards may risk being "captured by California terminology". The more practical near-term path is to build Chinese-context consensus through the CSAE group-standard drafting track: reference but do not copy DMV's binary classification, combine the Chinese MoT "AV Transport Safety Service Guidelines" and YD/T 4778-4783 to form localized definitions, and align on 30s/2min baselines while adjusting for China-specific contexts such as the 1:3 safety-operator ratio.</span></p>
     </div>
 
     <p style="margin-top:16px;color:var(--text3);font-size:0.95rem;">
@@ -554,7 +601,7 @@ footer a { color:var(--accent); }
     <h2 class="sec-title"><span class="cn">六大技术支柱</span><span class="en">Six Technology Pillars</span></h2>
     <p class="sec-sub"><span class="cn">L4 远程运营需要多个技术领域深度融合，单一技术无法独立支撑</span><span class="en">L4 remote operations require deep integration of multiple technology domains — no single technology can stand alone</span></p>
 
-    <div class="pillars" style="grid-template-columns:repeat(3,1fr);">
+    <div class="pillars" style="grid-template-columns:1fr 1fr 1fr;">
       <div class="pillar">
         <div class="pillar-num"><span class="cn">支柱 1</span><span class="en">Pillar 1</span></div>
         <h3><span class="cn">自动驾驶感知与决策</span><span class="en">Perception & Decision</span></h3>
@@ -628,20 +675,21 @@ footer a { color:var(--accent); }
       <div style="background:var(--card);border:1px solid var(--border);border-radius:6px;padding:20px;">
         <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:12px;color:var(--green);"><span class="cn">当前标准化路线</span><span class="en">Current Standards Path</span></h3>
         <ol style="font-size:1rem;color:var(--text2);line-height:1.9;padding-left:20px;">
-          <li><strong><span class="cn">CSAE / CAICV 团标预研</span><span class="en">CSAE / CAICV pre-research</span></strong><br><span style="color:var(--text3);font-size:0.9rem;"><span class="cn">2026-05-13 已启动，2026-05-25 前征集起草单位和专家</span><span class="en">Launched on 2026-05-13; drafting units and experts invited before 2026-05-25</span></span></li>
-          <li><strong><span class="cn">团标起草与发布</span><span class="en">Group standard drafting</span></strong><br><span style="color:var(--text3);font-size:0.9rem;"><span class="cn">计划 2026-06 立项答辩，2026-07~09 起草，2026-12 发布</span><span class="en">Target: proposal defense in 2026-06, drafting in 2026-07~09, publication in 2026-12</span></span></li>
+          <li><strong><span class="cn">CSAE 团标起草轨道</span><span class="en">CSAE drafting track</span></strong><br><span style="color:var(--text3);font-size:0.9rem;"><span class="cn">2026-05-13 已启动预研征集，CAICV 为提出单位，起草单位和专家持续扩展</span><span class="en">Pre-research call launched on 2026-05-13; proposed by CAICV, with drafting units and experts continuing to expand</span></span></li>
+          <li><strong><span class="cn">标准初稿 v0.96</span><span class="en">Working draft v0.96</span></strong><br><span style="color:var(--text3);font-size:0.9rem;"><span class="cn">2026-06 已形成工作组讨论稿；未作为公开标准发布</span><span class="en">Prepared in 2026-06 for drafting-group discussion; not a published standard</span></span></li>
+          <li><strong><span class="cn">团标起草与发布</span><span class="en">Group standard drafting</span></strong><br><span style="color:var(--text3);font-size:0.9rem;"><span class="cn">计划 2026-06 立项审查，2026-07~09 起草，2026-12 发布</span><span class="en">Target: CSAE review in 2026-06, drafting in 2026-07~09, publication in 2026-12</span></span></li>
           <li><strong><span class="cn">后续 GB / ITS / 国际转化</span><span class="en">GB / ITS / international transfer</span></strong><br><span style="color:var(--text3);font-size:0.9rem;"><span class="cn">基于团标共识和 ROAM 开源证据，择优推进</span><span class="en">To be selected based on group-standard consensus and ROAM evidence</span></span></li>
         </ol>
       </div>
     </div>
 
     <div style="margin-top:20px; padding:16px 20px; background:var(--bg2); border-radius:6px; border-left:3px solid var(--accent);">
-      <p style="font-size:1.05rem; color:var(--text2); line-height:1.7;"><strong><span class="cn">战略节奏：</span><span class="en">Strategic Pace: </span></strong><span class="cn">ROAM 继续作为开源研究框架沉淀公开事件、场景分类、责任矩阵和 KPI；CSAE 团标作为可标准化子集推进中国本土共识。当前标准题名为《智能网联汽车 高度自动驾驶车辆运营管理异常事件处置规范》，仍处于预研和起草组征集阶段，尚非正式发布标准。</span><span class="en">ROAM continues as the open-source research framework for public incidents, scenario taxonomy, responsibility matrices, and KPIs; the CSAE group standard is the standardizable Chinese-context subset. The current proposed title is "Specification for Operations Anomaly Event Management of High-Automation Vehicles"; it remains in pre-research and drafting-group recruitment, not yet a published standard.</span></p>
+      <p style="font-size:1.05rem; color:var(--text2); line-height:1.7;"><strong><span class="cn">战略节奏：</span><span class="en">Strategic Pace: </span></strong><span class="cn">ROAM 继续作为开源研究框架沉淀公开事件、场景分类、责任矩阵、KPI 和突发事件升级框架；CSAE 团标作为可标准化子集推进中国本土共识。当前标准题名为《智能网联汽车 高度自动驾驶车辆运营管理异常事件处置规范》，已形成内部 v0.96 工作稿用于讨论，但尚非正式发布标准。</span><span class="en">ROAM continues as the open-source research framework for public incidents, scenario taxonomy, responsibility matrices, KPIs and emergency escalation; the CSAE group standard is the standardizable Chinese-context subset. The proposed title is "Specification for Operations Anomaly Event Management of High-Automation Vehicles"; an internal v0.96 working draft is ready for discussion, but it is not a published standard.</span></p>
     </div>
 
     <p style="margin-top:16px;color:var(--text3);font-size:0.95rem;">
-      <span class="cn">完整战略文档：<a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/standards/landscape.md">landscape.md</a>（标准扫描） · <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/standards/proposal-roadmap.md">proposal-roadmap.md</a>（CSAE / CAICV 预研路线）</span>
-      <span class="en">Full strategy: <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/standards/landscape.md">landscape.md</a> (survey) · <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/standards/proposal-roadmap.md">proposal-roadmap.md</a> (CSAE / CAICV pre-research path)</span>
+      <span class="cn">完整战略文档：<a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/standards/landscape.md">landscape.md</a>（标准扫描） · <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/standards/proposal-roadmap.md">proposal-roadmap.md</a>（CSAE 团标起草路线）</span>
+      <span class="en">Full strategy: <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/standards/landscape.md">landscape.md</a> (survey) · <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/standards/proposal-roadmap.md">proposal-roadmap.md</a> (CSAE group-standard drafting path)</span>
     </p>
   </section>
 
@@ -652,7 +700,7 @@ footer a { color:var(--accent); }
 
     <div class="alert" style="border-color:#e8d5a0;background:#fdf8ec;">
       <strong style="color:#7a5c10;"><span class="cn">立项进展</span><span class="en">Standardization Status</span></strong>
-      <p style="color:#5c4a12;"><span class="cn">2026 年 5 月，CSAE 团标《智能网联汽车 高度自动驾驶车辆运营管理异常事件处置规范》正式启动预研。由中国智能网联汽车产业创新联盟（CAICV）提出，吉林大学、卓驭科技、一汽集团、国家智能网联汽车创新中心（CICV）联合牵头。<strong>ROAM 与该团标不等价</strong>：ROAM 是开源研究框架，持续国际化演化；CSAE 团标是中国本土的、由起草组共识决定的标准化产出。</span><span class="en">In May 2026, the CSAE Group Standard <em>Specification for Operations Anomaly Event Management of High-Automation Vehicles</em> entered pre-research, jointly led by Jilin University, ZYT, FAW Group, and the China Intelligent and Connected Vehicles Industry Innovation Center (CICV), proposed by CAICV. <strong>ROAM and the CSAE Group Standard are not equivalent</strong>: ROAM is an open-source research framework with international scope; the CSAE Group Standard is the Chinese-context, drafting-group-consensus standardization output.</span></p>
+      <p style="color:#5c4a12;"><span class="cn">2026 年 5 月，CSAE 团标《智能网联汽车 高度自动驾驶车辆运营管理异常事件处置规范》正式启动预研。由中国智能网联汽车产业创新联盟（CAICV）提出，吉林大学、卓驭科技、一汽集团、国家智能网联汽车创新中心（CICV）联合牵头。2026 年 6 月，内部标准初稿已迭代至 v0.96，用于起草工作组讨论和 CSAE 流程沟通。<strong>ROAM 与该团标不等价</strong>：ROAM 是开源研究框架，持续国际化演化；CSAE 团标是中国本土的、由起草组共识决定的标准化产出。</span><span class="en">In May 2026, the CSAE Group Standard <em>Specification for Operations Anomaly Event Management of High-Automation Vehicles</em> entered pre-research, jointly led by Jilin University, ZYT, FAW Group, and the China Intelligent and Connected Vehicles Industry Innovation Center (CICV), proposed by CAICV. By June 2026, an internal v0.96 working draft had been prepared for drafting-group discussion and CSAE process communication. <strong>ROAM and the CSAE Group Standard are not equivalent</strong>: ROAM is an open-source research framework with international scope; the CSAE Group Standard is the Chinese-context, drafting-group-consensus standardization output.</span></p>
     </div>
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px;">
@@ -674,6 +722,7 @@ footer a { color:var(--accent); }
           <li><span class="cn">决策架构层级（层数、定义、占比、是否分层）</span><span class="en">Decision architecture levels (count, definition, ratio, structure)</span></li>
           <li><span class="cn">异常事件场景分类（分类粒度由起草组细化）</span><span class="en">Anomaly scenario taxonomy (granularity by drafting group)</span></li>
           <li><span class="cn">责任划分维度（维度数量与定义）</span><span class="en">Responsibility-matrix dimensions (count and definitions)</span></li>
+          <li><span class="cn">交通安全突发事件升级条件与处置要求</span><span class="en">Traffic-safety-emergency upgrade conditions and response requirements</span></li>
           <li><span class="cn">KPI 具体阈值（需中国运营数据校准）</span><span class="en">KPI thresholds (calibrated against Chinese operational data)</span></li>
           <li><span class="cn">责任矩阵法律维度（需中国判例与公安部道研主导）</span><span class="en">Legal aspects of responsibility matrix (Chinese case law)</span></li>
           <li><span class="cn">FRIP 模板本土化、试验方法细则</span><span class="en">FRIP localization and test method details</span></li>
@@ -682,7 +731,7 @@ footer a { color:var(--accent); }
     </div>
 
     <div style="margin-top:20px; padding:16px 20px; background:var(--bg2); border-radius:6px; border-left:3px solid var(--accent);">
-      <p style="font-size:1.05rem; color:var(--text2); line-height:1.7;"><strong><span class="cn">材料状态披露：</span><span class="en">Material Status Disclosure: </span></strong><span class="cn">ROAM 框架 v1.2 是借助 AI 工具进行结构化整理的初步研究框架，基于公开的国内外标准、法规、行业报告以及作者团队的实践经验。ROAM 中的具体设计（10 种运营模式、三层决策架构、70/25/5 占比、29 子场景、7 维责任矩阵等）均为当前阶段的备选方案，<strong>后续可能由起草组进行调整、删减或重新定义</strong>。本框架不替代真实运营数据的实证校准、中国法律责任划分的判例支撑、跨企业协作中的真实摩擦点识别，以及监管侧的政治可行性评估。在 CSAE 团标起草过程中，所有条款的最终采纳由起草组专家审议确定。</span><span class="en">The ROAM v1.2 framework is an initial research framework structured with AI tools, based on publicly available standards, regulations, industry reports, and the author team's practical experience. ROAM's specific designs (10 operating modes, three-layer decision architecture, 70/25/5 split, 29 sub-scenarios, 7-dimension responsibility matrix) are current-stage proposals that <strong>may be adjusted, reduced, or redefined by the drafting group</strong>. This framework does not replace empirical calibration with real operational data, case-law support for Chinese legal liability allocation, identification of real friction points in cross-enterprise collaboration, or political feasibility assessment from the regulatory side. In the CSAE drafting process, the final adoption of all clauses is determined by expert review of the drafting group.</span></p>
+      <p style="font-size:1.05rem; color:var(--text2); line-height:1.7;"><strong><span class="cn">材料状态披露：</span><span class="en">Material Status Disclosure: </span></strong><span class="cn">ROAM 框架 v1.3 是基于公开资料和 CSAE 起草工作中可公开吸收的框架口径整理的研究框架，不发布未定稿条款。ROAM 中的具体设计（10 种运营模式、三层决策架构、70/25/5 占比、29 子场景、责任矩阵、突发事件升级触发条件和 KPI 组等）均为当前阶段的备选方案，<strong>后续可能由起草组进行调整、删减或重新定义</strong>。本框架不替代真实运营数据的实证校准、中国法律责任划分的判例支撑、跨企业协作中的真实摩擦点识别，以及监管侧的政治可行性评估。在 CSAE 团标起草过程中，所有条款的最终采纳由起草组专家审议确定。</span><span class="en">The ROAM v1.3 framework is a research framework based on public materials and public-facing concepts derived from CSAE drafting work; it does not publish unpublished clauses. ROAM's specific designs (10 operating modes, three-layer decision architecture, 70/25/5 split, 29 sub-scenarios, responsibility matrix, emergency-upgrade triggers and KPI groups) are current-stage proposals that <strong>may be adjusted, reduced, or redefined by the drafting group</strong>. This framework does not replace empirical calibration with real operational data, case-law support for Chinese legal liability allocation, identification of real friction points in cross-enterprise collaboration, or political feasibility assessment from the regulatory side. In the CSAE drafting process, the final adoption of all clauses is determined by expert review of the drafting group.</span></p>
     </div>
 
     <p style="margin-top:16px;color:var(--text3);font-size:0.95rem;">
@@ -819,11 +868,12 @@ footer a { color:var(--accent); }
 
   <section>
     <h2 class="sec-title"><span class="cn">对齐标准</span><span class="en">Standards Alignment</span></h2>
-    <p class="sec-sub"><span class="cn">四个模块与 17 项国内外标准 / 法规 / 调查报告形成系统性对齐（v1.2 新增加州 DMV、YD/T 4778-4783、Markey RAOS 三组）</span><span class="en">Four modules systematically aligned with 17 standards / regulations / reports (v1.2 adds California DMV, YD/T 4778-4783, Markey RAOS)</span></p>
+    <p class="sec-sub"><span class="cn">四个模块与 17 项国内外公开标准 / 法规 / 调查报告形成系统性对齐，并在 v1.3 补充 CSAE 起草轨道下的突发事件升级公开框架</span><span class="en">Four modules align with 17 public standards, regulations and reports; v1.3 adds the public emergency-upgrade framework for the CSAE drafting track</span></p>
     <div class="tbl-wrap">
     <table>
       <thead><tr><th><span class="cn">标准 / 法规</span><span class="en">Standard / Regulation</span></th><th><span class="cn">与 ROAM 的关联</span><span class="en">Relevance</span></th></tr></thead>
       <tbody>
+        <tr style="background:#eff7fa;"><td><strong><span class="cn">CSAE 团标起草轨道（2026-06）</span><span class="en">CSAE drafting track (2026-06)</span></strong> <span class="tag">v1.3</span></td><td><span class="cn">非已发布标准；ROAM 仅公开吸收可复用框架口径：异常事件包含交通安全突发事件，突发事件触发更严格的升级指挥、外部协同、数据保全、FRIP、专项复盘和整改验证</span><span class="en">Not a published standard; ROAM only exposes the reusable framework direction: anomaly events include traffic safety emergencies, which trigger stricter command escalation, external coordination, data preservation, FRIP, special review and corrective-action verification</span></td></tr>
         <tr style="background:#fdf8ec;"><td><strong><span class="cn">加州 DMV Article 3.7（Express Terms 2026）</span><span class="en">California DMV Article 3.7 (Express Terms 2026)</span></strong> <span class="tag">v1.2</span></td><td><span class="cn">全球首部远程运营专门法规：14 项安全档案 + Remote Driver/Assistant 二分 + § 227.46 分级限制 + § 227.42(i) FRIP 模板</span><span class="en">First dedicated remote-ops regulation: 14 safety case elements + Remote Driver/Assistant dichotomy + § 227.46 graduated restrictions + § 227.42(i) FRIP template</span></td></tr>
         <tr style="background:#fdf8ec;"><td><strong>YD/T 4778-4783</strong> <span class="tag">v1.2</span></td><td><span class="cn">中国 5G 远程遥控驾驶信息交互系列行业标准（6 部，覆盖系统架构、数据采集、信息编码、网络协议、安全要求、测试方法）</span><span class="en">CN 5G tele-driving information interaction industry standards (6 parts: system architecture, data acquisition, info encoding, network protocol, security, test methods)</span></td></tr>
         <tr style="background:#fdf0f0;"><td><strong><span class="cn">美国国会 Markey RAOS 报告（2026-03）</span><span class="en">US Congress Markey RAOS Report (2026-03)</span></strong> <span class="tag">v1.1</span></td><td><span class="cn">首份针对 RAO 的国会调查，七家头部 AV 公司均拒绝披露干预频率，从立法层面印证 ROAM 透明度命题</span><span class="en">First Congressional investigation into RAOs; all seven major AV companies refused to disclose intervention frequency, validating ROAM's transparency thesis</span></td></tr>
@@ -837,8 +887,8 @@ footer a { color:var(--accent); }
     </table>
     </div>
     <p style="margin-top:12px;color:var(--text3);font-size:0.82rem;">
-      <span class="cn">完整 17 项映射见 <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/docs/related-standards.md">related-standards.md</a> · 加州 DMV 全文映射：<a href="california-article-3-7-mapping.md">california-article-3-7-mapping.md</a> · 文献综述：<a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/docs/literature-review.md">中文</a> / <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/docs/literature-review-en.md">English</a></span>
-      <span class="en">Full 17-item mapping: <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/docs/related-standards.md">related-standards.md</a> · DMV full mapping: <a href="california-article-3-7-mapping.md">california-article-3-7-mapping.md</a> · Literature review: <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/docs/literature-review-en.md">literature-review.md</a></span>
+      <span class="cn">完整 17 项映射见 <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/docs/related-standards.md">related-standards.md</a> · v1.3 公开框架：<a href="operational-anomaly-emergency-framework.md">operational-anomaly-emergency-framework.md</a> · 加州 DMV 全文映射：<a href="california-article-3-7-mapping.md">california-article-3-7-mapping.md</a> · 文献综述：<a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/docs/literature-review.md">中文</a> / <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/docs/literature-review-en.md">English</a></span>
+      <span class="en">Full 17-item mapping: <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/docs/related-standards.md">related-standards.md</a> · v1.3 public framework: <a href="operational-anomaly-emergency-framework.md">operational-anomaly-emergency-framework.md</a> · DMV full mapping: <a href="california-article-3-7-mapping.md">california-article-3-7-mapping.md</a> · Literature review: <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/docs/literature-review-en.md">literature-review.md</a></span>
     </p>
   </section>
 

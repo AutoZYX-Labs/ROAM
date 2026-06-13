@@ -1,8 +1,8 @@
 # ROAM Scenario Taxonomy v1.1
 
-**Version:** 1.1
-**Last Updated:** 2026-04-27
-**Status:** Updated to align with California DMV Article 3.7 (Express Terms 2026)
+**Version:** 1.3
+**Last Updated:** 2026-06-13
+**Status:** Updated to align with California DMV Article 3.7 (Express Terms 2026) and ROAM public emergency-upgrade framework
 
 ---
 
@@ -14,6 +14,22 @@ The taxonomy is designed to be:
 - **Exhaustive** — covers all known incident types from public reports and operator disclosures
 - **Mutually exclusive at L1** — each incident has one primary category (secondary codes allowed)
 - **Actionable** — each sub-scenario maps to a recommended response layer
+
+### Emergency Upgrade Gate (v1.3)
+
+Traffic safety emergency status is not a seventh scenario category. It is a cross-cutting upgrade gate that can apply to any A-F scenario when the event reaches high impact, high urgency, or strong external-coordination conditions.
+
+Use the scenario code to describe what happened. Use the emergency-upgrade field to describe how it must be governed.
+
+Typical upgrade signals:
+
+- S3/S4 severity or U3 urgency
+- First-responder participation or request
+- Road obstruction, long-duration lane occupation, or secondary-crash risk
+- Passenger trapped, injured, medically distressed, or requiring special rescue
+- Smoke, fire, thermal runaway, high-voltage risk, or special energy-system hazard
+- Fleet-level or regional anomaly with public-order or traffic impact
+- Regulator, local demonstration-zone platform, or traffic-management request
 
 ### Category Index
 

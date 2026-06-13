@@ -2166,7 +2166,7 @@
       '从真实事件到运行阶段 SOTIF 问题',
       '现有标准覆盖了什么、还缺什么',
       'ROAM 的方法论与参考架构',
-      '从案例、数据到标准化预研',
+      '从案例、数据到标准化起草',
       '开源共建与下一步工作'
     ]
 
@@ -2190,7 +2190,7 @@
                   <strong>张玉新</strong>
                   <p>自动驾驶安全联合实验室</p>
                   <p>吉林大学 &amp; 卓驭科技</p>
-                  <span class="date">CICV SOTIF 工作组 · 2026年5月</span>
+                  <span class="date">CICV SOTIF 工作组 · 2026年6月</span>
                 </div>
                 <div class="logos">
                   <img src="${A}ad-safety-joint-lab-logo-transparent.png" alt="自动驾驶安全联合实验室">
@@ -2298,7 +2298,7 @@
             <div class="stat-card"><strong>565</strong><span>DMV 格式记录，可用于结构化导入。</span></div>
             <div class="stat-card red"><strong>19</strong><span>非 DMV 典型事件，用于运营异常案例库。</span></div>
             <div class="stat-card"><strong>10</strong><span>L4 运营模式，覆盖多主体责任窗口。</span></div>
-            <div class="stat-card red"><strong>6×26</strong><span>开源异常分类体系，连接处置与 KPI。</span></div>
+            <div class="stat-card red"><strong>6×29</strong><span>开源异常分类体系，连接处置、突发事件升级与 KPI。</span></div>
           </div>
         </div>`, '第三步正式引入 ROAM：它不是单独多做一个项目，而是把事件、SOTIF 触发条件和运营治理证据串成闭环。'),
       agendaSlide('agenda-standards', 1, '目录', '进入标准缺口部分。'),
@@ -2321,7 +2321,7 @@
           </div>
           <div class="coverage-row red">
             <div class="coverage-label">ROAM 补位</div>
-            <div class="coverage-standards"><span class="std-pill">异常分类</span><span class="std-pill">三层处置</span><span class="std-pill">责任矩阵</span><span class="std-pill">KPI</span><span class="std-pill">FRIP</span></div>
+            <div class="coverage-standards"><span class="std-pill">异常分类</span><span class="std-pill">三层处置</span><span class="std-pill">突发事件升级</span><span class="std-pill">责任矩阵</span><span class="std-pill">KPI</span><span class="std-pill">FRIP</span></div>
             <div class="coverage-gap">回答收到异常后，谁在何时依据什么权限完成恢复、沟通和留痕。</div>
           </div>
         </div>`, '这页建立 ROAM 与现有标准的互补关系。'),
@@ -2355,21 +2355,21 @@
             <p class="source-line">依据：<a href="https://www.nhtsa.gov/laws-regulations/standing-general-order-crash-reporting" target="_blank" rel="noopener">NHTSA Standing General Order on Crash Reporting</a>；<a href="https://www.dmv.ca.gov/portal/vehicle-industry-services/autonomous-vehicles/autonomous-vehicle-collision-reports/" target="_blank" rel="noopener">California DMV Autonomous Vehicle Collision Reports</a>。</p>
           </div>
         </div>`, '合并原第 9 页和第 10 页：保留数据上报边界，同时用监管页面建立“运营处置仍缺位”的立项理由。'),
-      contentSlide('csae', '团体标准预研的最新进展', `
-        <div class="notice-visual" aria-label="CSAE 团体标准预研通知与路线图">
+      contentSlide('csae', 'CSAE 团体标准起草轨道的最新进展', `
+        <div class="notice-visual" aria-label="CSAE 团体标准起草轨道与路线图">
           <div class="notice-sheet">
-            <span class="stamp">已按 CSAE 团体标准流程启动预研</span>
+            <span class="stamp">已进入 CSAE 流程沟通与起草组讨论准备</span>
             <h3>智能网联汽车<br>高度自动驾驶车辆运营管理异常事件处置规范</h3>
             <p>提出方：中国智能网联汽车产业创新联盟。牵头发起：吉林大学、卓驭科技、一汽集团、国家智能网联汽车创新中心等。</p>
-            <p style="color:#b30000;">当前阶段：参研单位与起草专家征集；反馈截止：2026年5月25日。</p>
-            <p class="source-line">来源：CICV 创新中心公众号公开预研通知，2026-05-13；公开层归档见 <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/standards/csae-proposal-2026/05-call-for-participants.md" target="_blank" rel="noopener">ROAM GitHub</a>。当前为预研和征集阶段，尚非正式发布标准。</p>
+            <p style="color:#b30000;">当前阶段：内部标准初稿 v0.96 已形成，用于起草工作组讨论和 CSAE 流程沟通；尚非正式发布标准。</p>
+            <p class="source-line">来源：CICV 创新中心公众号公开预研通知，2026-05-13；公开层归档见 <a href="https://github.com/AutoZYX-Labs/ROAM/blob/main/standards/csae-proposal-2026/05-call-for-participants.md" target="_blank" rel="noopener">ROAM GitHub</a>。公开材料仅吸收可复用框架口径，不发布未定稿条款。</p>
           </div>
           <div class="notice-right">
             <div class="notice-list">
-              <div><strong>标准对象</strong><p>L4 运营模式、异常事件分类、处置架构和验证方法。</p></div>
-              <div><strong>核心问题</strong><p>什么是异常、谁来处置、用什么 KPI 衡量。</p></div>
-              <div><strong>起草机制</strong><p>产学研用共同参与，公开征集起草单位与专家。</p></div>
-              <div><strong>ROAM 角色</strong><p>为预研提供事件库、分类体系、责任矩阵和公开证据。</p></div>
+              <div><strong>标准对象</strong><p>L4 运营模式、异常事件分类、突发事件升级、处置架构和验证方法。</p></div>
+              <div><strong>核心问题</strong><p>什么是异常、何时升级突发事件、谁来处置、用什么 KPI 衡量。</p></div>
+              <div><strong>起草机制</strong><p>产学研用共同参与，起草组共识决定最终条款。</p></div>
+              <div><strong>ROAM 角色</strong><p>提供事件库、分类体系、责任矩阵、FRIP、KPI 和公开证据框架。</p></div>
             </div>
             <div class="notice-lead-logos" aria-label="团体标准牵头发起单位 logo">
               <span>牵头<br>发起单位</span>
@@ -2382,12 +2382,13 @@
             </div>
             <div class="notice-timeline">
               <div class="mile red"><span>2026.05</span><strong>预研征集</strong></div>
+              <div class="mile red"><span>2026.06</span><strong>v0.96 讨论稿</strong></div>
               <div class="mile"><span>2026.07</span><strong>起草启动</strong></div>
               <div class="mile"><span>2026.10</span><strong>征求意见</strong></div>
               <div class="mile"><span>2026.12</span><strong>报批发布</strong></div>
             </div>
           </div>
-        </div>`, '这里使用最新 V3 标准预研征集通知口径，不再使用旧题名。'),
+        </div>`, '这里使用 2026 年 6 月 CSAE 起草轨道口径，不展示未定稿条款。'),
       agendaSlide('agenda-framework', 2, '目录', '进入 ROAM 方法论。'),
       contentSlide('roam-overview', 'ROAM 方法论与证据结构', `
         <div class="method-visual" aria-label="ROAM 官网截图与证据流">
@@ -2401,7 +2402,7 @@
               <div class="chain-row"><b>01</b><div><strong>公开事件输入</strong><span>监管记录、新闻报道、企业披露和研究案例。</span></div></div>
               <div class="chain-row red"><b>02</b><div><strong>结构化事件库</strong><span>来源置信度、场景编码、严重度、紧急度和处置层级。</span></div></div>
               <div class="chain-row"><b>03</b><div><strong>责任矩阵与 KPI</strong><span>把处置过程拆成执行、决策、技术、法律和监管反馈。</span></div></div>
-              <div class="chain-row red"><b>04</b><div><strong>标准与安全论证</strong><span>沉淀为团标预研、桌面推演、案例库和工程审阅包。</span></div></div>
+              <div class="chain-row red"><b>04</b><div><strong>标准与安全论证</strong><span>沉淀为团标起草、桌面推演、案例库和工程审阅包。</span></div></div>
             </div>
             <p class="source-line">图源：<a href="https://roam.autozyx.com/" target="_blank" rel="noopener">ROAM 官方页面截图</a>。</p>
           </div>
@@ -2449,7 +2450,7 @@
               <div>审阅证据</div>
             </div>
             <div class="tax-example"><strong>示例：</strong>A 系统性故障 + C 规划/执行异常 + F 乘客端异常，不应只写成“车辆异常停车”，而应触发车队级恢复、乘客沟通、现场协同和责任留痕。</div>
-            <p class="source-line">分类体系：ROAM v1.2。该页为演示用重绘图，不复用具体新闻截图。</p>
+            <p class="source-line">分类体系：ROAM v1.3。该页为演示用重绘图，不复用具体新闻截图。</p>
           </div>
         </div>`, '异常分类体系应看起来像分类树，而不是六张说明卡。'),
       contentSlide('three-layer', '三层架构是降风险状态机', `
@@ -2498,7 +2499,7 @@
           <div class="resp-thesis">
             <div class="big-number">10 × 3 × 7</div>
             <p>10 种运营模式、3 个处置层级、7 个责任维度。关键不是“谁负责一切”，而是把执行、决策、技术、法律和监管反馈拆开。</p>
-            <p class="source-line">结构来源：ROAM 责任矩阵与 CSAE 团标预研框架。</p>
+            <p class="source-line">结构来源：ROAM 责任矩阵与 CSAE 团标起草框架。</p>
           </div>
         </div>`, '这页改为更像 RACI/热力矩阵的主视觉。'),
       contentSlide('kpi-frip', 'KPI、第一响应者交互计划与桌面推演', `
@@ -2510,7 +2511,7 @@
             </div>
             <div class="kpi-strip red">
               <strong>16</strong>
-              <span>团标预研 KPI 候选<em>含 AI 处置率、误升级率、漏升级率、30 秒紧急响应等。</em></span>
+              <span>团标起草 KPI 候选<em>含 AI 处置率、误升级率、漏升级率、突发事件升级及时率、外部协同和数据保全等。</em></span>
             </div>
             <div class="kpi-strip">
               <strong>FRIP</strong>
@@ -2652,7 +2653,7 @@
             <div class="chain-step"><span>01</span><strong>边界定义</strong><p>OpenODC 给出 ODD / ODC 与触发条件，回答系统何时仍在可接受运行范围内。</p></div>
             <div class="chain-step red"><span>02</span><strong>异常触发</strong><p>ROAM 接住边界被触发后的异常事件，记录处置层级、责任主体和恢复过程。</p></div>
             <div class="chain-step"><span>03</span><strong>基线支撑</strong><p>DRIVEResearch 提供人类驾驶分布和风险参数，让异常判断不脱离真实交通行为。</p></div>
-            <div class="chain-step red"><span>04</span><strong>标准输入</strong><p>三者共同形成运行阶段 SOTIF 证据，服务团标预研、案例库和工程审阅包。</p></div>
+            <div class="chain-step red"><span>04</span><strong>标准输入</strong><p>三者共同形成运行阶段 SOTIF 证据，服务团标起草、案例库和工程审阅包。</p></div>
           </div>
         </div>`, '这页延续 OpenODC 中三个项目关系的表达。'),
       agendaSlide('agenda-summary', 4, '目录', '进入最后总结。'),
@@ -2664,7 +2665,7 @@
               <div class="contrib-card"><span>01</span><strong>提交公开事件</strong><p>新闻、监管记录、企业披露和现场可核验材料。</p></div>
               <div class="contrib-card red"><span>02</span><strong>结构化标注</strong><p>异常分类、严重度、处置层级、责任主体和来源置信度。</p></div>
               <div class="contrib-card"><span>03</span><strong>形成审阅包</strong><p>案例复盘、KPI、FRIP、责任矩阵和桌面推演材料。</p></div>
-              <div class="contrib-card red"><span>04</span><strong>进入标准讨论</strong><p>支撑 CSAE 团标预研、行业共识和运行阶段 SOTIF 证据。</p></div>
+              <div class="contrib-card red"><span>04</span><strong>进入标准讨论</strong><p>支撑 CSAE 团标起草、行业共识和运行阶段 SOTIF 证据。</p></div>
             </div>
           </div>
           <div class="final-copy">

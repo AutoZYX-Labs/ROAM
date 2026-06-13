@@ -8,7 +8,7 @@
 > 日期：2026 年 4 月
 > 文档版本：v1.1（范围从 Robotaxi 扩展至多模式 L4 出行）
 
-> **范围说明（v1.1）**：本综述最初聚焦于 L4 Robotaxi 远程运营。范围现已扩展至所有 L4 自动驾驶运营模式（Robotaxi、OEM 直营车队、个人所有+OEM 订阅、个人所有+闲时共享、公共交通、物流配送、特定环境专用）。详见 ROAM 的 [operating-models-v1.0.md](operating-models-v1.0.md) 10 模式分类体系。完整的多模式综述规划为 v2.0 版本。
+> **范围说明（v1.1）**：本综述最初聚焦于 L4 Robotaxi 远程运营。范围现已扩展至所有 L4 自动驾驶运营模式（Robotaxi、OEM 直营车队、个人所有+OEM 订阅、个人所有+闲时共享、公共交通、物流配送、特定环境专用）。详见 ROAM 的 [operating-models-v1.0.md](../taxonomy/operating-models-v1.0.md) 10 模式分类体系。完整的多模式综述规划为 v2.0 版本。
 
 ---
 
@@ -384,7 +384,7 @@ ROAM项目将秉持开源协作的理念，通过标准化数据格式、模块�
 
 [49] DJI Enterprise, "DJI UTC (Unmanned Aerial System Training Centers) Program," 200+全球培训中心，40,000+认证飞手。[Link](https://enterprise-insights.dji.com/learning-center)
 
-[50] Office of Senator Edward J. Markey, "Remote Back Seat Operators: Revealing the Autonomous Vehicle Industry's Reliance on Human Remote Assistance Operators," 2026年3月31日. 美国国会首次对自动驾驶远程协助操作的系统性调查，覆盖七家公司（Aurora、May Mobility、Motional、Nuro、Tesla、Waymo、Zoox）。[Link](https://www.markey.senate.gov/news/press-releases/senator-markey-releases-groundbreaking-report-on-autonomous-vehicle-industrys-use-of-remote-human-operators) [PDF](docs/Markey-Remote-Back-Seat-Operators-Report-2026.pdf)
+[50] Office of Senator Edward J. Markey, "Remote Back Seat Operators: Revealing the Autonomous Vehicle Industry's Reliance on Human Remote Assistance Operators," 2026年3月31日. 美国国会首次对自动驾驶远程协助操作的系统性调查，覆盖七家公司（Aurora、May Mobility、Motional、Nuro、Tesla、Waymo、Zoox）。[Link](https://www.markey.senate.gov/news/press-releases/senator-markey-releases-groundbreaking-report-on-autonomous-vehicle-industrys-use-of-remote-human-operators) [PDF](Markey-Remote-Back-Seat-Operators-Report-2026.pdf)
 
 [51] 智车科技, "Waymo拒交安全数据：七家自动驾驶巨头集体沉默," 2026年4月9日. 对Markey RAOS报告的中文深度分析，提供了行业透明度挑战的额外背景。
 

@@ -1,8 +1,8 @@
 # ROAM Reference Architecture: Three-Layer Remote Operations Platform
 
-**Version:** 1.1
-**Last Updated:** 2026-04-04
-**Status:** Initial Release
+**Version:** 1.3
+**Last Updated:** 2026-06-13
+**Status:** Public alignment update for emergency escalation and CSAE drafting track
 
 ---
 
@@ -14,7 +14,7 @@ This is a **reference architecture** — a starting point, not a prescription. C
 
 ## 1. Architecture Overview
 
-The ROAM Reference Architecture defines a three-layer decision model for handling robotaxi operational anomalies. The core principle: **AI handles routine anomalies autonomously; humans handle the exceptions.**
+The ROAM Reference Architecture defines a three-layer decision model for handling L4 autonomous mobility operational anomalies. The core principle: **AI handles routine anomalies autonomously; humans handle the exceptions; traffic safety emergencies trigger an additional escalation layer.**
 
 ```
                     ROAM Three-Layer Architecture
@@ -44,6 +44,29 @@ The ROAM Reference Architecture defines a three-layer decision model for handlin
 3. **Graceful Degradation** — If Layer 1 cannot resolve, it escalates to Layer 2. If Layer 2 cannot resolve, it escalates to Layer 3. No anomaly should fall through all layers without response.
 4. **Time-Bounded Escalation** — Each layer has a maximum resolution time. Exceeding it triggers automatic escalation to the next layer.
 5. **Passenger Communication at Every Layer** — Regardless of which layer handles the anomaly, the passenger receives status updates.
+
+### Operational Anomaly vs. Traffic Safety Emergency (v1.3)
+
+The public v1.3 update distinguishes two governance levels:
+
+| Level | Meaning | Response posture |
+|-------|---------|------------------|
+| **Operations management anomaly event** | Any operational condition that requires identification, classification, response, recovery, record keeping, or review by the operator, ROC, technology provider, fleet owner, or external party | Closed-loop operational handling through Layer 1/2/3 |
+| **Traffic safety emergency event** | A high-impact, high-urgency, or strong external-coordination subset of anomaly events that has caused or may cause injury, property loss, road obstruction, public-order impact, major operational interruption, or first-responder involvement | Escalated command, external coordination, data preservation, site safety, public communication, special review |
+
+The emergency upgrade gate sits above the normal three-layer routing logic. A case may still be handled technically by Layer 1, Layer 2, or Layer 3, but once upgraded it must also activate stricter governance requirements.
+
+Typical upgrade triggers include:
+
+- S3/S4 severity or U3 urgency
+- First-responder participation or request
+- Road blockage, long-duration lane occupation, or secondary-crash risk
+- Passenger trapped, passenger injury, sudden illness, or special passenger rescue
+- Smoke, fire, thermal runaway, high-voltage risk, or other energy-system hazard
+- Fleet-level anomaly, regional service pause, or public gathering
+- Regulator, local demonstration-zone platform, or traffic-management body requests upgraded handling
+
+After upgrade, the operator should define the command owner, coordinate ROC/field rescue/customer support/technical support, follow lawful first-responder on-scene command, preserve data and decision records, suspend affected vehicles or ODDs when needed, and conduct special post-event review before closure.
 
 ---
 
@@ -272,6 +295,7 @@ Layer 3 is triggered when:
 2. **Physical intervention required** — Hardware failure requiring tow, door mechanism jammed, vehicle fire
 3. **Emergency services coordination** — Fatality, serious injury, or fire requires on-site incident commander
 4. **Fleet-wide crisis** — Mass failure requiring coordinated recovery of 10+ vehicles
+5. **Traffic safety emergency upgrade** — The event meets emergency-upgrade conditions and requires external coordination, data preservation, site command support, special review, or public communication, even if the vehicle-level maneuver is simple
 
 ### 4.3 Remote Driving Operations
 
@@ -374,6 +398,8 @@ For scenarios requiring physical presence:
 ## 6. Complete Scenario-to-Handler Mapping
 
 This table maps every taxonomy sub-scenario to its primary handling layer, automated action, and escalation path.
+
+**v1.3 note:** the primary layer is not the same thing as emergency status. For example, a pedestrian collision may start with a Layer 1 emergency stop, but it is still a traffic safety emergency candidate because it involves injury risk, first responders, data preservation, and post-event review. Conversely, a routine freeze in a depot may require Layer 2 review without becoming a traffic safety emergency.
 
 | ID | Scenario | Primary Layer | Automated Action (Layer 1) | Layer 2 Action | Layer 3 Trigger |
 |----|----------|:----:|-----|-----|-----|
@@ -618,6 +644,22 @@ Required contingency protocols:
 
 **Leadership accountability:** Quarterly fleet-wide emergency drills; board-level ownership of contingency readiness metrics.
 
+---
+
+## 11. Verification and Exercise Hooks (v1.3)
+
+ROAM v1.3 recommends verifying the reference architecture through a mixed evidence approach:
+
+| Method | Focus |
+|--------|-------|
+| Document review | Anomaly classification, emergency-upgrade rules, layer routing, responsibility matrix, SLA, KPI, FRIP, fleet-level anomaly plan |
+| System-record review | S2+ anomaly records, remote-assistance logs, remote-driving logs, SOS records, first-responder contacts, emergency-upgrade logs, data-preservation logs |
+| Tabletop exercise | Traffic safety emergency upgrade, first-responder participation, batch anomaly escalation, fire/thermal runaway, passenger rescue, road blockage, temporary traffic control |
+| Historical review | S3+ events, all emergency-upgraded events, fleet-level anomalies, first-responder events, passenger-trapped events, recurring root causes |
+| Field drill | Vehicle identification, safe approach, power isolation, passenger rescue, towing, ROC contact, data handoff, regional recovery |
+
+This verification layer is governance-focused. It does not replace ADS performance testing, cybersecurity testing, OTA testing, vehicle type approval, or road-traffic enforcement.
+
 **References:**
 [2] Cummings, M., "What self-driving companies should learn from drone remote operations," George Mason University, 2026.
 [3] DJI Enterprise, "FlightHub 2 Virtual Cockpit," 2024. [Link](https://enterprise-insights.dji.com/blog/dji-flighthub-2-virtual-cockpit-now-available)
@@ -630,6 +672,7 @@ Required contingency protocols:
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 1.3 | 2026-06-13 | Added operational anomaly vs. traffic safety emergency distinction, emergency-upgrade gate, Layer 3 upgrade trigger, and verification / exercise hooks aligned with CSAE drafting work |
 | 1.2 | 2026-04-05 | Added Section 10: UAV operational lessons + DJI productized patterns |
 | 1.1 | 2026-04-04 | Added Adaptive Trust Calibration mechanism (Section 2.3) based on C-TRAIL framework |
 | 1.0 | 2026-04-02 | Initial release |

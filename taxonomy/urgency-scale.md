@@ -1,7 +1,7 @@
 # ROAM Urgency Scale
 
-**Version:** 1.0
-**Last Updated:** 2026-04-02
+**Version:** 1.3
+**Last Updated:** 2026-06-13
 
 ---
 
@@ -64,6 +64,8 @@ Urgency is assessed in real-time and drives the dispatching priority of the oper
 | **Escalation Trigger** | Already at maximum urgency. If unresolved within 5 minutes, trigger executive notification and public safety authority contact. |
 | **Examples** | Passenger medical emergency; vehicle fire; vehicle blocking active ambulance or fire truck; pedestrian contact; passenger reporting threat or assault; vehicle on elevated highway with imminent collision risk |
 | **Typical Scenarios** | F4 (medical emergency), D3 (vehicle fire), C5 (pedestrian collision), E3 (emergency vehicle actively blocked), F1 (passenger trapped in dangerous location) |
+
+**v1.3 emergency note:** U3 should automatically trigger an emergency-upgrade review. If the event involves first responders, passenger rescue, road blockage, fire/thermal runaway, fleet-level propagation, or a regulator/local-platform upgrade request, it should be managed as a traffic safety emergency even if the final severity outcome is later assessed below S3.
 
 ---
 

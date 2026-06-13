@@ -73,7 +73,7 @@
 ## 文件清单
 
 - **[`manuscript-zh.md`](manuscript-zh.md)** — 中文正文
-- **[`abstract-en.md`](abstract-en.md)** — 英文摘要（独立文件，便于编辑）
+- 英文摘要 — 待从正文中拆分为独立文件
 - **[`figures/`](figures/)** — 图表文件（SVG/PNG）
 - **[`references.md`](references.md)** — 参考文献（Markdown 格式，便于迭代）
 

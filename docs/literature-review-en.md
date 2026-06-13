@@ -6,7 +6,7 @@
 > Date: April 2026
 > Document Version: v1.1 (scope expanded from Robotaxi to multi-mode L4 mobility)
 
-> **Scope Note (v1.1):** This review originally focused on L4 Robotaxi remote operations. The scope has been expanded to cover all L4 autonomous mobility operating modes (Robotaxi, OEM direct fleet, personal L4 with OEM subscription, shared personal vehicles, public transit, delivery, specialized environments). See ROAM's [operating-models-v1.0.md](operating-models-v1.0.md) for the 10-mode taxonomy. A full multi-mode literature review is planned for v2.0.
+> **Scope Note (v1.1):** This review originally focused on L4 Robotaxi remote operations. The scope has been expanded to cover all L4 autonomous mobility operating modes (Robotaxi, OEM direct fleet, personal L4 with OEM subscription, shared personal vehicles, public transit, delivery, specialized environments). See ROAM's [operating-models-v1.0.md](../taxonomy/operating-models-v1.0.md) for the 10-mode taxonomy. A full multi-mode literature review is planned for v2.0.
 
 ---
 
@@ -380,7 +380,7 @@ The ROAM project will adhere to open-source collaboration principles, providing 
 
 [49] DJI Enterprise, "DJI UTC (Unmanned Aerial System Training Centers) Program," 200+ global training centers, 40,000+ certified pilots. [Link](https://enterprise-insights.dji.com/learning-center)
 
-[50] Office of Senator Edward J. Markey, "Remote Back Seat Operators: Revealing the Autonomous Vehicle Industry's Reliance on Human Remote Assistance Operators," March 31, 2026. The first US Congressional investigation into AV remote assistance operations, covering seven companies (Aurora, May Mobility, Motional, Nuro, Tesla, Waymo, Zoox). [Link](https://www.markey.senate.gov/news/press-releases/senator-markey-releases-groundbreaking-report-on-autonomous-vehicle-industrys-use-of-remote-human-operators) [PDF](docs/Markey-Remote-Back-Seat-Operators-Report-2026.pdf)
+[50] Office of Senator Edward J. Markey, "Remote Back Seat Operators: Revealing the Autonomous Vehicle Industry's Reliance on Human Remote Assistance Operators," March 31, 2026. The first US Congressional investigation into AV remote assistance operations, covering seven companies (Aurora, May Mobility, Motional, Nuro, Tesla, Waymo, Zoox). [Link](https://www.markey.senate.gov/news/press-releases/senator-markey-releases-groundbreaking-report-on-autonomous-vehicle-industrys-use-of-remote-human-operators) [PDF](Markey-Remote-Back-Seat-Operators-Report-2026.pdf)
 
 [51] 智车科技 (Smart Car Technology), "Waymo拒交安全数据：七家自动驾驶巨头集体沉默 (Waymo Refuses Safety Data: Seven AV Giants Collectively Silent)," April 9, 2026. Chinese-language analysis of the Markey RAOS report, providing additional context on industry transparency challenges.
 

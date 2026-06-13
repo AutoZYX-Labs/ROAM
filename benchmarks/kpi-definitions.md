@@ -1,7 +1,7 @@
 # ROAM KPI Definitions
 
-**Version:** 1.0
-**Last Updated:** 2026-04-02
+**Version:** 1.3
+**Last Updated:** 2026-06-13
 
 ---
 
@@ -11,7 +11,7 @@ This document defines 8 key performance indicators (KPIs) for evaluating robotax
 
 Each KPI includes: definition, formula, target value, measurement method, and data source.
 
-> 2026-05 standards note: this open-source v1.0 document keeps 8 core KPIs as the public baseline. The CSAE / CAICV pre-research draft is exploring an expanded 16-KPI structure for the group standard track; final KPI items and thresholds require drafting-group consensus and calibration with real operating data.
+> 2026-06 standards note: this open-source document keeps the 8 core KPIs as the public baseline, retains the California DMV-aligned KPI extensions, and adds a public v1.3 emergency-escalation KPI group derived from ROAM's CSAE drafting work. Final CSAE KPI items and thresholds require drafting-group consensus and calibration with real Chinese operating data.
 
 ---
 
@@ -419,6 +419,28 @@ Following the publication of California DMV Article 3.7 (Express Terms 2026), RO
 
 ---
 
+## Emergency Escalation KPI Group (v1.3, 2026-06-13)
+
+The CSAE drafting track sharpened the distinction between ordinary anomaly closure and traffic-safety-emergency handling. ROAM v1.3 therefore adds an emergency escalation KPI group. These metrics should be reported separately from ordinary MTTR because the objective is not only speed; it is correct upgrade, external coordination, evidence preservation, and verified corrective action.
+
+| KPI Group | Example indicators | Governance purpose |
+|-----------|-------------------|--------------------|
+| Emergency identification | Emergency classification accuracy; false emergency upgrade rate; missed emergency upgrade rate | Ensure high-impact events are neither ignored nor over-escalated |
+| Upgrade timeliness | Time from anomaly detection to emergency-upgrade decision; time from U3/S3 trigger to command-owner assignment | Measure whether the escalation chain activates fast enough |
+| External coordination | First-responder contact success rate; external coordination response time; local platform notification time | Measure cross-organization coordination capability |
+| Data preservation | Data-preservation completion rate; timestamp completeness; decision-log completeness | Maintain auditable evidence for review, investigation, and improvement |
+| Special review | Special post-event review completion rate; root-cause closure rate; corrective-action verification rate | Ensure emergencies produce verified systemic improvement |
+| Recovery governance | Affected vehicle/ODD/region suspension time; recovery authorization time; recurrence after recovery | Measure whether return-to-service is controlled and evidence-based |
+
+### Recommended Reporting Rules
+
+- Report this KPI group for every traffic-safety-emergency event and every event that was considered for upgrade.
+- Keep ordinary anomaly closure metrics separate from emergency metrics; otherwise operators may optimize for fast closure at the expense of evidence preservation and external coordination.
+- Break down results by operating mode, ODD, service type, first-responder involvement, and whether passengers or cargo were present.
+- Treat thresholds as local commitments. Public ROAM provides the structure; operators and drafting groups must calibrate thresholds with operational data.
+
+---
+
 ## Regulatory Feedback Dimension KPIs (v1.2, 2026-04-27)
 
 These KPIs operationalize the "regulatory feedback dimension" (responsibility-matrix.md Insight 7) introduced by California DMV Article 3.7 § 227.46. They are not about avoiding regulatory action — they are about **demonstrating, in real time, that the operator is responding to regulatory action with the speed and rigor required**.
@@ -490,3 +512,4 @@ Recurrence_Rate = N_recurring_restrictions / N_total_restrictions_12mo
 | 1.0 | 2026-04-02 | Initial release: 8 KPIs defined |
 | 1.1 | 2026-04-27 | Added KPIs 9-13 aligned with California DMV Article 3.7 (Express Terms 2026) regulatory thresholds: 30-second emergency response, 2-minute geofencing compliance, pre-application test mileage requirements |
 | 1.2 | 2026-04-27 | Added KPIs 14-16 (Regulatory Feedback Dimension): restriction compliance time, restriction lift cycle time, restriction recurrence rate. These operationalize Insight 7 of responsibility-matrix.md v1.2 and align with DMV § 227.46 graduated restriction mechanism. |
+| 1.3 | 2026-06-13 | Added Emergency Escalation KPI Group: emergency identification, upgrade timeliness, external coordination, data preservation, special review, and recovery governance. |

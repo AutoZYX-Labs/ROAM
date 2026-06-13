@@ -1,7 +1,7 @@
 # ROAM Severity Scale
 
-**Version:** 1.0
-**Last Updated:** 2026-04-02
+**Version:** 1.3
+**Last Updated:** 2026-06-13
 
 ---
 
@@ -116,6 +116,23 @@ Minor disruption (<5 min, no injury)?
     |-- YES --> S1
     |-- NO --> S0 (Near-miss)
 ```
+
+---
+
+## Traffic Safety Emergency Upgrade Gate (v1.3)
+
+Severity does not automatically decide legal status, but it is a strong trigger for operational escalation. ROAM v1.3 recommends treating S3 and S4 events as traffic safety emergency candidates unless a documented review shows otherwise.
+
+Lower-severity events can also be upgraded when any of the following are present:
+
+- First responders participate or request upgraded handling
+- Road lanes, intersections, emergency routes, bus stops, or entrances are blocked for a non-trivial duration
+- Passenger rescue, passenger injury, sudden illness, or special passenger assistance is involved
+- Smoke, fire, thermal runaway, high-voltage hazard, or other energy-system risk is suspected
+- A fleet-level anomaly or regional service interruption may affect public order or road traffic
+- A regulator, local demonstration-zone platform, or traffic-management body requires emergency handling
+
+Once upgraded, the event should be tracked with emergency-escalation KPIs, FRIP records, data-preservation evidence, and special post-event review.
 
 ---
 
