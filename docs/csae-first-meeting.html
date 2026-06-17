@@ -2012,7 +2012,7 @@
       background: #fff;
       overflow: hidden;
       display: grid;
-      grid-template-rows: minmax(0, 1fr) auto;
+      grid-template-rows: minmax(0, 1fr);
     }
     .flowchart-board svg {
       display: block;
@@ -2052,16 +2052,8 @@
     .flowchart-board .flow-small {
       fill: #111;
       font-family: "Source Han Sans SC", "Noto Sans CJK SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
-      font-size: 12.5px;
+      font-size: 15px;
       font-weight: 400;
-    }
-    .flowchart-caption {
-      padding: 8px 14px 10px;
-      border-top: 1px solid var(--line);
-      color: #5f6b7a;
-      font-size: 12px;
-      line-height: 1.35;
-      background: #fff;
     }
     .status-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
     .status-pill { display: inline-flex; align-items: center; min-height: 28px; padding: 4px 9px; border-radius: 999px; border: 1px solid var(--line); color: var(--blue); background: #fff; font-size: 13px; line-height: 1; }
@@ -2225,6 +2217,45 @@
     .thanks-contact-actions { margin: 14px 0 10px; }
     .thanks-side { display: grid; gap: 13px; align-content: end; justify-items: end; }
     .thanks-side .logos img { max-height: 66px; }
+
+    .kicker { font-size: 16px; }
+    .source-line,
+    .proof-card.compact p,
+    .purpose-item p,
+    .draft-action p,
+    .need-card p,
+    .lane-standards,
+    .lane-answer,
+    .lane-pill,
+    .position-card .tag,
+    .position-card p,
+    .position-card em,
+    .chapter-module header span,
+    .chapter-module ul,
+    .chapter-modules .chapter-module header span,
+    .chapter-modules .chapter-module ul,
+    .chapter-shot figcaption,
+    .mechanism-card p,
+    .work-step span,
+    .work-step p,
+    .status-pill,
+    .formula,
+    .deck-title,
+    .deck-control,
+    .deck-select,
+    .deck-nav,
+    .counter,
+    .notes-panel {
+      font-size: 15px;
+    }
+    .draft-sheet p,
+    .draft-meta span,
+    .need-core span,
+    .position-card p,
+    .mechanism-center span,
+    .work-step p {
+      line-height: 1.46;
+    }
 
     .notes-panel {
       max-width: 1280px;
@@ -2565,12 +2596,12 @@
 
             <rect class="terminal" x="24" y="38" width="145" height="70" rx="3"></rect>
             <text class="flow-title" x="96.5" y="66" text-anchor="middle">异常触发 / 发现</text>
-            <text class="flow-small" x="96.5" y="88" text-anchor="middle">车辆、运营、用户、监管</text>
+            <text class="flow-small" x="96.5" y="88" text-anchor="middle">多源触发</text>
 
             <line class="arrow" x1="169" y1="73" x2="204" y2="73"></line>
             <rect class="box" x="204" y="38" width="145" height="70" rx="3"></rect>
             <text class="flow-title" x="276.5" y="66" text-anchor="middle">信息记录与初筛</text>
-            <text class="flow-small" x="276.5" y="88" text-anchor="middle">时间、地点、车辆、证据</text>
+            <text class="flow-small" x="276.5" y="88" text-anchor="middle">基础信息 / 证据</text>
 
             <line class="arrow" x1="349" y1="73" x2="390" y2="73"></line>
             <polygon class="decision" points="470,32 548,73 470,114 392,73"></polygon>
@@ -2581,7 +2612,7 @@
             <text class="flow-small" x="565" y="61" text-anchor="middle">是</text>
             <rect class="box" x="586" y="38" width="145" height="70" rx="3"></rect>
             <text class="flow-title" x="658.5" y="66" text-anchor="middle">分类与分级</text>
-            <text class="flow-small" x="658.5" y="88" text-anchor="middle">类型、严重度、紧急度</text>
+            <text class="flow-small" x="658.5" y="88" text-anchor="middle">类型 / 等级</text>
 
             <line class="arrow" x1="470" y1="114" x2="470" y2="148"></line>
             <text class="flow-small" x="488" y="132">否</text>
@@ -2599,7 +2630,7 @@
             <line x1="585" y1="176" x2="1115" y2="176" stroke="#111" stroke-width="1.2" vector-effect="non-scaling-stroke"></line>
             <line x1="760" y1="176" x2="760" y2="224" stroke="#111" stroke-width="1.2" vector-effect="non-scaling-stroke"></line>
             <line x1="945" y1="176" x2="945" y2="224" stroke="#111" stroke-width="1.2" vector-effect="non-scaling-stroke"></line>
-            <text class="flow-small" x="850" y="166" text-anchor="middle">处置执行（按责任矩阵和响应层级选择）</text>
+            <text class="flow-small" x="850" y="166" text-anchor="middle">处置执行</text>
             <text class="flow-title" x="672.5" y="197" text-anchor="middle">运营处置</text>
             <text class="flow-small" x="672.5" y="216" text-anchor="middle">自动处置 / 远程协助</text>
             <text class="flow-title" x="852.5" y="197" text-anchor="middle">升级处置</text>
@@ -2609,22 +2640,21 @@
 
             <path class="arrow" d="M850 224 C800 238, 720 238, 665 248"></path>
 
-            <rect class="box" x="585" y="248" width="160" height="62" rx="3"></rect>
-            <text class="flow-title" x="665" y="273" text-anchor="middle">恢复确认</text>
-            <text class="flow-small" x="665" y="293" text-anchor="middle">安全状态 / 运行恢复</text>
+            <rect class="box" x="575" y="248" width="175" height="62" rx="3"></rect>
+            <text class="flow-title" x="662.5" y="273" text-anchor="middle">恢复确认</text>
+            <text class="flow-small" x="662.5" y="293" text-anchor="middle">安全状态 / 恢复</text>
 
-            <line class="arrow" x1="745" y1="279" x2="770" y2="279"></line>
-            <rect class="box" x="770" y="248" width="160" height="62" rx="3"></rect>
-            <text class="flow-title" x="850" y="273" text-anchor="middle">复盘评价</text>
-            <text class="flow-small" x="850" y="293" text-anchor="middle">KPI / 责任矩阵 / 证据核查</text>
+            <line class="arrow" x1="750" y1="279" x2="770" y2="279"></line>
+            <rect class="box" x="770" y="248" width="175" height="62" rx="3"></rect>
+            <text class="flow-title" x="857.5" y="273" text-anchor="middle">复盘评价</text>
+            <text class="flow-small" x="857.5" y="293" text-anchor="middle">KPI / 证据核查</text>
 
-            <line class="arrow" x1="930" y1="279" x2="955" y2="279"></line>
-            <rect class="terminal" x="955" y="248" width="160" height="62" rx="3"></rect>
-            <text class="flow-title" x="1035" y="273" text-anchor="middle">归档与改进</text>
-            <text class="flow-small" x="1035" y="293" text-anchor="middle">案例库 / 规则更新 / 培训</text>
+            <line class="arrow" x1="945" y1="279" x2="965" y2="279"></line>
+            <rect class="terminal" x="965" y="248" width="175" height="62" rx="3"></rect>
+            <text class="flow-title" x="1052.5" y="273" text-anchor="middle">归档与改进</text>
+            <text class="flow-small" x="1052.5" y="293" text-anchor="middle">案例库 / 规则更新</text>
           </svg>
-          <div class="flowchart-caption">黑白流程图为会议讨论稿，可作为后续标准文本中流程图的基础版本。</div>
-        </div>`, '新增一页黑白线条流程图，便于后续转入标准文稿。'),
+        </div>`, '展示异常事件处置流程主线：触发、记录、判定、分级、处置、恢复、复盘与改进。'),
       contentSlide('workplan', '后续工作计划', `
         <div class="workplan-board" aria-label="标准起草后续工作节奏">
           <div class="workplan-note"><strong>七月初立项会议之后</strong>，将基于标准初稿 v0.97 组织起草组开展集中修订，并围绕重点专题分工推进。</div>
