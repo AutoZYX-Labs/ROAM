@@ -56,6 +56,37 @@ header .actions { display:flex; gap:16px; justify-content:center; flex-wrap:wrap
 .btn-primary:hover { background:#b04e30; text-decoration:none; }
 .btn-secondary { border:1.5px solid var(--border); color:var(--text); background:transparent; }
 .btn-secondary:hover { border-color:var(--text3); text-decoration:none; }
+.csae-meeting-cta {
+  display:inline-flex;
+  flex-direction:column;
+  gap:4px;
+  width:min(100%, 440px);
+  padding:16px 24px;
+  border:2px solid var(--red);
+  border-left-width:7px;
+  border-radius:6px;
+  background:#fff8f8;
+  color:var(--text);
+  box-shadow:0 8px 22px rgba(184,58,58,0.10);
+}
+.csae-meeting-cta:hover {
+  border-color:#9f2626;
+  background:#fff4f4;
+  text-decoration:none;
+  transform:translateY(-1px);
+}
+.csae-meeting-cta .cta-date {
+  color:var(--red);
+  font-size:0.95rem;
+  font-weight:700;
+  line-height:1.25;
+}
+.csae-meeting-cta .cta-title {
+  color:var(--text);
+  font-size:1.18rem;
+  font-weight:800;
+  line-height:1.35;
+}
 
 /* Section */
 section { padding:56px 0; }
@@ -735,7 +766,10 @@ footer a { color:var(--accent); }
     </div>
 
     <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
-      <a href="csae-first-meeting.html" class="btn btn-secondary" style="font-size:1rem;padding:12px 20px;"><span class="cn">标准起草组第一次会议</span><span class="en">First Drafting-Group Meeting</span></a>
+      <a href="csae-first-meeting.html" class="btn csae-meeting-cta">
+        <span class="cta-date"><span class="cn">2026年6月17日</span><span class="en">17 Jun 2026</span></span>
+        <span class="cta-title"><span class="cn">标准起草组第一次会议展示材料</span><span class="en">First Drafting-Group Meeting Slides</span></span>
+      </a>
     </div>
 
     <p style="margin-top:16px;color:var(--text3);font-size:0.95rem;">
