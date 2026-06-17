@@ -1894,73 +1894,75 @@
     .purpose-board { display: grid; grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr); }
     .purpose-lead {
       padding: 28px;
-      background: var(--blue);
-      color: #fff;
+      background: #fff;
+      color: #111;
+      border-right: 1px solid var(--line);
+      border-left: 6px solid var(--blue);
       display: grid;
       align-content: center;
       gap: 18px;
     }
-    .purpose-lead .label { color: #dce8f5; font-size: 18px; letter-spacing: 0; }
-    .purpose-lead h3 { margin: 0; font-size: 42px; line-height: 1.14; font-weight: 400; }
-    .purpose-lead p { margin: 0; color: rgba(255,255,255,.88); font-size: 18px; line-height: 1.52; }
+    .purpose-lead .label { color: #5f6b7a; font-size: 18px; letter-spacing: 0; }
+    .purpose-lead h3 { margin: 0; color: var(--blue); font-size: 42px; line-height: 1.14; font-weight: 400; }
+    .purpose-lead p { margin: 0; color: #111; font-size: 18px; line-height: 1.52; }
     .purpose-stack { padding: 22px; display: grid; grid-template-rows: repeat(3, minmax(0, 1fr)); gap: 12px; }
-    .purpose-item { padding: 16px 18px; border: 1px solid var(--line); border-radius: 8px; background: var(--blue-soft); display: grid; align-content: center; gap: 8px; }
-    .purpose-item.red { background: var(--red-soft); border-left: 6px solid var(--red); }
+    .purpose-item { padding: 16px 18px; border: 1px solid var(--line); border-radius: 8px; background: #fff; display: grid; align-content: center; gap: 8px; }
+    .purpose-item.red { background: #fff; border-left: 4px solid var(--red); }
     .purpose-item strong { color: var(--blue); font-size: 23px; line-height: 1.24; font-weight: 500; }
     .purpose-item.red strong { color: var(--red); }
     .purpose-item p { margin: 0; color: #111; font-size: 15px; line-height: 1.45; }
 
     .draft-board { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); }
-    .draft-sheet { margin: 16px; padding: 22px; border: 1px solid #d9e1ea; border-radius: 8px; background: linear-gradient(180deg, #fff, #f8fafc); box-shadow: 0 12px 30px rgba(23,55,94,.08); display: grid; align-content: start; gap: 14px; }
+    .draft-sheet { margin: 16px; padding: 22px; border: 1px solid #d9e1ea; border-radius: 8px; background: #fff; display: grid; align-content: start; gap: 14px; }
     .draft-sheet h3 { margin: 0; color: var(--blue); font-size: 31px; line-height: 1.24; font-weight: 500; }
     .draft-sheet p { margin: 0; color: #111; font-size: 15px; line-height: 1.48; }
     .draft-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
-    .draft-meta span { display: grid; align-content: center; min-height: 54px; padding: 10px; border-radius: 8px; background: var(--blue-soft); color: var(--blue); font-size: 15px; line-height: 1.3; }
-    .draft-meta span.red { background: var(--red-soft); color: var(--red); }
+    .draft-meta span { display: grid; align-content: center; min-height: 54px; padding: 10px; border-radius: 6px; border: 1px solid var(--line); background: #fff; color: var(--blue); font-size: 15px; line-height: 1.3; }
+    .draft-meta span.red { border-left: 4px solid var(--red); color: #111; }
     .draft-actions { padding: 18px 18px 18px 0; display: grid; gap: 12px; align-content: stretch; }
     .draft-action { padding: 16px; border: 1px solid var(--line); border-radius: 8px; background: #fff; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; align-items: center; }
-    .draft-action b { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--blue); color: #fff; font-size: 19px; font-weight: 500; }
-    .draft-action.red b { background: var(--red); }
+    .draft-action b { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: #fff; color: var(--blue); border: 1.5px solid var(--blue); font-size: 19px; font-weight: 500; }
+    .draft-action.red b { color: var(--red); border-color: var(--red); }
     .draft-action strong { display: block; color: var(--blue); font-size: 21px; line-height: 1.25; font-weight: 500; }
     .draft-action p { margin: 5px 0 0; color: #111; font-size: 14px; line-height: 1.42; }
 
     .need-board { display: grid; grid-template-columns: minmax(0, 1fr) 210px minmax(0, 1fr); align-items: stretch; }
     .need-col { padding: 22px; display: grid; gap: 11px; align-content: start; }
     .need-col h3 { margin: 0; color: var(--blue); font-size: 24px; line-height: 1.25; font-weight: 500; }
-    .need-card { padding: 13px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--blue-soft); }
-    .need-card.red { background: var(--red-soft); border-left: 5px solid var(--red); }
+    .need-card { padding: 13px 14px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+    .need-card.red { background: #fff; border-left: 4px solid var(--red); }
     .need-card strong { color: var(--blue); font-size: 17px; line-height: 1.25; font-weight: 500; }
     .need-card.red strong { color: var(--red); }
     .need-card p { margin: 5px 0 0; color: #111; font-size: 13px; line-height: 1.38; }
-    .need-core { background: var(--blue); color: #fff; display: grid; place-items: center; text-align: center; padding: 20px; }
+    .need-core { background: #fff; color: #111; display: grid; place-items: center; text-align: center; padding: 20px; border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
     .need-core strong { display: block; font-size: 30px; line-height: 1.2; font-weight: 400; }
-    .need-core span { display: block; margin-top: 12px; color: rgba(255,255,255,.86); font-size: 15px; line-height: 1.45; }
+    .need-core span { display: block; margin-top: 12px; color: #111; font-size: 15px; line-height: 1.45; }
 
     .coverage-lanes { padding: 24px; display: grid; grid-template-rows: repeat(4, minmax(0, 1fr)); gap: 12px; }
     .lane { display: grid; grid-template-columns: 150px minmax(0, 1fr) minmax(0, .9fr); gap: 12px; align-items: stretch; }
-    .lane-label { border-radius: 8px; background: var(--blue); color: #fff; display: grid; place-items: center; text-align: center; padding: 10px; font-size: 18px; line-height: 1.25; }
-    .lane.red .lane-label { background: var(--red); }
-    .lane-standards, .lane-answer { border: 1px solid var(--line); border-radius: 8px; background: var(--blue-soft); padding: 13px; display: flex; flex-wrap: wrap; gap: 7px; align-items: center; align-content: center; color: #111; font-size: 14px; line-height: 1.35; }
-    .lane.red .lane-standards, .lane.red .lane-answer { background: var(--red-soft); }
-    .lane-pill { display: inline-flex; border-radius: 999px; background: #fff; border: 1px solid #d9e1ea; padding: 5px 9px; color: var(--blue); font-size: 12px; line-height: 1.2; }
+    .lane-label { border-radius: 6px; background: #fff; color: var(--blue); border: 1px solid var(--line); border-left: 4px solid var(--blue); display: grid; place-items: center; text-align: center; padding: 10px; font-size: 18px; line-height: 1.25; }
+    .lane.red .lane-label { color: #111; border-left-color: var(--red); }
+    .lane-standards, .lane-answer { border: 1px solid var(--line); border-radius: 6px; background: #fff; padding: 13px; display: flex; flex-wrap: wrap; gap: 7px; align-items: center; align-content: center; color: #111; font-size: 14px; line-height: 1.35; }
+    .lane.red .lane-standards, .lane.red .lane-answer { background: #fff; }
+    .lane-pill { display: inline-flex; border-radius: 4px; background: #fff; border: 1px solid #d9e1ea; padding: 5px 9px; color: #111; font-size: 12px; line-height: 1.2; }
 
     .scope-board { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
     .scope-col { padding: 24px; display: grid; gap: 13px; align-content: start; }
     .scope-col.include { background: #fff; }
-    .scope-col.exclude { background: #f8fafc; border-left: 1px solid var(--line); }
+    .scope-col.exclude { background: #fff; border-left: 1px solid var(--line); }
     .scope-col h3 { margin: 0; color: var(--blue); font-size: 27px; line-height: 1.22; font-weight: 500; }
     .scope-col.exclude h3 { color: var(--red); }
     .scope-list { display: grid; gap: 10px; }
-    .scope-list div { padding: 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--blue-soft); color: #111; font-size: 16px; line-height: 1.42; }
-    .scope-col.exclude .scope-list div { background: var(--red-soft); }
+    .scope-list div { padding: 14px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: #111; font-size: 16px; line-height: 1.42; }
+    .scope-col.exclude .scope-list div { background: #fff; border-left: 4px solid var(--red); }
     .scope-list strong { color: var(--blue); font-weight: 500; }
     .scope-col.exclude .scope-list strong { color: var(--red); }
 
     .position-board { padding: 23px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; align-content: stretch; }
-    .position-card { border: 1px solid var(--line); border-radius: 8px; background: var(--blue-soft); padding: 18px; display: grid; grid-template-rows: auto auto 1fr auto; gap: 10px; }
-    .position-card.red { background: var(--red-soft); border-top: 6px solid var(--red); }
-    .position-card .tag { justify-self: start; color: #fff; background: var(--blue); border-radius: 999px; padding: 5px 10px; font-size: 12px; line-height: 1.2; }
-    .position-card.red .tag { background: var(--red); }
+    .position-card { border: 1px solid var(--line); border-radius: 8px; background: #fff; padding: 18px; display: grid; grid-template-rows: auto auto 1fr auto; gap: 10px; }
+    .position-card.red { background: #fff; border-left: 4px solid var(--red); }
+    .position-card .tag { justify-self: start; color: #111; background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 5px 10px; font-size: 12px; line-height: 1.2; }
+    .position-card.red .tag { color: var(--red); border-color: #d8a0a0; }
     .position-card h3 { margin: 0; color: var(--blue); font-size: 22px; line-height: 1.24; font-weight: 500; }
     .position-card.red h3 { color: var(--red); }
     .position-card p { margin: 0; color: #111; font-size: 14px; line-height: 1.44; }
@@ -1968,9 +1970,9 @@
 
     .chapter-board { padding: 22px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 13px; align-content: stretch; }
     .chapter-module { border: 1px solid var(--line); border-radius: 8px; background: #fff; overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
-    .chapter-module header { padding: 15px; background: var(--blue); color: #fff; }
-    .chapter-module.red header { background: var(--red); }
-    .chapter-module header span { display: block; color: rgba(255,255,255,.82); font-size: 13px; }
+    .chapter-module header { padding: 15px; background: #fff; color: var(--blue); border-bottom: 1px solid var(--line); }
+    .chapter-module.red header { background: #fff; color: var(--red); }
+    .chapter-module header span { display: block; color: #5f6b7a; font-size: 13px; }
     .chapter-module header strong { display: block; margin-top: 5px; font-size: 21px; line-height: 1.22; font-weight: 400; }
     .chapter-module ul { margin: 0; padding: 16px 18px 16px 34px; color: #111; font-size: 14px; line-height: 1.55; }
     .chapter-evidence { display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); gap: 14px; min-height: 354px; }
@@ -1984,25 +1986,83 @@
     .chapter-shot figcaption { padding: 6px 12px 9px; color: #5f6b7a; font-size: 11px; line-height: 1.35; border-top: 1px solid #edf2f7; background: #fff; }
 
     .mechanism-board { padding: 22px; display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 18px; }
-    .mechanism-center { border-radius: 8px; background: var(--blue); color: #fff; display: grid; place-items: center; text-align: center; padding: 22px; }
+    .mechanism-center { border-radius: 8px; background: #fff; color: #111; border: 1px solid var(--line); border-left: 5px solid var(--blue); display: grid; place-items: center; text-align: center; padding: 22px; }
     .mechanism-center strong { font-size: 34px; line-height: 1.15; font-weight: 400; }
-    .mechanism-center span { display: block; margin-top: 12px; color: rgba(255,255,255,.85); font-size: 15px; line-height: 1.42; }
+    .mechanism-center span { display: block; margin-top: 12px; color: #111; font-size: 15px; line-height: 1.42; }
     .mechanism-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 11px; }
-    .mechanism-card { border: 1px solid var(--line); border-radius: 8px; background: var(--blue-soft); padding: 14px; display: grid; align-content: start; gap: 7px; }
-    .mechanism-card.red { background: var(--red-soft); border-left: 5px solid var(--red); }
+    .mechanism-card { border: 1px solid var(--line); border-radius: 8px; background: #fff; padding: 14px; display: grid; align-content: start; gap: 7px; }
+    .mechanism-card.red { background: #fff; border-left: 4px solid var(--red); }
     .mechanism-card strong { color: var(--blue); font-size: 18px; line-height: 1.22; font-weight: 500; }
     .mechanism-card.red strong { color: var(--red); }
     .mechanism-card p { margin: 0; color: #111; font-size: 12.8px; line-height: 1.38; }
 
     .workplan-board { padding: 24px; display: grid; gap: 16px; align-content: start; }
-    .workplan-note { padding: 15px 18px; border-radius: 8px; background: var(--red-soft); border-left: 6px solid var(--red); color: #111; font-size: 17px; line-height: 1.5; }
+    .workplan-note { padding: 15px 18px; border-radius: 8px; background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--red); color: #111; font-size: 17px; line-height: 1.5; }
     .workplan-note strong { color: var(--red); font-weight: 500; }
     .workplan-timeline { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-    .work-step { min-height: 190px; border: 1px solid var(--line); border-radius: 8px; background: var(--blue-soft); padding: 15px; display: grid; grid-template-rows: auto auto 1fr; gap: 8px; }
-    .work-step.red { background: var(--red-soft); border-top: 6px solid var(--red); }
+    .work-step { min-height: 190px; border: 1px solid var(--line); border-radius: 8px; background: #fff; padding: 15px; display: grid; grid-template-rows: auto auto 1fr; gap: 8px; }
+    .work-step.red { background: #fff; border-top: 4px solid var(--red); }
     .work-step span { color: var(--red); font-size: 14px; line-height: 1.2; }
     .work-step strong { color: var(--blue); font-size: 21px; line-height: 1.24; font-weight: 500; }
     .work-step p { margin: 0; color: #111; font-size: 14px; line-height: 1.42; }
+    .flowchart-board {
+      min-height: 354px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) auto;
+    }
+    .flowchart-board svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      background: #fff;
+    }
+    .flowchart-board .box,
+    .flowchart-board .decision,
+    .flowchart-board .terminal {
+      fill: #fff;
+      stroke: #111;
+      stroke-width: 1.6;
+      vector-effect: non-scaling-stroke;
+    }
+    .flowchart-board .decision { stroke-width: 1.7; }
+    .flowchart-board .arrow {
+      fill: none;
+      stroke: #111;
+      stroke-width: 1.55;
+      marker-end: url(#flow-arrow);
+      vector-effect: non-scaling-stroke;
+    }
+    .flowchart-board .flow-text {
+      fill: #111;
+      font-family: "Source Han Sans SC", "Noto Sans CJK SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+    }
+    .flowchart-board .flow-title {
+      fill: #111;
+      font-family: "Source Han Sans SC", "Noto Sans CJK SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      font-size: 17px;
+      font-weight: 500;
+    }
+    .flowchart-board .flow-small {
+      fill: #111;
+      font-family: "Source Han Sans SC", "Noto Sans CJK SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      font-size: 12.5px;
+      font-weight: 400;
+    }
+    .flowchart-caption {
+      padding: 8px 14px 10px;
+      border-top: 1px solid var(--line);
+      color: #5f6b7a;
+      font-size: 12px;
+      line-height: 1.35;
+      background: #fff;
+    }
     .status-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
     .status-pill { display: inline-flex; align-items: center; min-height: 28px; padding: 4px 9px; border-radius: 999px; border: 1px solid var(--line); color: var(--blue); background: #fff; font-size: 13px; line-height: 1; }
     .status-pill.red { border-color: #d8a0a0; color: var(--red); background: var(--red-soft); }
@@ -2268,7 +2328,7 @@
 
     <div class="deck-bottombar">
       <button class="deck-nav" id="prev">上一页</button>
-      <span class="counter" id="counter">1 / 15</span>
+      <span class="counter" id="counter">1 / 16</span>
       <button class="deck-nav" id="next">下一页</button>
     </div>
 
@@ -2494,6 +2554,77 @@
             <div class="mechanism-card red"><strong>KPI、FRIP 与验证</strong><p>用评价指标、第一响应者交互计划、桌面推演、历史事件复盘和记录抽查形成闭环。</p></div>
           </div>
         </div>`, '用一页图把草案核心机制串起来，但不讲条款细节。'),
+      contentSlide('disposal-flow', '异常事件处置流程图', `
+        <div class="flowchart-board" aria-label="异常事件处置流程图">
+          <svg viewBox="0 0 1140 360" role="img" aria-label="异常事件从触发发现、记录初筛、异常判定、分类分级、处置决策、恢复确认到复盘归档的流程图">
+            <defs>
+              <marker id="flow-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#111"></path>
+              </marker>
+            </defs>
+
+            <rect class="terminal" x="24" y="38" width="145" height="70" rx="3"></rect>
+            <text class="flow-title" x="96.5" y="66" text-anchor="middle">异常触发 / 发现</text>
+            <text class="flow-small" x="96.5" y="88" text-anchor="middle">车辆、运营、用户、监管</text>
+
+            <line class="arrow" x1="169" y1="73" x2="204" y2="73"></line>
+            <rect class="box" x="204" y="38" width="145" height="70" rx="3"></rect>
+            <text class="flow-title" x="276.5" y="66" text-anchor="middle">信息记录与初筛</text>
+            <text class="flow-small" x="276.5" y="88" text-anchor="middle">时间、地点、车辆、证据</text>
+
+            <line class="arrow" x1="349" y1="73" x2="390" y2="73"></line>
+            <polygon class="decision" points="470,32 548,73 470,114 392,73"></polygon>
+            <text class="flow-title" x="470" y="67" text-anchor="middle">是否构成</text>
+            <text class="flow-title" x="470" y="88" text-anchor="middle">运营异常事件</text>
+
+            <line class="arrow" x1="548" y1="73" x2="586" y2="73"></line>
+            <text class="flow-small" x="565" y="61" text-anchor="middle">是</text>
+            <rect class="box" x="586" y="38" width="145" height="70" rx="3"></rect>
+            <text class="flow-title" x="658.5" y="66" text-anchor="middle">分类与分级</text>
+            <text class="flow-small" x="658.5" y="88" text-anchor="middle">类型、严重度、紧急度</text>
+
+            <line class="arrow" x1="470" y1="114" x2="470" y2="148"></line>
+            <text class="flow-small" x="488" y="132">否</text>
+            <rect class="box" x="390" y="148" width="160" height="58" rx="3"></rect>
+            <text class="flow-title" x="470" y="173" text-anchor="middle">常规记录</text>
+            <text class="flow-small" x="470" y="193" text-anchor="middle">持续监测 / 归档</text>
+
+            <line class="arrow" x1="731" y1="73" x2="770" y2="73"></line>
+            <polygon class="decision" points="850,32 932,73 850,114 768,73"></polygon>
+            <text class="flow-title" x="850" y="67" text-anchor="middle">处置决策</text>
+            <text class="flow-small" x="850" y="88" text-anchor="middle">责任矩阵 / 响应层级</text>
+
+            <line class="arrow" x1="850" y1="114" x2="850" y2="148"></line>
+            <rect class="box" x="585" y="148" width="530" height="76" rx="3"></rect>
+            <line x1="585" y1="176" x2="1115" y2="176" stroke="#111" stroke-width="1.2" vector-effect="non-scaling-stroke"></line>
+            <line x1="760" y1="176" x2="760" y2="224" stroke="#111" stroke-width="1.2" vector-effect="non-scaling-stroke"></line>
+            <line x1="945" y1="176" x2="945" y2="224" stroke="#111" stroke-width="1.2" vector-effect="non-scaling-stroke"></line>
+            <text class="flow-small" x="850" y="166" text-anchor="middle">处置执行（按责任矩阵和响应层级选择）</text>
+            <text class="flow-title" x="672.5" y="197" text-anchor="middle">运营处置</text>
+            <text class="flow-small" x="672.5" y="216" text-anchor="middle">自动处置 / 远程协助</text>
+            <text class="flow-title" x="852.5" y="197" text-anchor="middle">升级处置</text>
+            <text class="flow-small" x="852.5" y="216" text-anchor="middle">远程驾驶 / 现场救援</text>
+            <text class="flow-title" x="1030" y="197" text-anchor="middle">外部协同</text>
+            <text class="flow-small" x="1030" y="216" text-anchor="middle">FRIP / 区域管控</text>
+
+            <path class="arrow" d="M850 224 C800 238, 720 238, 665 248"></path>
+
+            <rect class="box" x="585" y="248" width="160" height="62" rx="3"></rect>
+            <text class="flow-title" x="665" y="273" text-anchor="middle">恢复确认</text>
+            <text class="flow-small" x="665" y="293" text-anchor="middle">安全状态 / 运行恢复</text>
+
+            <line class="arrow" x1="745" y1="279" x2="770" y2="279"></line>
+            <rect class="box" x="770" y="248" width="160" height="62" rx="3"></rect>
+            <text class="flow-title" x="850" y="273" text-anchor="middle">复盘评价</text>
+            <text class="flow-small" x="850" y="293" text-anchor="middle">KPI / 责任矩阵 / 证据核查</text>
+
+            <line class="arrow" x1="930" y1="279" x2="955" y2="279"></line>
+            <rect class="terminal" x="955" y="248" width="160" height="62" rx="3"></rect>
+            <text class="flow-title" x="1035" y="273" text-anchor="middle">归档与改进</text>
+            <text class="flow-small" x="1035" y="293" text-anchor="middle">案例库 / 规则更新 / 培训</text>
+          </svg>
+          <div class="flowchart-caption">黑白流程图为会议讨论稿，可作为后续标准文本中流程图的基础版本。</div>
+        </div>`, '新增一页黑白线条流程图，便于后续转入标准文稿。'),
       contentSlide('workplan', '后续工作计划', `
         <div class="workplan-board" aria-label="标准起草后续工作节奏">
           <div class="workplan-note"><strong>七月初立项会议之后</strong>，将基于标准初稿 v0.97 组织起草组开展集中修订，并围绕重点专题分工推进。</div>
