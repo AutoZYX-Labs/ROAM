@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>标准起草组第一次会议简要介绍材料 — ROAM CSAE Presentation</title>
-    <meta property="og:title" content="标准起草组第一次会议简要介绍材料 — ROAM CSAE Presentation">
-    <meta property="og:description" content="高度自动驾驶车辆运营管理异常事件处置规范标准起草组第一次会议公开摘要型演示材料。">
+  <title>标准起草组第一次会议 — ROAM CSAE Presentation</title>
+    <meta property="og:title" content="标准起草组第一次会议 — ROAM CSAE Presentation">
+    <meta property="og:description" content="高度自动驾驶车辆运营管理异常事件处置规范标准起草组第一次会议演示材料。">
     <meta property="og:image" content="https://roam.autozyx.com/assets/logo.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://roam.autozyx.com/csae-first-meeting.html">
     <meta name="twitter:card" content="summary_large_image">
-  <meta name="description" content="高度自动驾驶车辆运营管理异常事件处置规范标准起草组第一次会议公开摘要型演示材料。">
+  <meta name="description" content="高度自动驾驶车辆运营管理异常事件处置规范标准起草组第一次会议演示材料。">
   <meta name="theme-color" content="#17375e">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -256,8 +256,8 @@
     .cover-media { margin: 0; overflow: hidden; background: #d8dee7; }
     .cover-media video, .cover-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
     .cover-bottom { display: grid; grid-template-rows: auto 1fr; gap: 18px; padding: 24px 46px 28px; background: #fff; box-shadow: 0 -18px 46px rgba(23,55,94,.1); }
-    .cover-title-cn { margin: 0; color: var(--blue); font-size: 42px; line-height: 1.15; font-weight: 400; }
-    .cover-title-en { margin: 5px 0 0; color: #315f93; font-size: 19px; line-height: 1.2; font-weight: 400; text-transform: uppercase; }
+    .cover-title-cn { margin: 0; color: var(--blue); font-size: 46px; line-height: 1.14; font-weight: 400; }
+    .cover-title-en { margin: 8px 0 0; color: #315f93; font-size: 26px; line-height: 1.22; font-weight: 400; letter-spacing: 0; }
     .cover-meta { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 0.38fr); gap: 36px; align-items: end; }
     .speaker strong { display: block; font-size: 26px; line-height: 1.2; font-weight: 400; color: #111; }
     .speaker p { margin: 6px 0 0; font-size: 19px; line-height: 1.38; color: #111; }
@@ -1973,6 +1973,15 @@
     .chapter-module header span { display: block; color: rgba(255,255,255,.82); font-size: 13px; }
     .chapter-module header strong { display: block; margin-top: 5px; font-size: 21px; line-height: 1.22; font-weight: 400; }
     .chapter-module ul { margin: 0; padding: 16px 18px 16px 34px; color: #111; font-size: 14px; line-height: 1.55; }
+    .chapter-evidence { display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); gap: 14px; min-height: 354px; }
+    .chapter-modules { min-height: 0; padding: 14px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; align-content: stretch; }
+    .chapter-modules .chapter-module header { padding: 12px; }
+    .chapter-modules .chapter-module header span { font-size: 12px; }
+    .chapter-modules .chapter-module header strong { font-size: 18px; line-height: 1.18; }
+    .chapter-modules .chapter-module ul { padding: 12px 14px 12px 28px; font-size: 12.8px; line-height: 1.45; }
+    .chapter-shot { margin: 0; min-height: 0; border: 1px solid var(--line); border-radius: 8px; background: #fff; overflow: hidden; display: grid; grid-template-rows: minmax(0, 1fr) auto; }
+    .chapter-shot img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; padding: 8px 10px 4px; box-sizing: border-box; }
+    .chapter-shot figcaption { padding: 6px 12px 9px; color: #5f6b7a; font-size: 11px; line-height: 1.35; border-top: 1px solid #edf2f7; background: #fff; }
 
     .mechanism-board { padding: 22px; display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 18px; }
     .mechanism-center { border-radius: 8px; background: var(--blue); color: #fff; display: grid; place-items: center; text-align: center; padding: 22px; }
@@ -2187,7 +2196,7 @@
       .deck-app:not(.is-fullscreen) .slide-inner,
       .deck-app:not(.is-fullscreen) .cover-bottom,
       .deck-app:not(.is-fullscreen) .thanks-bottom { padding-left: 22px; padding-right: 22px; }
-      .deck-app:not(.is-fullscreen) :is(.body-two, .body-three, .body-figure, .comparison, .flow, .project-row, .cover-meta, .thanks-bottom, .custom-layer, .sotif-map, .case-map, .framework-row, .framework-bottom, .mode-grid, .layer-state-layout, .frip-layout, .dash-head, .dash-grid, .report-layout, .sotif-proof, .iso-path, .event-board, .loop-board, .coverage-row, .bridge-board, .gap-board, .standard-plan, .deliverable-grid, .plan-timeline, .framework-canvas, .mode-map, .mode-quads, .taxonomy-board, .taxonomy-grid, .responsibility-board, .case-board, .case-triage, .case-flow, .ecosystem-board, .ecosystem-chain, .summary-board, .summary-path, .photo-compare, .visual-gap, .notice-visual, .notice-timeline, .notice-list, .method-visual, .mode-visual, .axis-map, .taxonomy-visual, .tax-branches, .tax-output, .responsibility-visual, .case-visual, .case-mini-flow, .final-visual, .purpose-board, .draft-board, .need-board, .lane, .scope-board, .position-board, .chapter-board, .mechanism-board, .mechanism-grid, .workplan-timeline) { grid-template-columns: 1fr; }
+      .deck-app:not(.is-fullscreen) :is(.body-two, .body-three, .body-figure, .comparison, .flow, .project-row, .cover-meta, .thanks-bottom, .custom-layer, .sotif-map, .case-map, .framework-row, .framework-bottom, .mode-grid, .layer-state-layout, .frip-layout, .dash-head, .dash-grid, .report-layout, .sotif-proof, .iso-path, .event-board, .loop-board, .coverage-row, .bridge-board, .gap-board, .standard-plan, .deliverable-grid, .plan-timeline, .framework-canvas, .mode-map, .mode-quads, .taxonomy-board, .taxonomy-grid, .responsibility-board, .case-board, .case-triage, .case-flow, .ecosystem-board, .ecosystem-chain, .summary-board, .summary-path, .photo-compare, .visual-gap, .notice-visual, .notice-timeline, .notice-list, .method-visual, .mode-visual, .axis-map, .taxonomy-visual, .tax-branches, .tax-output, .responsibility-visual, .case-visual, .case-mini-flow, .final-visual, .purpose-board, .draft-board, .need-board, .lane, .scope-board, .position-board, .chapter-board, .chapter-evidence, .chapter-modules, .mechanism-board, .mechanism-grid, .workplan-timeline) { grid-template-columns: 1fr; }
       .deck-app:not(.is-fullscreen) .framework-node:not(:last-child)::after { display: none; }
       .deck-app:not(.is-fullscreen) .flow .step:not(:last-child)::after { display: none; }
       .deck-app:not(.is-fullscreen) .frip-node:not(:last-child)::after { display: none; }
@@ -2233,7 +2242,7 @@
     <div class="deck-topbar">
       <div class="deck-title">
         <a href="./index.html">ROAM</a>
-        <span> CSAE 标准起草组第一次会议简要介绍材料</span>
+        <span> CSAE 标准起草组第一次会议</span>
       </div>
       <div class="deck-controls">
         <select class="deck-select" id="theme">
@@ -2275,7 +2284,7 @@
     const A = './assets/presentation/'
     const agenda = [
       '会议目的与讨论边界',
-      '立项背景：为什么需要这项团标',
+      '立项背景与必要性',
       '范围边界与适用对象',
       '与现有标准的差异和定位',
       '草案框架与后续工作'
@@ -2285,7 +2294,7 @@
       {
         key: 'cover',
         type: 'cover',
-        notes: '开场先说明这是第一次会议的简要介绍材料，不进入条款技术细节。',
+        notes: '开场说明本次材料用于起草组第一次会议，重点统一背景、范围、定位和后续工作机制。',
         html: `
           <div class="cover-layout">
             <figure class="cover-media">
@@ -2293,7 +2302,7 @@
             </figure>
             <div class="cover-bottom">
               <div>
-                <h1 class="cover-title-cn editable">标准起草组第一次会议简要介绍材料</h1>
+                <h1 class="cover-title-cn editable">标准起草组第一次会议</h1>
                 <p class="cover-title-en editable">高度自动驾驶车辆运营管理异常事件处置规范</p>
               </div>
               <div class="cover-meta">
@@ -2312,41 +2321,41 @@
           </div>`
       },
       agendaSlide('agenda', -1, '目录', '先给出本次会议材料的结构。'),
-      contentSlide('meeting-purpose', '本次会议的目的', `
+      contentSlide('meeting-purpose', '会议目标与讨论边界', `
         <div class="purpose-board" aria-label="本次会议目的和讨论边界">
           <div class="purpose-lead">
-            <span class="label">First meeting</span>
-            <h3>今天不是为了讨论标准草案的技术细节</h3>
-            <p>第一次会议更重要的是统一背景、目标、范围边界和后续协作方式，让大家知道会后应该如何读草案、如何提意见。</p>
+            <span class="label">Meeting scope</span>
+            <h3>统一背景、定位与工作机制</h3>
+            <p>本次会议聚焦立项背景、适用范围、标准定位与起草协同安排；具体条款将在立项会议后按专题组织讨论。</p>
           </div>
           <div class="purpose-stack">
-            <div class="purpose-item red"><strong>统一认识</strong><p>说明为什么需要面向运营异常事件处置的管理类团体标准。</p></div>
-            <div class="purpose-item"><strong>明确边界</strong><p>讲清本标准与车辆技术要求、数据上报、事故责任认定和现场执法的关系。</p></div>
-            <div class="purpose-item"><strong>组织修订</strong><p>七月初立项会议之后，将围绕草案进行集中修订、修改和优化。</p></div>
+            <div class="purpose-item red"><strong>形成共识</strong><p>明确高度自动驾驶车辆运营异常事件处置规范的行业需求和立项目标。</p></div>
+            <div class="purpose-item"><strong>界定范围</strong><p>区分本标准与车辆技术要求、数据上报、事故责任认定和现场执法规则的关系。</p></div>
+            <div class="purpose-item"><strong>启动协同</strong><p>立项会议后围绕范围、术语、分类、责任矩阵和验证方法推进专题修订。</p></div>
           </div>
-        </div>`, '把会议目的讲清楚，避免大家在第一次会议就陷入单条技术条款。'),
-      contentSlide('draft-feedback', '草案状态与会后反馈', `
+        </div>`, '说明第一次会议的边界：统一背景、范围、定位和工作机制，具体条款后续专题讨论。'),
+      contentSlide('draft-feedback', '标准初稿与意见征集', `
         <div class="draft-board" aria-label="标准草案状态和会后反馈方式">
           <div class="draft-sheet">
             <span class="stamp">标准初稿 v0.97 · 2026-06-15</span>
-            <h3>草案已经发给大家，请会后重点阅读</h3>
-            <p>这份初稿是前期几个牵头单位共同形成的工作基础，不是定稿，也不是希望大家简单通过。</p>
+            <h3>标准初稿 v0.97 作为起草工作基础</h3>
+            <p>初稿由前期牵头单位共同形成，用于起草组讨论和意见收集；后续将结合各单位实践经验持续迭代。</p>
             <div class="draft-meta">
               <span>立项申请表<br>2026-06-16</span>
               <span class="red">标准初稿<br>v0.97</span>
-              <span>公开摘要<br>不列名单</span>
+              <span>起草组名单<br>另附表格</span>
               <span class="red">正式条款<br>起草组共识决定</span>
             </div>
             <p class="source-line">资料依据：CSAE 立项申请表 20260616；标准初稿 v0.97 20260615。本页为公开摘要，不发布未定稿条款。</p>
           </div>
           <div class="draft-actions">
-            <div class="draft-action red"><b>1</b><div><strong>问题一定还有不少</strong><p>希望各单位结合实际运营、测试、管理、保险和应急协同经验提出修改建议。</p></div></div>
-            <div class="draft-action"><b>2</b><div><strong>先看框架，再看条款</strong><p>第一次会议重点理解标准为什么要做、边界在哪里、后续怎样组织讨论。</p></div></div>
-            <div class="draft-action"><b>3</b><div><strong>会后进入集中修订</strong><p>七月初立项会议之后，将围绕术语、范围、分类、责任矩阵、KPI、FRIP 和验证方法推进专题修改。</p></div></div>
+            <div class="draft-action red"><b>1</b><div><strong>实践反馈</strong><p>结合示范应用、准商业运营、商业化运营、测试评价、保险和应急协同经验提出建议。</p></div></div>
+            <div class="draft-action"><b>2</b><div><strong>框架审阅</strong><p>优先审阅标准适用范围、运营模式、异常分类、决策架构和责任矩阵等基础框架。</p></div></div>
+            <div class="draft-action"><b>3</b><div><strong>专题修订</strong><p>立项会议后围绕术语、范围、分类、责任矩阵、KPI、FRIP 和验证方法开展专题修改。</p></div></div>
           </div>
-        </div>`, '强调草案是工作基础，邀请会后反馈。'),
+        </div>`, '说明 v0.97 是起草工作基础，后续结合各单位实践反馈迭代。'),
       agendaSlide('agenda-background', 1, '目录', '进入立项背景。'),
-      contentSlide('why-standard', '为什么需要这项团标', `
+      contentSlide('why-standard', '立项背景与必要性', `
         <div class="need-board" aria-label="L4 运营异常治理对象扩展">
           <div class="need-col">
             <h3>过去更关注车辆和系统</h3>
@@ -2364,7 +2373,7 @@
             <div class="need-card red"><strong>持续改进证据链</strong><p>异常识别、处置、恢复、复盘和整改需要可审计、可复盘。</p></div>
           </div>
         </div>`, '从安全治理对象扩展讲立项必要性。'),
-      contentSlide('standards-gap', '现有标准覆盖了什么、还缺什么', `
+      contentSlide('standards-gap', '现有标准覆盖边界与治理缺口', `
         <div class="coverage-lanes" aria-label="现有标准覆盖边界与本团标补位">
           <div class="lane">
             <div class="lane-label">车辆能力</div>
@@ -2419,56 +2428,62 @@
             <span class="tag">不是</span>
             <h3>安全事件数据上报格式标准</h3>
             <p>不重点规定数据字段、通信协议、加密机制或企业平台与监管平台之间的报送通道。</p>
-            <em>数据上报回答的是“发生了什么”。</em>
+            <em>数据上报侧重事实记录与报送链路。</em>
           </div>
           <div class="position-card red">
             <span class="tag">而是</span>
             <h3>运营异常事件处置规范</h3>
             <p>回答收到或识别异常后，如何分级、谁来处置、如何协同、何时恢复、怎样复盘和改进。</p>
-            <em>运营治理回答的是“接下来怎么做”。</em>
+            <em>运营治理侧重响应组织与闭环改进。</em>
           </div>
         </div>`, '标准定位页强调差异，而不是再罗列标准号。'),
       agendaSlide('agenda-framework', 4, '目录', '进入草案框架和后续工作。'),
-      contentSlide('draft-chapters', '草案章节结构', `
-        <div class="chapter-board" aria-label="标准草案 12 章压缩为四个模块">
-          <div class="chapter-module">
-            <header><span>模块一</span><strong>对象与术语</strong></header>
-            <ul>
-              <li>范围</li>
-              <li>规范性引用文件</li>
-              <li>术语和定义</li>
-              <li>缩略语</li>
-            </ul>
+      contentSlide('draft-chapters', '草案框架与章节结构', `
+        <div class="chapter-evidence" aria-label="标准草案章节结构与目录截图">
+          <div class="chapter-board chapter-modules">
+            <div class="chapter-module">
+              <header><span>模块一</span><strong>对象与术语</strong></header>
+              <ul>
+                <li>范围</li>
+                <li>规范性引用文件</li>
+                <li>术语和定义</li>
+                <li>缩略语</li>
+              </ul>
+            </div>
+            <div class="chapter-module red">
+              <header><span>模块二</span><strong>运营模式与总体框架</strong></header>
+              <ul>
+                <li>高度自动驾驶车辆运营模式分类</li>
+                <li>运营管理异常事件处置总体框架</li>
+              </ul>
+            </div>
+            <div class="chapter-module">
+              <header><span>模块三</span><strong>分类、决策、责任与评价</strong></header>
+              <ul>
+                <li>异常事件分类</li>
+                <li>处置决策参考架构</li>
+                <li>处置责任矩阵</li>
+                <li>处置评价</li>
+              </ul>
+            </div>
+            <div class="chapter-module red">
+              <header><span>模块四</span><strong>FRIP 与验证方法</strong></header>
+              <ul>
+                <li>第一响应者交互计划要求</li>
+                <li>验证方法</li>
+                <li>典型异常事件案例库</li>
+              </ul>
+            </div>
           </div>
-          <div class="chapter-module red">
-            <header><span>模块二</span><strong>运营模式与总体框架</strong></header>
-            <ul>
-              <li>高度自动驾驶车辆运营模式分类</li>
-              <li>运营管理异常事件处置总体框架</li>
-            </ul>
-          </div>
-          <div class="chapter-module">
-            <header><span>模块三</span><strong>分类、决策、责任与评价</strong></header>
-            <ul>
-              <li>异常事件分类</li>
-              <li>处置决策参考架构</li>
-              <li>处置责任矩阵</li>
-              <li>处置评价</li>
-            </ul>
-          </div>
-          <div class="chapter-module red">
-            <header><span>模块四</span><strong>FRIP 与验证方法</strong></header>
-            <ul>
-              <li>第一响应者交互计划要求</li>
-              <li>验证方法</li>
-              <li>典型异常事件案例库</li>
-            </ul>
-          </div>
-        </div>`, '把 12 章转换成四个模块，便于第一次会议理解。'),
-      contentSlide('key-mechanism', '关键机制一页图', `
+          <figure class="chapter-shot">
+            <img src="${A}csae-draft-toc-v097-cropped.png" alt="标准初稿 v0.97 目录截图">
+            <figcaption>资料来源：标准初稿 v0.97 目录页。截图仅用于起草组第一次会议框架说明。</figcaption>
+          </figure>
+        </div>`, '展示 v0.97 初稿目录，并把 12 章压缩为四个模块便于会议理解。'),
+      contentSlide('key-mechanism', '核心机制与处置闭环', `
         <div class="mechanism-board" aria-label="标准草案关键机制关系图">
           <div class="mechanism-center">
-            <div><strong>异常事件<br>处置闭环</strong><span>从运营模式开始，到分类、分级、决策、协同、评价和验证。</span></div>
+            <div><strong>运营异常<br>处置闭环</strong><span>从运营模式识别，到异常分类、分级决策、协同处置、评价复盘和验证改进。</span></div>
           </div>
           <div class="mechanism-grid">
             <div class="mechanism-card"><strong>运营模式</strong><p>先识别车辆属于哪类运营组织，明确运营主体、技术责任方、远程运营中心和现场救援责任窗口。</p></div>
@@ -2479,9 +2494,9 @@
             <div class="mechanism-card red"><strong>KPI、FRIP 与验证</strong><p>用评价指标、第一响应者交互计划、桌面推演、历史事件复盘和记录抽查形成闭环。</p></div>
           </div>
         </div>`, '用一页图把草案核心机制串起来，但不讲条款细节。'),
-      contentSlide('workplan', '会后工作节奏', `
+      contentSlide('workplan', '后续工作计划', `
         <div class="workplan-board" aria-label="标准起草后续工作节奏">
-          <div class="workplan-note"><strong>七月初立项会议之后</strong>，将基于标准初稿 v0.97 组织起草组进行材料修订、修改和优化，并围绕重点专题分工推进。</div>
+          <div class="workplan-note"><strong>七月初立项会议之后</strong>，将基于标准初稿 v0.97 组织起草组开展集中修订，并围绕重点专题分工推进。</div>
           <div class="workplan-timeline">
             <div class="work-step red"><span>2026.05-2026.07</span><strong>立项审查与起草组组建</strong><p>完成预研征集、报名单位梳理、立项材料和起草组讨论稿准备。</p></div>
             <div class="work-step"><span>2026.07-2026.10</span><strong>起草组讨论与草案形成</strong><p>围绕范围、术语、运营模式、异常分类、责任矩阵、KPI、FRIP 和验证方法组织专题讨论。</p></div>
