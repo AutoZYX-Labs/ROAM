@@ -11,12 +11,12 @@
     <meta property="og:url" content="https://roam.autozyx.com/">
     <meta name="twitter:card" content="summary_large_image">
   <meta name="description" content="Open-source incident database, scenario taxonomy & reference architecture for L4+ autonomous mobility remote operations.">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style.css?v=2">
 </head>
 <body>
 
 <!-- Language Toggle -->
-<button class="lang-toggle" onclick="toggleLang()">
+<button class="lang-toggle" data-auto-hide-nav onclick="toggleLang()">
   <span class="cn">EN</span>
   <span class="en">中文</span>
 </button>
@@ -247,6 +247,7 @@ function toggleLang() {
   localStorage.setItem(KEY, document.body.classList.contains('E') ? 'en' : 'cn');
 }
 </script>
+<script src="assets/auto-nav.js?v=1"></script>
 
 </body>
 </html>
