@@ -26,17 +26,21 @@
   --green: #2d7a4f;
   --amber: #a67c2e;
   --red: #b83a3a;
+  --max: 1760px;
+  --page-gutter: clamp(20px, 4vw, 72px);
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family: 'Inter', -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; color:var(--text); background:var(--bg); line-height:1.75; -webkit-font-smoothing:antialiased; font-size:1.25rem; }
 a { color:var(--accent); text-decoration:none; }
 a:hover { text-decoration:underline; }
-.wrap { max-width:1320px; margin:0 auto; padding:0 40px; }
+.wrap { max-width:var(--max); margin:0 auto; padding:0 var(--page-gutter); }
 
 /* Language toggle */
-.lang { position:fixed; top:24px; right:48px; z-index:99; display:flex; border:1px solid var(--border); border-radius:6px; overflow:hidden; background:rgba(250,249,245,0.92); backdrop-filter:blur(8px); }
+.lang { position:fixed; top:24px; right:48px; z-index:99; display:flex; border:1px solid var(--border); border-radius:6px; overflow:hidden; background:rgba(250,249,245,0.92); backdrop-filter:blur(8px); transition:transform .2s ease, opacity .2s ease, box-shadow .2s ease; }
 .lang button { padding:7px 16px; border:none; cursor:pointer; font-size:12px; font-weight:600; background:transparent; color:var(--text3); transition:.15s; font-family:inherit; }
 .lang button.on { background:var(--text); color:var(--bg); }
+.lang.nav-hidden,
+.autozyx-brand.nav-hidden { opacity:0; pointer-events:none; transform:translateY(-100%); }
 span.en, p.en, div.en, h2.en, .en-link { display:none; }
 body.E span.cn, body.E p.cn, body.E div.cn, body.E h2.cn, body.E .cn-link { display:none!important; }
 body.E span.en { display:inline!important; }
@@ -163,7 +167,7 @@ footer a { color:var(--accent); }
   header .desc.cn .cn-title { font-size:4vw!important; letter-spacing:2px; }
   header .desc.cn .cn-sub { font-size:4vw!important; }
   header .desc { font-size:4vw!important; }
-  .wrap { padding:0 18px; }
+  .wrap { padding:0 20px; }
   header { padding:72px 18px 48px; }
   .lang { right:18px; }
   .autozyx-brand { left:14px; }
@@ -171,19 +175,23 @@ footer a { color:var(--accent); }
 }
 
 /* AutoZYX brand strip — 跨站统一 */
-.autozyx-brand{position:fixed;top:16px;left:20px;display:flex;align-items:center;gap:10px;padding:5px 14px 5px 5px;background:rgba(250,249,245,0.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(224,222,214,0.7);border-radius:28px;text-decoration:none;color:var(--text);font:500 13px/1 'Inter',-apple-system,sans-serif;z-index:100;transition:border-color .15s,transform .15s}
+.autozyx-brand{position:fixed;top:16px;left:20px;display:flex;align-items:center;gap:10px;padding:5px 14px 5px 5px;background:rgba(250,249,245,0.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(224,222,214,0.7);border-radius:28px;text-decoration:none;color:var(--text);font:500 13px/1 'Inter',-apple-system,sans-serif;z-index:100;transition:border-color .15s,transform .2s ease,opacity .2s ease}
 .autozyx-brand:hover{border-color:#8a8a80;text-decoration:none;transform:translateY(-1px)}
 .autozyx-brand img{width:30px;height:30px;border-radius:50%;object-fit:cover;display:block}
+@media (prefers-reduced-motion: reduce) {
+  .lang,
+  .autozyx-brand { transition:none; }
+}
 </style>
 </head>
 <body>
 
-<a href="https://autozyx.com" class="autozyx-brand" title="返回 AutoZYX 主页">
+<a href="https://autozyx.com" class="autozyx-brand" data-auto-hide-nav title="返回 AutoZYX 主页">
   <img src="https://autozyx.com/assets/avatar.png" alt="AutoZYX">
   <span>AutoZYX</span>
 </a>
 
-<div class="lang">
+<div class="lang" data-auto-hide-nav>
   <button class="on" onclick="L('cn',this)">中文</button>
   <button onclick="L('en',this)">EN</button>
 </div>
@@ -955,6 +963,41 @@ footer a { color:var(--accent); }
 
 <script>
 function L(l,b){document.body.className=l==='en'?'E':'';document.querySelectorAll('.lang button').forEach(x=>x.classList.remove('on'));b.classList.add('on');}
+(function(){
+  var controls = Array.prototype.slice.call(document.querySelectorAll('[data-auto-hide-nav]'));
+  if(!controls.length) return;
+  var lastY = window.scrollY || 0;
+  var ticking = false;
+  function pinned(y){
+    return y <= 8 || controls.some(function(el){ return el.matches(':hover') || el.contains(document.activeElement); });
+  }
+  function setHidden(hidden){
+    controls.forEach(function(el){ el.classList.toggle('nav-hidden', hidden); });
+  }
+  function update(){
+    var y = Math.max(window.scrollY || 0, 0);
+    var delta = y - lastY;
+    if(pinned(y)){
+      setHidden(false);
+    }else if(delta > 6 && y > 72){
+      setHidden(true);
+    }else if(delta < -6){
+      setHidden(false);
+    }
+    lastY = y;
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if(ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(update);
+  }, { passive:true });
+  controls.forEach(function(el){
+    el.addEventListener('mouseenter', function(){ setHidden(false); });
+    el.addEventListener('focusin', function(){ setHidden(false); });
+  });
+  update();
+})();
 </script>
 </body>
 </html>
